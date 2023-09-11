@@ -1,0 +1,7 @@
+cd C:\soft\mysql-8.1.0-winx64\bin
+
+>mysqld --initialize --user=mysql --console
+>mysqld -install
+>net start mysql
+>mysql -u root -p
+>alter user root@localhost identified by '123456';

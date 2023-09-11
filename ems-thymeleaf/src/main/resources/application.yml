@@ -1,0 +1,41 @@
+server:
+  port: 9999
+  servlet:
+    context-path: /ems-thymeleaf
+
+# spring相关配置 datasource数据源  thymeleaf 模板引擎
+spring:
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ems-thymeleaf?characterEncoding=UTF-8
+    username: root
+    password: 123456
+  web:
+    resources:
+      static-locations: classpath:/static/,file:${photo.file.dir} #暴露哪些资源可以通过项目名访问
+
+
+
+# mybatis配置
+mybatis:
+  mapper-locations: classpath:com/baizhi/mapper/*.xml
+  type-aliases-package: com.baizhi.entity
+
+# 日志配置
+logging:
+  level:
+    root: info
+    com.baizhi: debug
+
+
+# 指定文件上传位置
+photo:
+  file:
+#    dir: /Users/user/Documents/file/photo
+    dir: C:\work\file\photo

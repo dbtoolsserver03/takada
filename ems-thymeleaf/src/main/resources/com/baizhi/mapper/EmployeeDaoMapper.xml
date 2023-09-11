@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baizhi.dao.EmployeeDao">
+
+
+
+    <!--lists-->
+    <select id="lists" resultType="com.baizhi.entity.Employee">
+        select id,name,salary,birthday,photo from `employee`
+    </select>
+
+
+    <!--save-->
+    <insert id="save" parameterType="Employee" useGeneratedKeys="true" keyProperty="id">
+        insert into `employee` values (#{id},#{name},#{salary},#{birthday},#{photo})
+    </insert>
+
+
+    <!--findById-->
+    <select id="findById" parameterType="Integer" resultType="Employee">
+        select id,name,salary,birthday,photo from `employee`
+        where id = #{id}
+    </select>
+
+    <!--update-->
+    <update id="update" parameterType="Employee" >
+        update `employee` set name=#{name},salary=#{salary},birthday=#{birthday},photo=#{photo}
+        where id = #{id}
+    </update>
+
+    <!--delete-->
+    <delete id="delete" parameterType="Integer">
+        delete from `employee` where id = #{id}
+    </delete>
+
+
+
+</mapper>

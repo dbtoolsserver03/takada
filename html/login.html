@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ログイン画面</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css"/>
+    <script src="./plug-in/jquery/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	  $("#id_my_btn").click(function(){
+		  debugger;
+		  var userId = $("#id_user_id")[0].value;
+		  console.log("userId:"+userId);
+		  window.location = 'list.html?userId='+userId+'&result=notView';
+
+	  });
+	});
+
+</script>
+</head>
+<body>
+
+<div class="align-right">
+<a href="#">ユーザ新規</a>
+<br>
+</div>
+
+<div class="background-color">
+    <table width="100%">
+        <tr>
+            <td width="5%"></td>
+            <td width="20%">
+                <div align="right"><img src="./images/logo.png"/></div>
+            </td>
+            <td width="50%"><p align="center" style="color:white">人事システム</p></td>
+            <td align="right" width="25%"></td>
+        </tr>
+    </table>
+</div>
+
+
+<div align="center">
+    <br><br><br><br><br>
+    <input id="id_user_id" type="text" name="userId" style="background-color:DeepSkyBlue" placeholder="ログインID">
+    <br>
+    <input type="password" name="password" style="background-color:DeepSkyBlue" placeholder="パスワード">
+    <br><br>
+    <input id="id_my_btn" type="button"  class="btn-pink"  value="  ログイン  " />
+</div>
+
+<div class="footer">cuishuangjia © Copyright 2021</div>
+</body>
+</html>
