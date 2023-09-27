@@ -1,20 +1,26 @@
 package com.baizhi.controller;
 
-import com.baizhi.entity.Emp;
-import com.baizhi.service.EmpService;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FilenameUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
+import org.apache.commons.io.FilenameUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.baizhi.entity.Emp;
+import com.baizhi.service.EmpService;
+
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("emp")
@@ -26,7 +32,7 @@ public class EmpController {
     @Autowired
     private EmpService empService;
 
-    @Value("${photo.dir}")
+    @Value("${photo.file.dir}")
     private String realPath;
 
 
