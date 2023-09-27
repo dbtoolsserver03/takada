@@ -53,7 +53,7 @@
 								操作
 							</td>
 						</tr>
-						<tr th:each="employee,state:${employeeList}"  th:class="${state.odd?'row1':'row2'}">
+						<tr th:each="employee,shn state:${employeeList}"  th:class="${state.odd?'row1':'row2'}">
 							<td>
 								<span th:text="${employee.id}"></span>
 							</td>

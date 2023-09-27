@@ -1,0 +1,20 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="com.baizhi.dao.UserDAO">
+
+
+
+    <!--save-->
+    <insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user values (#{id},#{username},#{realname},#{password},#{sex},#{status},#{registerTime})
+    </insert>
+
+    <!--findByUserName-->
+    <select id="findByUserName" parameterType="String" resultType="User">
+        select id,username,realname,password,sex,status,regsterTime
+        from t_user where username=#{username}
+    </select>
+
+</mapper>
