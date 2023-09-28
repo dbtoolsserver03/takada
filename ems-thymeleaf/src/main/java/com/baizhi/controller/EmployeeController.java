@@ -109,7 +109,7 @@ public class EmployeeController {
         //1.根据id查询一个
         Employee employee = employeeService.findById(id);
         model.addAttribute("employee", employee);
-        return "updateEmp";//跳转到更新页面
+        return "emp/updateEmp";//跳转到更新页面
     }
 
     /**
@@ -135,7 +135,7 @@ public class EmployeeController {
         
         if(employee.getSalary()<0) {
         	model.addAttribute("error", "工资不可以为负数！");
-            return "updateEmp";//更新成功,跳转到员工列表
+            return "emp/updateEmp";//更新成功,跳转到员工列表
         }
         
         
@@ -160,6 +160,6 @@ public class EmployeeController {
         log.warn("warn....");
         log.error("error....");
         
-        return "emplist";
+        return "emp/emplist";
     }
 }
