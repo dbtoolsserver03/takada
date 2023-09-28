@@ -13,7 +13,9 @@ public class MvcConfig  implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
 
         //viewController 请求路径    viewName: 跳转视图
-        registry.addViewController("/").setViewName("redirect:/login");
+    	registry.addViewController("/").setViewName("redirect:/login");
+    	registry.addViewController("/menu").setViewName("menu");
+    	registry.addViewController("/manageEmp").setViewName("redirect:/employee/lists");
         registry.addViewController("login").setViewName("login");
         registry.addViewController("register").setViewName("regist");
         registry.addViewController("addEmp").setViewName("addEmp");

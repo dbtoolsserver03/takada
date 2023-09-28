@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>emplist</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="top_content"> 
+				<div id="header">
+					<div id="rightheader">
+						<p>
+							2009/11/20 
+							<br />
+							<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
+							<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
+						</p>
+					</div>
+					<div id="topheader">
+						<h1 id="title">
+							<a href="#">main</a>
+						</h1>
+					</div>
+					<div id="navigation">
+					</div>
+				</div>
+				<div id="content">
+					<p id="whereami">
+					</p>
+					<h1>
+						欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+							<span th:if="${session.user==null}" >游客</span>!
+					</h1>
+
+						<input type="button" class="button" value="员工管理" onclick="manageEmp()"/>
+						<script>
+							function manageEmp(){
+								location.href = '[[@{/manageEmp}]]';
+							}
+						</script>
+
+				</div>
+			</div>
+			<div id="footer">
+				<div id="footer_bg">
+				ABC@126.com
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
