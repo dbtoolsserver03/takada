@@ -8,10 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
 import com.baizhi.dao.EmployeeDao;
-import com.baizhi.dao.original.UniqloMapper;
 import com.baizhi.entity.Employee;
-import com.baizhi.entity.original.Uniqlo;
-import com.baizhi.entity.original.UniqloExample;
 import com.baizhi.service.EmployeeService;
 
 @SpringBootTest
@@ -26,8 +23,8 @@ class EmsThymeleafApplicationTests {
 	@Autowired
 	private EmployeeDao employeeDao;
 
-	@Autowired
-	private UniqloMapper uniqloMapper;
+//	@Autowired
+//	private UniqloMapper uniqloMapper;
 	
 	@Test
 	void contextLoads() {
@@ -47,15 +44,15 @@ class EmsThymeleafApplicationTests {
 			System.out.println(employee.getName());
 		}
 		
-		UniqloExample example = new UniqloExample();
-		UniqloExample.Criteria criteria = example.createCriteria();
-		criteria.andIdEqualTo(1001);
-		
-		//List<Uniqlo> daoUniqloLst = uniqloMapper.selectByExample(example);
-
-		Uniqlo uniqlo = uniqloMapper.selectByPrimaryKey(1001);
-		System.out.println(uniqlo);
-		
+//		UniqloExample example = new UniqloExample();
+//		UniqloExample.Criteria criteria = example.createCriteria();
+//		criteria.andIdEqualTo(1001);
+//		
+//		//List<Uniqlo> daoUniqloLst = uniqloMapper.selectByExample(example);
+//
+//		Uniqlo uniqlo = uniqloMapper.selectByPrimaryKey(1001);
+//		System.out.println(uniqlo);
+//		
 
 	}
 }
