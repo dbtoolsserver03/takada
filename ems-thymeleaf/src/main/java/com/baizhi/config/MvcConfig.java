@@ -13,12 +13,26 @@ public class MvcConfig  implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
 
         //viewController 请求路径    viewName: 跳转视图
+    	
+    	// 首页跳转
     	registry.addViewController("/").setViewName("redirect:/login");
+    	
+    	// 菜单画面
     	registry.addViewController("/menu").setViewName("menu");
+    	
+    	// 跳转到员工管理画面
     	registry.addViewController("/manageEmp").setViewName("redirect:/employee/lists");
-    	registry.addViewController("/manageUniqlo").setViewName("redirect:/manageUniqlo/lists");
+    	
+    	// 跳转到优衣库管理画面
+    	registry.addViewController("/manageUniqlo").setViewName("redirect:/uniqlo/uniqlolists");
+    	
+    	// 画面登陆
         registry.addViewController("login").setViewName("login");
+        
+        // 新用户注册
         registry.addViewController("register").setViewName("user/regist");
+        
+        // 增加员工
         registry.addViewController("addEmp").setViewName("emp/addEmp");
 
     }
