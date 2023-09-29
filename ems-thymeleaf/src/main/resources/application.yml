@@ -32,6 +32,7 @@ logging:
   level:
     root: info
     com.baizhi: debug
+    org.mybatis.generator: debug
 
 
 # 指定文件上传位置

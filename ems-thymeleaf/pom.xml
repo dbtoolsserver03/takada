@@ -88,6 +88,13 @@
 		    <artifactId>commons-lang3</artifactId>
 		</dependency>
 
+		<!-- mybatis generator工具类-->
+		<dependency>
+		    <groupId>org.mybatis.generator</groupId>
+		    <artifactId>mybatis-generator-core</artifactId>
+		    <version>1.4.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
