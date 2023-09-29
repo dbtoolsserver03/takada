@@ -8,8 +8,8 @@
     <result column="size" jdbcType="CHAR" property="size" />
     <result column="sex" jdbcType="CHAR" property="sex" />
     <result column="photo" jdbcType="VARCHAR" property="photo" />
-    <result column="saleBegin" jdbcType="TIMESTAMP" property="salebegin" />
-    <result column="saleEnd" jdbcType="TIMESTAMP" property="saleend" />
+    <result column="sale_begin" jdbcType="TIMESTAMP" property="saleBegin" />
+    <result column="sale_end" jdbcType="TIMESTAMP" property="saleEnd" />
     <result column="price" jdbcType="INTEGER" property="price" />
     <result column="delete_flg" jdbcType="CHAR" property="deleteFlg" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
@@ -76,7 +76,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, type, size, sex, photo, saleBegin, saleEnd, price, delete_flg, create_time, 
+    id, name, type, size, sex, photo, sale_begin, sale_end, price, delete_flg, create_time, 
     create_user_id, update_time, update_user_id
   </sql>
   <select id="selectByExample" parameterType="com.baizhi.entity.original.UniqloExample" resultMap="BaseResultMap">
@@ -111,13 +111,13 @@
   </delete>
   <insert id="insert" parameterType="com.baizhi.entity.original.Uniqlo">
     insert into uniqlo (id, name, type, 
-      size, sex, photo, saleBegin, 
-      saleEnd, price, delete_flg, 
+      size, sex, photo, sale_begin, 
+      sale_end, price, delete_flg, 
       create_time, create_user_id, update_time, 
       update_user_id)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=CHAR}, 
-      #{size,jdbcType=CHAR}, #{sex,jdbcType=CHAR}, #{photo,jdbcType=VARCHAR}, #{salebegin,jdbcType=TIMESTAMP}, 
-      #{saleend,jdbcType=TIMESTAMP}, #{price,jdbcType=INTEGER}, #{deleteFlg,jdbcType=CHAR}, 
+      #{size,jdbcType=CHAR}, #{sex,jdbcType=CHAR}, #{photo,jdbcType=VARCHAR}, #{saleBegin,jdbcType=TIMESTAMP}, 
+      #{saleEnd,jdbcType=TIMESTAMP}, #{price,jdbcType=INTEGER}, #{deleteFlg,jdbcType=CHAR}, 
       #{createTime,jdbcType=TIMESTAMP}, #{createUserId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{updateUserId,jdbcType=VARCHAR})
   </insert>
@@ -142,11 +142,11 @@
       <if test="photo != null">
         photo,
       </if>
-      <if test="salebegin != null">
-        saleBegin,
+      <if test="saleBegin != null">
+        sale_begin,
       </if>
-      <if test="saleend != null">
-        saleEnd,
+      <if test="saleEnd != null">
+        sale_end,
       </if>
       <if test="price != null">
         price,
@@ -186,11 +186,11 @@
       <if test="photo != null">
         #{photo,jdbcType=VARCHAR},
       </if>
-      <if test="salebegin != null">
-        #{salebegin,jdbcType=TIMESTAMP},
+      <if test="saleBegin != null">
+        #{saleBegin,jdbcType=TIMESTAMP},
       </if>
-      <if test="saleend != null">
-        #{saleend,jdbcType=TIMESTAMP},
+      <if test="saleEnd != null">
+        #{saleEnd,jdbcType=TIMESTAMP},
       </if>
       <if test="price != null">
         #{price,jdbcType=INTEGER},
@@ -239,11 +239,11 @@
       <if test="row.photo != null">
         photo = #{row.photo,jdbcType=VARCHAR},
       </if>
-      <if test="row.salebegin != null">
-        saleBegin = #{row.salebegin,jdbcType=TIMESTAMP},
+      <if test="row.saleBegin != null">
+        sale_begin = #{row.saleBegin,jdbcType=TIMESTAMP},
       </if>
-      <if test="row.saleend != null">
-        saleEnd = #{row.saleend,jdbcType=TIMESTAMP},
+      <if test="row.saleEnd != null">
+        sale_end = #{row.saleEnd,jdbcType=TIMESTAMP},
       </if>
       <if test="row.price != null">
         price = #{row.price,jdbcType=INTEGER},
@@ -276,8 +276,8 @@
       size = #{row.size,jdbcType=CHAR},
       sex = #{row.sex,jdbcType=CHAR},
       photo = #{row.photo,jdbcType=VARCHAR},
-      saleBegin = #{row.salebegin,jdbcType=TIMESTAMP},
-      saleEnd = #{row.saleend,jdbcType=TIMESTAMP},
+      sale_begin = #{row.saleBegin,jdbcType=TIMESTAMP},
+      sale_end = #{row.saleEnd,jdbcType=TIMESTAMP},
       price = #{row.price,jdbcType=INTEGER},
       delete_flg = #{row.deleteFlg,jdbcType=CHAR},
       create_time = #{row.createTime,jdbcType=TIMESTAMP},
@@ -306,11 +306,11 @@
       <if test="photo != null">
         photo = #{photo,jdbcType=VARCHAR},
       </if>
-      <if test="salebegin != null">
-        saleBegin = #{salebegin,jdbcType=TIMESTAMP},
+      <if test="saleBegin != null">
+        sale_begin = #{saleBegin,jdbcType=TIMESTAMP},
       </if>
-      <if test="saleend != null">
-        saleEnd = #{saleend,jdbcType=TIMESTAMP},
+      <if test="saleEnd != null">
+        sale_end = #{saleEnd,jdbcType=TIMESTAMP},
       </if>
       <if test="price != null">
         price = #{price,jdbcType=INTEGER},
@@ -340,8 +340,8 @@
       size = #{size,jdbcType=CHAR},
       sex = #{sex,jdbcType=CHAR},
       photo = #{photo,jdbcType=VARCHAR},
-      saleBegin = #{salebegin,jdbcType=TIMESTAMP},
-      saleEnd = #{saleend,jdbcType=TIMESTAMP},
+      sale_begin = #{saleBegin,jdbcType=TIMESTAMP},
+      sale_end = #{saleEnd,jdbcType=TIMESTAMP},
       price = #{price,jdbcType=INTEGER},
       delete_flg = #{deleteFlg,jdbcType=CHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},

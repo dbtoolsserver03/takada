@@ -49,12 +49,12 @@ class EmsThymeleafApplicationTests {
 		
 		UniqloExample example = new UniqloExample();
 		UniqloExample.Criteria criteria = example.createCriteria();
-		criteria.andIdEqualTo(1009);
+		criteria.andIdEqualTo(1001);
 		
 		//List<Uniqlo> daoUniqloLst = uniqloMapper.selectByExample(example);
 
-		Uniqlo uniqlo = uniqloMapper.selectByPrimaryKey(1009);
-		System.out.println(uniqlo.getName());
+		Uniqlo uniqlo = uniqloMapper.selectByPrimaryKey(1001);
+		System.out.println(uniqlo);
 		
 
 	}

@@ -1,7 +1,7 @@
 /*
 *
 * UniqloExample.java
-* Copyright(C) 2017-2020 fendo公司
+* Copyright(C) 2017-2020 saisk
 * @date 2023-09-29
 */
 package com.baizhi.entity.original;
@@ -11,46 +11,91 @@ import java.util.Date;
 import java.util.List;
 
 public class UniqloExample {
+    /**
+     * uniqlo
+     */
     protected String orderByClause;
 
+    /**
+     * uniqlo
+     */
     protected boolean distinct;
 
+    /**
+     * uniqlo
+     */
     protected List<Criteria> oredCriteria;
 
+    /**
+     *
+     * @mbg.generated 2023-09-29
+     */
     public UniqloExample() {
         oredCriteria = new ArrayList<>();
     }
 
+    /**
+     *
+     * @mbg.generated 2023-09-29
+     */
     public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
     }
 
+    /**
+     *
+     * @mbg.generated 2023-09-29
+     */
     public String getOrderByClause() {
         return orderByClause;
     }
 
+    /**
+     *
+     * @mbg.generated 2023-09-29
+     */
     public void setDistinct(boolean distinct) {
         this.distinct = distinct;
     }
 
+    /**
+     *
+     * @mbg.generated 2023-09-29
+     */
     public boolean isDistinct() {
         return distinct;
     }
 
+    /**
+     *
+     * @mbg.generated 2023-09-29
+     */
     public List<Criteria> getOredCriteria() {
         return oredCriteria;
     }
 
+    /**
+     *
+     * @mbg.generated 2023-09-29
+     */
     public void or(Criteria criteria) {
         oredCriteria.add(criteria);
     }
 
+    /**
+     *
+     * @mbg.generated 2023-09-29
+     */
     public Criteria or() {
         Criteria criteria = createCriteriaInternal();
         oredCriteria.add(criteria);
         return criteria;
     }
 
+    /**
+     *
+     * @mbg.generated 2023-09-29
+     */
     public Criteria createCriteria() {
         Criteria criteria = createCriteriaInternal();
         if (oredCriteria.size() == 0) {
@@ -59,17 +104,28 @@ public class UniqloExample {
         return criteria;
     }
 
+    /**
+     *
+     * @mbg.generated 2023-09-29
+     */
     protected Criteria createCriteriaInternal() {
         Criteria criteria = new Criteria();
         return criteria;
     }
 
+    /**
+     *
+     * @mbg.generated 2023-09-29
+     */
     public void clear() {
         oredCriteria.clear();
         orderByClause = null;
         distinct = false;
     }
 
+    /**
+     * uniqlo 优衣库 2023-09-29
+     */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
 
@@ -521,123 +577,123 @@ public class UniqloExample {
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginIsNull() {
-            addCriterion("saleBegin is null");
+        public Criteria andSaleBeginIsNull() {
+            addCriterion("sale_begin is null");
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginIsNotNull() {
-            addCriterion("saleBegin is not null");
+        public Criteria andSaleBeginIsNotNull() {
+            addCriterion("sale_begin is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginEqualTo(Date value) {
-            addCriterion("saleBegin =", value, "salebegin");
+        public Criteria andSaleBeginEqualTo(Date value) {
+            addCriterion("sale_begin =", value, "saleBegin");
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginNotEqualTo(Date value) {
-            addCriterion("saleBegin <>", value, "salebegin");
+        public Criteria andSaleBeginNotEqualTo(Date value) {
+            addCriterion("sale_begin <>", value, "saleBegin");
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginGreaterThan(Date value) {
-            addCriterion("saleBegin >", value, "salebegin");
+        public Criteria andSaleBeginGreaterThan(Date value) {
+            addCriterion("sale_begin >", value, "saleBegin");
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginGreaterThanOrEqualTo(Date value) {
-            addCriterion("saleBegin >=", value, "salebegin");
+        public Criteria andSaleBeginGreaterThanOrEqualTo(Date value) {
+            addCriterion("sale_begin >=", value, "saleBegin");
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginLessThan(Date value) {
-            addCriterion("saleBegin <", value, "salebegin");
+        public Criteria andSaleBeginLessThan(Date value) {
+            addCriterion("sale_begin <", value, "saleBegin");
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginLessThanOrEqualTo(Date value) {
-            addCriterion("saleBegin <=", value, "salebegin");
+        public Criteria andSaleBeginLessThanOrEqualTo(Date value) {
+            addCriterion("sale_begin <=", value, "saleBegin");
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginIn(List<Date> values) {
-            addCriterion("saleBegin in", values, "salebegin");
+        public Criteria andSaleBeginIn(List<Date> values) {
+            addCriterion("sale_begin in", values, "saleBegin");
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginNotIn(List<Date> values) {
-            addCriterion("saleBegin not in", values, "salebegin");
+        public Criteria andSaleBeginNotIn(List<Date> values) {
+            addCriterion("sale_begin not in", values, "saleBegin");
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginBetween(Date value1, Date value2) {
-            addCriterion("saleBegin between", value1, value2, "salebegin");
+        public Criteria andSaleBeginBetween(Date value1, Date value2) {
+            addCriterion("sale_begin between", value1, value2, "saleBegin");
             return (Criteria) this;
         }
 
-        public Criteria andSalebeginNotBetween(Date value1, Date value2) {
-            addCriterion("saleBegin not between", value1, value2, "salebegin");
+        public Criteria andSaleBeginNotBetween(Date value1, Date value2) {
+            addCriterion("sale_begin not between", value1, value2, "saleBegin");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendIsNull() {
-            addCriterion("saleEnd is null");
+        public Criteria andSaleEndIsNull() {
+            addCriterion("sale_end is null");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendIsNotNull() {
-            addCriterion("saleEnd is not null");
+        public Criteria andSaleEndIsNotNull() {
+            addCriterion("sale_end is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendEqualTo(Date value) {
-            addCriterion("saleEnd =", value, "saleend");
+        public Criteria andSaleEndEqualTo(Date value) {
+            addCriterion("sale_end =", value, "saleEnd");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendNotEqualTo(Date value) {
-            addCriterion("saleEnd <>", value, "saleend");
+        public Criteria andSaleEndNotEqualTo(Date value) {
+            addCriterion("sale_end <>", value, "saleEnd");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendGreaterThan(Date value) {
-            addCriterion("saleEnd >", value, "saleend");
+        public Criteria andSaleEndGreaterThan(Date value) {
+            addCriterion("sale_end >", value, "saleEnd");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendGreaterThanOrEqualTo(Date value) {
-            addCriterion("saleEnd >=", value, "saleend");
+        public Criteria andSaleEndGreaterThanOrEqualTo(Date value) {
+            addCriterion("sale_end >=", value, "saleEnd");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendLessThan(Date value) {
-            addCriterion("saleEnd <", value, "saleend");
+        public Criteria andSaleEndLessThan(Date value) {
+            addCriterion("sale_end <", value, "saleEnd");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendLessThanOrEqualTo(Date value) {
-            addCriterion("saleEnd <=", value, "saleend");
+        public Criteria andSaleEndLessThanOrEqualTo(Date value) {
+            addCriterion("sale_end <=", value, "saleEnd");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendIn(List<Date> values) {
-            addCriterion("saleEnd in", values, "saleend");
+        public Criteria andSaleEndIn(List<Date> values) {
+            addCriterion("sale_end in", values, "saleEnd");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendNotIn(List<Date> values) {
-            addCriterion("saleEnd not in", values, "saleend");
+        public Criteria andSaleEndNotIn(List<Date> values) {
+            addCriterion("sale_end not in", values, "saleEnd");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendBetween(Date value1, Date value2) {
-            addCriterion("saleEnd between", value1, value2, "saleend");
+        public Criteria andSaleEndBetween(Date value1, Date value2) {
+            addCriterion("sale_end between", value1, value2, "saleEnd");
             return (Criteria) this;
         }
 
-        public Criteria andSaleendNotBetween(Date value1, Date value2) {
-            addCriterion("saleEnd not between", value1, value2, "saleend");
+        public Criteria andSaleEndNotBetween(Date value1, Date value2) {
+            addCriterion("sale_end not between", value1, value2, "saleEnd");
             return (Criteria) this;
         }
 
@@ -1032,12 +1088,18 @@ public class UniqloExample {
         }
     }
 
+    /**
+     *  * uniqlo 优衣库
+     */
     public static class Criteria extends GeneratedCriteria {
         protected Criteria() {
             super();
         }
     }
 
+    /**
+     * uniqlo 优衣库 2023-09-29
+     */
     public static class Criterion {
         private String condition;
 

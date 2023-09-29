@@ -175,8 +175,8 @@ public class MyCommentGenerator implements CommentGenerator{
         StringBuilder sb = new StringBuilder();
         innerClass.addJavaDocLine("/**");
         sb.append(" * ");
-        sb.append(introspectedTable.getFullyQualifiedTable());
-        sb.append(" ");
+        sb.append(introspectedTable.getFullyQualifiedTable() + " " + introspectedTable.getRemarks());
+        sb.append(" aaaaaaaa");
         sb.append(getDateString());
         innerClass.addJavaDocLine(sb.toString().replace("\n", " "));
         innerClass.addJavaDocLine(" */");
@@ -194,12 +194,12 @@ public class MyCommentGenerator implements CommentGenerator{
         innerClass.addJavaDocLine("/**");
         sb.append(" * ");
         sb.append(" * ");
-        sb.append(introspectedTable.getFullyQualifiedTable());
+        sb.append(introspectedTable.getFullyQualifiedTable()+ " " + introspectedTable.getRemarks());
         innerClass.addJavaDocLine(sb.toString().replace("\n", " "));
         sb.setLength(0);
         sb.append(" * @author ");
         sb.append(systemPro.getProperty("user.name"));
-        sb.append(" ");
+        sb.append(" aaaaaaaaa ");
         sb.append(currentDateStr);
         innerClass.addJavaDocLine(" */");
 	}
@@ -370,7 +370,7 @@ public class MyCommentGenerator implements CommentGenerator{
     	compilationUnit.addFileCommentLine("/*");
     	compilationUnit.addFileCommentLine("*");
     	compilationUnit.addFileCommentLine("* "+compilationUnit.getType().getShortName()+".java");
-    	compilationUnit.addFileCommentLine("* Copyright(C) 2017-2020 saisk");
+    	compilationUnit.addFileCommentLine("* Copyright(C) 2010-2030 saisk");
     	compilationUnit.addFileCommentLine("* @date "+sdf.format(new Date())+"");
     	compilationUnit.addFileCommentLine("*/");
 	}
