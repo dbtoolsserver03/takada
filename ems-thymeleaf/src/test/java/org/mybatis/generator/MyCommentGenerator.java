@@ -48,8 +48,8 @@ import org.mybatis.generator.internal.DefaultShellCallback;
 public class MyCommentGenerator implements CommentGenerator{
  
 	
-	public static final String S_DAO = File.separator+"src"+File.separator+"main"+File.separator+"java"+File.separator+"com"+File.separator+"baizhi"+File.separator+"dao"+File.separator+"original";
-	public static final String S_PO = File.separator+"src"+File.separator+"main"+File.separator+"java"+File.separator+"com"+File.separator+"baizhi"+File.separator+"entity"+File.separator+"original";
+	public static final String S_DAO = "src"+File.separator+"main"+File.separator+"java"+File.separator+"com"+File.separator+"baizhi"+File.separator+"dao"+File.separator+"original";
+	public static final String S_PO = "src"+File.separator+"main"+File.separator+"java"+File.separator+"com"+File.separator+"baizhi"+File.separator+"entity"+File.separator+"original";
 	
 	
 	public static void main(String[] args) throws URISyntaxException {
@@ -69,10 +69,8 @@ public class MyCommentGenerator implements CommentGenerator{
             DefaultShellCallback callback = new DefaultShellCallback(overwrite);
             MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
             
-			File directory = new File("");//参数为空
-			String courseFile = directory.getCanonicalPath() ;
-			delFile(new File(courseFile+S_PO));
-			delFile(new File(courseFile+S_DAO));
+			delFile(new File(S_PO));
+			delFile(new File(S_DAO));
 
             myBatisGenerator.generate(null);
         	System.out.println("--------------------end generator-------------------");
@@ -94,6 +92,7 @@ public class MyCommentGenerator implements CommentGenerator{
     
 	}
 	
+
 	public static void delFile(File f)throws Throwable {
 		try {
 			if (f == null) {
@@ -156,6 +155,13 @@ public class MyCommentGenerator implements CommentGenerator{
         suppressAllComments = false;
         currentDateStr = (new SimpleDateFormat("yyyy-MM-dd")).format(new Date());
     }
+    
+    
+    
+	
+	
+	////////////////////////////////////////////////////////////////////
+	
     
     /**
      * Java类的类注释
@@ -364,7 +370,7 @@ public class MyCommentGenerator implements CommentGenerator{
     	compilationUnit.addFileCommentLine("/*");
     	compilationUnit.addFileCommentLine("*");
     	compilationUnit.addFileCommentLine("* "+compilationUnit.getType().getShortName()+".java");
-    	compilationUnit.addFileCommentLine("* Copyright(C) 2017-2020 fendo公司");
+    	compilationUnit.addFileCommentLine("* Copyright(C) 2017-2020 saisk");
     	compilationUnit.addFileCommentLine("* @date "+sdf.format(new Date())+"");
     	compilationUnit.addFileCommentLine("*/");
 	}
