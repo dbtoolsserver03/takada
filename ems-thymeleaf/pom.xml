@@ -54,12 +54,18 @@
 		</dependency>
 		
 		<!-- 自动生成GET，SET等方法 -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		
+<!--		<dependency>-->
+<!--			<groupId>org.projectlombok</groupId>-->
+<!--			<artifactId>lombok</artifactId>-->
+<!--			<optional>true</optional>-->
+<!--		</dependency>-->
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>edge-SNAPSHOT</version>
+		<scope>provided</scope>
+	</dependency>
+
 		<!-- 支持单体测试 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -111,7 +117,23 @@
 					</excludes>
 				</configuration>
 			</plugin>
+		<!--SpringBoot maven插件-->
+		<!-- 可以将应用打成一个可执行的jar包 -->
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+			<!-- 设置启动入口 -->
+			<!-- mainClass即使不配置 , SprinBoot也在打包的时候也清楚入口是哪个 , 其实不用配置 -->
+<!--			<configuration>-->
+<!--				<mainClass>com.baizhi.EmsThymeleafApplication</mainClass>-->
+<!--			</configuration>-->
+		</plugin>
 		</plugins>
 	</build>
-
+<repositories>
+	<repository>
+		<id>projectlombok.org</id>
+		<url>https://projectlombok.org/edge-releases</url>
+	</repository>
+</repositories>
 </project>
