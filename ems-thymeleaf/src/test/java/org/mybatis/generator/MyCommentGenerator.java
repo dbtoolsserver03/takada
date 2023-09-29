@@ -47,6 +47,11 @@ import org.mybatis.generator.internal.DefaultShellCallback;
 */
 public class MyCommentGenerator implements CommentGenerator{
  
+	
+	public static final String S_DAO = File.separator+"src"+File.separator+"main"+File.separator+"java"+File.separator+"com"+File.separator+"baizhi"+File.separator+"dao"+File.separator+"original";
+	public static final String S_PO = File.separator+"src"+File.separator+"main"+File.separator+"java"+File.separator+"com"+File.separator+"baizhi"+File.separator+"entity"+File.separator+"original";
+	
+	
 	public static void main(String[] args) throws URISyntaxException {
 		
 		run();
@@ -63,8 +68,16 @@ public class MyCommentGenerator implements CommentGenerator{
             Configuration config = cp.parseConfiguration(f);
             DefaultShellCallback callback = new DefaultShellCallback(overwrite);
             MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+            
+			File directory = new File("");//参数为空
+			String courseFile = directory.getCanonicalPath() ;
+			delFile(new File(courseFile+S_PO));
+			delFile(new File(courseFile+S_DAO));
+
             myBatisGenerator.generate(null);
         	System.out.println("--------------------end generator-------------------");
+        	
+        	
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -75,9 +88,42 @@ public class MyCommentGenerator implements CommentGenerator{
             e.printStackTrace();
         } catch (XMLParserException e) {
             e.printStackTrace();
-        }
+        } catch (Throwable e) {
+			e.printStackTrace();
+		}
     
 	}
+	
+	public static void delFile(File f)throws Throwable {
+		try {
+			if (f == null) {
+				return;
+			}
+			if (f.isDirectory()) {
+				File[] list = f.listFiles();
+				for (int i = 0; i < list.length; i++) {
+					if (list[i].isDirectory()) {
+						delFile(list[i]);
+					}else{
+						if(list[i].isFile())
+							list[i].delete();
+					}
+				}
+				f.delete();
+			} else {
+				if (f.isFile()) {
+					f.delete();
+				}
+		
+			}
+		} catch (Throwable e) {
+			throw e;
+		}
+	}
+
+
+	
+	
     /**
       * properties配置文件
      */

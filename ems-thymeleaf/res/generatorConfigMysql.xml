@@ -5,10 +5,14 @@
 
 <generatorConfiguration>
 	<context id="testTables" targetRuntime="MyBatis3">
-		<commentGenerator>
+	        <!-- 这里的type里写的是你的实现类的类全路径 -->
+	
+		<commentGenerator type="org.mybatis.generator.MyCommentGenerator">
 			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
+		
+
 		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
 		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
 		connectionURL="jdbc:mysql://localhost:3306/ems-thymeleaf?characterEncoding=UTF-8" userId="root"

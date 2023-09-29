@@ -1,3 +1,9 @@
+/*
+*
+* UniqloMapper.java
+* Copyright(C) 2017-2020 fendo公司
+* @date 2023-09-29
+*/
 package com.baizhi.dao.original;
 
 import com.baizhi.entity.original.Uniqlo;
