@@ -20,8 +20,10 @@ spring:
   web:
     resources:
       static-locations: classpath:/static/,file:${photo.file.dir} #暴露哪些资源可以通过项目名访问
-
-
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
 
 # mybatis配置
 mybatis:

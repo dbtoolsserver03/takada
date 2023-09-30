@@ -1,4 +1,4 @@
-package com.baizhi.aspects;
+package com.baizhi.aop.aspects;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

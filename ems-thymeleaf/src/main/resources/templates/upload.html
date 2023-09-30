@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用来测试在springboot实现文件上传</title>
+</head>
+<body>
+
+<h1>测试文件上传</h1>
+
+<form action="/springboot_day7/file/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="aaa" />
+    <input type="submit" value="上传文件">
+</form>
+
+
+<h1>文件下载链接</h1>
+<a href="/springboot_day7/file/download?fileName=aa.txt">aa.txt</a>
+<a href="/springboot_day7/file/download?fileName=5.jpeg">5.jpeg</a>
+</body>
+</html>

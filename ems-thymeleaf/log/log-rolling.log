@@ -1,0 +1,541 @@
+2023-09-30 22:26:14 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 7751 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:26:14 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:26:14 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 22:26:16 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 1.906 seconds (process running for 2.85)
+2023-09-30 22:26:18 [DEBUG] http-nio-9991-exec-8 UserController.java:48 com.baizhi.controller.UserController 本次登录用户名: admin
+2023-09-30 22:26:18 [DEBUG] http-nio-9991-exec-8 UserController.java:49 com.baizhi.controller.UserController 本地登录密码: 123
+2023-09-30 22:26:18 [DEBUG] http-nio-9991-exec-8 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName ==>  Preparing: select id,username,realname,password,gender from `user` where username = ?
+2023-09-30 22:26:18 [DEBUG] http-nio-9991-exec-8 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName ==> Parameters: admin(String)
+2023-09-30 22:26:18 [DEBUG] http-nio-9991-exec-8 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName <==      Total: 1
+2023-09-30 22:26:20 [DEBUG] http-nio-9991-exec-4 EmployeeController.java:154 com.baizhi.controller.EmployeeController 查询所有员工信息
+2023-09-30 22:26:20 [DEBUG] http-nio-9991-exec-4 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==>  Preparing: select id,name,salary,birthday,photo from `employee`
+2023-09-30 22:26:20 [DEBUG] http-nio-9991-exec-4 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==> Parameters: 
+2023-09-30 22:26:20 [DEBUG] http-nio-9991-exec-4 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists <==      Total: 1
+2023-09-30 22:26:20 [DEBUG] http-nio-9991-exec-4 EmployeeController.java:158 com.baizhi.controller.EmployeeController debug...
+2023-09-30 22:26:20 [INFO ] http-nio-9991-exec-4 EmployeeController.java:159 com.baizhi.controller.EmployeeController info...
+2023-09-30 22:26:20 [WARN ] http-nio-9991-exec-4 EmployeeController.java:160 com.baizhi.controller.EmployeeController warn....
+2023-09-30 22:26:20 [ERROR] http-nio-9991-exec-4 EmployeeController.java:161 com.baizhi.controller.EmployeeController error....
+2023-09-30 22:26:22 [DEBUG] http-nio-9991-exec-6 EmployeeController.java:154 com.baizhi.controller.EmployeeController 查询所有员工信息
+2023-09-30 22:26:22 [DEBUG] http-nio-9991-exec-6 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==>  Preparing: select id,name,salary,birthday,photo from `employee`
+2023-09-30 22:26:22 [DEBUG] http-nio-9991-exec-6 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==> Parameters: 
+2023-09-30 22:26:22 [DEBUG] http-nio-9991-exec-6 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists <==      Total: 1
+2023-09-30 22:26:22 [DEBUG] http-nio-9991-exec-6 EmployeeController.java:158 com.baizhi.controller.EmployeeController debug...
+2023-09-30 22:26:22 [INFO ] http-nio-9991-exec-6 EmployeeController.java:159 com.baizhi.controller.EmployeeController info...
+2023-09-30 22:26:22 [WARN ] http-nio-9991-exec-6 EmployeeController.java:160 com.baizhi.controller.EmployeeController warn....
+2023-09-30 22:26:22 [ERROR] http-nio-9991-exec-6 EmployeeController.java:161 com.baizhi.controller.EmployeeController error....
+2023-09-30 22:26:23 [DEBUG] http-nio-9991-exec-2 EmployeeController.java:154 com.baizhi.controller.EmployeeController 查询所有员工信息
+2023-09-30 22:26:23 [DEBUG] http-nio-9991-exec-2 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==>  Preparing: select id,name,salary,birthday,photo from `employee`
+2023-09-30 22:26:23 [DEBUG] http-nio-9991-exec-2 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==> Parameters: 
+2023-09-30 22:26:23 [DEBUG] http-nio-9991-exec-2 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists <==      Total: 1
+2023-09-30 22:26:23 [DEBUG] http-nio-9991-exec-2 EmployeeController.java:158 com.baizhi.controller.EmployeeController debug...
+2023-09-30 22:26:23 [INFO ] http-nio-9991-exec-2 EmployeeController.java:159 com.baizhi.controller.EmployeeController info...
+2023-09-30 22:26:23 [WARN ] http-nio-9991-exec-2 EmployeeController.java:160 com.baizhi.controller.EmployeeController warn....
+2023-09-30 22:26:23 [ERROR] http-nio-9991-exec-2 EmployeeController.java:161 com.baizhi.controller.EmployeeController error....
+2023-09-30 22:26:32 [DEBUG] http-nio-9991-exec-5 EmployeeController.java:154 com.baizhi.controller.EmployeeController 查询所有员工信息
+2023-09-30 22:26:32 [DEBUG] http-nio-9991-exec-5 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==>  Preparing: select id,name,salary,birthday,photo from `employee`
+2023-09-30 22:26:32 [DEBUG] http-nio-9991-exec-5 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==> Parameters: 
+2023-09-30 22:26:32 [DEBUG] http-nio-9991-exec-5 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists <==      Total: 1
+2023-09-30 22:26:32 [DEBUG] http-nio-9991-exec-5 EmployeeController.java:158 com.baizhi.controller.EmployeeController debug...
+2023-09-30 22:26:32 [INFO ] http-nio-9991-exec-5 EmployeeController.java:159 com.baizhi.controller.EmployeeController info...
+2023-09-30 22:26:32 [WARN ] http-nio-9991-exec-5 EmployeeController.java:160 com.baizhi.controller.EmployeeController warn....
+2023-09-30 22:26:32 [ERROR] http-nio-9991-exec-5 EmployeeController.java:161 com.baizhi.controller.EmployeeController error....
+2023-09-30 22:26:33 [DEBUG] http-nio-9991-exec-8 EmployeeController.java:154 com.baizhi.controller.EmployeeController 查询所有员工信息
+2023-09-30 22:26:33 [DEBUG] http-nio-9991-exec-8 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==>  Preparing: select id,name,salary,birthday,photo from `employee`
+2023-09-30 22:26:33 [DEBUG] http-nio-9991-exec-8 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==> Parameters: 
+2023-09-30 22:26:33 [DEBUG] http-nio-9991-exec-8 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists <==      Total: 1
+2023-09-30 22:26:33 [DEBUG] http-nio-9991-exec-8 EmployeeController.java:158 com.baizhi.controller.EmployeeController debug...
+2023-09-30 22:26:33 [INFO ] http-nio-9991-exec-8 EmployeeController.java:159 com.baizhi.controller.EmployeeController info...
+2023-09-30 22:26:33 [WARN ] http-nio-9991-exec-8 EmployeeController.java:160 com.baizhi.controller.EmployeeController warn....
+2023-09-30 22:26:33 [ERROR] http-nio-9991-exec-8 EmployeeController.java:161 com.baizhi.controller.EmployeeController error....
+2023-09-30 22:26:41 [DEBUG] http-nio-9991-exec-10 EmployeeController.java:154 com.baizhi.controller.EmployeeController 查询所有员工信息
+2023-09-30 22:26:41 [DEBUG] http-nio-9991-exec-10 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==>  Preparing: select id,name,salary,birthday,photo from `employee`
+2023-09-30 22:26:41 [DEBUG] http-nio-9991-exec-10 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==> Parameters: 
+2023-09-30 22:26:41 [DEBUG] http-nio-9991-exec-10 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists <==      Total: 1
+2023-09-30 22:26:41 [DEBUG] http-nio-9991-exec-10 EmployeeController.java:158 com.baizhi.controller.EmployeeController debug...
+2023-09-30 22:26:41 [INFO ] http-nio-9991-exec-10 EmployeeController.java:159 com.baizhi.controller.EmployeeController info...
+2023-09-30 22:26:41 [WARN ] http-nio-9991-exec-10 EmployeeController.java:160 com.baizhi.controller.EmployeeController warn....
+2023-09-30 22:26:41 [ERROR] http-nio-9991-exec-10 EmployeeController.java:161 com.baizhi.controller.EmployeeController error....
+2023-09-30 22:27:45 [INFO ] main StartupInfoLogger.java:51 com.baizhi.MyCommentGeneratorApplicationTests Starting MyCommentGeneratorApplicationTests using Java 17.0.7 with PID 7775 (started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:27:45 [DEBUG] main StartupInfoLogger.java:52 com.baizhi.MyCommentGeneratorApplicationTests Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:27:45 [INFO ] main SpringApplication.java:640 com.baizhi.MyCommentGeneratorApplicationTests The following 1 profile is active: "dev"
+2023-09-30 22:27:47 [INFO ] main StartupInfoLogger.java:57 com.baizhi.MyCommentGeneratorApplicationTests Started MyCommentGeneratorApplicationTests in 1.807 seconds (process running for 2.985)
+2023-09-30 22:28:06 [INFO ] main StartupInfoLogger.java:51 com.baizhi.MyCommentGeneratorApplicationTests Starting MyCommentGeneratorApplicationTests using Java 17.0.7 with PID 7792 (started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:28:06 [DEBUG] main StartupInfoLogger.java:52 com.baizhi.MyCommentGeneratorApplicationTests Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:28:06 [INFO ] main SpringApplication.java:640 com.baizhi.MyCommentGeneratorApplicationTests The following 1 profile is active: "dev"
+2023-09-30 22:28:08 [INFO ] main StartupInfoLogger.java:57 com.baizhi.MyCommentGeneratorApplicationTests Started MyCommentGeneratorApplicationTests in 2.069 seconds (process running for 3.15)
+2023-09-30 22:33:12 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 7835 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:33:12 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:33:12 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 22:33:12 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 22:33:12 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:33:12 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 22:33:12 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 22:33:12 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 22:33:12 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 189 ms
+2023-09-30 22:33:12 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 22:33:12 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:33:12 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 22:33:12 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 0.444 seconds (process running for 90.607)
+2023-09-30 22:33:12 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 22:33:38 [INFO ] http-nio-9991-exec-1 DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-30 22:33:38 [INFO ] http-nio-9991-exec-1 FrameworkServlet.java:532 org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2023-09-30 22:33:38 [INFO ] http-nio-9991-exec-1 FrameworkServlet.java:554 org.springframework.web.servlet.DispatcherServlet Completed initialization in 1 ms
+2023-09-30 22:33:38 [DEBUG] http-nio-9991-exec-2 EmployeeController.java:154 com.baizhi.controller.EmployeeController 查询所有员工信息
+2023-09-30 22:33:38 [INFO ] http-nio-9991-exec-2 HikariDataSource.java:110 com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2023-09-30 22:33:38 [INFO ] http-nio-9991-exec-2 HikariPool.java:565 com.zaxxer.hikari.pool.HikariPool HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d992b62
+2023-09-30 22:33:38 [INFO ] http-nio-9991-exec-2 HikariDataSource.java:123 com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2023-09-30 22:33:38 [DEBUG] http-nio-9991-exec-2 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==>  Preparing: select id,name,salary,birthday,photo from `employee`
+2023-09-30 22:33:38 [DEBUG] http-nio-9991-exec-2 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==> Parameters: 
+2023-09-30 22:33:38 [DEBUG] http-nio-9991-exec-2 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists <==      Total: 1
+2023-09-30 22:33:38 [DEBUG] http-nio-9991-exec-2 EmployeeController.java:158 com.baizhi.controller.EmployeeController debug...
+2023-09-30 22:33:38 [INFO ] http-nio-9991-exec-2 EmployeeController.java:159 com.baizhi.controller.EmployeeController info...
+2023-09-30 22:33:38 [WARN ] http-nio-9991-exec-2 EmployeeController.java:160 com.baizhi.controller.EmployeeController warn....
+2023-09-30 22:33:38 [ERROR] http-nio-9991-exec-2 EmployeeController.java:161 com.baizhi.controller.EmployeeController error....
+2023-09-30 22:33:40 [DEBUG] http-nio-9991-exec-6 UserController.java:48 com.baizhi.controller.UserController 本次登录用户名: admin
+2023-09-30 22:33:40 [DEBUG] http-nio-9991-exec-6 UserController.java:49 com.baizhi.controller.UserController 本地登录密码: 123
+2023-09-30 22:33:40 [DEBUG] http-nio-9991-exec-6 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName ==>  Preparing: select id,username,realname,password,gender from `user` where username = ?
+2023-09-30 22:33:40 [DEBUG] http-nio-9991-exec-6 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName ==> Parameters: admin(String)
+2023-09-30 22:33:40 [DEBUG] http-nio-9991-exec-6 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName <==      Total: 1
+2023-09-30 22:33:41 [DEBUG] http-nio-9991-exec-5 EmployeeController.java:154 com.baizhi.controller.EmployeeController 查询所有员工信息
+2023-09-30 22:33:41 [DEBUG] http-nio-9991-exec-5 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==>  Preparing: select id,name,salary,birthday,photo from `employee`
+2023-09-30 22:33:41 [DEBUG] http-nio-9991-exec-5 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==> Parameters: 
+2023-09-30 22:33:41 [DEBUG] http-nio-9991-exec-5 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists <==      Total: 1
+2023-09-30 22:33:41 [DEBUG] http-nio-9991-exec-5 EmployeeController.java:158 com.baizhi.controller.EmployeeController debug...
+2023-09-30 22:33:41 [INFO ] http-nio-9991-exec-5 EmployeeController.java:159 com.baizhi.controller.EmployeeController info...
+2023-09-30 22:33:41 [WARN ] http-nio-9991-exec-5 EmployeeController.java:160 com.baizhi.controller.EmployeeController warn....
+2023-09-30 22:33:41 [ERROR] http-nio-9991-exec-5 EmployeeController.java:161 com.baizhi.controller.EmployeeController error....
+2023-09-30 22:44:24 [DEBUG] http-nio-9991-exec-3 EmployeeController.java:154 com.baizhi.controller.EmployeeController 查询所有员工信息
+2023-09-30 22:44:24 [DEBUG] http-nio-9991-exec-3 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==>  Preparing: select id,name,salary,birthday,photo from `employee`
+2023-09-30 22:44:24 [DEBUG] http-nio-9991-exec-3 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==> Parameters: 
+2023-09-30 22:44:24 [DEBUG] http-nio-9991-exec-3 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists <==      Total: 1
+2023-09-30 22:44:24 [DEBUG] http-nio-9991-exec-3 EmployeeController.java:158 com.baizhi.controller.EmployeeController debug...
+2023-09-30 22:44:24 [INFO ] http-nio-9991-exec-3 EmployeeController.java:159 com.baizhi.controller.EmployeeController info...
+2023-09-30 22:44:24 [WARN ] http-nio-9991-exec-3 EmployeeController.java:160 com.baizhi.controller.EmployeeController warn....
+2023-09-30 22:44:24 [ERROR] http-nio-9991-exec-3 EmployeeController.java:161 com.baizhi.controller.EmployeeController error....
+2023-09-30 22:44:28 [DEBUG] http-nio-9991-exec-5 UserController.java:48 com.baizhi.controller.UserController 本次登录用户名: admin
+2023-09-30 22:44:28 [DEBUG] http-nio-9991-exec-5 UserController.java:49 com.baizhi.controller.UserController 本地登录密码: 123
+2023-09-30 22:44:28 [DEBUG] http-nio-9991-exec-5 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName ==>  Preparing: select id,username,realname,password,gender from `user` where username = ?
+2023-09-30 22:44:28 [DEBUG] http-nio-9991-exec-5 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName ==> Parameters: admin(String)
+2023-09-30 22:44:28 [DEBUG] http-nio-9991-exec-5 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName <==      Total: 1
+2023-09-30 22:47:29 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-30 22:47:29 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:47:29 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 22:47:29 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-30 22:47:29 [WARN ] Thread-7 DirectJDKLog.java:173 org.apache.catalina.loader.WebappClassLoaderBase The web application [ems-thymeleaf] appears to have started a thread named [HikariPool-2 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.7/java.lang.Thread.run(Thread.java:833)
+2023-09-30 22:47:29 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:47:29 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:47:29 [INFO ] Thread-7 HikariDataSource.java:350 com.zaxxer.hikari.HikariDataSource HikariPool-2 - Shutdown initiated...
+2023-09-30 22:47:29 [INFO ] Thread-7 HikariDataSource.java:352 com.zaxxer.hikari.HikariDataSource HikariPool-2 - Shutdown completed.
+2023-09-30 22:47:29 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 7835 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:47:29 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:47:29 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 22:47:32 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 22:47:32 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:47:32 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 22:47:32 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 22:47:32 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 22:47:32 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2265 ms
+2023-09-30 22:47:32 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 22:47:32 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:47:32 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 22:47:32 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 2.741 seconds (process running for 950.423)
+2023-09-30 22:47:32 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 22:48:09 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-30 22:48:09 [INFO ] Thread-11 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:48:09 [INFO ] Thread-11 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 22:48:09 [INFO ] Thread-11 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:48:09 [INFO ] Thread-11 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:48:09 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 7835 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:48:09 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:48:09 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 22:48:10 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 22:48:10 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:48:10 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 22:48:10 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 22:48:10 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 22:48:10 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 404 ms
+2023-09-30 22:48:10 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 22:48:10 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:48:10 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 22:48:10 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 0.881 seconds (process running for 988.557)
+2023-09-30 22:48:10 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 22:52:34 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2023-09-30 22:52:34 [INFO ] Thread-15 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:52:34 [INFO ] Thread-15 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 22:52:34 [INFO ] Thread-15 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:52:34 [INFO ] Thread-15 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:52:35 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 7835 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:52:35 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:52:35 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 22:52:35 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 22:52:35 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:52:35 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 22:52:35 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 22:52:35 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 22:52:35 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 647 ms
+2023-09-30 22:52:36 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 22:52:36 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:52:36 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 22:52:36 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 1.274 seconds (process running for 1254.101)
+2023-09-30 22:52:36 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 22:52:44 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 2 class path changes (1 addition, 1 deletion, 0 modifications)
+2023-09-30 22:52:44 [INFO ] Thread-19 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:52:44 [INFO ] Thread-19 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 22:52:44 [INFO ] Thread-19 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:52:44 [INFO ] Thread-19 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:52:44 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 7835 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:52:44 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:52:44 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 22:52:45 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 22:52:45 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:52:45 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 22:52:45 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 22:52:45 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 22:52:45 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 448 ms
+2023-09-30 22:52:45 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 22:52:46 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:52:46 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 22:52:46 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 1.236 seconds (process running for 1263.944)
+2023-09-30 22:52:46 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 22:53:29 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 4 class path changes (2 additions, 2 deletions, 0 modifications)
+2023-09-30 22:53:29 [INFO ] Thread-23 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:29 [INFO ] Thread-23 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 22:53:29 [INFO ] Thread-23 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:29 [INFO ] Thread-23 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:30 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 7835 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:53:30 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:53:30 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 22:53:30 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 22:53:30 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:30 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 22:53:30 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 22:53:30 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 22:53:30 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 454 ms
+2023-09-30 22:53:31 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 22:53:31 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:31 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 22:53:31 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 1.079 seconds (process running for 1309.006)
+2023-09-30 22:53:31 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 22:53:43 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 2 class path changes (1 addition, 1 deletion, 0 modifications)
+2023-09-30 22:53:43 [INFO ] Thread-27 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:43 [INFO ] Thread-27 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 22:53:43 [INFO ] Thread-27 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:43 [INFO ] Thread-27 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:43 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 7835 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:53:43 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:53:43 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 22:53:44 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 22:53:44 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:44 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 22:53:44 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 22:53:44 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 22:53:44 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 426 ms
+2023-09-30 22:53:44 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 22:53:44 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:44 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 22:53:44 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 0.939 seconds (process running for 1322.586)
+2023-09-30 22:53:44 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 22:53:49 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-30 22:53:49 [INFO ] Thread-31 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:49 [INFO ] Thread-31 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 22:53:49 [INFO ] Thread-31 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:49 [INFO ] Thread-31 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:49 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 7835 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:53:49 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:53:49 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 22:53:49 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 22:53:49 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:49 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 22:53:49 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 22:53:49 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 22:53:49 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 590 ms
+2023-09-30 22:53:50 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 22:53:50 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:50 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 22:53:50 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 1.057 seconds (process running for 1328.25)
+2023-09-30 22:53:50 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 22:53:54 [INFO ] RMI TCP Connection(49)-127.0.0.1 SpringApplicationAdminMXBeanRegistrar.java:159 org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin Application shutdown requested.
+2023-09-30 22:53:54 [INFO ] RMI TCP Connection(49)-127.0.0.1 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:54 [INFO ] RMI TCP Connection(49)-127.0.0.1 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 22:53:54 [INFO ] RMI TCP Connection(49)-127.0.0.1 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:53:54 [INFO ] RMI TCP Connection(49)-127.0.0.1 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:54:00 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 8146 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 22:54:00 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 22:54:00 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 22:54:00 [INFO ] restartedMain DeferredLog.java:250 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-30 22:54:00 [INFO ] restartedMain DeferredLog.java:250 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-30 22:54:02 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 22:54:02 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:54:02 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 22:54:02 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 22:54:03 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 22:54:03 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2464 ms
+2023-09-30 22:54:04 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 22:54:04 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 22:54:04 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 22:54:04 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 4.823 seconds (process running for 6.824)
+2023-09-30 22:54:18 [INFO ] http-nio-9991-exec-1 DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-30 22:54:18 [INFO ] http-nio-9991-exec-1 FrameworkServlet.java:532 org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2023-09-30 22:54:18 [INFO ] http-nio-9991-exec-1 FrameworkServlet.java:554 org.springframework.web.servlet.DispatcherServlet Completed initialization in 1 ms
+2023-09-30 22:54:19 [DEBUG] http-nio-9991-exec-2 EmployeeController.java:154 com.baizhi.controller.EmployeeController 查询所有员工信息
+2023-09-30 22:54:19 [INFO ] http-nio-9991-exec-2 HikariDataSource.java:110 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2023-09-30 22:54:19 [INFO ] http-nio-9991-exec-2 HikariPool.java:565 com.zaxxer.hikari.pool.HikariPool HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6592d0e4
+2023-09-30 22:54:19 [INFO ] http-nio-9991-exec-2 HikariDataSource.java:123 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2023-09-30 22:54:19 [DEBUG] http-nio-9991-exec-2 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==>  Preparing: select id,name,salary,birthday,photo from `employee`
+2023-09-30 22:54:19 [DEBUG] http-nio-9991-exec-2 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==> Parameters: 
+2023-09-30 22:54:19 [DEBUG] http-nio-9991-exec-2 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists <==      Total: 1
+2023-09-30 22:54:19 [DEBUG] http-nio-9991-exec-2 EmployeeController.java:158 com.baizhi.controller.EmployeeController debug...
+2023-09-30 22:54:19 [INFO ] http-nio-9991-exec-2 EmployeeController.java:159 com.baizhi.controller.EmployeeController info...
+2023-09-30 22:54:19 [WARN ] http-nio-9991-exec-2 EmployeeController.java:160 com.baizhi.controller.EmployeeController warn....
+2023-09-30 22:54:19 [ERROR] http-nio-9991-exec-2 EmployeeController.java:161 com.baizhi.controller.EmployeeController error....
+2023-09-30 22:54:28 [DEBUG] http-nio-9991-exec-9 UserController.java:48 com.baizhi.controller.UserController 本次登录用户名: admin
+2023-09-30 22:54:28 [DEBUG] http-nio-9991-exec-9 UserController.java:49 com.baizhi.controller.UserController 本地登录密码: 123
+2023-09-30 22:54:28 [DEBUG] http-nio-9991-exec-9 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName ==>  Preparing: select id,username,realname,password,gender from `user` where username = ?
+2023-09-30 22:54:28 [DEBUG] http-nio-9991-exec-9 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName ==> Parameters: admin(String)
+2023-09-30 22:54:28 [DEBUG] http-nio-9991-exec-9 BaseJdbcLogger.java:135 com.baizhi.dao.UserDao.findByUserName <==      Total: 1
+2023-09-30 22:54:30 [DEBUG] http-nio-9991-exec-7 EmployeeController.java:154 com.baizhi.controller.EmployeeController 查询所有员工信息
+2023-09-30 22:54:30 [DEBUG] http-nio-9991-exec-7 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==>  Preparing: select id,name,salary,birthday,photo from `employee`
+2023-09-30 22:54:30 [DEBUG] http-nio-9991-exec-7 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists ==> Parameters: 
+2023-09-30 22:54:30 [DEBUG] http-nio-9991-exec-7 BaseJdbcLogger.java:135 com.baizhi.dao.EmployeeDao.lists <==      Total: 1
+2023-09-30 22:54:30 [DEBUG] http-nio-9991-exec-7 EmployeeController.java:158 com.baizhi.controller.EmployeeController debug...
+2023-09-30 22:54:30 [INFO ] http-nio-9991-exec-7 EmployeeController.java:159 com.baizhi.controller.EmployeeController info...
+2023-09-30 22:54:30 [WARN ] http-nio-9991-exec-7 EmployeeController.java:160 com.baizhi.controller.EmployeeController warn....
+2023-09-30 22:54:30 [ERROR] http-nio-9991-exec-7 EmployeeController.java:161 com.baizhi.controller.EmployeeController error....
+2023-09-30 23:01:19 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2023-09-30 23:01:19 [INFO ] Thread-5 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:01:19 [INFO ] Thread-5 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 23:01:19 [INFO ] Thread-5 DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-30 23:01:19 [WARN ] Thread-5 DirectJDKLog.java:173 org.apache.catalina.loader.WebappClassLoaderBase The web application [ems-thymeleaf] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.7/java.lang.Thread.run(Thread.java:833)
+2023-09-30 23:01:19 [INFO ] Thread-5 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:01:19 [INFO ] Thread-5 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:01:19 [INFO ] Thread-5 HikariDataSource.java:350 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2023-09-30 23:01:19 [INFO ] Thread-5 HikariDataSource.java:352 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+2023-09-30 23:01:19 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 8146 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 23:01:19 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 23:01:19 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 23:01:19 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 23:01:19 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:01:19 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 23:01:19 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 23:01:19 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 23:01:19 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 586 ms
+2023-09-30 23:01:19 [WARN ] restartedMain AbstractApplicationContext.java:616 org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fileController': Lookup method resolution failed
+2023-09-30 23:01:19 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 23:01:19 [INFO ] restartedMain ConditionEvaluationReportLogger.java:82 org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-30 23:01:20 [ERROR] restartedMain SpringApplication.java:824 org.springframework.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fileController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:472)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:342)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1291)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1186)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.baizhi.EmsThymeleafApplication.main(EmsThymeleafApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.baizhi.controller.FileController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@198b8b5]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:450)
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: HttpServletResponse
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: HttpServletResponse
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 30 common frames omitted
+2023-09-30 23:01:31 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 8146 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 23:01:31 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 23:01:31 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 23:01:31 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 23:01:31 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:01:31 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 23:01:31 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 23:01:31 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 23:01:31 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 261 ms
+2023-09-30 23:01:32 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 23:01:32 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:01:32 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 23:01:32 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 0.825 seconds (process running for 454.567)
+2023-09-30 23:01:32 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 23:06:14 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 54 class path changes (0 additions, 29 deletions, 25 modifications)
+2023-09-30 23:06:14 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:06:14 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 23:06:14 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:06:14 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:08:04 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 8146 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 23:08:04 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 23:08:04 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 23:08:05 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 23:08:05 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 23:08:05 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 23:08:05 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat-4].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 23:08:05 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 157 ms
+2023-09-30 23:08:05 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 23:08:05 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 23:08:05 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 0.404 seconds (process running for 847.622)
+2023-09-30 23:08:05 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 23:08:13 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-09-30 23:08:13 [INFO ] Thread-14 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 23:08:13 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 8146 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 23:08:13 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 23:08:13 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 23:08:14 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 23:08:14 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 23:08:14 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 23:08:14 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat-4].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 23:08:14 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 338 ms
+2023-09-30 23:08:14 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 23:08:14 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 23:08:14 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 0.49 seconds (process running for 856.614)
+2023-09-30 23:08:14 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 23:08:29 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2023-09-30 23:08:29 [INFO ] Thread-27 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 23:08:30 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 8146 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 23:08:30 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 23:08:30 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 23:08:30 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 23:08:30 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 23:08:30 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 23:08:30 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat-4].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 23:08:30 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 408 ms
+2023-09-30 23:11:06 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 8474 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 23:11:06 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 23:11:06 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 23:11:06 [INFO ] restartedMain DeferredLog.java:250 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-30 23:11:06 [INFO ] restartedMain DeferredLog.java:250 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-30 23:11:07 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 23:11:07 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:11:07 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 23:11:07 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 23:11:07 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 23:11:07 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 931 ms
+2023-09-30 23:11:08 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 23:11:08 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:11:08 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 23:11:08 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 2.067 seconds (process running for 2.882)
+2023-09-30 23:11:21 [INFO ] http-nio-9991-exec-1 DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-30 23:11:21 [INFO ] http-nio-9991-exec-1 FrameworkServlet.java:532 org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2023-09-30 23:11:21 [INFO ] http-nio-9991-exec-1 FrameworkServlet.java:554 org.springframework.web.servlet.DispatcherServlet Completed initialization in 1 ms
+2023-09-30 23:12:07 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-30 23:12:07 [INFO ] Thread-5 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:07 [INFO ] Thread-5 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 23:12:07 [INFO ] Thread-5 DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-30 23:12:07 [INFO ] Thread-5 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:07 [INFO ] Thread-5 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:07 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 8474 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 23:12:07 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 23:12:07 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 23:12:07 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 23:12:07 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:07 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 23:12:07 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 23:12:07 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 23:12:07 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 384 ms
+2023-09-30 23:12:08 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 23:12:08 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:08 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 23:12:08 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 0.653 seconds (process running for 62.426)
+2023-09-30 23:12:08 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 23:12:11 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-30 23:12:11 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:11 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 23:12:11 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:11 [INFO ] Thread-7 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:11 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 8474 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 23:12:11 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 23:12:11 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 23:12:11 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 23:12:11 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:11 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 23:12:11 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 23:12:11 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 23:12:11 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 236 ms
+2023-09-30 23:12:12 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 23:12:12 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:12 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 23:12:12 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 0.448 seconds (process running for 66.367)
+2023-09-30 23:12:12 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 23:12:15 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-30 23:12:15 [INFO ] Thread-11 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:15 [INFO ] Thread-11 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 23:12:15 [INFO ] Thread-11 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:15 [INFO ] Thread-11 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:15 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 8474 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 23:12:15 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 23:12:15 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 23:12:15 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 23:12:15 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:15 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 23:12:15 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 23:12:15 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 23:12:15 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 254 ms
+2023-09-30 23:12:16 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 23:12:16 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:16 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 23:12:16 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 0.489 seconds (process running for 70.366)
+2023-09-30 23:12:16 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+2023-09-30 23:12:21 [INFO ] File Watcher LocalDevToolsAutoConfiguration.java:211 org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-30 23:12:21 [INFO ] Thread-15 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:21 [INFO ] Thread-15 DirectJDKLog.java:173 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-09-30 23:12:21 [INFO ] Thread-15 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:21 [INFO ] Thread-15 DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:21 [INFO ] restartedMain StartupInfoLogger.java:51 com.baizhi.EmsThymeleafApplication Starting EmsThymeleafApplication using Java 17.0.7 with PID 8474 (/Users/user/git/0928/takada/ems-thymeleaf/target/classes started by user in /Users/user/git/0928/takada/ems-thymeleaf)
+2023-09-30 23:12:21 [DEBUG] restartedMain StartupInfoLogger.java:52 com.baizhi.EmsThymeleafApplication Running with Spring Boot v3.1.2, Spring v6.0.11
+2023-09-30 23:12:21 [INFO ] restartedMain SpringApplication.java:640 com.baizhi.EmsThymeleafApplication The following 1 profile is active: "dev"
+2023-09-30 23:12:21 [INFO ] restartedMain TomcatWebServer.java:108 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 9991 (http)
+2023-09-30 23:12:21 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:21 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-09-30 23:12:21 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-30 23:12:22 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ems-thymeleaf] Initializing Spring embedded WebApplicationContext
+2023-09-30 23:12:22 [INFO ] restartedMain ServletWebServerApplicationContext.java:291 org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 314 ms
+2023-09-30 23:12:22 [INFO ] restartedMain OptionalLiveReloadServer.java:59 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+2023-09-30 23:12:22 [INFO ] restartedMain DirectJDKLog.java:173 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9991"]
+2023-09-30 23:12:22 [INFO ] restartedMain TomcatWebServer.java:220 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 9991 (http) with context path '/ems-thymeleaf'
+2023-09-30 23:12:22 [INFO ] restartedMain StartupInfoLogger.java:57 com.baizhi.EmsThymeleafApplication Started EmsThymeleafApplication in 0.573 seconds (process running for 76.486)
+2023-09-30 23:12:22 [INFO ] restartedMain ConditionEvaluationDeltaLoggingListener.java:63 org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
