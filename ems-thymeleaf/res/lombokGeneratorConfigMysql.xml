@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<!--包含了两种方式 1.application.properties与1.1 通过1.1扫描properties获得mysql驱动 用户 密码 
+		2.直接扫描mysql驱动 用户 密码 此文件是mybatis generator整合lombok 在mybatis-generator-core-1.3.5.jar中plugins中有LombokPlugin.class文件 
+		通过此文件和lombok中的配置可以减少get set方法 并且实体类会存在注解 -->
+
+	<!-- 1.1 <properties resource="application.properties"></properties> -->
+
+	<!--mysql 连接数据库jar 这里选择自己本地位置 -->
+	<classPathEntry
+		location="E:\mysql-jar\mysql-connector-j-8.0.32\mysql-connector-j-8.0.32.jar" />
+
+	<context id="testTables" targetRuntime="MyBatis3">
+
+		<!--lombok 自动生成lombok注解配置和根据数据库注释为实体添加注释, 需要自己编译文件才可以实现,具体见https://www.jianshu.com/p/58ee7e09fc3f -->
+		<plugin type="org.mybatis.generator.LombokPlugin">
+			<property name="hasLombok" value="true" />
+		</plugin>
+
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+
+		<!--1.1 <jdbcConnection driverClass="${spring.datasource.driver-class-name}" 
+			connectionURL="${spring.datasource.url}" userId="${spring.datasource.username}" 
+			password="${spring.datasource.password}"> </jdbcConnection> -->
+
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/ems-thymeleaf?useLegacyDatetimeCode=false&amp;
+                        characterEncoding=UTF-8&amp;useSSL=false&amp;serverTimezone=GMT%2B8"
+			userId="root" password="123456">
+			<property name="nullCatalogMeansCurrent" value="true" />
+		</jdbcConnection>
+
+
+
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 
+			和 NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="true" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成PO类的位置 -->
+		<javaModelGenerator
+			targetPackage="com.baizhi.entity.original"
+			targetProject="./src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="false" />
+		</javaModelGenerator>
+		<!-- targetProject:mapper映射文件生成的位置 -->
+		<!-- <sqlMapGenerator targetPackage="com.baizhi.mapper.original" targetProject="./src/main/resources"> -->
+		<sqlMapGenerator
+			targetPackage="com.baizhi.dao.original"
+			targetProject="./src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- targetPackage：mapper接口生成的位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.baizhi.dao.original"
+			targetProject="./src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+
+		<!-- 指定数据库表 -->
+		<!-- <table schema="" tableName="tb_item" domainObjectName="Item"></table> 
+			domainObjectName 可以配置生成的pojo名字 如不需要example类添加下面四个属性 enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+
+		<table schema="" tableName="t_files" domainObjectName="TFiles"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+			<!-- 数据库表主键 -->
+			<generatedKey column="id" sqlStatement="Mysql"
+				identity="true" />
+		</table>
+
+
+	</context>
+</generatorConfiguration>

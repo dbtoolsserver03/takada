@@ -68,3 +68,25 @@ CREATE TABLE `m_code` (
 	`update_user_id` VARCHAR ( 20 ) NULL COMMENT '更新者',
 PRIMARY KEY ( `key` ) 
 ) COMMENT = 'm_code' ENGINE = INNODB DEFAULT CHARSET = utf8mb4;
+
+DROP TABLE
+IF
+	EXISTS `t_files`;
+CREATE TABLE `t_files` (
+	`id` INT ( 8 ) NOT NULL COMMENT 'key',
+	`old_File_Name` VARCHAR ( 200 ) DEFAULT NULL COMMENT '文件原始名称',
+	`new_File_Name` VARCHAR ( 50 ) DEFAULT NULL COMMENT '文件的新名称	',
+	`ext` VARCHAR ( 50 ) DEFAULT NULL COMMENT '文件后缀',
+	`path` VARCHAR ( 50 ) DEFAULT NULL COMMENT '存储路径	',
+	`size` VARCHAR ( 50 ) DEFAULT NULL COMMENT '文件大小	',
+	`type` VARCHAR ( 50 ) DEFAULT NULL COMMENT '类型	',
+	`is_img` VARCHAR ( 50 ) DEFAULT NULL COMMENT '是否是图片	',
+	`downcounts` INT ( 6 ) DEFAULT NULL COMMENT '下载次数	',
+	`username` VARCHAR ( 40 ) DEFAULT NULL COMMENT '用户名',
+	`delete_flg` CHAR ( 1 ) NOT NULL COMMENT '削除フラグ',
+	`create_time` DATETIME NULL COMMENT '登録日時',
+	`create_user_id` VARCHAR ( 20 ) NULL COMMENT '登録者',
+	`update_time` DATETIME NULL COMMENT '更新日時',
+	`update_user_id` VARCHAR ( 20 ) NULL COMMENT '更新者',
+PRIMARY KEY ( `id` ) 
+) COMMENT = '文件上传下载' ENGINE = INNODB DEFAULT CHARSET = utf8mb4;
