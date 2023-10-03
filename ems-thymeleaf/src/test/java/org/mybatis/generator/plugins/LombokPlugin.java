@@ -1,4 +1,4 @@
-package org.mybatis.generator;
+package org.mybatis.generator.plugins;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

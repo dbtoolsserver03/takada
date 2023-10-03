@@ -13,7 +13,7 @@ public class MvcConfigUpload  implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
 
         registry.addViewController("easyUpload").setViewName("/upload/easyUpload");
-        registry.addViewController("upload").setViewName("/upload/showAll");
+        registry.addViewController("upload").setViewName("redirect:/file/showAll");
         
     }
 }

@@ -1,7 +1,7 @@
 package com.baizhi;
 
 import org.junit.jupiter.api.Test;
-import org.mybatis.generator.LombokMyCommentGenerator;
+import org.mybatis.generator.plugins.LombokMyCommentGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;

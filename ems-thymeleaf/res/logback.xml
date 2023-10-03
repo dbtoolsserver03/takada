@@ -81,7 +81,7 @@
         </logger>
         <logger name="com.baizhi.service" level="DEBUG">
             <appender-ref ref="CONSOLE" />
-<!--             <appender-ref ref="ROLLING_FILE" /> -->
+            <appender-ref ref="ROLLING_FILE" />
         </logger>
         <logger name="com.baizhi.dao" level="DEBUG">
             <appender-ref ref="CONSOLE" />

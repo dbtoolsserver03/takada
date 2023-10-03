@@ -28,7 +28,7 @@ public class FileController {
 	 * 文件下载
 	 *
 	 */
-	@GetMapping("download")
+	@GetMapping("easydownload")
 	public void download(String fileName, HttpServletResponse response) throws IOException {
 		//根据文件名去指定目录中查找文件
 		String realPath = ResourceUtils.getURL("classpath:").getPath() + "static"+File.separator+"files";
@@ -67,7 +67,7 @@ public class FileController {
 	 * @return
 	 * @throws IOException
 	 */
-	@PostMapping("upload")
+	@PostMapping("easyupload")
 	public String upload(MultipartFile aaa, HttpServletRequest request) throws IOException {
 
 		//文件上传

@@ -1,4 +1,4 @@
-package org.mybatis.generator;
+package org.mybatis.generator.plugins;
  
  
 import java.io.File;
@@ -41,7 +41,7 @@ public class LombokMyCommentGenerator {
         	System.out.println("--------------------start generator-------------------");
             List<String> warnings = new ArrayList<String>();
             boolean overwrite = true;
-            String filePath = "res" + File.separator+"lombokGeneratorConfigMysql.xml";
+            String filePath = "res" + File.separator+"generatorConfigMysqlLombok.xml";
             File f = new File(filePath);
             ConfigurationParser cp = new ConfigurationParser(warnings);
             Configuration config = cp.parseConfiguration(f);
