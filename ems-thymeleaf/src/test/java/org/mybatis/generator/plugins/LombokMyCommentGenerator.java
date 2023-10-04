@@ -26,7 +26,7 @@ import org.mybatis.generator.internal.DefaultShellCallback;
 */
 public class LombokMyCommentGenerator {
  
-
+	public static final String S_XML = "src"+File.separator+"main"+File.separator+"resources"+File.separator+"com"+File.separator+"baizhi"+File.separator+"dao"+File.separator+"original";
 	public static final String S_DAO = "src"+File.separator+"main"+File.separator+"java"+File.separator+"com"+File.separator+"baizhi"+File.separator+"dao"+File.separator+"original";
 	public static final String S_PO = "src"+File.separator+"main"+File.separator+"java"+File.separator+"com"+File.separator+"baizhi"+File.separator+"entity"+File.separator+"original";
 	
