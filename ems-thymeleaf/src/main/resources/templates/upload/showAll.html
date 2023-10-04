@@ -2,9 +2,40 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>emplist</title>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+
+	<title>用户文件列表页面</title>
+	
+	<script th:src="@{/js/plug-in/jquery-3.7.1.min.js}"></script>
+	<script>
+
+	$(function () {
+	var intervalId;
+		$("#start").click(function(){
+			console.log("开启定时更新。。。。。。");
+			intervalId = setInterval(myFunc, 3000);
+			
+		});
+		
+		function myFunc() {
+			
+			$.get("[[@{/file/findAllJson}]]", function (res) {
+				$.each(res, function (index, file) {
+					$("#" + file.id).text(file.downcounts);
+				})
+			})
+		}
+		$("#stop").click(function(){
+			console.log("关闭定时更新。。。。。。");
+			clearInterval(intervalId);
+		});
+
+	});
+		
+	</script>
+
 </head>
 
 <body>
