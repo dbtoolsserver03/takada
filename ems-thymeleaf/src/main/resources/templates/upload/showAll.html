@@ -7,11 +7,9 @@
 	
 	<script th:src="@{/js/plug-in/jquery-3.7.1.min.js}"></script>
 	<script>
-		
- 
 
 	$(function () {
-var intervalId;
+	var intervalId;
 		$("#start").click(function(){
 			console.log("开启定时更新。。。。。。");
 			intervalId = setInterval(myFunc, 3000);
@@ -30,8 +28,6 @@ var intervalId;
 			console.log("关闭定时更新。。。。。。");
 			clearInterval(intervalId);
 		});
-
-
 
 	});
 		

@@ -12,9 +12,9 @@ import java.util.UUID;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,13 +38,16 @@ public class UserFileController {
 
     private UserFileService service;
 
+    @Value("${upload.dir}")
+    private String uploadPath;
+    
     @Autowired
     public UserFileController(UserFileService service) {
         this.service = service;
     }
 
 	/**
-	 * 文件上传
+	 * 文件删除
 	 * @param aaa
 	 * @param request
 	 * @return
@@ -57,9 +60,9 @@ public class UserFileController {
 		// 获取文件信息
 		UserFile userFile = service.findById(idInt);
 		//根据文件名去指定目录中查找文件
-		String realPath = ResourceUtils.getURL("classpath:").getPath() + "static" + File.separator + userFile.getPath();
+		String dateDir = uploadPath + File.separator + userFile.getPath();
 		//读取文件
-		File file = new File(realPath, userFile.getNewFileName());
+		File file = new File(dateDir, userFile.getNewFileName());
 		// 删除文件
 		if (file.exists()) file.delete();
 		
@@ -106,9 +109,10 @@ public class UserFileController {
 		}
 
 		//根据文件名去指定目录中查找文件
-		String realPath = ResourceUtils.getURL("classpath:").getPath() + "static" + File.separator + userFile.getPath();
+		String dateDir = uploadPath + File.separator + userFile.getPath();
+
 		//读取文件
-		File file = new File(realPath, userFile.getNewFileName());
+		File file = new File(dateDir, userFile.getNewFileName());
 		//获取文件输入流
 		FileInputStream is = new FileInputStream(file);
 		//attachment; 附件下载   inline 在线打开(图片 pdf )
@@ -140,12 +144,10 @@ public class UserFileController {
 		System.out.println("文件大小: " + aaa.getSize());
 
 		//处理文件上传
-		//String realPath = request.getServletContext().getRealPath("/files");
-		String realPath = ResourceUtils.getURL("classpath:").getPath() + "static"+File.separator+"files";
 		//日期目录创建
-		String dateDir = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-
-		File dir = new File(realPath, dateDir);
+		String dateDir =  new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+		
+		File dir = new File(uploadPath + File.separator + dateDir);
 		if (!dir.exists())
 			dir.mkdirs();
 		//修改文件名
@@ -162,7 +164,7 @@ public class UserFileController {
     	
 		// 将文件信息放入数据库保存
 		service.save(UserFile.builder().oldFileName(aaa.getOriginalFilename()).newFileName(newFileName).ext(extension).username(user.getUsername())
-				.size(String.valueOf(aaa.getSize())).type(aaa.getContentType()).path("files"+File.separator+dateDir)
+				.size(String.valueOf(aaa.getSize())).type(aaa.getContentType()).path(dateDir)
 				.createUserId(user.getUsername()).updateUserId(user.getUsername()).build());
 		return "redirect:/upload";
 	}

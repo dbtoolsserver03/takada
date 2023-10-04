@@ -28,7 +28,7 @@ public class EmployeeController {
 
     private EmployeeService employeeService;
 
-    @Value("${photo.file.dir}")
+    @Value("${upload.dir}")
     private String realpath;
 
     @Autowired
