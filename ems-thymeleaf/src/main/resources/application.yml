@@ -5,8 +5,6 @@ server:
 
 # spring相关配置 datasource数据源  thymeleaf 模板引擎
 spring:
-  profiles:
-    active: mac
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
