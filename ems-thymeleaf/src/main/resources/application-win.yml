@@ -1,4 +1,4 @@
 # 指定文件上传位置
 upload:
-  dir: /Users/user/Documents/file/photo
-# dir: C:\work\file\photo
+# dir: /Users/user/Documents/file/photo
+  dir: C:\work\file\photo
