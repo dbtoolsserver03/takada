@@ -10,9 +10,6 @@ import org.springframework.core.annotation.Order;
 @Configuration
 @Order(2)
 public class MyAspect1 {
-
-
-
     //环绕通知  当目标方法执行时会先进入环绕通知,然后在环绕通知放行之后进入目标方法,然后执行目标方法,目标方法执行完成之后回到环绕通知
     @Around("within(com.baizhi.service.*ServiceImpl)")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
