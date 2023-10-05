@@ -17,11 +17,11 @@ import org.mybatis.generator.internal.DefaultShellCallback;
 
 /**   
  * @Title: MyCommentGenerator.java 
- * @Package com.fendo.mybatis_generator_plus 
+ * @Package org.mybatis.generator.plugins 
  * @Description:  mybatis generator 自定义comment生成器.
  *                基于MBG 1.3.5
- * @author fendo
- * @date 2017年10月5日 下午3:07:26 
+ * @author takada
+ * @date 2023年10月2日 下午13:12:53 
  * @version V1.0   
 */
 public class LombokMyCommentGenerator {
