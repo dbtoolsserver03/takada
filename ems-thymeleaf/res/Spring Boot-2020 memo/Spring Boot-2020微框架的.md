@@ -1212,6 +1212,7 @@ public class InterceptorConfig extends WebMvcConfigurationSupport {
 ```java
 //1.继承SpringBootServletInitializer
 //2.覆盖configure方法
+@SpringBootApplication
 public class Application extends SpringBootServletInitializer{
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
