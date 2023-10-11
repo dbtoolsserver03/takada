@@ -23,6 +23,6 @@ public class MvcConfig  implements WebMvcConfigurer {
         
         // 新用户注册
         registry.addViewController("register").setViewName("user/regist");
-
+        
     }
 }

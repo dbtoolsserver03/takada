@@ -147,7 +147,7 @@ public class EmployeeController {
         log.debug("查询所有员工信息");
         List<Employee> employeeList = employeeService.lists();
         model.addAttribute("employeeList", employeeList);
-        
+        int a=1/0;
         return "emp/emplist";
     }
 }
