@@ -1,0 +1,16 @@
+
+
+rm -rf /Users/user/Downloads/apache-tomcat-10.1.13/webapps/ab*
+ll /Users/user/Downloads/apache-tomcat-10.1.13/webapps/
+cd /Users/user/git/0928/takada/ems-thymeleaf/
+mvn clean package -Dmaven.test.skip=true
+cp /Users/user/git/0928/takada/ems-thymeleaf/target/ems-thymeleaf-0.0.1-SNAPSHOT.war /Users/user/Downloads/apache-tomcat-10.1.13/webapps/abc.war
+
+
+cd /Users/user/Downloads/apache-tomcat-10.1.13/bin
+tail -f /Users/user/Downloads/apache-tomcat-10.1.13/logs/catalina.out
+
+ll /Users/user/Downloads/apache-tomcat-10.1.13/webapps/
+
+
+http://localhost:9991/hello

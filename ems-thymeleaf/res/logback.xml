@@ -74,24 +74,33 @@
 
     <!-- 开发环境和测试环境 -->
     <springProfile name="dev,test">
-        <logger name="com.baizhi；root；org.mybatis.generator:" level="DEBUG">
+    
+        <logger name="com.baizhi.controller" level="DEBUG">
+            <appender-ref ref="CONSOLE" />
+<!--             <appender-ref ref="ROLLING_FILE" /> -->
+        </logger>
+        <logger name="com.baizhi.service" level="DEBUG">
             <appender-ref ref="CONSOLE" />
             <appender-ref ref="ROLLING_FILE" />
+        </logger>
+        <logger name="com.baizhi.dao" level="DEBUG">
+            <appender-ref ref="CONSOLE" />
+<!--             <appender-ref ref="ROLLING_FILE" /> -->
         </logger>
         <logger name="root" level="INFO">
             <appender-ref ref="CONSOLE" />
-            <appender-ref ref="ROLLING_FILE" />
+<!--             <appender-ref ref="ROLLING_FILE" /> -->
         </logger>
-        <logger name="org.mybatis.generator:" level="DEBUG">
+        <logger name="org.mybatis.generator" level="DEBUG">
             <appender-ref ref="CONSOLE" />
-            <appender-ref ref="ROLLING_FILE" />
+<!--             <appender-ref ref="ROLLING_FILE" /> -->
         </logger>
     </springProfile>
     <!-- 生产环境 -->
     <springProfile name="prod">
         <logger name="com.baizhi" level="ERROR">
-            <appender-ref ref="CONSOLE" />
-            <appender-ref ref="FILE" />
+<!--             <appender-ref ref="CONSOLE" /> -->
+<!--             <appender-ref ref="FILE" /> -->
         </logger>
     </springProfile>
 </configuration>

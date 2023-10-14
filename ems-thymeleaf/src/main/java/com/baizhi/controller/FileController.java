@@ -28,10 +28,10 @@ public class FileController {
 	 * 文件下载
 	 *
 	 */
-	@GetMapping("download")
+	@GetMapping("easydownload")
 	public void download(String fileName, HttpServletResponse response) throws IOException {
 		//根据文件名去指定目录中查找文件
-		String realPath = ResourceUtils.getURL("classpath:").getPath() + "static/files";
+		String realPath = ResourceUtils.getURL("classpath:").getPath() + "static"+File.separator+"files";
 		//读取文件
 		File file = new File(realPath, fileName);
 		//获取文件输入流
@@ -67,7 +67,7 @@ public class FileController {
 	 * @return
 	 * @throws IOException
 	 */
-	@PostMapping("upload")
+	@PostMapping("easyupload")
 	public String upload(MultipartFile aaa, HttpServletRequest request) throws IOException {
 
 		//文件上传
@@ -77,7 +77,7 @@ public class FileController {
 
 		//处理文件上传
 		//String realPath = request.getServletContext().getRealPath("/files");
-		String realPath = ResourceUtils.getURL("classpath:").getPath() + "static/files";
+		String realPath = ResourceUtils.getURL("classpath:").getPath() + "static"+File.separator+"files";
 		//日期目录创建
 		String dateDir = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
@@ -90,6 +90,6 @@ public class FileController {
 		String extension = FilenameUtils.getExtension(aaa.getOriginalFilename());
 		String newFileName = newFileNamePrefix + "." + extension;
 		aaa.transferTo(new File(dir, newFileName));
-		return "redirect:/upload.html";
+		return "redirect:/upload";
 	}
 }
