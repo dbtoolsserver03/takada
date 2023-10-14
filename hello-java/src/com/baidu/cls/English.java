@@ -8,5 +8,4 @@ public class English extends Person{
 		System.out.println("en say");
 	}
 
-	
 }

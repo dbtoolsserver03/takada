@@ -4,7 +4,6 @@ import java.util.Date;
 
 // 类 ： 封装，继承，多态
 
-
 public class Person {
 	
 	// 封装：封装属性，定义属性的可视范围
@@ -14,6 +13,9 @@ public class Person {
 	protected int weight=120; //可继承属性
 	public Date birthday = new Date();// 公开属性
 	
+	public void eat() {
+		
+	}
 	public void say() {
 		System.out.println("person say");
 	}

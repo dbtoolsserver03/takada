@@ -10,6 +10,10 @@ public class Japanese extends Person {
 	@Override
 	public void say() {
 		System.out.println("jp say");
+		
+		// 显示调用父类方法
+		super.eat();
+		
 	}
 	
 
