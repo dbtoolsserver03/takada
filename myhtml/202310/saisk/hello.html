@@ -13,6 +13,16 @@
 		}
 
 	</style>
+	
+	<script>
+		function funLogin() {
+			
+			var el =  document.getElementById("id_user");
+			el.style.backgroundColor = "red";
+			alert(el.value);
+			
+		}
+	</script>
 </head>
 
 <body>
@@ -20,11 +30,11 @@
 <div style="background-color: rgb(128, 255, 255);">
 	
 	<table>
-		<tr><td>usr:</td><td><input type="text" class="btn_pink"></input></td></tr>
-		<tr><td>password:</td><td><input type="password"></input></td></tr>
+		<tr><td>usr:</td><td><input id="id_user" value="tanaka" type="text" class="btn_pink"></input></td></tr>
+		<tr><td>password:</td><td><input  id="id_pwd" type="password"></input></td></tr>
 		
 	</table>
-	<input type="button" value="login"
+	<input type="button" value="login" onclick="funLogin()"
 		style="background-color: rgb(255, 255, 0);"
 		class="btn_pink">
 
