@@ -5,17 +5,33 @@
 	<meta charset="UTF-8">
 	<title>hello</title>
 	<link rel="icon" href="./img/favicon.ico">
+	<link type="text/css" rel="styleSheet"  href="./css/hel.css" />
+	<style>
+		
+		table:hover{
+			background-color: cornflowerblue;
+		}
+
+	</style>
 </head>
 
 <body>
 
-	usr:<input type="text"></input>
-	<br>
-	password:<input type="password"></input>
-	<br>
-	<input type="button" value="login">
+<div style="background-color: rgb(128, 255, 255);">
+	
+	<table>
+		<tr><td>usr:</td><td><input type="text" class="btn_pink"></input></td></tr>
+		<tr><td>password:</td><td><input type="password"></input></td></tr>
+		
+	</table>
+	<input type="button" value="login"
+		style="background-color: rgb(255, 255, 0);"
+		class="btn_pink">
 
-	<hr>
+</div>
+
+<div style="background-color: rgb(153, 172, 230);">
+	
 
 	sex:
 	<label><input name="msex" type="radio">man</label>
@@ -48,12 +64,11 @@
 	<input type="date">
 	<br>
 	introduce:
-	<textarea rows="5" cols="10"> </textarea>
+	<textarea class="btn_pink" rows="5" cols="10"> </textarea>
 	<br>
 	<a href="./to.html"> next page</a>
 
-
-	<hr>
+</div>
 	<table border="1" width="100%">
 		<tr> <!-- table row-->
 			<th width="5%"> <!-- table head-->
@@ -91,7 +106,7 @@
 				li4
 			</td>
 			<td align="center">
-				1999/01/02
+				<input type="date">
 			</td>
 			<td align="right">
 				5000
