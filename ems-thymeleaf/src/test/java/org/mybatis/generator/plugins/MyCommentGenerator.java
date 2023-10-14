@@ -1,4 +1,4 @@
-package org.mybatis.generator;
+package org.mybatis.generator.plugins;
  
  
 import static org.mybatis.generator.internal.util.StringUtility.*;

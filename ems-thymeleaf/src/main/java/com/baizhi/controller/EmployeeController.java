@@ -6,8 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -18,17 +16,16 @@ import org.springframework.web.multipart.MultipartFile;
 import com.baizhi.entity.Employee;
 import com.baizhi.service.EmployeeService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping("employee")
-
+@Slf4j
 public class EmployeeController {
-
-    private static final Logger log = LoggerFactory.getLogger(EmployeeController.class);
-
 
     private EmployeeService employeeService;
 
-    @Value("${photo.file.dir}")
+    @Value("${upload.dir}")
     private String realpath;
 
     @Autowired
@@ -131,14 +128,10 @@ public class EmployeeController {
         //2.保存员工信息
         employee.setPhoto(newFileName);//保存头像名字
         
-        
-        
         if(employee.getSalary()<0) {
         	model.addAttribute("error", "工资不可以为负数！");
             return "emp/updateEmp";//更新成功,跳转到员工列表
         }
-        
-        
         
         employeeService.save(employee);
         return "redirect:/employee/lists";//保存成功跳转到列表页面
@@ -154,12 +147,6 @@ public class EmployeeController {
         log.debug("查询所有员工信息");
         List<Employee> employeeList = employeeService.lists();
         model.addAttribute("employeeList", employeeList);
-        
-        log.debug("debug...");
-        log.info("info...");
-        log.warn("warn....");
-        log.error("error....");
-        
         return "emp/emplist";
     }
 }
