@@ -1,29 +1,97 @@
-drop database IF EXISTS `ems-thymeleaf`;
-create database IF NOT EXISTS `ems-thymeleaf` character set utf8mb4;
-use `ems-thymeleaf`;
+DROP DATABASE
+IF
+	EXISTS `ems-thymeleaf`;
+	
+CREATE DATABASE
+IF
+	NOT EXISTS `ems-thymeleaf` CHARACTER 
+	SET utf8mb4;
+	
+USE `ems-thymeleaf`;
+
 -- ----------------------------
 -- Table structure for employee
 -- ----------------------------
 DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(60) DEFAULT NULL COMMENT '员工姓名',
   `salary` double(10,2) DEFAULT NULL COMMENT '员工工资',
   `birthday` datetime DEFAULT NULL COMMENT '员工生日',
   `photo` varchar(200) DEFAULT NULL COMMENT '头像路径',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Table structure for m_code
+-- ----------------------------
+DROP TABLE IF EXISTS `m_code`;
+CREATE TABLE `m_code` (
+  `key` varchar(20) NOT NULL COMMENT 'key',
+  `code` char(2) NOT NULL COMMENT 'code',
+  `value` varchar(50) DEFAULT NULL COMMENT 'value',
+  `delete_flg` char(1) NOT NULL COMMENT '削除フラグ',
+  `create_time` datetime DEFAULT NULL COMMENT '登録日時',
+  `create_user_id` varchar(20) DEFAULT NULL COMMENT '登録者',
+  `update_time` datetime DEFAULT NULL COMMENT '更新日時',
+  `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
+  PRIMARY KEY (`key`,`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='m_code';
+
+-- ----------------------------
+-- Table structure for t_files
+-- ----------------------------
+DROP TABLE IF EXISTS `uniqlo`;
+CREATE TABLE `uniqlo` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) DEFAULT NULL COMMENT '商品名称',
+  `type` char(2) DEFAULT NULL COMMENT '上身/下身/脚',
+  `size` char(2) DEFAULT NULL COMMENT '尺寸规格',
+  `sex` char(2) DEFAULT NULL COMMENT '适用性别',
+  `photo` varchar(200) DEFAULT NULL COMMENT '商品照片路径',
+  `sale_begin` datetime DEFAULT NULL COMMENT '销售开始日',
+  `sale_end` datetime DEFAULT NULL COMMENT '销售终了日',
+  `price` int DEFAULT NULL COMMENT '单价',
+  `lblob` longblob,
+  `delete_flg` char(1) NOT NULL COMMENT '削除フラグ',
+  `create_time` datetime DEFAULT NULL COMMENT '登録日時',
+  `create_user_id` varchar(20) DEFAULT NULL COMMENT '登録者',
+  `update_time` datetime DEFAULT NULL COMMENT '更新日時',
+  `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='优衣库';
+
+-- ----------------------------
+-- Table structure for uniqlo
+-- ----------------------------
+DROP TABLE IF EXISTS `uniqlo`;
+CREATE TABLE `uniqlo` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) DEFAULT NULL COMMENT '商品名称',
+  `type` char(2) DEFAULT NULL COMMENT '上身/下身/脚',
+  `size` char(2) DEFAULT NULL COMMENT '尺寸规格',
+  `sex` char(2) DEFAULT NULL COMMENT '适用性别',
+  `photo` varchar(200) DEFAULT NULL COMMENT '商品照片路径',
+  `sale_begin` datetime DEFAULT NULL COMMENT '销售开始日',
+  `sale_end` datetime DEFAULT NULL COMMENT '销售终了日',
+  `price` int DEFAULT NULL COMMENT '单价',
+  `delete_flg` char(1) NOT NULL COMMENT '削除フラグ',
+  `create_time` datetime DEFAULT NULL COMMENT '登録日時',
+  `create_user_id` varchar(20) DEFAULT NULL COMMENT '登録者',
+  `update_time` datetime DEFAULT NULL COMMENT '更新日時',
+  `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='优衣库';
 
 -- ----------------------------
 -- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(40) DEFAULT NULL COMMENT '用户名',
   `realname` varchar(60) DEFAULT NULL COMMENT '真实姓名',
   `password` varchar(40) DEFAULT NULL COMMENT '密码',
-  `gender` tinyint(1) unsigned DEFAULT NULL COMMENT '性别',
+  `gender` tinyint unsigned DEFAULT NULL COMMENT '性别',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

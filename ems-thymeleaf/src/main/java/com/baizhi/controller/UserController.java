@@ -56,7 +56,7 @@ public class UserController {
             e.printStackTrace();
             return "redirect:/login";//登录失败回到登录界面
         }
-        return "redirect:/employee/lists";//登录成功之后,跳转到查询所有员工信息控制器路径
+        return "redirect:/menu";//登录成功之后,跳转到菜单画面
     }
 
     /**
