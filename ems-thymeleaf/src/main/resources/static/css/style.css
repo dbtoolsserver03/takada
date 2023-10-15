@@ -9,7 +9,7 @@
 	}
 
 	#wrap {
-		width: 820px;
+		width: auto;
 		margin: 0 auto;
 		background: url(../img/bg.gif) top repeat-y #FFFFFF;
 	}

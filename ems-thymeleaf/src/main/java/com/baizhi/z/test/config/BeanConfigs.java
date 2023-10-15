@@ -1,10 +1,12 @@
-package com.baizhi.config;
+package com.baizhi.z.test.config;
 
 import java.util.Calendar;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+
+import com.baizhi.z.test.entity.DogBean;
 
 @Configuration
 public class BeanConfigs {
@@ -13,5 +15,9 @@ public class BeanConfigs {
     @Scope("prototype")  //prototype  singleton
     public Calendar getCalendar(){
         return Calendar.getInstance();
+    }
+    @Bean
+    public DogBean getDogBean(){
+        return new DogBean();
     }
 }

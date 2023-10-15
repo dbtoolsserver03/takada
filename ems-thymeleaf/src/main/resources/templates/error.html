@@ -26,14 +26,14 @@
 						<div id="navigation">
 						</div>
 					</div>
-				<div id="content">
+				<div id="content" >
 					<p id="whereami">
 					</p>
 					
 					
 					
 				<ul>
-					<li>◾️path：<div th:text="${path}"></div>
+					<li>◾️path：<div th:text="${path}"  class="notice_error"> </div>
 					</li>
 					<li>◾timestamp：<div th:text="${#dates.format(timestamp,'yyyy-MM-dd HH:mm:ss SSS')}"></div>
 					</li>
@@ -45,7 +45,7 @@
 					</li>
 					<li>◾messages：<div th:text="${messages}"></div>
 					</li>
-					<li>◾trace：<div th:text="${trace}"></div>
+					<li >◾trace：<div th:text="${trace}"></div>
 					</li>
 				</ul>
 					

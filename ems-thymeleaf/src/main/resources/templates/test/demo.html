@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>测试Thymeleaf</title>
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+
+	<h1>测试 Thymeleaf模板 </h1>
+
+
+	<h4>获取数据: <span th:text="${msg}"></span></h4>
+
+	<h4>获取数据num: <span th:text="${num}"></span></h4>
+	<h4>获取数据bir: <span th:text="${bir}"></span></h4>
+	<h4>获取数据strs: <span th:text="${strs}"></span></h4>
+	<h4>获取数据qqs: <span th:text="${qqs}"></span></h4>
+	<h4>获取数据maps: <span th:text="${maps}"></span></h4>
+	<hr>
+
+
+
+
+
+	<span th:text="${name}" />
+	<span th:utext="${nameA}" />
+	<input type="text" th:value="${username}" />
+	<br>
+	<textarea readonly rows="8" cols="100">
+# 总结
+-  1.使用 th:text="${属性名}"  获取对应数据,获取数据时会将对应标签中数据清空,因此最好是空标签
+-  2.使用 th:utext="${属性名}" 获取对应的数据,可以将数据中html先解析在渲染到页面
+-  3.使用 th:value="${属性名}" 获取数据直接作为表单元素value属性	
+</textarea>
+	<hr>
+
+	id:<span th:text="${user.id}"></span><br>
+	name:<span th:text="${user.name}"></span><br>
+	age:<span th:text="${user.salary}"></span><br>
+	bir: <span th:text="${user.bir}"></span> ==== <span th:text="${#dates.format(user.bir, 'yyyy-MM-dd HH:mm:ss SSS')}"></span>
+	日期格式化
+	<br>
+	<hr>
+
+	<span th:if="${user.salary} ge 10000">
+		SE
+	</span>
+	<span th:if="${user.salary lt 10000}">
+		PG
+	</span>
+	<br>
+	<textarea readonly rows="10" cols="60">
+# 运算符
+    gt：great than（大于）>
+    ge：great equal（大于等于）>=
+    eq：equal（等于）==
+    lt：less than（小于）<
+    le：less equal（小于等于）<=
+    ne：not equal（不等于）!=
+</textarea>
+
+	<hr>
+
+	<table class="table">
+		<tr class="table_header">
+			<td>
+				编号
+			</td>
+			<td>
+				姓名
+			</td>
+			<td>
+				工资
+			</td>
+			<td>
+				生日
+			</td>
+			<td>
+				状态
+			</td>
+		</tr>
+		<tr th:each="user,state:${users}" th:class="${state.odd?'row1':'row2'}">
+			<td>
+				<span th:text="${user.id}"></span>
+			</td>
+			<td>
+				<span th:text="${user.name}"></span>
+			</td>
+			<td>
+				<span th:text="${user.salary}"></span>
+			</td>
+			<td>
+				<span th:text="${#dates.format(user.bir,'yyyy/MM/dd')}"></span>
+			</td>
+			<td>
+				获取遍历次数 count 从1开始 index 从0开始:<span th:text="${state.count}" /> index 从0开始:<span
+					th:text="${state.index}" /> 奇数行:<span th:text="${state.odd}"></span>偶数行:<span
+					th:text="${state.even}" />总条数:<span th:text="${state.size}" />
+			</td>
+		</tr>
+	</table>
+
+
+</body>
+
+</html>
