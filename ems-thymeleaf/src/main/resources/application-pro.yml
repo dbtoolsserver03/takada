@@ -1,0 +1,22 @@
+# 指定文件上传位置
+upload:
+  dir: /Users/user/Documents/file/photo
+# dir: C:\work\file\photo
+
+#ENC(6iXQDl9YmW9PazO7G74qo8rSACEdyjFV)
+mysql:
+  #host: ENC(6iXQDl9YmW9PazO7G74qo8rSACEdyjFV)
+  host: ENC(rMjyYrl7rIMS4jvBAn+UFhqIdp+ZhRHxfx3Db3FdJpQ=)
+  #host: localhost
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${mysql.host}:3306/ems-thymeleaf?chatacterEncoding=UTF-8
+    username: ENC(yKdVPTre6e++zCmT/6zc9iRGY+7ZtSW3)
+    password: ENC(Zh1AS+XHt3c4qiPAjvH3RIHoxXHCvPQG)
+    
+    
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES           #指定加密算法
+    password:  saisk         #指定秘钥 -Djasypt.encryptor.password=saisk  or java -jar -Djasypt.encryptor.password=saisk  xxx.jar
