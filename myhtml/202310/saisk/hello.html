@@ -18,11 +18,14 @@
 		function funLogin() {
 			
 			//debugger;
-			
 			var el =  document.getElementById("id_user");
 			el.style.backgroundColor = "red";
 			alert(el.value);
 			
+		}
+		
+		function funJump() {
+			window.location="./to.html?aa=1";
 		}
 	</script>
 </head>
@@ -80,6 +83,9 @@
 	<br>
 	<a href="./to.html"> next page</a>
 
+	<br>
+	<input type="button" value="jump page" onclick="funJump()">
+	
 </div>
 	<table border="1" width="100%">
 		<tr> <!-- table row-->

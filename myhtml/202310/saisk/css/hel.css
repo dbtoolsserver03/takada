@@ -6,8 +6,23 @@
 }
 
 /*使用该标签就会生效*/
-
 /*[] 里面可以写过滤条件*/
 input[type="date"] {
 	background-color: rgb(255, 128, 255);
+}
+
+/*指定ID的标签会生效*/
+#pwdxxx {
+		background-color: rgb(128, 255, 0);
+
+}
+
+
+
+.bgc_blue {
+	background-color: cadetblue;
+}
+
+label {
+	background-color: lightpink;
 }
