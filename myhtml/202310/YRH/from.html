@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>from</title>
+	<script>
+		function funNextPage() {
+			
+			var el = document.getElementById("id_user");
+			
+			var elpwd = document.getElementById("id_pwd");
+			
+			window.location = "./to.html?user="+el.value + "&pwd="+elpwd.value;
+		}
+
+	</script>
+</head>
+<body>
+	user <input id="id_user" type="text">
+	pwd<input id="id_pwd" type="text">
+	<br>
+	
+	<input type="button" onclick="funNextPage()" value="nextPage">
+	<br>
+	<br>
+
+	
+</body>
+</html>
