@@ -9,6 +9,8 @@ public class TestSet {
 
 	public static void main(String[] args) {
 		
+		// 所有的set都具有去重复功能 
+		
 		System.out.println("--------testHashSet--------");
 		testHashSet();
 		
