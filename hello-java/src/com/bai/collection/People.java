@@ -2,7 +2,7 @@ package com.bai.collection;
 
 import java.util.Date;
 
-public class People {
+public class People implements Comparable<People> {
 
 	private String name;
 	private Date birthday;
@@ -69,6 +69,15 @@ public class People {
 
 	public People() {
 		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+
+
+	@Override
+	public int compareTo(People o) {
+		
+		return this.height-o.height;
+		
 	}
 
 }

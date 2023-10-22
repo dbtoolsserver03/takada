@@ -2,20 +2,28 @@ package com.bai.collection;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
-import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
-public class ExetCollection {
+public class ExeMap {
 
 	public static void main(String[] args) {
-
-		List<People> lst = new ArrayList<People>();
+		
+		// 整数转字符串定长
+		int n=172;
+		System.out.println(String.format("aaa%05d %03d", n,1));
+		
+		
+		
+		
+		Map<String,People> map = new TreeMap<String,People>();
+		
+		
+		
 		People zhang3 = new People();
 		zhang3.setName("zhang3");
-		zhang3.setHeight(170);
+		zhang3.setHeight(178);
 		zhang3.setBirthday(getDate("2001/03/02","yyyy/MM/dd"));
 		
 		People li4 = new People();
@@ -26,24 +34,15 @@ public class ExetCollection {
 
 		People wang5 = new People();
 		wang5.setName("wang5");
-		wang5.setHeight(175);
+		wang5.setHeight(195);
 		wang5.setBirthday(getDate("1993/11/01","yyyy/MM/dd"));
 
-		lst.add(zhang3);
-		lst.add(li4);
-		lst.add(wang5);
 		
-		Collections.sort(
-				lst, 
-	            new Comparator<People>() {
-	                @Override
-	                public int compare(People obj1, People obj2) {
-	                    return obj1.getBirthday().compareTo(obj2.getBirthday());
-	                }
-	            }
-	        );
+		map.put(String.format("%03d", zhang3.getHeight()) , zhang3);
+		map.put(String.format("%03d", li4.getHeight()), li4);
+		map.put(String.format("%03d", wang5.getHeight()), wang5);
 		
-		for(People p : lst) {
+		for(People p : map.values()) {
 			System.out.println(p);
 		}
 	}
