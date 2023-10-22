@@ -14,7 +14,7 @@ public class TestList {
 		Integer oInt = Integer.MAX_VALUE;
 		Date date = null;
 		
-		// 数组在定义时，就已经把长度定死子，后期不可修改。
+		// 数组在定义时，就已经把长度定死，后期不可修改。
 		int[] a = {1,2,3};
 		for (int n : a) {
 			System.out.println(n);

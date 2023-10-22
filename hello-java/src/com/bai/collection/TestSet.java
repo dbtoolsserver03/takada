@@ -15,11 +15,14 @@ public class TestSet {
 		testHashSet();
 		
 		System.out.println("--------testLinkedHashSet--------");
-		//和LIST效果一样，多了一个去重复的功能 
+		// 和LIST效果一样，多了一个去重复的功能 
+		// 按照追加时的顺序进行存储
 		testLinkedHashSet();
 
 		System.out.println("--------testTreeSet--------");
+		
 		// 有排序功能的set
+		// 按照值的进行存储
 		testTreeSet();
 		
 	}
