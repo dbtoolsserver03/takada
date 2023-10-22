@@ -2,12 +2,17 @@ package com.bai.collection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
-public class TestCollection {
+public class TestList {
 
 	public static void main(String[] args) {
+		 
 		
+		// java.lang包以外的类都需要明确import
+		Integer oInt = Integer.MAX_VALUE;
+		Date date = null;
 		
 		// 数组在定义时，就已经把长度定死子，后期不可修改。
 		int[] a = {1,2,3};
@@ -33,6 +38,7 @@ public class TestCollection {
 		
 		lst.add(1, "xxxxxxxxxxxxxx");
 		
+		lst.add("aaa");
 		for (String str : lst) {
 			System.out.println(str);
 		}
