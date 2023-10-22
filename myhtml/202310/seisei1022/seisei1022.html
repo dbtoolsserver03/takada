@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>from</title>
+<script>
+	function funnextpage(){
+		var el=document.getelementbyid("id_user");
+		var elpwd=document.getelementbyid("id_pwd");
+		window.location="./seisei1022To.html?user="+"&pwd="+elpwd.value;
+	}
+</script>
+</head>
+<body>
+user<input id="id_user"type="text">
+pwd<input id="id_pwd"type="text">
+<br>
+<input type="button"onclick="funnextpage()"value="nextpage">
+<br>
+<br>
+tag a<a href="./seisei1022To.html">next page</a>
+</body>
+</html>
