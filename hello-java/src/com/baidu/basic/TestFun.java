@@ -21,10 +21,13 @@ public class TestFun {
 
 	}
 
+	// 重载
 	private static boolean isTwo(int num) {
 		return num%2==0;
 	}
-
+	private static boolean isTwo(String num) {
+		return false;
+	}
 	
 	private static void print(int sum) {
 		System.out.println(sum);
