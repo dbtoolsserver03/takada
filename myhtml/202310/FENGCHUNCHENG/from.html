@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>from</title>
+<script>
+	function funNextpage(){
+		var el = document.getElementById("id_user");
+		var elpassword =document.getElementById("id_password");
+		window.location="./to.html?user="+el.value+"&password="+elpassword.value;
+	}
+</script>
+</head>
+<body >
+  
+  user<input id="id_user" type="text">
+  password<input id="id_password" type="text">
+  <br>
+  <input type="button" onclick="funNextPage()" value="nextpage">
+  <br>
+  <br>
+  
+  tag a <a href="./to.html">next page</a>
+  
+</body>
+</html>
