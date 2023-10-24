@@ -1,0 +1,6 @@
+cd /usr/local/redis-stable
+cd src
+pwd
+ls
+./redis-server ../redis.conf
+ls
