@@ -1,26 +1,16 @@
-package com.bai.collection;
+package com.baidu.collection;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.Set;
+import java.util.TreeSet;
 
-public class ExeMap {
+public class ExeSet {
 
 	public static void main(String[] args) {
 		
-		// 整数转字符串定长
-		int n=172;
-		System.out.println(String.format("aaa%05d %03d", n,1));
-		
-		
-		
-		
-		Map<String,People> map = new TreeMap<String,People>();
-		
-		
-		
+		Set<People> set = new TreeSet<People>();
 		People zhang3 = new People();
 		zhang3.setName("zhang3");
 		zhang3.setHeight(178);
@@ -37,12 +27,11 @@ public class ExeMap {
 		wang5.setHeight(195);
 		wang5.setBirthday(getDate("1993/11/01","yyyy/MM/dd"));
 
+		set.add(zhang3);
+		set.add(li4);
+		set.add(wang5);
 		
-		map.put(String.format("%03d", zhang3.getHeight()) , zhang3);
-		map.put(String.format("%03d", li4.getHeight()), li4);
-		map.put(String.format("%03d", wang5.getHeight()), wang5);
-		
-		for(People p : map.values()) {
+		for(People p : set) {
 			System.out.println(p);
 		}
 	}

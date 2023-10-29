@@ -1,4 +1,4 @@
-package com.bai.collection;
+package com.baidu.collection;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;

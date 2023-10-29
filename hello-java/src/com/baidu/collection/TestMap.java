@@ -1,4 +1,4 @@
-package com.bai.collection;
+package com.baidu.collection;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -29,7 +29,7 @@ public class TestMap {
 		Map<String,String> map = new TreeMap<String,String>();
 		map.put("aaa", "111");
 		map.put("bbbb", "22");
-		map.put("ccc", "33333");
+		map.put("acc", "33333");
 		map.put("aaa", "44444");
 		for(Entry<String,String> entry : map.entrySet()) {
 			System.out.println(entry.getKey() + ":" + entry.getValue());
@@ -42,7 +42,7 @@ public class TestMap {
 		Map<String,String> map = new LinkedHashMap<String,String>();
 		map.put("aaa", "111");
 		map.put("bbbb", "22");
-		map.put("ccc", "33333");
+		map.put("accc", "33333");
 		
 		map.put("aaa", "44444");
 		for(Entry<String,String> entry : map.entrySet()) {

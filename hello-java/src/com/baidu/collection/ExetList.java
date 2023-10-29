@@ -1,19 +1,27 @@
-package com.bai.collection;
+package com.baidu.collection;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.List;
 
-public class ExeSet {
+public class ExetList {
 
 	public static void main(String[] args) {
+
+		String str1 = "aaa";
+		String str2 = "bbb";
 		
-		Set<People> set = new TreeSet<People>();
+		System.out.println(str1.compareTo(str2));
+		
+		
+		List<People> lst = new ArrayList<People>();
 		People zhang3 = new People();
 		zhang3.setName("zhang3");
-		zhang3.setHeight(178);
+		zhang3.setHeight(170);
 		zhang3.setBirthday(getDate("2001/03/02","yyyy/MM/dd"));
 		
 		People li4 = new People();
@@ -27,11 +35,22 @@ public class ExeSet {
 		wang5.setHeight(195);
 		wang5.setBirthday(getDate("1993/11/01","yyyy/MM/dd"));
 
-		set.add(zhang3);
-		set.add(li4);
-		set.add(wang5);
+		lst.add(zhang3);
+		lst.add(li4);
+		lst.add(wang5);
 		
-		for(People p : set) {
+		Collections.sort(
+				lst, 
+	            new Comparator<People>() {
+	                @Override
+	                public int compare(People obj1, People obj2) {
+	                    return obj1.getHeight()-obj2.getHeight();
+	                    // return obj1.getBirthday().compareTo(obj2.getBirthday());
+	                }
+	            }
+	        );
+		
+		for(People p : lst) {
 			System.out.println(p);
 		}
 	}
