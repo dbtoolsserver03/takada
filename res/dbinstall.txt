@@ -1,3 +1,5 @@
+
+
 cd C:\soft\mysql-8.1.0-winx64\bin
 
 >mysqld --initialize --user=mysql --console
@@ -5,3 +7,6 @@ cd C:\soft\mysql-8.1.0-winx64\bin
 >net start mysql
 >mysql -u root -p
 >alter user root@localhost identified by '123456';
+
+
+sc delete mysql,删除服务
