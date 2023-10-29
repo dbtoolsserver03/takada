@@ -20,7 +20,7 @@ CREATE TABLE `employee` (
   `birthday` datetime DEFAULT NULL COMMENT '员工生日',
   `photo` varchar(200) DEFAULT NULL COMMENT '头像路径',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Table structure for m_code
@@ -59,7 +59,7 @@ CREATE TABLE `uniqlo` (
   `update_time` datetime DEFAULT NULL COMMENT '更新日時',
   `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='优衣库';
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='优衣库';
 
 -- ----------------------------
 -- Table structure for uniqlo
@@ -81,7 +81,7 @@ CREATE TABLE `uniqlo` (
   `update_time` datetime DEFAULT NULL COMMENT '更新日時',
   `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='优衣库';
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='优衣库';
 
 -- ----------------------------
 -- Table structure for user
@@ -94,4 +94,4 @@ CREATE TABLE `user` (
   `password` varchar(40) DEFAULT NULL COMMENT '密码',
   `gender` tinyint unsigned DEFAULT NULL COMMENT '性别',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
