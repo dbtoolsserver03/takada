@@ -75,4 +75,34 @@ select * from employee where salary -100 > 0
 
 
 
+-- SQL多表查询 要用inner join(内连接) 或left join(外连接)
+--- 取员工的人名，工资，性别 
+
+-- 多表联合查询时，如果不加检索条件，会出现迪卡尔积现象
+select e.name,e.salary,u.gender
+from employee e, user u
+
+
+
+-- 写法可以，但不推荐
+select e.name,e.salary,u.gender
+from employee e, user u
+where e.name = u.username
+
+
+-- 多表联合查询 推荐的写法
+select e.name,e.salary,u.gender
+from employee e inner join user u on e.name = u.username
+
+
+--- 取员工的人名，工资，性别 (找不到相关记录性别为空)
+select e.name,e.salary,u.gender
+from employee e left join user u on e.name = u.username
+ 
+
+-- right join  不要用 
+select e.name,e.salary,u.gender
+from employee e right join user u on e.name = u.username
+ 
+
 
