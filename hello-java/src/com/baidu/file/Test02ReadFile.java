@@ -26,13 +26,13 @@ public class Test02ReadFile {
 		
 		try {
 
-			// 文件输出流 
+			// 文件输入流 
 			fInputStream = new FileInputStream(f);
 
-			// 写输出流
+			// 读输入流
 			inputStreamReader = new InputStreamReader(fInputStream, "utf-8");
 
-			// 缓冲区输出流
+			// 缓冲区输入流
 			reader = new BufferedReader(inputStreamReader);
 			
 			
