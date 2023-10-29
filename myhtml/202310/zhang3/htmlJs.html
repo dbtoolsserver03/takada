@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<!--1.浏览器从上到下解释HTML文件。-->
+	<!--2.document里面有该标签时，才可以取标签。-->
+
+	<!-- js 执行顺序-->
+
+	1.由上到下，执行所有不在方法体的JS语句。
+	2.显示BODY标签里面的内容到浏览器上。
+	3.执行onload事件里的方法。
+
+	<script>
+		alert(1);
+
+		var el = document.getElementById("id_user");
+		alert(el.value);
+
+		function init() {
+
+			alert("init:");
+			var el = document.getElementById("id_user");
+			alert(el.value);
+		}
+
+	</script>
+
+</head>
+
+
+<body onload="init()">
+	user<input id="id_user" type="text" value="tanaka">
+
+	<script>
+
+		alert(2);
+
+		var el = document.getElementById("id_user");
+		alert(el.value);
+	</script>
+</body>
+
+</html>
