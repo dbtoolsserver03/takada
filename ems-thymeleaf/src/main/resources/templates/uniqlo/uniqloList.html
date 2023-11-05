@@ -42,15 +42,32 @@
 					<table>
 						<tr>
 							<td>商品名称</td>
-							<td><input type="text" name="name"></td>
+							<td><input type="text" name="name" th:value="${namexxx}"></td>
 						</tr>
+						
+						<tr>
+							<td>类型</td>
+							<td>
+							 	<select name="type">
+									 <option value=""></option>
+									 <option value="1">上身</option>
+									 <option value="2">下身</option>
+									 <option value="3">脚</option>
+								 </select>
+							</td>
+						</tr>
+						
 						<tr>
 							<td>尺寸规格</td>
-							<td><input type="text" name="size"></td>
+							<td>
+							 	<label><input type="checkbox" name="size" value="S">S</label>
+								<label><input type="checkbox" name="size" value="M">M</label>
+								<label><input type="checkbox" name="size" value="L">L</label>
+							</td>
 						</tr>
 						<tr>
 							<td>单价</td>
-							<td><input type="text" name="priceBegin"> ～<input type="text" name="priceEnd"></td>
+							<td><input type="text" name="priceBegin" th:value="${priceBegin}"> ～<input type="text" name="priceEnd"></td>
 						</tr>
 					</table>
 
