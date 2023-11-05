@@ -41,8 +41,9 @@ public class UniqloController {
         // model里的数据，可以显示在画面上。
         model.addAttribute("namexxx", name);
         model.addAttribute("priceBegin", priceBegin);
+        
+        // date回显
         model.addAttribute("saleBegin",getDate(saleBegin,"yyyy-MM-dd") );
-
         
         // 检索数据库
         return "uniqlo/uniqlolist";

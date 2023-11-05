@@ -84,7 +84,7 @@
 						
 						<tr>
 							<td>生产日期</td>
-							<td><input type="date" name="saleBegin" th:value="${saleBegin}" th:field="${saleBegin}">
+							<td><input type="date" name="saleBegin"  th:value="${#dates.format(saleBegin, 'yyyy-MM-dd')}">
 							 ～<input type="date" name="saleEnd" value="1991-10-11"></td>
 						</tr>
 						
