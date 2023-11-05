@@ -13,6 +13,7 @@
 						<p>
 							2009/11/20 
 							<br />
+							<a th:href="@{/menu}">返回菜单</a>
 							<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
 							<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
 						</p>
@@ -32,38 +33,10 @@
 						欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
 							<span th:if="${session.user==null}" >游客</span>!
 					</h1>
-
-						<input type="button" class="button" value="员工管理" onclick="manageEmp()"/>
-						<script>
-							function manageEmp(){
-								location.href = '[[@{/manageEmp}]]';
-							}
-						</script>
-						<input type="button" class="button" value="优衣库管理" onclick="manageUniqlo()"/>
-						<script>
-							function manageUniqlo(){
-								location.href = '[[@{/manageUniqlo}]]';
-							}
-						</script>
-						<input type="button" class="button" value="简易上传下载" onclick="manageEasyUpload()"/>
-						<script>
-							function manageEasyUpload(){
-								location.href = '[[@{/easyUpload}]]';
-							}
-						</script>
-						<input type="button" class="button" value="企业级上传下载" onclick="manageUpload()"/>
-						<script>
-							function manageUpload(){
-								location.href = '[[@{/upload}]]';
-							}
-						</script>
-						
-						<input type="button" class="button" value="书管理" onclick="manageBooks()"/>
-						<script>
-							function manageBooks(){
-								location.href = '[[@{/manageBooks}]]';
-							}
-						</script>
+					  
+					  
+					  xxxxxxxxxxxx BOOKS
+					  
 				</div>
 			</div>
 			<div id="footer">
