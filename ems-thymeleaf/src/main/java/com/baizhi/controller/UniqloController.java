@@ -20,7 +20,7 @@ public class UniqloController {
     @RequestMapping("searchByCondition")
     public String lists(@RequestParam String name ,
     		@RequestParam String type,
-    		@RequestParam String size,
+    		@RequestParam(defaultValue = "") String size,
     		@RequestParam String priceBegin,
     		@RequestParam String priceEnd,
     		Model model) {
