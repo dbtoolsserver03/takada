@@ -27,7 +27,7 @@ select
 from
     employee 
 where
-    salary = (select min(salary) from employee)
+    salary = (select max(salary) from employee)
     
 -------------------------------------
 
@@ -37,12 +37,18 @@ select
   from employee t
 --------------------------------------
 
-select 1 as 'no'
+
+select 1
+
+select 1 as 'no' 
 
 -------------------------------
 select 1 as 'no'
 union all
 select 1 as 'no'
+union all
+select 1 as 'no'
+
 ---------------------------
 
 select distinct no from 
@@ -91,6 +97,7 @@ where e.name = u.username
 
 
 -- 多表联合查询 推荐的写法
+-- 表的内连接，直连接
 select e.name,e.salary,u.gender
 from employee e inner join user u on e.name = u.username
 
@@ -100,9 +107,29 @@ select e.name,e.salary,u.gender
 from employee e left join user u on e.name = u.username
  
 
--- right join  不要用 
+-- right join  不要用 要改成左连写法。
 select e.name,e.salary,u.gender
 from employee e right join user u on e.name = u.username
  
+
+--分级查询 
+SELECT COUNT(*) AS CNT  FROM USER
+
+
+--查询USER表中男女各多少名
+SELECT GENDER SEX , COUNT(*) 人数 FROM USER GROUP BY GENDER
+
+SELECT
+    case GENDER 
+        WHEN '1' THEN 'MAN' 
+        WHEN '0' THEN 'WOMAN' 
+        ELSE '未知' 
+        end  SEX
+    , COUNT(*) 人数 
+FROM
+    USER 
+GROUP BY
+    GENDER
+
 
 

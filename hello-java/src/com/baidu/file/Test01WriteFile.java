@@ -46,7 +46,11 @@ public class Test01WriteFile {
 			// 循环执行写操作
 			for (String str : strList) {
 				writer.write(str);
+				
+				// 回车换行
 				writer.newLine();
+				
+				// 清空缓冲区
 				writer.flush();
 
 				int a = 1;

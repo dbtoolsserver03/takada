@@ -28,7 +28,7 @@ public class TestSet {
 	}
 
 	private static void testTreeSet() {
-		// hashSet 乱序
+		// TreeSet 按照从小到大顺序
 		Set<String> set = new TreeSet<String>();
 		
 		set.add("aaa");
