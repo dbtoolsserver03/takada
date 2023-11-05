@@ -17,7 +17,8 @@ public class MyInterceptor implements HandlerInterceptor {
 		System.out.println("****  "+request.getRequestURI());
 
 		if (request.getRequestURI().endsWith("/login") 
-			|| request.getRequestURI().endsWith("/register")) {
+				|| request.getRequestURI().endsWith("/register")
+				|| request.getRequestURI().endsWith("/generateImageCode")) {
 			return true;
 		}
 		

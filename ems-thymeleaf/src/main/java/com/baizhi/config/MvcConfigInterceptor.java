@@ -31,7 +31,6 @@ public class MvcConfigInterceptor implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		// TODO 自動生成されたメソッド・スタブ
 		WebMvcConfigurer.super.addResourceHandlers(registry);
 		
 		registry.addResourceHandler("/**")
