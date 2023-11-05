@@ -40,6 +40,18 @@
 				<form th:action="@{/uniqlo/searchByCondition}" method="post">
 
 					<table>
+						
+						<tr>
+							<td>适用性别</td>
+							<td>
+								<label><input type="radio" name="sex" value="2">ALL</label>
+								<label><input type="radio" name="sex" value="1">男</label>
+								<label><input type="radio" name="sex" value="0">女</label>
+							 </td>
+						</tr>
+						
+						
+						
 						<tr>
 							<td>商品名称</td>
 							<td><input type="text" name="name" th:value="${namexxx}"></td>
@@ -69,6 +81,13 @@
 							<td>单价</td>
 							<td><input type="text" name="priceBegin" th:value="${priceBegin}"> ～<input type="text" name="priceEnd"></td>
 						</tr>
+						
+						<tr>
+							<td>生产日期</td>
+							<td><input type="date" name="saleBegin" th:value="${saleBegin}" th:field="${saleBegin}">
+							 ～<input type="date" name="saleEnd" value="1991-10-11"></td>
+						</tr>
+						
 					</table>
 
 
