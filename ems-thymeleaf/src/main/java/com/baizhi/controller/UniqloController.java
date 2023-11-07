@@ -24,7 +24,7 @@ public class UniqloController {
 			@RequestParam String type,
 			@RequestParam(defaultValue = "") String sex,
 			@RequestParam(defaultValue = "") String size,
-			@RequestParam(value = "size") List<String> sizeLst,
+			@RequestParam(value = "size", defaultValue = "") List<String> sizeLst,
 			@RequestParam String priceBegin,
 			@RequestParam String priceEnd,
 			@RequestParam String saleBegin,
