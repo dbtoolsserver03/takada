@@ -1,0 +1,33 @@
+要通过 Docker 运行 MySQL，并将 MySQL 存储的数据保存到宿主机上，你可以使用 Docker 的数据卷（volume）功能。以下是实现的步骤：
+
+    创建一个数据卷：
+    运行以下命令以创建一个数据卷，用于将 MySQL 数据保存到宿主机上：
+
+    sudo docker volume create mysql_data
+
+    运行 MySQL 容器并挂载数据卷：
+    运行以下命令以创建并运行 MySQL 容器，并将数据卷挂载到容器内的 /var/lib/mysql 目录：
+
+    sudo docker run -d -p 3306:3306 --name mysql-container -e MYSQL_ROOT_PASSWORD=<your_password> -v mysql_data:/var/lib/mysql mysql
+	例：sudo docker run -d -p 3306:3306 --name mysql-container -e MYSQL_ROOT_PASSWORD=123456 -v mysql_data:/var/lib/mysql mysql
+    上述命令中的 <your_password> 应替换为你想要设置的 MySQL root 用户的密码。
+
+    -v mysql_data:/var/lib/mysql 参数将之前创建的数据卷 mysql_data 挂载到容器内的 /var/lib/mysql 目录，从而将 MySQL 数据保存到宿主机上。
+
+    验证 MySQL 容器是否正在运行：
+    运行以下命令以查看正在运行的容器列表：
+
+    sudo docker ps
+
+    如果你看到名为 mysql-container 的容器正在运行，则说明 MySQL 容器已成功启动。
+
+    连接到 MySQL 容器：
+    你可以使用任何 MySQL 客户端工具连接到 MySQL 容器，使用以下信息进行连接：
+        主机：localhost
+        端口：3306
+        用户名：root
+        密码：你在步骤 2 中设置的密码
+
+    如果你希望从外部主机连接到 MySQL 容器，请使用容器运行时所在的主机 IP 地址替代 localhost。
+
+现在，你已经成功通过 Docker 运行了 MySQL，并将 MySQL 数据保存到宿主机上的数据卷中。这样可以确保即使容器被删除或重新创建，数据仍然可以保留在宿主机上。
