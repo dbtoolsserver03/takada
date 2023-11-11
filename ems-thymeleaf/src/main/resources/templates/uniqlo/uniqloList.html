@@ -5,6 +5,84 @@
 	<title>emplist</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	<script th:src="@{/js/plug-in/jquery-3.7.1.min.js}"></script>
+	
+	
+<script th:inline="javascript">
+
+
+	$(function () {
+		var masterMapSex = /*[[${masterMapSex}]]*/ '';
+		console.log(masterMapSex);
+		// 在这里可以使用 JavaScript 中的 data 变量
+
+	});
+
+</script>
+
+	<script>
+		$(function () {
+		  // 全选复选框的事件处理程序
+		  $("#id_check_all").change(function() {
+		    $(".checkbox").prop("checked", $(this).prop("checked"));
+		  });
+		  
+		  // 其他复选框的事件处理程序
+		  $(".checkbox").change(function() {
+		    var allChecked = $(".checkbox:checked").length === $(".checkbox").length;
+		    $("#id_check_all").prop("checked", allChecked);
+		  });
+
+			$("#id_update_all").click(function () {
+				$('#formlist').attr('action', "saveList");
+				$('#formlist').submit();
+			});
+		});
+
+		
+		function clickTd(idStr,index) {
+			
+			$("#id_v_"+idStr + "_"+index).css('display', 'none');
+			$("#id_e_"+idStr + "_"+index).css('display', 'block');
+		}
+			function changeTd(idStr, index, obj) {
+
+
+				var elView = $("#id_v_" + idStr + "_" + index);
+				var elEdit = $("#id_e_" + idStr + "_" + index);
+				var elHiden = $("#id_h_" + idStr + "_" + index);
+				var elTd = $("#id_td_" + idStr + "_" + index)
+				elView.css('display', 'block');
+				elEdit.css('display', 'none');
+
+				var tagName = elEdit.prop('tagName').toLowerCase();
+
+				if (tagName === 'select') {
+					var selectedOption = elEdit.find('option:selected');
+					debugger;
+					var displayValue = selectedOption.attr("mval");
+					elView.text(displayValue);
+					
+					if(elView.attr("oldVal") === selectedOption.val()) {
+						elTd.css("background-color","");
+					} else {
+						elTd.css("background-color","pink");
+					}
+
+				} else {
+					elView.text(elEdit.val());
+					if (elView.attr("oldVal") === elView.text()) {
+						elTd.css("background-color", "");
+					} else {
+						elTd.css("background-color", "pink");
+					}
+				}
+
+				elHiden.val(elEdit.val());
+
+		}
+		
+	</script>
 </head>
 
 <body>
@@ -37,71 +115,72 @@
 				</h1>
 
 
-				<form th:action="@{/uniqlo/searchByCondition}" method="post">
+				<form th:action="@{/uniqlo/searchList}" method="post">
 
 					<table>
 						<tr>
 							<td>适用性别</td>
 							<td>
-								<label><input type="radio" name="sex" value="2" th:checked="(${sex} == 2)" >ALL</label>
-								<label><input type="radio" name="sex" value="1" th:checked="(${sex} == 1)">男</label>
-								<label><input type="radio" name="sex" value="0" th:checked="(${sex} == 0)">女</label>
-							 </td>
+								<span th:each="entry : ${masterMapSex}">  
+<!--									th:checked="|{#maps.containsKey(masterMapSex,${entry.key})}|"-->
+								    <label> <input type="radio" th:value="${entry.key}" th:text="${entry.value.mDisplay2}" name="uniqlo.sex" th:checked="(${vo.uniqlo.sex} == ${entry.value.mCode})" /></label>
+								</span>
+							 </td>							
 						</tr>
-						
-						
-						
 						<tr>
 							<td>商品名称</td>
-							<td><input type="text" name="name" th:value="${namexxx}"></td>
+							<td><input type="text" name="uniqlo.name" th:value="${vo.uniqlo.name}"></td>
 						</tr>
-												
 
 						<tr>
 							<td>类型</td>
 							<td>
-							 	<select name="type">
-									 <option value=""></option>
-									 <option value="1" th:selected="(${type} == '1')" >上身</option>
-									 <option value="2" th:selected="(${type} == '2')">下身</option>
-									 <option value="3" th:selected="(${type} == '3')">脚</option>
-								 </select>
+								<select name="uniqlo.type">
+								    <option th:each="entry : ${masterMapType}" th:value="${entry.key}"  th:text="${entry.value.mDisplay2}"  th:selected="(${vo.uniqlo.type} == ${entry.value.mCode})"></option>
+								</select>
+								
 							</td>
 						</tr>
 						
 						<tr>
 							<td>尺寸规格</td>
 							<td>
-								<label><input type="checkbox" name="size" value="S" th:checked="${sizeLst!=null && #lists.contains(sizeLst, 'S')}">S</label>
-								<label><input type="checkbox" name="size" value="M" th:checked="${sizeLst!=null && #lists.contains(sizeLst, 'M')}">M</label>
-								<label><input type="checkbox" name="size" value="L" th:checked="${sizeLst!=null && #lists.contains(sizeLst, 'L')}">L</label>
+								
+								<span th:each="entry : ${masterMapSize}">
+								    <label><input type="checkbox" th:value="${entry.key}" th:text="${entry.value.mDisplay2}" th:checked="${vo.sizeLst!=null && #lists.contains(vo.sizeLst, entry.value.mCode)}"></label>
+								</span>
 							</td>
 						</tr>
 						<tr>
 							<td>单价</td>
-							<td><input type="text" name="priceBegin" th:value="${priceBegin}"> 
-							～<input type="text" name="priceEnd" th:value="${priceEnd}"></td>
+							<td><input type="text" name="priceBegin" th:value="${vo.priceBegin}"> 
+							～<input type="text" name="priceEnd" th:value="${vo.priceEnd}"></td>
 						</tr>
 						
 						<tr>
-							<td>生产日期</td>
-							<td><input type="date" name="saleBegin" th:value="${saleBegin}">
-							 ～<input type="date" name="saleEnd" th:value="${saleEnd}"></td>
+							<td>销售日期</td>
+							<td><input type="date" name="uniqlo.saleBegin"  th:value="${#dates.format(vo.uniqlo.saleBegin,'yyyy-MM-dd')}">
+							 ～<input type="date" name="uniqlo.saleEnd" th:value="${#dates.format(vo.uniqlo.saleEnd,'yyyy-MM-dd')}"></td>
 						</tr>
-						
 					</table>
-
-
 					<div align="right">
 						<input type="submit" value="検索" >
 					</div>
-
-
 				</form>
 
+	<hr>
+	
+	<form id="formlist" method="post">
 
+				<div align="right">
+					<input id="id_update_all" type="button" value="一括更新"> <input id="id_delete_all" type="button" value="一括删除" > <input  id="id_btn_add" type="button" value="追加" >
+				</div>
 				<table class="table">
 					<tr class="table_header">
+						<td style="width: 2%;">
+							<input id="id_check_all" type="checkbox"> 
+						</td>
+
 						<td>
 							编号
 						</td>
@@ -109,10 +188,10 @@
 							商品名称
 						</td>
 						<td>
-							上身/下身/脚
+							类型
 						</td>
 						<td>
-							尺寸规格
+							尺寸
 						</td>
 						<td>
 							适用性别
@@ -120,31 +199,72 @@
 						<td>
 							商品照片
 						</td>
+						
+						<td>
+							操作
+						</td>
 					</tr>
-					<tr th:each="uniqlo,state:${uniqloList}" th:class="${state.odd?'row1':'row2'}">
+					<tr th:each="uniqlo,state:${vo.uniqloLst}" th:class="${state.odd?'row1':'row2'}">
+						
 						<td>
-							<span th:text="${uniqlo.id}"></span>
+							<input type="checkbox" th:value="${uniqlo.id}" th:name="|uniqloLst[${state.index}].id|" class="checkbox"/>
 						</td>
 						<td>
-							<span th:text="${uniqlo.name}"></span>
+							<span th:text="${state.count}"></span>
 						</td>
-						<td>
-							<span th:text="${uniqlo.type}"></span>
+
+						<td th:id="'id_td_name_'+${state.index}" th:onclick="|clickTd('name',${state.index})|">
+							<span  th:text="${uniqlo.name}" th:attr="oldVal=${uniqlo.name}" th:id="'id_v_name_'+${state.index}"></span>
+							<input th:id="'id_e_name_'+${state.index}" type="text" th:value="${uniqlo.name}" hidden  th:onblur="|changeTd('name',${state.index},this)|"/>
+							<input th:id="'id_h_name_'+${state.index}" type="hidden" th:value="${uniqlo.name}" th:name="|uniqloLst[${state.index}].name|"/>
+							
 						</td>
-						<td>
-							<span th:text="${uniqlo.size}"></span>
+						<td th:id="'id_td_type_'+${state.index}" th:onclick="|clickTd('type',${state.index})|">
+							<span th:text="${masterMapType[uniqlo.type].mValue}" th:attr="oldVal=${uniqlo.type}"  th:id="'id_v_type_'+${state.index}" ></span>
+							
+							
+							  <span th:each="entry : ${masterMapType}" th:value="${entry.key}" th:text="|@${entry.value.mValue}|"></span>
+							
+							
+							
+								<select th:id="'id_e_type_'+${state.index}"  hidden  th:onblur="|changeTd('type',${state.index},this)|"/>
+								    <option th:each="entry : ${masterMapType}" th:value="${entry.key}" th:text="${entry.value.mDisplay1}" th:attr="mval=${entry.value.mValue}" th:selected="(${uniqlo.type} == ${entry.key})"></option>
+								</select>
+							
+ 							<input th:id="'id_h_type_'+${state.index}" type="hidden" th:value="${uniqlo.type}" th:name="|uniqloLst[${state.index}].type|"/>
+
 						</td>
-						<td>
-							<span th:text="${uniqlo.sex}"></span>
+						<td th:id="'id_td_size_'+${state.index}" th:onclick="|clickTd('size',${state.index})|">
+							<span th:text="${masterMapSize[uniqlo.size].mValue}" th:attr="oldVal=${uniqlo.size}" th:id="'id_v_size_'+${state.index}" ></span>
+							
+								<select th:id="'id_e_size_'+${state.index}"  hidden  th:onblur="|changeTd('size',${state.index},this)|"/>
+								    <option th:each="entry : ${masterMapSize}" th:value="${entry.key}" th:text="${entry.value.mDisplay1}"  th:attr="mval=${entry.value.mValue}" th:selected="(${uniqlo.size} == ${entry.key})"></option>
+								</select>
+								
+ 							<input th:id="'id_h_size_'+${state.index}" type="hidden" th:value="${uniqlo.size}" th:name="|uniqloLst[${state.index}].size|"/>
+
+						</td>
+						<td th:id="'id_td_sex_'+${state.index}" th:onclick="|clickTd('sex',${state.index})|">
+							
+							<span th:text="${masterMapSex[uniqlo.sex].mValue}" th:attr="oldVal=${uniqlo.sex}" th:id="'id_v_sex_'+${state.index}" ></span>
+							
+								<select th:id="'id_e_sex_'+${state.index}"  hidden  th:onblur="|changeTd('sex',${state.index},this)|"/>
+								    <option th:each="entry : ${masterMapSex}" th:value="${entry.key}" th:text="${entry.value.mDisplay1}"  th:attr="mval=${entry.value.mValue}" th:selected="(${uniqlo.sex} == ${entry.key})"></option>
+								</select>
+ 							<input th:id="'id_h_sex_'+${state.index}" type="hidden" th:value="${uniqlo.sex}" th:name="|uniqloLst[${state.index}].sex|"/>
+
 						</td>
 						<td>
 							<img th:src="@{/}+${uniqlo.photo}" width="60">
+						</td>
+						<td>
+							<input type="button" value="详细"><input type="button" value="修改"><input type="button" value="删除"><input type="button" value="复写">
 						</td>
 					</tr>
 
 				</table>
 
-
+	</form>
 
 
 				xxxxxxxxxxxxxxxxxxx uniqlo

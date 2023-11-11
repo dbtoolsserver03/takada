@@ -8,8 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
 import com.baizhi.dao.EmployeeDao;
+import com.baizhi.dao.original.MCodeMapper;
 import com.baizhi.dao.original.UniqloMapper;
 import com.baizhi.entity.Employee;
+import com.baizhi.entity.original.MCode;
+import com.baizhi.entity.original.MCodeExample;
 import com.baizhi.entity.original.Uniqlo;
 import com.baizhi.service.EmployeeService;
 
@@ -27,6 +30,9 @@ class EmsThymeleafApplicationTests {
 
 	@Autowired
 	private UniqloMapper uniqloMapper;
+	
+	@Autowired
+	private MCodeMapper mCodeMapper;
 	
 	@Test
 	void contextLoads() {
@@ -55,5 +61,18 @@ class EmsThymeleafApplicationTests {
 		Uniqlo uniqlo = uniqloMapper.selectByPrimaryKey(1001);
 		System.out.println(uniqlo);
 
+		
+		
+	
+		
+		MCodeExample cond = new MCodeExample();
+		MCodeExample.Criteria criteria = cond.createCriteria();
+		criteria.andDeleteFlgEqualTo("0");
+    	
+    	List<MCode> mCodeLst = mCodeMapper.selectByExample(cond);
+    	
+    	System.out.println(mCodeLst);
+    	
+    	
 	}
 }
