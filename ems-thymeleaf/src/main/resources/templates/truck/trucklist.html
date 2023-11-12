@@ -43,20 +43,20 @@
 						
 						<tr>
 							<td>车名称</td>
-							<td><input type="text" name="myTruck.carName" th:value="${vo.myTruck.carName}"></td>
+							<td><input type="text" name="myTruck.carName" th:value="${voxxx.myTruck.carName}"></td>
 						</tr>
 												
 						<tr>
 							<td>价格范围</td>
-							<td><input type="text" name="priceBegin" th:value="${vo.priceBegin}">
-								～<input type="text" name="priceEnd" th:value="${vo.priceEnd}">
+							<td><input type="text" name="priceBegin" th:value="${voxxx.priceBegin}">
+								～<input type="text" name="priceEnd" th:value="${voxxx.priceEnd}">
 							</td>
 						</tr>
 								
 						<tr>
 							<td>生产日期</td>
-							<td><input type="date" name="productDayBegin" th:value="${vo.productDayBegin}">
-								～<input type="date" name="productDayEnd" th:value="${vo.productDayEnd}">
+							<td><input type="date" name="productDayBegin" th:value="${voxxx.productDayBegin}">
+								～<input type="date" name="productDayEnd" th:value="${voxxx.productDayEnd}">
 							</td>
 						</tr>
 						
@@ -89,7 +89,7 @@
 							商品照片
 						</td>
 					</tr>
-					<tr th:each="obj,state:${vo.lst}" th:class="${state.odd?'row1':'row2'}">
+					<tr th:each="obj,state:${voxxx.lst}" th:class="${state.odd?'row1':'row2'}">
 						<td>
 							<span th:text="${obj.id}"></span>
 						</td>

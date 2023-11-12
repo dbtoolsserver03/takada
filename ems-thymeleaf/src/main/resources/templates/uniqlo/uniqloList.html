@@ -40,53 +40,53 @@
 				<form th:action="@{/uniqlo/searchByCondition}" method="post">
 
 					<table>
-						<tr>
-							<td>适用性别</td>
-							<td>
-								<label><input type="radio" name="sex" value="2" th:checked="(${sex} == 2)" >ALL</label>
-								<label><input type="radio" name="sex" value="1" th:checked="(${sex} == 1)">男</label>
-								<label><input type="radio" name="sex" value="0" th:checked="(${sex} == 0)">女</label>
-							 </td>
-						</tr>
+<!--						<tr>-->
+<!--							<td>适用性别</td>-->
+<!--							<td>-->
+<!--								<label><input type="radio" name="sex" value="2" th:checked="(${sex} == 2)" >ALL</label>-->
+<!--								<label><input type="radio" name="sex" value="1" th:checked="(${sex} == 1)">男</label>-->
+<!--								<label><input type="radio" name="sex" value="0" th:checked="(${sex} == 0)">女</label>-->
+<!--							 </td>-->
+<!--						</tr>-->
 						
 						
 						
 						<tr>
 							<td>商品名称</td>
-							<td><input type="text" name="name" th:value="${namexxx}"></td>
+							<td><input type="text" name="uniqlo.name" th:value="${vo.uniqlo.name}"></td>
 						</tr>
 												
 
-						<tr>
-							<td>类型</td>
-							<td>
-							 	<select name="type">
-									 <option value=""></option>
-									 <option value="1" th:selected="(${type} == '1')" >上身</option>
-									 <option value="2" th:selected="(${type} == '2')">下身</option>
-									 <option value="3" th:selected="(${type} == '3')">脚</option>
-								 </select>
-							</td>
-						</tr>
+<!--						<tr>-->
+<!--							<td>类型</td>-->
+<!--							<td>-->
+<!--							 	<select name="type">-->
+<!--									 <option value=""></option>-->
+<!--									 <option value="1" th:selected="(${type} == '1')" >上身</option>-->
+<!--									 <option value="2" th:selected="(${type} == '2')">下身</option>-->
+<!--									 <option value="3" th:selected="(${type} == '3')">脚</option>-->
+<!--								 </select>-->
+<!--							</td>-->
+<!--						</tr>-->
 						
-						<tr>
-							<td>尺寸规格</td>
-							<td>
-								<label><input type="checkbox" name="size" value="S" th:checked="${sizeLst!=null && #lists.contains(sizeLst, 'S')}">S</label>
-								<label><input type="checkbox" name="size" value="M" th:checked="${sizeLst!=null && #lists.contains(sizeLst, 'M')}">M</label>
-								<label><input type="checkbox" name="size" value="L" th:checked="${sizeLst!=null && #lists.contains(sizeLst, 'L')}">L</label>
-							</td>
-						</tr>
+<!--						<tr>-->
+<!--							<td>尺寸规格</td>-->
+<!--							<td>-->
+<!--								<label><input type="checkbox" name="size" value="S" th:checked="${sizeLst!=null && #lists.contains(sizeLst, 'S')}">S</label>-->
+<!--								<label><input type="checkbox" name="size" value="M" th:checked="${sizeLst!=null && #lists.contains(sizeLst, 'M')}">M</label>-->
+<!--								<label><input type="checkbox" name="size" value="L" th:checked="${sizeLst!=null && #lists.contains(sizeLst, 'L')}">L</label>-->
+<!--							</td>-->
+<!--						</tr>-->
 						<tr>
 							<td>单价</td>
-							<td><input type="text" name="priceBegin" th:value="${priceBegin}"> 
-							～<input type="text" name="priceEnd" th:value="${priceEnd}"></td>
+							<td><input type="text" name="priceBegin" th:value="${vo.priceBegin}"> 
+							～<input type="text" name="priceEnd" th:value="${vo.priceEnd}"></td>
 						</tr>
 						
 						<tr>
 							<td>生产日期</td>
-							<td><input type="date" name="saleBegin" th:value="${saleBegin}">
-							 ～<input type="date" name="saleEnd" th:value="${saleEnd}"></td>
+							<td><input type="date" name="saleBegin" th:value="${vo.saleBegin}">
+							 ～<input type="date" name="saleEnd" th:value="${vo.saleEnd}"></td>
 						</tr>
 						
 					</table>
@@ -121,24 +121,24 @@
 							商品照片
 						</td>
 					</tr>
-					<tr th:each="uniqlo,state:${uniqloList}" th:class="${state.odd?'row1':'row2'}">
+					<tr th:each="obj,state:${vo.lst}" th:class="${state.odd?'row1':'row2'}">
 						<td>
-							<span th:text="${uniqlo.id}"></span>
+							<span th:text="${obj.id}"></span>
 						</td>
 						<td>
-							<span th:text="${uniqlo.name}"></span>
+							<span th:text="${obj.name}"></span>
 						</td>
 						<td>
-							<span th:text="${uniqlo.type}"></span>
+							<span th:text="${obj.type}"></span>
 						</td>
 						<td>
-							<span th:text="${uniqlo.size}"></span>
+							<span th:text="${obj.size}"></span>
 						</td>
 						<td>
-							<span th:text="${uniqlo.sex}"></span>
+							<span th:text="${obj.sex}"></span>
 						</td>
 						<td>
-							<img th:src="@{/}+${uniqlo.photo}" width="60">
+							<img th:src="@{/}+${obj.photo}" width="60">
 						</td>
 					</tr>
 
