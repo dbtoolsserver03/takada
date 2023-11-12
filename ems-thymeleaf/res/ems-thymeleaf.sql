@@ -34,26 +34,26 @@ INSERT INTO `employee` VALUES (2, 'aaa', 111.20, '1991-01-01 00:00:00', '2023101
 -- ----------------------------
 DROP TABLE IF EXISTS `m_code`;
 CREATE TABLE `m_code`  (
-  `m_key` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `m_code` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `m_value` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `m_order` int NULL DEFAULT NULL,
-  `m_display1` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `m_display2` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `m_display3` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `m_display4` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `m_display5` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `m_display6` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `m_display7` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `m_display8` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `m_display9` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `delete_flg` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `create_time` datetime NULL DEFAULT NULL,
-  `create_user_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `update_time` datetime NULL DEFAULT NULL,
-  `update_user_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `m_key` varchar(20)  NOT NULL COMMENT 'キー',
+  `m_code` char(2)  NOT NULL COMMENT 'コード',
+  `m_value` varchar(50)  NULL DEFAULT NULL COMMENT '内容',
+  `m_order` int NULL DEFAULT NULL COMMENT '並び順',
+  `m_display1` varchar(60)  NULL DEFAULT NULL COMMENT '表示１',
+  `m_display2` varchar(60)  NULL DEFAULT NULL COMMENT '表示２',
+  `m_display3` varchar(60)  NULL DEFAULT NULL COMMENT '表示３',
+  `m_display4` varchar(60)  NULL DEFAULT NULL COMMENT '表示４',
+  `m_display5` varchar(60)  NULL DEFAULT NULL COMMENT '表示５',
+  `m_display6` varchar(60)  NULL DEFAULT NULL COMMENT '表示６',
+  `m_display7` varchar(60)  NULL DEFAULT NULL COMMENT '表示７',
+  `m_display8` varchar(60)  NULL DEFAULT NULL COMMENT '表示８',
+  `m_display9` varchar(60)  NULL DEFAULT NULL COMMENT '表示９',
+  `delete_flg` char(1) NOT NULL COMMENT '削除フラグ',
+  `create_time` datetime DEFAULT NULL COMMENT '登録日時',
+  `create_user_id` varchar(20) DEFAULT NULL COMMENT '登録者',
+  `update_time` datetime DEFAULT NULL COMMENT '更新日時',
+  `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
   PRIMARY KEY (`m_key`, `m_code`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = 'm_code' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = 'マスタコード';
 
 -- ----------------------------
 -- Records of m_code
