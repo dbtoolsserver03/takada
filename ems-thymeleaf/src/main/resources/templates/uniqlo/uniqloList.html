@@ -118,6 +118,9 @@
 							适用性别
 						</td>
 						<td>
+							价格
+						</td>
+						<td>
 							商品照片
 						</td>
 					</tr>
@@ -136,6 +139,9 @@
 						</td>
 						<td>
 							<span th:text="${obj.sex}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.price}"></span>
 						</td>
 						<td>
 							<img th:src="@{/}+${obj.photo}" width="60">
