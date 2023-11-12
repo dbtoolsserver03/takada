@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.baizhi.entity.MytruckVo;
 import com.baizhi.entity.original.Mytruck;
+import com.baizhi.entity.vo.MytruckVo;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,7 +30,7 @@ public class MyTruckController {
 		MytruckVo mytruckVo = new MytruckVo();
 		mytruckVo.setMyTruck(new Mytruck());
 		
-		model.addAttribute("vo", mytruckVo);
+		model.addAttribute("voxxx", mytruckVo);
 		
 		return "truck/trucklist"; 
 	}
@@ -55,7 +55,7 @@ public class MyTruckController {
 
 		vo.setLst(lst);
 		
-		model.addAttribute("vo", vo);
+		model.addAttribute("voxxx", vo);
 		
 		// 检索数据库
 		return "truck/trucklist";
