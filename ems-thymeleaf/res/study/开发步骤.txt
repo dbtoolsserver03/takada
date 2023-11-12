@@ -1,0 +1,30 @@
+1. 在菜单画面里增加按钮，并实现点按钮后，画面的跳转
+	1.1 在/ems-thymeleaf/src/main/resources/templates/ 里增加自己的HTML画面
+	    例： xxx/xxxlist.html
+	1.2 在MENU的HTML里，增加按钮，和点按钮后所对应的画面跳转请求。
+		
+	1.3 因为仅是画面跳转，可以在JAVA里增加请求映射  
+		例： /ems-thymeleaf/src/main/java/com/baizhi/config/MvcConfigEmp.java
+		
+2. 实现检索功能
+	2.1 在HTML文件里追加FORM表单 使在表单里的项目可以提交到JAVA后台
+		例：/ems-thymeleaf/src/main/resources/templates/uniqlo/uniqloList.html
+
+	2.2 增加CONTROL类文件 ，响应FORM表单的请求，接收表单提交过来的参数。实现将数据从画面传到JAVA后台
+		例：/ems-thymeleaf/src/main/java/com/baizhi/controller/EmployeeController.java
+		
+	2.3 实现回显，将数据从JAVA后台传到画面 （利用MODEL参数）
+
+3.
+	为了自动生成JAVA类和操作数据库的相关代码，要做下面两步
+	
+	3.1修改配置文件，增加表名
+	/ems-thymeleaf/res/generatorConfigMysqlLombok.xml
+	
+	3.2执行JAVA代码 
+	/ems-thymeleaf/src/test/java/org/mybatis/generator/plugins/LombokMyCommentGenerator.java
+
+
+4. 实现追加功能
+5. 实现更新功能
+6. 实现删除功能

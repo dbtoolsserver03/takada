@@ -21,11 +21,14 @@ public class TestFun {
 
 	}
 
-	// 重载
+	// 重载(方法法名相同，参数类型或个数或顺序不同)
 	private static boolean isTwo(int num) {
 		return num%2==0;
 	}
 	private static boolean isTwo(String num) {
+		return false;
+	}
+	private static boolean isTwo(String num,int a) {
 		return false;
 	}
 	

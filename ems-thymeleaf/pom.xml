@@ -112,6 +112,13 @@
 			<artifactId>mybatis-generator-core</artifactId>
 			<version>1.4.2</version>
 		</dependency>
+		
+		<!-- Hutool是一个小而全的Java工具类库，通过静态方法封装 -->
+		<dependency>
+		    <groupId>cn.hutool</groupId>
+		    <artifactId>hutool-all</artifactId>
+		    <version>5.8.22</version>
+		</dependency>
 
 	</dependencies>
 

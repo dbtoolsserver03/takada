@@ -42,6 +42,9 @@ public class TestDuoTai {
 			
 		}
 		
+		long num = 1000;
+		int numA = (int)num;
+		
 		
 	}
 }

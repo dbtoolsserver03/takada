@@ -6,7 +6,7 @@ public class Texe {
 
 		runLoop();
 
-		//runIfElse();
+		runIfElse();
 
 	}
 
@@ -46,7 +46,12 @@ public class Texe {
 
 		// i++;
 		int num = 0;
+		// 先执行num + 1， 后执行打印
 		System.out.println(++num);
+		
+		// 先执行打印， 后执行num + 1
+		System.out.println(num++);
+
 		System.out.println(num);
 
 		System.out.println("短路 test 或");

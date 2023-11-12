@@ -15,7 +15,7 @@ public class MvcConfigUniqlo  implements WebMvcConfigurer {
         //viewController 请求路径    viewName: 跳转视图
     	
     	// 跳转到优衣库管理画面
-    	registry.addViewController("/manageUniqlo").setViewName("redirect:/uniqlo/uniqlolists");
+    	registry.addViewController("/manageUniqlo").setViewName("/uniqlo/uniqloList");
     	
     }
 }

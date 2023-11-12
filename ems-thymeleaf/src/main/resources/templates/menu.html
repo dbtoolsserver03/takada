@@ -42,8 +42,7 @@
 						<input type="button" class="button" value="优衣库管理" onclick="manageUniqlo()"/>
 						<script>
 							function manageUniqlo(){
-								alert("TODO");
-								//location.href = '[[@{/manageUniqlo}]]';
+								location.href = '[[@{/manageUniqlo}]]';
 							}
 						</script>
 						<input type="button" class="button" value="简易上传下载" onclick="manageEasyUpload()"/>
@@ -56,6 +55,22 @@
 						<script>
 							function manageUpload(){
 								location.href = '[[@{/upload}]]';
+							}
+						</script>
+						
+						<input type="button" class="button" value="书管理" onclick="manageBooks()"/>
+						</script>
+						
+						<input type="button" class="button" value="图书管理" onclick="manageMybooks()"/>
+						<script>
+							function manageMybooks(){
+								location.href = '[[@{/manageMyBooks}]]';
+							}
+						</script>
+						<input type="button" class="button" value="卡车管理" onclick="manageMyTrucks()"/>
+						<script>
+							function manageMyTrucks(){
+								location.href = '[[@{/manageMyTrucks}]]';
 							}
 						</script>
 				</div>

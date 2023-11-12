@@ -1,37 +1,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<title>login</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 
-	</head>
+<head>
+	<title>login</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 
-	<body>
-		<div id="wrap">
-			<div id="top_content">
-					<div id="header">
-						<div id="rightheader">
-						<p>
-							2009/11/20 
-							<br />
-							<a th:href="@{/login}">点我登录</a>
-						</p>
-						</div>
-						<div id="topheader">
-							<h1 id="title">
-								<a href="#">main</a>
-							</h1>
-						</div>
-						<div id="navigation">
-						</div>
-					</div>
-				<div id="content">
-					<p id="whereami">
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+						<a th:href="@{/menu}">返回菜单</a>
+						<a th:href="@{/login}">点我登录</a>
 					</p>
-					
-					
-					
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+
+
+
 				<ul>
 					<li>◾️path：<div th:text="${path}"></div>
 					</li>
@@ -48,16 +51,17 @@
 					<li>◾trace：<div th:text="${trace}"></div>
 					</li>
 				</ul>
-					
-					
-					
-				</div>
-			</div>
-			<div id="footer">
-				<div id="footer_bg">
-					ABC@163.com
-				</div>
+
+
+
 			</div>
 		</div>
-	</body>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@163.com
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>

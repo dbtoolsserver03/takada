@@ -3,6 +3,7 @@ package com.baizhi.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.baizhi.aop.interceptors.MyInterceptor;
@@ -28,16 +29,15 @@ public class MvcConfigInterceptor implements WebMvcConfigurer {
 
 	}
 
-//	@Override
-//	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//		// TODO 自動生成されたメソッド・スタブ
-//		WebMvcConfigurer.super.addResourceHandlers(registry);
-//		
-//		registry.addResourceHandler("/**")
-//		.addResourceLocations("classpath:/static/")
-//		.addResourceLocations("classpath:/templates/")
-//		.addResourceLocations("file:"+upload)
-//		;
-//	}
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		WebMvcConfigurer.super.addResourceHandlers(registry);
+		
+		registry.addResourceHandler("/**")
+		.addResourceLocations("classpath:/static/")
+		.addResourceLocations("classpath:/templates/")
+		.addResourceLocations("file:"+upload)
+		;
+	}
 
 }
