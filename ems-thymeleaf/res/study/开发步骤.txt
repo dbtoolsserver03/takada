@@ -14,7 +14,17 @@
 		例：/ems-thymeleaf/src/main/java/com/baizhi/controller/EmployeeController.java
 		
 	2.3 实现回显，将数据从JAVA后台传到画面 （利用MODEL参数）
-		
-3. 实现追加功能
-4. 实现更新功能
-5. 实现删除功能
+
+3.
+	为了自动生成JAVA类和操作数据库的相关代码，要做下面两步
+	
+	3.1修改配置文件，增加表名
+	/ems-thymeleaf/res/generatorConfigMysqlLombok.xml
+	
+	3.2执行JAVA代码 
+	/ems-thymeleaf/src/test/java/org/mybatis/generator/plugins/LombokMyCommentGenerator.java
+
+
+4. 实现追加功能
+5. 实现更新功能
+6. 实现删除功能

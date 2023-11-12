@@ -139,10 +139,72 @@ CREATE TABLE `user`  (
   `password` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `gender` tinyint UNSIGNED NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 0 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+
+DROP TABLE IF EXISTS `books`;
+CREATE TABLE `books` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `book_name` varchar(60) DEFAULT NULL COMMENT '书名',
+  `author_name` varchar(60) DEFAULT NULL COMMENT '作者',
+  `price` double(10,2) DEFAULT NULL COMMENT '价格',
+  `publication_day` datetime DEFAULT NULL COMMENT '出版日',
+  `photo` varchar(200) DEFAULT NULL COMMENT '图片路径',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='书';
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'admin', 'tom', '202cb962ac59075b964b07152d234b70', 1);
 INSERT INTO `user` VALUES (2, 'z3', 'tom', '202cb962ac59075b964b07152d234b70', 1);
+
+DROP TABLE IF EXISTS `carInfo`;
+CREATE TABLE `carInfo` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(40) DEFAULT NULL COMMENT '用户名',
+  `carType` varchar(60) DEFAULT NULL COMMENT '车型',
+  `password` varchar(40) DEFAULT NULL COMMENT '密码',
+  `odometer` tinyint unsigned DEFAULT NULL COMMENT '里程',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='汽车信息';
+
+DROP TABLE IF EXISTS `snacks`;
+CREATE TABLE `snacks` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) DEFAULT NULL COMMENT '商品名称',
+  `salary` double(10,2) DEFAULT NULL COMMENT '商品价格',
+  `pof` datetime DEFAULT NULL COMMENT '赏味期限',
+  `photo` varchar(200) DEFAULT NULL COMMENT '商品图片',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='おやつ';
+
+DROP TABLE IF EXISTS `oshi`;
+CREATE TABLE `oshi` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) DEFAULT NULL COMMENT '名前',
+  `age` varchar(60) DEFAULT NULL COMMENT '年齢',
+  `kamiiro` varchar(40) DEFAULT NULL COMMENT '髪色',
+
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='人の情報';
+
+DROP TABLE IF EXISTS `salesrecords`;
+
+CREATE TABLE `salesrecords` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(40) DEFAULT NULL COMMENT '商品名',
+  `price` varchar(60) DEFAULT NULL COMMENT '价格',
+  `sales_date` datetime DEFAULT NULL COMMENT '售出日期',
+ `picture` varchar(200) DEFAULT NULL COMMENT '图片路径',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='销售记录';
+
+DROP TABLE IF EXISTS `mytruck`;
+CREATE TABLE `mytruck` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `car_name` varchar(60) DEFAULT NULL COMMENT '公司名',
+  `price` double(10,2) DEFAULT NULL COMMENT '价格',
+  `product_day` datetime DEFAULT NULL COMMENT '生产日',
+  `photo` varchar(200) DEFAULT NULL COMMENT '图片路径',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='卡车';
