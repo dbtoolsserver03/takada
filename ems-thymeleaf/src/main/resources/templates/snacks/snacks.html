@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>emplist</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="top_content"> 
+				<div id="header">
+					<div id="rightheader">
+						<p>
+							2009/11/20 
+							<br />
+							<a th:href="@{/menu}">返回菜单</a>
+							<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
+							<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
+						</p>
+					</div>
+					<div id="topheader">
+						<h1 id="title">
+							<a href="#">main</a>
+						</h1>
+					</div>
+					<div id="navigation">
+					</div>
+				</div>
+				<div id="content">
+					<p id="whereami">
+					</p>
+					<h1>
+						欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+							<span th:if="${session.user==null}" >游客</span>!
+							
+					</h1>
+<form th:action="@{/snacks/searchByCondition}" method="post">					
+<table>
+	<tr><td>商品名称</td><td><input type="text" name="snacks.name" th:value="${vo.snacks.name}"></td></tr>
+    <!--						<tr>-->
+<!--							<td>类型</td>-->
+<!--							<td>-->
+<!--							 	<select name="type">-->
+<!--									 <option value=""></option>-->
+<!--									 <option value="1" th:selected="(${type} == '1')" >各种肉类</option>-->
+<!--									 <option value="2" th:selected="(${type} == '2')">鸡蛋</option>-->
+<!--									 <option value="3" th:selected="(${type} == '3')">蔬菜</option>-->
+<!--								 </select>-->
+<!--							</td>-->
+<!--						</tr>-->
+
+    <tr><td>单价</td><td><input type="text" name="priceBegin" th:value="${vo.priceBegin}"> 
+							～<input type="text" name="priceEnd" th:value="${vo.priceEnd}"></td></tr>
+</table>
+<div align="right">
+<input type="submit"value="检索" >
+</div>
+</form>
+
+
+				<table class="table">
+					<tr class="table_header">
+						<td>
+							编号
+						</td>
+						<td>
+							商品名称
+						</td>
+						<td>
+							价格
+						</td>
+						<td>
+							赏味期限
+						</td>
+						<td>
+							商品图片
+						</td>
+						
+					</tr>
+					<tr th:each="obj,state:${vo.lst}" th:class="${state.odd?'row1':'row2'}">
+						<td>
+							<span th:text="${obj.id}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.name}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.salary}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.pof}"></span>
+						</td>
+						<td>
+					
+							<img th:src="@{/}+${obj.photo}" width="60">
+						</td>
+					</tr>
+
+				</table>
+
+
+					  xxxxxxxxxxxx SNACKS
+
+				</div>
+			</div>
+			<div id="footer">
+				<div id="footer_bg">
+				ABC@126.com
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
