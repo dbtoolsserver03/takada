@@ -17,5 +17,12 @@ public class MvcConfigUniqlo  implements WebMvcConfigurer {
     	// 跳转到优衣库管理画面
     	//registry.addViewController("/manageUniqlo").setViewName("/uniqlo/uniqloList");
     	registry.addViewController("/manageUniqlo").setViewName("redirect:/uniqlo/init");
+    	
+    	registry.addViewController("/manageUniqloAdd").setViewName("redirect:/uniqlo/addInit");
+    	
+    	//registry.addViewController("/manageUniqloUpdate").setViewName("redirect:/uniqlo/updateInit");
+    	
+    	
+    	
     }
 }

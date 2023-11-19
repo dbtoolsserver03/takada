@@ -9,4 +9,10 @@ public interface UniqloService {
 
     List<Uniqlo> lists(UniqloVo vo);
 
+	int addRec(UniqloVo vo);
+
+	int updateRec(UniqloVo vo);
+
+	Uniqlo getOneRec(int id);
+
 }

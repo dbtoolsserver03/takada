@@ -5,6 +5,19 @@
 	<title>emplist</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	<script>
+		function addRec () {
+			location.href = '[[@{/manageUniqloAdd}]]';
+		}
+		function updateRec (key) {
+			
+			location.href='[[@{/uniqlo/updateInit?id=}]]'+key;
+		}
+		function delRec () {
+			location.href = '[[@{/manageUniqloDel}]]';
+		}
+		
+	</script>
 </head>
 
 <body>
@@ -93,7 +106,7 @@
 
 
 					<div align="right">
-						<input type="submit" value="検索" >
+						<input type="button" value="追加" onclick="addRec()">  <input type="submit" value="検索" >
 					</div>
 
 
@@ -127,6 +140,9 @@
 						<td>
 							商品照片
 						</td>
+						<td>
+							操作
+						</td>
 						
 					</tr>
 					<tr th:each="obj,state:${vo.lst}" th:class="${state.odd?'row1':'row2'}">
@@ -155,6 +171,13 @@
 						</td>
 						<td>
 							<img th:src="@{/}+${obj.photo}" width="60">
+						</td>
+						<td>
+							<input type="button" value="更新" th:onclick="'updateRec('+${obj.id}+')'">
+							
+							<a th:href="@{/uniqlo/manageUniqloUpdate(id=${obj.id})}">更新</a>
+							
+							<input type="button" value="删除" onclick="delRec()">
 						</td>
 					</tr>
 
