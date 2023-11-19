@@ -120,9 +120,14 @@
 						<td>
 							价格
 						</td>
+						
+						<td>
+							日期
+						</td>
 						<td>
 							商品照片
 						</td>
+						
 					</tr>
 					<tr th:each="obj,state:${vo.lst}" th:class="${state.odd?'row1':'row2'}">
 						<td>
@@ -142,6 +147,11 @@
 						</td>
 						<td>
 							<span th:text="${obj.price}"></span>
+						</td>
+						<td>
+							
+
+							<span th:text="${#dates.format(obj.saleBegin, 'yyyy-MM-dd')}"></span>～<span th:text="${#dates.format(obj.saleEnd, 'yyyy-MM-dd')}"></span>
 						</td>
 						<td>
 							<img th:src="@{/}+${obj.photo}" width="60">

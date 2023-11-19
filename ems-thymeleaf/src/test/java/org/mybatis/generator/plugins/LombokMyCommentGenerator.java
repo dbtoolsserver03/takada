@@ -50,7 +50,8 @@ public class LombokMyCommentGenerator {
             
 			delFile(new File(S_PO));
 			delFile(new File(S_DAO));
-
+			delFile(new File(S_XML));
+			
             myBatisGenerator.generate(null);
         	System.out.println("--------------------end generator-------------------");
         	

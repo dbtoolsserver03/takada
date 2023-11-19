@@ -158,15 +158,17 @@ CREATE TABLE `books` (
 INSERT INTO `user` VALUES (1, 'admin', 'tom', '202cb962ac59075b964b07152d234b70', 1);
 INSERT INTO `user` VALUES (2, 'z3', 'tom', '202cb962ac59075b964b07152d234b70', 1);
 
+
 DROP TABLE IF EXISTS `carInfo`;
 CREATE TABLE `carInfo` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(40) DEFAULT NULL COMMENT '用户名',
   `carType` varchar(60) DEFAULT NULL COMMENT '车型',
-  `password` varchar(40) DEFAULT NULL COMMENT '密码',
+  `photo` varchar(40) DEFAULT NULL COMMENT '图片',
   `odometer` tinyint unsigned DEFAULT NULL COMMENT '里程',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='汽车信息';
+
 
 DROP TABLE IF EXISTS `snacks`;
 CREATE TABLE `snacks` (
