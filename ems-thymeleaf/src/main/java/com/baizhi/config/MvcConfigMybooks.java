@@ -14,8 +14,8 @@ public class MvcConfigMybooks  implements WebMvcConfigurer {
 
         //viewController 请求路径    viewName: 跳转视图
     	
-    	// 跳转到书管理画面
-    	registry.addViewController("/manageMybooks").setViewName("Mybooks/Mybooklist");
+    	// 跳转到书管理画
+    	registry.addViewController("/manageMybooks").setViewName("Mybooks/booklist");
         
     }
 }
