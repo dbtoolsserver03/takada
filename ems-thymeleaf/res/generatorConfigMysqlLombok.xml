@@ -83,11 +83,20 @@
 		<!-- <generatedKey column="id" sqlStatement="Mysql" -->
 		<!-- identity="true" /> -->
 		<!-- </table> -->
+		
+
+
+
+		
+<!-- employee -->
+<!-- user -->
+		
+		
 		<table tableName="uniqlo"></table>
 		<table tableName="t_files"  domainObjectName="UserFile"></table>
 		<table tableName="m_code" ></table>
 		<table tableName="books" ></table>
-		<table tableName="carInfo" ></table>
+		<table tableName="carinfo" ></table>
 		<table tableName="snacks" ></table>
 		<table tableName="oshi" ></table>
 		<table tableName="salesrecords" ></table>

@@ -100,7 +100,8 @@
 							<span th:text="${obj.price}"></span>
 						</td>
 						<td>
-							<span th:text="${obj.productDay}"></span>
+							
+							<span th:text="${#dates.format(obj.productDay, 'yyyy-MM-dd')}"></span>
 						</td>
 
 						<td>

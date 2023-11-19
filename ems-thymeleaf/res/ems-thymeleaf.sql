@@ -208,3 +208,24 @@ CREATE TABLE `mytruck` (
   `photo` varchar(200) DEFAULT NULL COMMENT '图片路径',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='卡车';
+
+DROP TABLE IF EXISTS `food`;
+CREATE TABLE `food` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `food_name` varchar(60) DEFAULT NULL COMMENT '食物名',
+  `price` double(10,2) DEFAULT NULL COMMENT '价格',
+  `product_day` datetime DEFAULT NULL COMMENT '生产日期',
+  `photo` varchar(200) DEFAULT NULL COMMENT '图片路径',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='食品';
+
+
+DROP TABLE IF EXISTS `snacks`;
+CREATE TABLE `snacks` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) DEFAULT NULL COMMENT '商品名称',
+  `salary` double(10,2) DEFAULT NULL COMMENT '商品价格',
+  `pof` datetime DEFAULT NULL COMMENT '赏味期限',
+  `photo` varchar(200) DEFAULT NULL COMMENT '商品图片',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci  COMMENT='snacks';
