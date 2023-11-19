@@ -5,17 +5,44 @@
 	<title>emplist</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	
+	  <script>
+        $(document).ready(function() {
+            // 监听全选复选框的状态变化
+            $("#selectAll").change(function() {
+                // 获取全选复选框的状态
+                var isChecked = $(this).prop("checked");
+                
+                // 将全选状态应用到其他复选框
+                $(".checkbox").prop("checked", isChecked);
+            });
+        });
+    </script>
+    
 	<script>
-		function addRec () {
-			location.href = '[[@{/manageUniqloAdd}]]';
-		}
-		function updateRec (key) {
+		function addRec() {
+				location.href = '[[@{/manageUniqloAdd}]]';
+			}
+			function updateRec(key) {
+
+				location.href = '[[@{/uniqlo/updateInit?id=}]]' + key;
+			}
+			function delRec(key) {
+				if (window.confirm('确定要删除这条记录吗?')) {
+					location.href = '[[@{/uniqlo/deleteOne?id=}]]' + key;
+				}
+
+			}
+			function delAllRec() {
+				if (window.confirm('确定要删除全部所选记录吗?')) {
+					
+					$('#formLst').attr('action', "deleteAll");
+					$('#formLst').submit();
+				}
+
+			}
 			
-			location.href='[[@{/uniqlo/updateInit?id=}]]'+key;
-		}
-		function delRec () {
-			location.href = '[[@{/manageUniqloDel}]]';
-		}
 		
 	</script>
 </head>
@@ -106,15 +133,22 @@
 
 
 					<div align="right">
-						<input type="button" value="追加" onclick="addRec()">  <input type="submit" value="検索" >
+						<input type="button" value="一括删除" onclick="delAllRec()">   <input type="button" value="追加" onclick="addRec()">  <input type="submit" value="検索" >
 					</div>
 
 
 				</form>
 
 
+				<form id="formLst" method="post">
+					
+					
 				<table class="table">
 					<tr class="table_header">
+						<td>
+							<input type="checkbox" id="selectAll"> 全选
+						</td>
+						
 						<td>
 							编号
 						</td>
@@ -146,6 +180,11 @@
 						
 					</tr>
 					<tr th:each="obj,state:${vo.lst}" th:class="${state.odd?'row1':'row2'}">
+						
+						<td>
+								<input type="checkbox" th:value="${obj.id}" th:name="|lst[${state.index}].id|" class="checkbox"/>
+						</td>
+						
 						<td>
 							<span th:text="${obj.id}"></span>
 						</td>
@@ -175,13 +214,12 @@
 						<td>
 							<input type="button" value="更新" th:onclick="'updateRec('+${obj.id}+')'">
 							
-							<a th:href="@{/uniqlo/manageUniqloUpdate(id=${obj.id})}">更新</a>
-							
-							<input type="button" value="删除" onclick="delRec()">
+							<input type="button" value="删除" th:onclick="'delRec('+${obj.id}+')'">
 						</td>
 					</tr>
 
 				</table>
+				</form>
 
 
 

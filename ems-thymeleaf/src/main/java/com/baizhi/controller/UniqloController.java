@@ -124,5 +124,39 @@ public class UniqloController {
 	
 		return "redirect:/uniqlo/init";
 	}
+
+	
+	/**
+	 * uniqlo列表
+	 *
+	 * @return
+	 */
+	@RequestMapping("deleteOne")
+	public String deleteOne(@RequestParam int id, Model model) {
+		
+		service.deleteOneRec(id);
+	
+		return "redirect:/uniqlo/init";
+	}
+	
+
+	
+	/**
+	 * uniqlo列表
+	 *
+	 * @return
+	 */
+	@RequestMapping("deleteAll")
+	public String deleteAll(UniqloVo vo, Model model) {
+		
+		for(Uniqlo obj :  vo.getLst()) {
+			service.deleteOneRec(obj.getId());
+		}
+		
+	
+		return "redirect:/uniqlo/init";
+	}
+	
+	
 	
 }

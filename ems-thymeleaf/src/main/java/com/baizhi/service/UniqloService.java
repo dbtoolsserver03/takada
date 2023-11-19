@@ -15,4 +15,6 @@ public interface UniqloService {
 
 	Uniqlo getOneRec(int id);
 
+	int deleteOneRec(int id);
+
 }
