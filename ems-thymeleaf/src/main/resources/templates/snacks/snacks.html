@@ -37,20 +37,22 @@
 <form th:action="@{/snacks/searchByCondition}" method="post">					
 <table>
 	<tr><td>商品名称</td><td><input type="text" name="snacks.name" th:value="${vo.snacks.name}"></td></tr>
-    <!--						<tr>-->
-<!--							<td>类型</td>-->
-<!--							<td>-->
-<!--							 	<select name="type">-->
-<!--									 <option value=""></option>-->
-<!--									 <option value="1" th:selected="(${type} == '1')" >各种肉类</option>-->
-<!--									 <option value="2" th:selected="(${type} == '2')">鸡蛋</option>-->
-<!--									 <option value="3" th:selected="(${type} == '3')">蔬菜</option>-->
-<!--								 </select>-->
-<!--							</td>-->
-<!--						</tr>-->
+						<tr>
+							<td>类型</td>
+							<td>
+							 	<select name="type">
+									 <option value=""></option>
+									 <option value="1" th:selected="(${type} == '1')" >各种肉类</option>
+									 <option value="2" th:selected="(${type} == '2')">鸡蛋</option>
+									 <option value="3" th:selected="(${type} == '3')">蔬菜</option>
+								 </select>
+							</td>
+						</tr>
 
     <tr><td>单价</td><td><input type="text" name="priceBegin" th:value="${vo.priceBegin}"> 
 							～<input type="text" name="priceEnd" th:value="${vo.priceEnd}"></td></tr>
+<tr><td>单价</td><td><input type="date" name="saleBegin" th:value="${vo.saleBegin}"> 
+							～<input type="date" name="saleEnd" th:value="${vo.saleEnd}"></td></tr>
 </table>
 <div align="right">
 <input type="submit"value="检索" >

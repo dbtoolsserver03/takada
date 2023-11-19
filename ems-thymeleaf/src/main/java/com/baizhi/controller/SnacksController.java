@@ -26,11 +26,11 @@ public class SnacksController {
 	@RequestMapping("init")
 	public String init(Model model) {
 		SnacksVo vo = new SnacksVo();
-		vo.setUniqlo(new Snacks());
+		vo.setSnacks(new Snacks());
 
 		model.addAttribute("vo",vo);
 		// 检索数据库
-		return "snacks/snackslist";
+		return "snacks/snacks";
 	}
 	@RequestMapping("searchByCondition")
 	public String lists(SnacksVo vo, Model model) {
@@ -47,7 +47,7 @@ List<Snacks> lst = new ArrayList<Snacks>();
 			lst.add(u1);
 		}
 		
-		vo.setLst(snacksLst);
+		vo.setLst(lst);
 		model.addAttribute("vo",vo);
 
         return "snacks/snacks";

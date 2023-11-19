@@ -17,13 +17,12 @@ import cn.hutool.core.util.StrUtil;
 
 @Service
 @Transactional
-public class SnacksServiceImpl  implements  SnacksService{
+public class SnacksServicelmpl  implements  SnacksService{
 
 	@Autowired
     private SnacksMapper mapper;
 
 
-    @Override
     public List<Snacks> lists(SnacksVo vo) {
 
     	SnacksExample cond = new SnacksExample();
@@ -31,17 +30,17 @@ public class SnacksServiceImpl  implements  SnacksService{
 
 
 		// 姓名糊糊查询 条件     日语叫曖昧検索
-		if( StrUtil.isNotEmpty(vo.getUniqlo().getName())) {
-			criteria.andNameLike("%" + vo.getUniqlo().getName() + "%" );
+		if( StrUtil.isNotEmpty(vo.getSnacks().getName())) {
+			criteria.andNameLike("%" + vo.getSnacks().getName() + "%" );
 		}
 
 
 		// 价格范围 条件
 		if( ObjUtil.isNotNull(vo.getPriceBegin())) {
-			criteria.andPriceGreaterThanOrEqualTo(NumberUtil.parseInt(vo.getPriceBegin().toString()));
+			criteria.andSalaryGreaterThanOrEqualTo(NumberUtil.parseDouble(vo.getPriceBegin().toString()));
 		}
 		if( ObjUtil.isNotNull(vo.getPriceEnd())) {
-			criteria.andPriceLessThanOrEqualTo(NumberUtil.parseInt(vo.getPriceEnd().toString()));
+			criteria.andSalaryLessThanOrEqualTo(NumberUtil.parseDouble(vo.getPriceEnd().toString()));
 		}
 
 
