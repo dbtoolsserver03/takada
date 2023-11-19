@@ -23,7 +23,7 @@ public class MvcConfigInterceptor implements WebMvcConfigurer {
 				.addPathPatterns("/**")//添加拦截的请求路径
 				.excludePathPatterns("/login", "user/regist")
 				.excludePathPatterns("/js/**","/css/**","/files/**","/img/**"
-						//, "file:"+upload
+						, "file:"+upload
 						)
 				;//添加排除那些请求路径不经过拦截器
 
@@ -31,13 +31,13 @@ public class MvcConfigInterceptor implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		WebMvcConfigurer.super.addResourceHandlers(registry);
-		
-		registry.addResourceHandler("/**")
-		.addResourceLocations("classpath:/static/")
-		.addResourceLocations("classpath:/templates/")
-		.addResourceLocations("file:"+upload)
-		;
+//		WebMvcConfigurer.super.addResourceHandlers(registry);
+//		
+//		registry.addResourceHandler("/**")
+//		.addResourceLocations("classpath:/static/")
+//		.addResourceLocations("classpath:/templates/")
+//		.addResourceLocations("file:"+upload)
+//		;
 	}
 
 }
