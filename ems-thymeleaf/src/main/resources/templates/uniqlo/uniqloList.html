@@ -35,13 +35,19 @@
 
 			}
 			function delAllRec() {
-				if (window.confirm('确定要删除全部所选记录吗?')) {
-					
-					$('#formLst').attr('action', "deleteAll");
-					$('#formLst').submit();
-				}
 
-			}
+					if ($(".checkbox:checked").length > 0) {
+
+						if (window.confirm('确定要删除全部所选记录吗?')) {
+
+							$('#formLst').attr('action', "deleteAll");
+							$('#formLst').submit();
+						}
+					} else {
+						alert("请选择记录");
+					}
+
+				}
 			
 		
 	</script>
@@ -97,7 +103,7 @@
 						</tr>
 												
 
-<!--						<tr>-->0
+<!--						<tr>-->
 <!--							<td>类型</td>-->
 <!--							<td>-->
 <!--							 	<select name="type">-->
