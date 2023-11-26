@@ -8,8 +8,10 @@ public class TestMyUtils {
 
 	@Test
 	void test() {
-		
-		int ret = MyUtils.getArea(2, 5);
+		MyUtils obj = new MyUtils();	
+		int ret = MyUtils.getNumber("*",2, 5);
 		Assert.equals(ret, 10);
+		 ret = MyUtils.getNumber("+",2, 5);
+		Assert.equals(ret, 7);
 	}
 }
