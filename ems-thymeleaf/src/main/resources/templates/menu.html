@@ -3,6 +3,8 @@
 	<head>
 		<title>emplist</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon"/>
+		
 		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 	</head>
 	<body>
@@ -71,6 +73,12 @@
 						<script>
 							function manageSnacks(){
 								location.href = '[[@{/manageSnacks}]]';
+							}
+						</script>
+						<input type="button" class="button" value="中古车" onclick="manageCarInfo()"/>
+						<script>
+							function manageCarInfo(){
+								location.href = '[[@{/manageCarInfo}]]';
 							}
 						</script>
 				</div>

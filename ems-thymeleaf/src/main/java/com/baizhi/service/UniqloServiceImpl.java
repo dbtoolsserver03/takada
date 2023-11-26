@@ -47,4 +47,34 @@ public class UniqloServiceImpl  implements  UniqloService{
 		
         return mapper.selectByExample(cond);
     }
+
+
+	@Override
+	public int addRec(UniqloVo vo) {
+		
+		vo.getUniqlo().setDeleteFlg("0");
+		int cnt = mapper.insertSelective(vo.getUniqlo());
+		return cnt;
+	}
+
+
+	@Override
+	public int updateRec(UniqloVo vo) {
+		int cnt = mapper.updateByPrimaryKeySelective(vo.getUniqlo());
+		return cnt;	
+	}
+
+
+	@Override
+	public Uniqlo getOneRec(int id) {
+		// TODO 自動生成されたメソッド・スタブ
+		return mapper.selectByPrimaryKey(id);
+	}
+
+
+	@Override
+	public int deleteOneRec(int id) {
+		int cnt = mapper.deleteByPrimaryKey(id);
+		return cnt;	
+	}
 }

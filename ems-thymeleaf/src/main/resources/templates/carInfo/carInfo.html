@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>emplist</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+						<a th:href="@{/menu}">返回菜单</a>
+						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
+						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
+					</p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+					<span th:if="${session.user==null}">游客</span>!
+				</h1>
+
+
+				<form th:action="@{/carInfo/searchByCondition}" method="post">
+
+					<table>
+						
+						<tr>
+							<td>车型</td>
+							<td><input type="text" name="carinfo.cartype" th:value="${voxxx.carinfo.cartype}"></td>
+						</tr>
+												
+						<tr>
+							<td>里程范围</td>
+							<td><input type="text" name="odometerBegin" th:value="${voxxx.odometerBegin}">
+								～<input type="text" name="odometerEnd" th:value="${voxxx.odometerEnd}">
+							</td>
+						</tr>						
+						
+					</table>
+
+
+					<div align="right">
+						<input type="submit" value="検索" >
+					</div>
+
+
+				</form>
+
+
+				<table class="table">
+					<tr class="table_header">
+						<td>
+							编号
+						</td>
+						<td>
+							用户名
+						</td>
+						<td>
+							车型
+						</td>
+						<td>
+							里程数
+						</td>
+						<td>
+							商品照片
+						</td>
+					</tr>
+					<tr th:each="obj,state:${voxxx.lst}" th:class="${state.odd?'row1':'row2'}">
+						<td>
+							<span th:text="${obj.id}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.username}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.cartype}"></span>							                     
+						</td>
+						<td>
+							<span th:text="${obj.odometer}"></span>							                     
+						</td><td>
+							<span th:text="${obj.photo}"></span>							                     
+						</td>
+					</tr>
+
+				</table>
+
+				xxxxxxxxxxxxxxxxxxx carInfo
+
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
