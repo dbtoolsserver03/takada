@@ -46,12 +46,15 @@ public class CarInfoController {
 		
 		for (int i = 0; i < 3; i++) {
 			Carinfo obj = new Carinfo();
-			obj.setId(i);
-			obj.setCartype("CAR TYPE"+1);
+			obj.setId(i+1);
+			obj.setUsername("username"+i);
+			obj.setCartype("CAR TYPE"+i);
 			obj.setOdometer(Byte.valueOf((byte)i) );
+			obj.setPhoto("photo"+i);
 			
 			lst.add(obj);
 		}
+		
 
 		vo.setLst(lst);
 		
