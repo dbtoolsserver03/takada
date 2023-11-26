@@ -1,15 +1,16 @@
 package com.baizhi.controller;
 
-import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.baizhi.entity.original.Snacks;
 import com.baizhi.entity.vo.SnacksVo;
+import com.baizhi.service.SnacksService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,7 +18,8 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("snacks")
 @Slf4j
 public class SnacksController {
-
+	@Autowired
+	SnacksService service;
     /**
      * uniqlo列表
      *
@@ -32,24 +34,18 @@ public class SnacksController {
 		// 检索数据库
 		return "snacks/snacks";
 	}
+	/**
+	 * uniqlo列表
+	 *
+	 * @return
+	 */
 	@RequestMapping("searchByCondition")
 	public String lists(SnacksVo vo, Model model) {
+		List<Snacks> snacksLst = service.lists(vo);
 
-List<Snacks> lst = new ArrayList<Snacks>();
-		
-		for (int i = 0; i < 3; i++) {
-			Snacks u1 = new Snacks();
-			u1.setId(i);
-			u1.setName("zhang" + i);
-			u1.setPof(new Date());
-			u1.setSalary(Double.valueOf("123"));
-		
-			lst.add(u1);
-		}
-		
-		vo.setLst(lst);
+		vo.setLst(snacksLst);
 		model.addAttribute("vo",vo);
-
-        return "snacks/snacks";
-    }
+		// 检索数据库
+		return "snacks/snacks";
+	}
 }

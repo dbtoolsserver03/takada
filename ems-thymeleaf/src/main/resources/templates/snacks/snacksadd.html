@@ -6,15 +6,9 @@
 		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 	<script>
 		function addRec () {
-			location.href = '[[@{/managesnacksAdd}]]';
+			location.href = '[[@{/managesnacksadd}]]';
 		}
-		function updateRec (key) {
 
-			location.href='[[@{/snacks/updateInit?id=}]]'+key;
-		}
-		function delRec () {
-			location.href = '[[@{/manageSnacksDel}]]';
-		}
 
 	</script>
 	</head>
@@ -64,67 +58,20 @@
 
     <tr><td>单价</td><td><input type="text" name="priceBegin" th:value="${vo.priceBegin}"> 
 							～<input type="text" name="priceEnd" th:value="${vo.priceEnd}"></td></tr>
-<tr><td>赏味期限</td><td><input type="date" name="snacks.saleBegin" th:value="${#dates.format(vo.saleBegin, 'yyyy-MM-dd')}" />
-							 ～<input type="date" name="snacks.saleEnd" th:value="${#dates.format(vo.saleEnd, 'yyyy-MM-dd')}" /></td></tr>
+<tr>
+	<td>生产日期</td>
+							<td><input type="date" name="snacks.saleBegin" th:value="${vo.saleBegin}">
+							 ～<input type="date" name="snacks.saleEnd" th:value="${vo.saleEnd}"></td>
+							 </tr>
 </table>
-
 <div align="right">
-<input type="button"value="追加" onclick="addRec()"><input type="submit"value="检索" >
+<input type="button"value="追加"  >
 </div>
 </form>
 
 
-				<table class="table">
-					<tr class="table_header">
-						<td>
-							编号
-						</td>
-						<td>
-							商品名称
-						</td>
-						<td>
-							价格
-						</td>
-						<td>
-							赏味期限
-						</td>
-						<td>
-							商品图片
-						</td>
-						<td>
-							操作
-						</td>
-					</tr>
-					<tr th:each="obj,state:${vo.lst}" th:class="${state.odd?'row1':'row2'}">
-						<td>
-							<span th:text="${obj.id}"></span>
-						</td>
-						<td>
-							<span th:text="${obj.name}"></span>
-						</td>
-						<td>
-							<span th:text="${obj.salary}"></span>
-						</td>
-						<td>
-							<span th:text="${obj.pof}"></span>
-						</td>
-						<td>
-					
-							<img th:src="@{/}+${obj.photo}" width="60">
-						</td>
-						<td>
-							<input type="button" value="更新" th:onclick="'updateRec('+${obj.id}+')'">
 
-							<a th:href="@{/snacks/manageSnacksUpdate(id=${obj.id})}">更新</a>
-
-							<input type="button" value="删除" onclick="delRec()">
-						</td>
-					</tr>
-
-				</table>
-
-
-					  xxxxxxxxxxxx SNACKS
+					  xxxxxxxxxxxxadd SNACKS
 
 				</div>
 			</div>
