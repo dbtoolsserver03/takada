@@ -16,7 +16,7 @@ public class MvcConfigsnacks  implements WebMvcConfigurer {
     	
     	// 跳转到员工管理画面
     	registry.addViewController("/manageSnacks").setViewName("redirect:/snacks/init");
-    	registry.addViewController("/managesnacksAdd").setViewName("redirect:/snacks/addInit");
+    	registry.addViewController("/manageSnacksAdd").setViewName("redirect:/snacks/addInit");
     	
     	//registry.addViewController("/manageSnacksUpdate").setViewName("redirect:/snacks/updateInit");
 

@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 	<script>
 		function addRec () {
-			location.href = '[[@{/managesnacksadd}]]';
+			location.href = '[[@{/manageSnacksAdd}]]';
 		}
 
 
@@ -41,7 +41,7 @@
 							<span th:if="${session.user==null}" >游客</span>!
 							
 					</h1>
-<form th:action="@{/snacks/searchByCondition}" method="post">					
+<form th:action="@{/snacks/addSnacks}" method="post">					
 <table>
 	<tr><td>商品名称</td><td><input type="text" name="snacks.name" th:value="${vo.snacks.name}"></td></tr>
 						<tr>
@@ -56,16 +56,16 @@
 							</td>
 						</tr>
 
-    <tr><td>单价</td><td><input type="text" name="priceBegin" th:value="${vo.priceBegin}"> 
-							～<input type="text" name="priceEnd" th:value="${vo.priceEnd}"></td></tr>
+    <tr><td>单价</td><td><input type="text" name="snacks.salary" th:value="${vo.snacks.salary}"> 
+							</td></tr>
 <tr>
 	<td>生产日期</td>
-							<td><input type="date" name="snacks.saleBegin" th:value="${vo.saleBegin}">
-							 ～<input type="date" name="snacks.saleEnd" th:value="${vo.saleEnd}"></td>
+							<td><input type="date" name="snacks.pof" th:value="${vo.snacks.pof}">
+							 </td>
 							 </tr>
 </table>
 <div align="right">
-<input type="button"value="追加"  >
+<input type="submit"value="追加"  >
 </div>
 </form>
 

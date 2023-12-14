@@ -63,4 +63,9 @@ public class SnacksServicelmpl  implements  SnacksService{
 		// TODO 自動生成されたメソッド・スタブ
 		return mapper.selectByPrimaryKey(id);
 	}
+	@Override
+	public int deleteOneRec(int id) {
+		int cnt = mapper.deleteByPrimaryKey(id);
+		return cnt;	
+	}
 }

@@ -26,7 +26,7 @@ public class SnacksVo {
 	private Date saleEnd;
 
 	// 检索出来的数据
-	private List<Snacks> lst;
+	private List<Snacks> Lst;
 
 
 }

@@ -56,12 +56,13 @@
 							</td>
 						</tr>
 
-    <tr><td>单价</td><td><input type="text" name="priceBegin" th:value="${vo.priceBegin}"> 
-							～<input type="text" name="priceEnd" th:value="${vo.priceEnd}"></td></tr>
-<tr><td>生产日期</td>
-
-							<td><input type="date" name="snacks.saleBegin" th:value="${#dates.format(vo.saleBegin, 'yyyy-MM-dd')}" />
-							 ～<input type="date" name="snacks.saleEnd" th:value="${#dates.format(vo.saleEnd, 'yyyy-MM-dd')}" /></td></tr>
+   <tr><td>单价</td><td><input type="text" name="snacks.salary" th:value="${vo.snacks.salary}"> 
+							</td></tr>
+<tr>
+	<td>生产日期</td>
+							<td><input type="date" name="snacks.pof" th:value="${vo.snacks.pof}">
+							 </td>
+							 </tr>
 </table>
 
 					<input type="hidden" name="snacks" th:value="${vo.snacks}">

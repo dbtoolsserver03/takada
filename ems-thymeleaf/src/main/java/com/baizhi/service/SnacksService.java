@@ -7,4 +7,12 @@ public interface SnacksService {
 
 	 List<Snacks> lists(SnacksVo vo);
 
+	int addRec(SnacksVo vo);
+
+	int updateRec(SnacksVo vo);
+
+	Snacks getOneRec(int id);
+
+	int deleteOneRec(int id);
+
 	}
