@@ -1,9 +1,6 @@
 package com.baizhi.controller;
 
-import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +8,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
 
-import com.baizhi.entity.Employee;
-import com.baizhi.service.EmployeeService;
+import com.baizhi.entity.original.Employee;
+import com.baizhi.service.Employee02Service;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,13 +19,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class EmployeeController {
 
-    private EmployeeService employeeService;
+    private Employee02Service employeeService;
 
     @Value("${upload.dir}")
     private String realpath;
 
     @Autowired
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController(Employee02Service employeeService) {
         this.employeeService = employeeService;
     }
 
@@ -47,9 +43,7 @@ public class EmployeeController {
         //1.删除数据
         String photo = employeeService.findById(id).getPhoto();
         employeeService.delete(id);
-        //2.删除头像
-        File file = new File(realpath, photo);
-        if (file.exists()) file.delete();
+
         return "redirect:/employee/lists";//跳转到员工列表
     }
 
@@ -61,36 +55,14 @@ public class EmployeeController {
      * @return
      */
     @RequestMapping("update")
-    public String update(Employee employee, MultipartFile img,Model model) throws IOException {
+    public String update(Employee employee, Model model) throws IOException {
 
         log.debug("更新之后员工信息: id:{},姓名:{},工资:{},生日:{},", employee.getId(), employee.getName(), employee.getSalary(), employee.getBirthday());
-        //1.判断是否更新头像
-        boolean notEmpty = !img.isEmpty();
-        log.debug("是否更新头像: {}", notEmpty);
-        if (notEmpty) {
-            //1.删除老的头像 根据id查询原始头像
-            String oldPhoto = employeeService.findById(employee.getId()).getPhoto();
-            File file = new File(realpath, oldPhoto);
-            if (file.exists()) file.delete();//删除文件
-            //2.处理新的头像上传
-            String originalFilename = img.getOriginalFilename();
-            String newFileName = uploadPhoto(img, originalFilename);
-            //3.修改员工新的头像名称
-            employee.setPhoto(newFileName);
-        }
+
         
-        //2.没有更新头像直接更新基本信息
+        // 直接更新基本信息
         employeeService.update(employee);
         return "redirect:/employee/lists";//更新成功,跳转到员工列表
-    }
-
-    //上传头像方法
-    private String uploadPhoto(MultipartFile img, String originalFilename) throws IOException {
-        String fileNamePrefix = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
-        String fileNameSuffix = originalFilename.substring(originalFilename.lastIndexOf("."));
-        String newFileName = fileNamePrefix + fileNameSuffix;
-        img.transferTo(new File(realpath, newFileName));
-        return newFileName;
     }
 
     /**
@@ -116,18 +88,9 @@ public class EmployeeController {
      * @return
      */
     @RequestMapping("save")
-    public String save(Employee employee, MultipartFile img,Model model) throws IOException {
+    public String save(Employee employee, Model model) throws IOException {
         log.debug("姓名:{}, 薪资:{}, 生日:{} ", employee.getName(), employee.getSalary(), employee.getBirthday());
-        String originalFilename = img.getOriginalFilename();
-        log.debug("头像名称: {}", originalFilename);
-        log.debug("头像大小: {}", img.getSize());
-        log.debug("上传的路径: {}", realpath);
 
-        //1.处理头像的上传&修改文件名称
-        String newFileName = uploadPhoto(img, originalFilename);
-        //2.保存员工信息
-        employee.setPhoto(newFileName);//保存头像名字
-        
         if(employee.getSalary()<0) {
         	model.addAttribute("error", "工资不可以为负数！");
             return "emp/updateEmp";//更新成功,跳转到员工列表

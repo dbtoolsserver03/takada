@@ -13,13 +13,14 @@
 			<div id="header">
 				<div id="rightheader">
 					<p>
-						2009/11/20
+						<span th:text="${#dates.format(#calendars.createNow(), 'yyyy-MM-dd HH:mm:ss')}"></span>
 						<br />
 						<a th:href="@{/menu}">返回菜单</a>
 						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
 						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
 					</p>
-					<p><label style="color: darkred;"> 01.实现表的增删改查 </label></p>
+					<p><label style="color: darkred;"> 02.实现图片上传，内置时间函数</label></p>
+
 				</div>
 				<div id="topheader">
 					<h1 id="title">
@@ -45,6 +46,9 @@
 							姓名
 						</td>
 						<td>
+							头像
+						</td>
+						<td>
 							工资
 						</td>
 						<td>
@@ -61,7 +65,9 @@
 						<td>
 							<span th:text="${employee.name}"></span>
 						</td>
-
+						<td>
+							<img th:src="@{/}+${employee.photo}" width="60">
+						</td>
 						<td>
 							<span th:text="${employee.salary}"></span>
 						</td>
@@ -72,7 +78,7 @@
 							<a href="javascript:;" th:onclick="'deleteEmployee('+${employee.id}+')'">删除</a>
 							<!--								<a th:href="@{/employee/detail?id=}+${employee.id}+'&name='+${employee.name}">更新</a>-->
 							<!--								<a th:href="@{/employee/detail(id=${employee.id},name=${employee.name})}">更新</a>-->
-							<a th:href="@{/employee/detail(id=${employee.id})}">更新</a>
+							<a th:href="@{/employee02/detail(id=${employee.id})}">更新</a>
 
 						</td>
 					</tr>
@@ -80,8 +86,8 @@
 						function deleteEmployee(id) {
 							console.log(id);
 							if (window.confirm('确定要删除这条记录吗?')) {
-								console.log('[[@{/employee/delete?id=}]]' + id);
-								location.href = '[[@{/employee/delete?id=}]]' + id;
+								console.log('[[@{/employee02/delete?id=}]]' + id);
+								location.href = '[[@{/employee02/delete?id=}]]' + id;
 							}
 						}
 					</script>
@@ -90,7 +96,7 @@
 					<input type="button" class="button" value="添加" onclick="addEmp()" />
 					<script>
 						function addEmp() {
-							location.href = '[[@{/addEmp}]]';
+							location.href = '[[@{/addEmp02}]]';
 						}
 					</script>
 				</p>

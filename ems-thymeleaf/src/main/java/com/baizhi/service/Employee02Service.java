@@ -1,12 +1,12 @@
-package com.baizhi.dao;
-
-import com.baizhi.entity.Employee;
+package com.baizhi.service;
 
 import java.util.List;
 
-public interface EmployeeDao {
+import com.baizhi.entity.original.Employee;
 
-    //员工列表
+public interface Employee02Service {
+
+    //员工列表方法
     List<Employee> lists();
 
     //保存员工信息

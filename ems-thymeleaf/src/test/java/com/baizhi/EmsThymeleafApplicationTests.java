@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
-import com.baizhi.dao.EmployeeDao;
+import com.baizhi.dao.original.EmployeeMapper;
 import com.baizhi.dao.original.UniqloMapper;
-import com.baizhi.entity.Employee;
+import com.baizhi.entity.original.Employee;
 import com.baizhi.entity.original.Uniqlo;
-import com.baizhi.service.EmployeeService;
+import com.baizhi.service.Employee02Service;
 
 @SpringBootTest
 class EmsThymeleafApplicationTests {
@@ -20,10 +20,10 @@ class EmsThymeleafApplicationTests {
 	private ApplicationContext applicationContext;
 
 	@Autowired
-	private EmployeeService employeeService;
+	private Employee02Service employeeService;
 
 	@Autowired
-	private EmployeeDao employeeDao;
+	private EmployeeMapper employeeMapper;
 
 	@Autowired
 	private UniqloMapper uniqloMapper;
@@ -40,7 +40,7 @@ class EmsThymeleafApplicationTests {
 			System.out.println(employee.getName());
 		}
 		
-		List<Employee> daoEmpLst = employeeDao.lists();
+		List<Employee> daoEmpLst = employeeMapper.selectByExample(null);
 
 		for (Employee employee : daoEmpLst) {
 			System.out.println(employee.getName());
