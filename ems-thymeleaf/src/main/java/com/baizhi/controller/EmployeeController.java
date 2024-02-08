@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.baizhi.entity.original.Employee;
-import com.baizhi.service.Employee02Service;
+import com.baizhi.service.EmployeeService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,13 +19,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class EmployeeController {
 
-    private Employee02Service employeeService;
+    private EmployeeService employeeService;
 
     @Value("${upload.dir}")
     private String realpath;
 
     @Autowired
-    public EmployeeController(Employee02Service employeeService) {
+    public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 

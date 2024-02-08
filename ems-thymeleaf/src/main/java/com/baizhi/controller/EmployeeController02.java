@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.baizhi.entity.original.Employee;
-import com.baizhi.service.Employee02Service;
+import com.baizhi.service.EmployeeService;
 
 import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -24,13 +24,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class EmployeeController02 {
 
-    private Employee02Service employee02Service;
+    private EmployeeService employee02Service;
 
     @Value("${upload.dir}")
     private String realpath;
 
     @Autowired
-    public EmployeeController02(Employee02Service employee02Service) {
+    public EmployeeController02(EmployeeService employee02Service) {
         this.employee02Service = employee02Service;
     }
 

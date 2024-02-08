@@ -11,7 +11,7 @@ import com.baizhi.dao.original.EmployeeMapper;
 import com.baizhi.dao.original.UniqloMapper;
 import com.baizhi.entity.original.Employee;
 import com.baizhi.entity.original.Uniqlo;
-import com.baizhi.service.Employee02Service;
+import com.baizhi.service.EmployeeService;
 
 @SpringBootTest
 class EmsThymeleafApplicationTests {
@@ -20,7 +20,7 @@ class EmsThymeleafApplicationTests {
 	private ApplicationContext applicationContext;
 
 	@Autowired
-	private Employee02Service employeeService;
+	private EmployeeService employeeService;
 
 	@Autowired
 	private EmployeeMapper employeeMapper;
