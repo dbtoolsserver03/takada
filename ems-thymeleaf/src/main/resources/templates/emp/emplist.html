@@ -51,6 +51,9 @@
 							生日
 						</td>
 						<td>
+							职能
+						</td>
+						<td>
 							操作
 						</td>
 					</tr>
@@ -67,6 +70,13 @@
 						</td>
 						<td>
 							<span th:text="${#dates.format(obj.birthday,'yyyy/MM/dd')}"></span>
+<<<<<<< HEAD
+						</td>
+
+						<td style="text-align: right;">
+							<span th:text="${obj.jobRole}"></span>
+=======
+>>>>>>> branch '202403_master' of git@github.com:dbtoolsserver03/takada.git
 						</td>
 						<td>
 							<a href="javascript:;" th:onclick="'deleteEmployee('+${obj.id}+')'">删除</a>
