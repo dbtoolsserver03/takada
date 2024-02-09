@@ -19,7 +19,7 @@
 						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
 						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
 					</p>
-					<p><label style="color: darkred;"> 01.实现表的增删改查 </label></p>
+					<p><label style="color: darkred;"> 04.实现数据库里的定数显示 </label></p>
 				</div>
 				<div id="topheader">
 					<h1 id="title">
@@ -74,13 +74,12 @@
 
 						<td style="text-align: right;">
 							<span th:text="${obj.jobRole}"></span>
-
 						</td>
 						<td>
 							<a href="javascript:;" th:onclick="'deleteEmployee('+${obj.id}+')'">删除</a>
 							<!--								<a th:href="@{/employee/detail?id=}+${employee.id}+'&name='+${employee.name}">更新</a>-->
 							<!--								<a th:href="@{/employee/detail(id=${employee.id},name=${employee.name})}">更新</a>-->
-							<a th:href="@{/employee/detail(id=${obj.id})}">更新</a>
+							<a th:href="@{/employee04/detail(id=${obj.id})}">更新</a>
 
 						</td>
 					</tr>
@@ -88,8 +87,8 @@
 						function deleteEmployee(id) {
 							console.log(id);
 							if (window.confirm('确定要删除这条记录吗?')) {
-								console.log('[[@{/employee/delete?id=}]]' + id);
-								location.href = '[[@{/employee/delete?id=}]]' + id;
+								console.log('[[@{/employee04/delete?id=}]]' + id);
+								location.href = '[[@{/employee04/delete?id=}]]' + id;
 							}
 						}
 					</script>
@@ -98,7 +97,7 @@
 					<input type="button" class="button" value="添加" onclick="addEmp()" />
 					<script>
 						function addEmp() {
-							location.href = '[[@{/employee/addEmp}]]';
+							location.href = '[[@{/employee04/addEmp}]]';
 						}
 					</script>
 				</p>
