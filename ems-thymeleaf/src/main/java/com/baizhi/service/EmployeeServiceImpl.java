@@ -58,8 +58,8 @@ public class EmployeeServiceImpl  implements  EmployeeService{
 		
 		
 		// 姓名糊糊查询 条件     日语叫曖昧検索
-		if( StrUtil.isNotEmpty(vo.getEmployee().getName())) {
-			criteria.andNameLike("%" + vo.getEmployee().getName() + "%" );
+		if( StrUtil.isNotEmpty(vo.getObj().getName())) {
+			criteria.andNameLike("%" + vo.getObj().getName() + "%" );
 		}
     	
 		// 工资范围 条件

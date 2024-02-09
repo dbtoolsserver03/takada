@@ -35,7 +35,7 @@ public class EmployeeController03 {
 	@RequestMapping("init")
 	public String init(Model model) {
 		EmployeeVo vo = new EmployeeVo();
-		vo.setEmployee(new Employee());
+		vo.setObj(new Employee());
 		model.addAttribute("vo",vo);
 		
 		return "emp03/emplist";

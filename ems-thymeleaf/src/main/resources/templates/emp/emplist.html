@@ -54,25 +54,25 @@
 							操作
 						</td>
 					</tr>
-					<tr th:each="employee,state:${employeeList}" th:class="${state.odd?'row1':'row2'}">
+					<tr th:each="obj,state:${objLst}" th:class="${state.odd?'row1':'row2'}">
 						<td>
-							<span th:text="${employee.id}"></span>
+							<span th:text="${obj.id}"></span>
 						</td>
 						<td>
-							<span th:text="${employee.name}"></span>
+							<span th:text="${obj.name}"></span>
 						</td>
 
 						<td>
-							<span th:text="${employee.salary}"></span>
+							<span th:text="${obj.salary}"></span>
 						</td>
 						<td>
-							<span th:text="${#dates.format(employee.birthday,'yyyy/MM/dd')}"></span>
+							<span th:text="${#dates.format(obj.birthday,'yyyy/MM/dd')}"></span>
 						</td>
 						<td>
-							<a href="javascript:;" th:onclick="'deleteEmployee('+${employee.id}+')'">删除</a>
+							<a href="javascript:;" th:onclick="'deleteEmployee('+${obj.id}+')'">删除</a>
 							<!--								<a th:href="@{/employee/detail?id=}+${employee.id}+'&name='+${employee.name}">更新</a>-->
 							<!--								<a th:href="@{/employee/detail(id=${employee.id},name=${employee.name})}">更新</a>-->
-							<a th:href="@{/employee/detail(id=${employee.id})}">更新</a>
+							<a th:href="@{/employee/detail(id=${obj.id})}">更新</a>
 
 						</td>
 					</tr>

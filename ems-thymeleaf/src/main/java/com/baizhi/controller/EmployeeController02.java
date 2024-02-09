@@ -148,8 +148,8 @@ public class EmployeeController02 {
     @RequestMapping("lists")
     public String lists(Model model) {
         log.debug("查询所有员工信息");
-        List<Employee> employeeList = service.lists();
-        model.addAttribute("employeeList", employeeList);
+        List<Employee> objLst = service.lists();
+        model.addAttribute("objLst", objLst);
         return "emp02/emplist";
     }
 }

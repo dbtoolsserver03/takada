@@ -18,7 +18,7 @@ public class EmployeeVo {
 	}
 	
 	// 检索条件
-	private Employee employee;
+	private Employee obj;
 	private Double salaryBegin;
 	private Double salaryEnd;
 	private Date birthdayBegin;
