@@ -5,6 +5,46 @@
 	<title>emplist</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	<script th:src="@{/js/plug-in/jquery-3.7.1.min.js}"></script>
+
+	<script>
+		$(document).ready(function () {
+			// 监听全选复选框的状态变化
+			$("#selectAll").change(function () {
+				// 获取全选复选框的状态
+				var isChecked = $(this).prop("checked");
+				// 将全选状态应用到其他复选框
+				$(".checkbox").prop("checked", isChecked);
+			});
+		});
+	</script>
+
+	<script>
+		function addRec() {
+			location.href = '[[@{/employee03/addEmp}]]';
+		}
+		function updateRec(key) {
+			location.href = '[[@{/employee03/updateInit?id=}]]' + key;
+		}
+		function delRec(key) {
+			if (window.confirm('确定要删除这条记录吗?')) {
+				location.href = '[[@{/employee03/deleteOne?id=}]]' + key;
+			}
+		}
+		function delAllRec() {
+
+			if ($(".checkbox:checked").length > 0) {
+				if (window.confirm('确定要删除全部所选记录吗?')) {
+
+					$('#formLst').attr('action', "deleteAll");
+					$('#formLst').submit();
+				}
+			} else {
+				alert("请选择记录");
+			}
+		}
+	</script>
+
 </head>
 
 <body>
@@ -37,77 +77,103 @@
 					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
 					<span th:if="${session.user==null}">游客</span>!
 				</h1>
-				<table class="table">
-					<tr class="table_header">
-						<td>
-							编号
-						</td>
-						<td>
-							姓名
-						</td>
-						<td>
-							头像
-						</td>
-						<td>
-							工资
-						</td>
-						<td>
-							生日
-						</td>
-						<td>
-							操作
-						</td>
-					</tr>
-					<tr th:each="employee,state:${employeeList}" th:class="${state.odd?'row1':'row2'}">
-						<td>
-							<span th:text="${employee.id}"></span>
-						</td>
-						<td>
-							<span th:text="${employee.name}"></span>
-						</td>
-						<td>
-							<img th:src="@{/}+${employee.photo}" width="60">
-						</td>
-						<td>
-							<span th:text="${employee.salary}"></span>
-						</td>
-						<td>
-							<span th:text="${#dates.format(employee.birthday,'yyyy/MM/dd')}"></span>
-						</td>
-						<td>
-							<a href="javascript:;" th:onclick="'deleteEmployee('+${employee.id}+')'">删除</a>
-							<!--								<a th:href="@{/employee/detail?id=}+${employee.id}+'&name='+${employee.name}">更新</a>-->
-							<!--								<a th:href="@{/employee/detail(id=${employee.id},name=${employee.name})}">更新</a>-->
-							<a th:href="@{/employee02/detail(id=${employee.id})}">更新</a>
 
-						</td>
-					</tr>
-					<script>
-						function deleteEmployee(id) {
-							console.log(id);
-							if (window.confirm('确定要删除这条记录吗?')) {
-								console.log('[[@{/employee02/delete?id=}]]' + id);
-								location.href = '[[@{/employee02/delete?id=}]]' + id;
+				<form th:action="@{/employee03/searchByCondition}" method="post">
+
+					<table>
+						<tr>
+							<td>员工姓名</td>
+							<td><input type="text" name="employee.name" th:value="${vo.employee.name}"></td>
+						</tr>
+						<tr>
+							<td>员工工资</td>
+							<td><input type="text" name="salaryBegin" th:value="${vo.salaryBegin}">
+								～<input type="text" name="salaryEnd" th:value="${vo.salaryEnd}"></td>
+						</tr>
+						<tr>
+							<td>员工生日</td>
+							<td><input type="date" name="birthdayBegin"
+									th:value="${#dates.format(vo.birthdayBegin,'yyyy-MM-dd')}">
+								～<input type="date" name="birthdayEnd"
+									th:value="${#dates.format(vo.birthdayEnd,'yyyy-MM-dd')}">
+							</td>
+						</tr>
+					</table>
+
+					<div align="right">
+						<input type="button" value="一括删除" class="button" onclick="delAllRec()">
+						<input type="button" value="追加" class="button" onclick="addRec()">
+						<input type="submit" value="検索" class="button">
+					</div>
+
+				</form>
+
+				<form id="formLst" method="post">
+
+					<table class="table">
+						<tr class="table_header">
+
+							<td style="width: 5%;">
+								<input type="checkbox" id="selectAll">
+							</td>
+							<td style="width: 10%;">
+								编号
+							</td>
+							<td>
+								姓名
+							</td>
+							<td>
+								工资
+							</td>
+							<td>
+								生日
+							</td>
+							<td>
+								操作
+							</td>
+						</tr>
+						<tr th:each="obj,state:${vo.lst}" th:class="${state.odd?'row1':'row2'}">
+							<td>
+<!--								th:name="|lst[${state.index}].id|"-->
+								<input type="checkbox" th:value="${obj.id}" th:field="*{vo.selectedItems}" 
+									class="checkbox" />
+							</td>
+							<td>
+								<span th:text="${obj.id}"></span>
+							</td>
+							<td>
+								<span th:text="${obj.name}"></span>
+							</td>
+							<td style="text-align: right;">
+								<span th:text="${obj.salary}"></span>
+							</td>
+							<td style="text-align: center;">
+								<span th:text="${#dates.format(obj.birthday,'yyyy/MM/dd')}"></span>
+							</td>
+							<td>
+								<a href="javascript:;" th:onclick="'deleteEmployee('+${obj.id}+')'">删除</a>
+								<a th:href="@{/employee03/detail(id=${obj.id})}">更新</a>
+
+							</td>
+						</tr>
+						<script>
+							function deleteEmployee(id) {
+								console.log(id);
+								if (window.confirm('确定要删除这条记录吗?')) {
+									console.log('[[@{/employee03/delete?id=}]]' + id);
+									location.href = '[[@{/employee03/delete?id=}]]' + id;
+								}
 							}
-						}
-					</script>
-				</table>
-				<p>
-					<input type="button" class="button" value="添加" onclick="addEmp()" />
-					<script>
-						function addEmp() {
-							location.href = '[[@{/addEmp02}]]';
-						}
-					</script>
-				</p>
+						</script>
+					</table>
+				</form>
+			</div>
+			<div id="footer">
+				<div id="footer_bg">
+					ABC@126.com
+				</div>
 			</div>
 		</div>
-		<div id="footer">
-			<div id="footer_bg">
-				ABC@126.com
-			</div>
-		</div>
-	</div>
 </body>
 
 </html>

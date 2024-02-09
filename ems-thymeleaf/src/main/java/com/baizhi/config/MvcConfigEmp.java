@@ -13,12 +13,21 @@ public class MvcConfigEmp  implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
 
         //viewController 请求路径    viewName: 跳转视图
-    	
     	// 跳转到员工管理画面
     	registry.addViewController("/manageEmp").setViewName("redirect:/employee/lists");
-        
         // 增加员工
-        registry.addViewController("addEmp").setViewName("emp/addEmp");
+        registry.addViewController("employee/addEmp").setViewName("emp/addEmp");
 
+        //-------------02-------------
+    	// 跳转到员工管理画面
+    	registry.addViewController("/manageEmp02").setViewName("redirect:/employee02/lists");
+        // 增加员工
+        registry.addViewController("employee02/addEmp").setViewName("emp02/addEmp");
+        
+        //-------------03-------------
+    	// 跳转到员工管理画面
+    	registry.addViewController("/manageEmp03").setViewName("redirect:/employee03/init");
+        // 增加员工
+        registry.addViewController("employee03/addEmp").setViewName("emp03/addEmp");
     }
 }

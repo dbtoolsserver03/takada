@@ -75,8 +75,6 @@ public class UniqloController {
 		return "uniqlo/uniqloUpdate";
 	}
 	
-	
-
 	/**
 	 * uniqlo列表
 	 *
@@ -92,9 +90,6 @@ public class UniqloController {
 		// 检索数据库
 		return "uniqlo/uniqlolist";
 	}
-	
-	
-	
 	
 	
 	/**

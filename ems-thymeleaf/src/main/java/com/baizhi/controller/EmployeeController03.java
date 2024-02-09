@@ -9,36 +9,71 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.baizhi.entity.original.Employee;
+import com.baizhi.entity.vo.EmployeeVo;
 import com.baizhi.service.EmployeeService;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("employee")
+@RequestMapping("employee03")
 @Slf4j
-public class EmployeeController {
+public class EmployeeController03 {
 
     private EmployeeService employeeService;
 
     @Autowired
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController03(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
+    
+	/**
+	 * emp列表
+	 *
+	 * @return
+	 */
+	@RequestMapping("init")
+	public String init(Model model) {
+		EmployeeVo vo = new EmployeeVo();
+		vo.setEmployee(new Employee());
+		model.addAttribute("vo",vo);
+		
+		return "emp03/emplist";
+	}
 
+	/**
+	 * 员工列表
+	 *
+	 * @return
+	 */
+	@RequestMapping("searchByCondition")
+	public String lists(EmployeeVo vo, Model model,HttpSession session) {
+		
+		List<Employee> lst = employeeService.lists(vo);
+		
+		vo.setLst(lst);
+		model.addAttribute("vo",vo);
+		
+		session.setAttribute("condEmp03", vo);
+		// 检索数据库
+		return "emp03/emplist";
+	}
+	
     /**
      * 删除员工信息
      * @param id
      * @return
      */
-    @RequestMapping("delete")
+    @RequestMapping("deleteAll")
     // 方法名写什么都可以，主要看方法上面的@RequestMapping是什么
-    public String delete1(Integer id){
+    public String deleteAll(EmployeeVo vo, Model model){
     	
-        log.debug("删除的员工id: {}",id);
-        // 删除数据;
-        employeeService.delete(id);
-
-        return "redirect:/employee/lists";//跳转到员工列表
+        // 删除数据
+    	
+    	for(String id : vo.getSelectedItems()) {
+            employeeService.delete(Integer.parseInt(id));
+    	}
+        return "redirect:/employee03/lists";//跳转到员工列表
     }
 
     /**
@@ -52,11 +87,10 @@ public class EmployeeController {
     public String update(Employee employee, Model model) throws IOException {
 
         log.debug("更新之后员工信息: id:{},姓名:{},工资:{},生日:{},", employee.getId(), employee.getName(), employee.getSalary(), employee.getBirthday());
-
         
         // 直接更新基本信息
         employeeService.update(employee);
-        return "redirect:/employee/lists";//更新成功,跳转到员工列表
+        return "redirect:/employee03/lists";//更新成功,跳转到员工列表
     }
 
     /**
@@ -72,7 +106,7 @@ public class EmployeeController {
         //1.根据id查询一个
         Employee employee = employeeService.findById(id);
         model.addAttribute("employee", employee);
-        return "emp/updateEmp";//跳转到更新页面
+        return "emp03/updateEmp";//跳转到更新页面
     }
 
     /**
@@ -87,11 +121,11 @@ public class EmployeeController {
 
         if(employee.getSalary()<0) {
         	model.addAttribute("error", "工资不可以为负数！");
-            return "emp/updateEmp";//更新成功,跳转到员工列表
+            return "emp03/updateEmp";//更新成功,跳转到员工列表
         }
         
         employeeService.save(employee);
-        return "redirect:/employee/lists";//保存成功跳转到列表页面
+        return "redirect:/employee03/lists";//保存成功跳转到列表页面
     }
 
     /**
@@ -99,11 +133,28 @@ public class EmployeeController {
      *
      * @return
      */
+    @RequestMapping("returnToList")
+    public String returnToList(Model model,HttpSession session) {
+        
+    	EmployeeVo vo = (EmployeeVo)session.getAttribute("condEmp03");
+        
+        model.addAttribute("vo",vo);
+        return "emp03/emplist";
+    }
+    
+    /**
+     * 员工列表
+     *
+     * @return
+     */
     @RequestMapping("lists")
-    public String lists(Model model) {
-        log.debug("查询所有员工信息");
-        List<Employee> employeeList = employeeService.lists();
-        model.addAttribute("employeeList", employeeList);
-        return "emp/emplist";
+    public String lists(Model model,HttpSession session) {
+        
+    	EmployeeVo vo = (EmployeeVo)session.getAttribute("condEmp03");
+		List<Employee> lst = employeeService.lists(vo);
+		
+		vo.setLst(lst);
+        model.addAttribute("vo",vo);
+        return "emp03/emplist";
     }
 }

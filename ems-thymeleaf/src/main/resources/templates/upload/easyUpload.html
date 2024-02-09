@@ -1,21 +1,60 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>用来测试在springboot实现文件上传</title>
+	<meta charset="UTF-8">
+	<title>用来测试在springboot实现文件上传</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 </head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+					<div id="rightheader">
+					<p>
+						<span th:text="${#dates.format(#calendars.createNow(), 'yyyy-MM-dd HH:mm:ss')}"></span>
+						<br />
+						<a th:href="@{/menu}">返回菜单</a>
+						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
+						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
+					</p>
+					<p><label style="color: darkred;"> 简易上传实现例子 </label></p>
+
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<p>
+					测试文件上传:
+				</p>
+				<form th:action="@{/file/upload}" method="post" enctype="multipart/form-data">
+					<input type="file" name="aaa" />
+					<input type="submit" value="上传文件">
+				</form>
+				<hr>
+				<p>文件下载链接</p>
+				<a th:href="@{/file/download?fileName=aa.txt}">aa.txt</a>
+				<a th:href="@{/file/download?fileName=5.jpeg}">5.jpeg</a>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+</body>
+
+
 <body>
 
-<h1>测试文件上传</h1>
-<!--<form th:action="@{/user/login}" method="post">-->
-<form th:action="@{/file/upload}" method="post" enctype="multipart/form-data">
-    <input type="file" name="aaa" />
-    <input type="submit" value="上传文件">
-</form>
-
-
-<h1>文件下载链接</h1>
-<a th:href="@{/file/download?fileName=aa.txt}">aa.txt</a>
-<a th:href="@{/file/download?fileName=5.jpeg}">5.jpeg</a>
-</body>
 </html>

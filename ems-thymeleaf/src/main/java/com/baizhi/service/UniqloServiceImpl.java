@@ -29,12 +29,10 @@ public class UniqloServiceImpl  implements  UniqloService{
     	UniqloExample cond = new UniqloExample();
 		UniqloExample.Criteria criteria = cond.createCriteria();
 		
-		
 		// 姓名糊糊查询 条件     日语叫曖昧検索
 		if( StrUtil.isNotEmpty(vo.getUniqlo().getName())) {
 			criteria.andNameLike("%" + vo.getUniqlo().getName() + "%" );
 		}
-    	
 		
 		// 价格范围 条件
 		if( ObjUtil.isNotNull(vo.getPriceBegin())) {
@@ -43,7 +41,6 @@ public class UniqloServiceImpl  implements  UniqloService{
 		if( ObjUtil.isNotNull(vo.getPriceEnd())) {
 			criteria.andPriceLessThanOrEqualTo(NumberUtil.parseInt(vo.getPriceEnd().toString()));
 		}
-
 		
         return mapper.selectByExample(cond);
     }
