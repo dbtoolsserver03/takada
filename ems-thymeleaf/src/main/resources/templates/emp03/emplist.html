@@ -129,13 +129,16 @@
 								生日
 							</td>
 							<td>
+								职能
+							</td>
+							<td>
 								操作
 							</td>
 						</tr>
 						<tr th:each="obj,state:${vo.lst}" th:class="${state.odd?'row1':'row2'}">
 							<td>
-<!--								th:name="|lst[${state.index}].id|"-->
-								<input type="checkbox" th:value="${obj.id}" th:field="*{vo.selectedItems}" 
+								<!--								th:name="|lst[${state.index}].id|"-->
+								<input type="checkbox" th:value="${obj.id}" th:field="*{vo.selectedItems}"
 									class="checkbox" />
 							</td>
 							<td>
@@ -150,10 +153,12 @@
 							<td style="text-align: center;">
 								<span th:text="${#dates.format(obj.birthday,'yyyy/MM/dd')}"></span>
 							</td>
+							<td style="text-align: right;">
+								<span th:text="${obj.jobRole}"></span>
+							</td>
 							<td>
 								<a href="javascript:;" th:onclick="'deleteEmployee('+${obj.id}+')'">删除</a>
 								<a th:href="@{/employee03/detail(id=${obj.id})}">更新</a>
-
 							</td>
 						</tr>
 						<script>
