@@ -1,11 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymealf.org">
 
 <head>
-	<title>更新员工信息</title>
+	<title>添加员工信息</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
-
 </head>
 
 <body>
@@ -29,28 +28,26 @@
 			<div id="content">
 				<p id="whereami">
 				</p>
-				<h2 th:if="${error!=null}" th:text="${error}" style="color:red"></h2>
-
 				<h1>
-					更新员工信息:
+					添加员工信息:
 				</h1>
-				<form th:action="@{/employee/update}" method="post">
+				<form th:action="@{/employee04/save}" method="post">
 					<table cellpadding="0" cellspacing="0" border="0" class="form_table">
-						<tr>
-							<td valign="middle" align="right">
-								编号:
-							</td>
-							<td valign="middle" align="left">
-								<span th:text="${obj.id}"></span>
-								<input type="hidden" name="id" th:value="${obj.id}">
-							</td>
-						</tr>
 						<tr>
 							<td valign="middle" align="right">
 								姓名:
 							</td>
 							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="name" th:value="${obj.name}" />
+								<input type="text" class="inputgri" name="name" />
+							</td>
+						</tr>
+						<tr>
+							<td>性别:</td>
+							<td>
+								<span th:each="entry : ${masterSex}">
+									<label> <input type="radio" th:value="${entry.key}"
+											th:text="${entry.value.mDisplay1}" name="sex" /></label>
+								</span>
 							</td>
 						</tr>
 						<tr>
@@ -58,7 +55,7 @@
 								工资:
 							</td>
 							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="salary" th:value="${obj.salary}" />
+								<input type="text" class="inputgri" name="salary" />
 							</td>
 						</tr>
 						<tr>
@@ -66,8 +63,7 @@
 								生日:
 							</td>
 							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="birthday"
-									th:value="${#dates.format(obj.birthday,'yyyy/MM/dd')}" />
+								<input type="text" class="inputgri" name="birthday" />
 							</td>
 						</tr>
 						<tr>
@@ -75,18 +71,33 @@
 								职能:
 							</td>
 							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="jobRole" th:value="${obj.jobRole}" />
+
+								<select name="jobRole">
+									<option th:each="entry : ${masterJobRole}" th:value="${entry.key}"
+										th:text="${entry.value.mDisplay1}"></option>
+								</select>
+
 							</td>
 						</tr>
+
+						<tr>
+							<td>外语:</td>
+							<td>
+								<span th:each="entry : ${masterForeignType}">
+									<label><input type="checkbox" name="foreignType" th:value="${entry.key}"
+											th:text="${entry.value.mDisplay1}"></label>
+								</span>
+							</td>
+						</tr>
+
+
 					</table>
 					<p>
-						<input type="submit" class="button" value="更新" />
-
+						<input type="submit" class="button" value="确认添加" />
 						<input type="button" class="button" value="返回列表" onclick="returnEmployeeLst()" />
 						<script>
-
 							function returnEmployeeLst() {
-								location.href = '[[@{lists}]]';
+								location.href = '[[@{/employee04/lists}]]';
 							}
 
 						</script>

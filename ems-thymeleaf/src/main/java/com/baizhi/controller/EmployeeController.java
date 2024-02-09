@@ -71,7 +71,7 @@ public class EmployeeController {
         log.debug("当前查询员工id: {}", id);
         //1.根据id查询一个
         Employee employee = service.findById(id);
-        model.addAttribute("employee", employee);
+        model.addAttribute("obj", employee);
         return "emp/updateEmp";//跳转到更新页面
     }
 

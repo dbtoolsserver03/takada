@@ -40,8 +40,8 @@
 								编号:
 							</td>
 							<td valign="middle" align="left">
-								<span th:text="${employee.id}"></span>
-								<input type="hidden" name="id" th:value="${employee.id}">
+								<span th:text="${obj.id}"></span>
+								<input type="hidden" name="id" th:value="${obj.id}">
 							</td>
 						</tr>
 						<tr>
@@ -49,7 +49,7 @@
 								姓名:
 							</td>
 							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="name" th:value="${employee.name}" />
+								<input type="text" class="inputgri" name="name" th:value="${obj.name}" />
 							</td>
 						</tr>
 						<tr>
@@ -57,8 +57,8 @@
 								当前头像:
 							</td>
 							<td valign="middle" align="left">
-								<img th:src="@{/}+${employee.photo}" width="60">
-								<input type="hidden" th:value="${employee.photo}" name="photo">
+								<img th:src="@{/}+${obj.photo}" width="60">
+								<input type="hidden" th:value="${obj.photo}" name="photo">
 							</td>
 						</tr>
 						<tr>
@@ -74,7 +74,7 @@
 								工资:
 							</td>
 							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="salary" th:value="${employee.salary}" />
+								<input type="text" class="inputgri" name="salary" th:value="${obj.salary}" />
 							</td>
 						</tr>
 						<tr>
@@ -83,7 +83,7 @@
 							</td>
 							<td valign="middle" align="left">
 								<input type="text" class="inputgri" name="birthday"
-									th:value="${#dates.format(employee.birthday,'yyyy/MM/dd')}" />
+									th:value="${#dates.format(obj.birthday,'yyyy/MM/dd')}" />
 							</td>
 						</tr>
 					</table>

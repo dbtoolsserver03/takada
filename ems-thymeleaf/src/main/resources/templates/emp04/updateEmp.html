@@ -34,7 +34,7 @@
 				<h1>
 					更新员工信息:
 				</h1>
-				<form th:action="@{/employee/update}" method="post">
+				<form th:action="@{/employee04/update}" method="post">
 					<table cellpadding="0" cellspacing="0" border="0" class="form_table">
 						<tr>
 							<td valign="middle" align="right">
@@ -53,6 +53,19 @@
 								<input type="text" class="inputgri" name="name" th:value="${obj.name}" />
 							</td>
 						</tr>
+						
+						<tr>
+							<td valign="middle" align="right">性别:</td>
+							<td>
+								<span th:each="entry : ${masterSex}">
+									<label> <input type="radio" th:value="${entry.key}"
+											th:text="${entry.value.mDisplay1}" name="sex" 
+											th:checked="(${obj.sex} == ${entry.value.mCode})" 
+											/></label>
+								</span>
+							</td>
+						</tr>
+												
 						<tr>
 							<td valign="middle" align="right">
 								工资:
@@ -70,12 +83,32 @@
 									th:value="${#dates.format(obj.birthday,'yyyy/MM/dd')}" />
 							</td>
 						</tr>
+
 						<tr>
 							<td valign="middle" align="right">
 								职能:
 							</td>
 							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="jobRole" th:value="${obj.jobRole}" />
+
+								<select name="jobRole">
+									<option th:each="entry : ${masterJobRole}" th:value="${entry.key}"
+										th:text="${entry.value.mDisplay1}"
+										th:selected="${obj.jobRole==entry.value.mCode}"
+										></option>
+								</select>
+
+							</td>
+						</tr>
+
+						<tr>
+							<td>外语: </td>
+							<td>
+								<span th:each="entry : ${masterForeignType}">
+									<label><input type="checkbox" name="foreignType" th:value="${entry.key}"
+											th:text="${entry.value.mDisplay1}"
+											th:checked="${obj.foreignType !=null and obj.foreignType.contains(entry.value.mCode)}"
+											></label>
+								</span>
 							</td>
 						</tr>
 					</table>
