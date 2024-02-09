@@ -24,14 +24,14 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class EmployeeController02 {
 
-    private EmployeeService employeeService;
+    private EmployeeService service;
 
     @Value("${upload.dir}")
     private String realpath;
 
     @Autowired
-    public EmployeeController02(EmployeeService employeeService) {
-        this.employeeService = employeeService;
+    public EmployeeController02(EmployeeService service) {
+        this.service = service;
     }
 
 
@@ -42,12 +42,12 @@ public class EmployeeController02 {
      */
     @RequestMapping("delete")
     // 方法名写什么都可以，主要看方法上面的@RequestMapping是什么
-    public String delete1(Integer id){
+    public String delete(Integer id){
     	
         log.debug("删除的员工id: {}",id);
         //1.删除数据
-        String photo = employeeService.findById(id).getPhoto();
-        employeeService.delete(id);
+        String photo = service.findById(id).getPhoto();
+        service.delete(id);
         //2.删除头像
         File file = new File(realpath, photo);
         if (file.exists()) file.delete();
@@ -70,7 +70,7 @@ public class EmployeeController02 {
         log.debug("是否更新头像: {}", notEmpty);
         if (notEmpty) {
             //1.删除老的头像 根据id查询原始头像
-            String oldPhoto = employeeService.findById(employee.getId()).getPhoto();
+            String oldPhoto = service.findById(employee.getId()).getPhoto();
             if(!StrUtil.isBlank(oldPhoto)) {
                 File file = new File(realpath, oldPhoto);
                 if (file.exists()) file.delete();//删除文件
@@ -83,7 +83,7 @@ public class EmployeeController02 {
         }
         
         //2.没有更新头像直接更新基本信息
-        employeeService.update(employee);
+        service.update(employee);
         return "redirect:/employee02/lists";//更新成功,跳转到员工列表
     }
 
@@ -107,7 +107,7 @@ public class EmployeeController02 {
     public String detail(Integer id, Model model) {
         log.debug("当前查询员工id: {}", id);
         //1.根据id查询一个
-        Employee employee = employeeService.findById(id);
+        Employee employee = service.findById(id);
         model.addAttribute("employee", employee);
         return "emp02/updateEmp";//跳转到更新页面
     }
@@ -136,7 +136,7 @@ public class EmployeeController02 {
             return "emp/updateEmp";//更新成功,跳转到员工列表
         }
         
-        employeeService.save(employee);
+        service.save(employee);
         return "redirect:/employee02/lists";//保存成功跳转到列表页面
     }
 
@@ -148,7 +148,7 @@ public class EmployeeController02 {
     @RequestMapping("lists")
     public String lists(Model model) {
         log.debug("查询所有员工信息");
-        List<Employee> employeeList = employeeService.lists();
+        List<Employee> employeeList = service.lists();
         model.addAttribute("employeeList", employeeList);
         return "emp02/emplist";
     }

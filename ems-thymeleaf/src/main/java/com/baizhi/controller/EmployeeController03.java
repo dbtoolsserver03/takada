@@ -20,11 +20,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class EmployeeController03 {
 
-    private EmployeeService employeeService;
+    private EmployeeService service;
 
     @Autowired
-    public EmployeeController03(EmployeeService employeeService) {
-        this.employeeService = employeeService;
+    public EmployeeController03(EmployeeService service) {
+        this.service = service;
     }
     
 	/**
@@ -49,7 +49,7 @@ public class EmployeeController03 {
 	@RequestMapping("searchByCondition")
 	public String lists(EmployeeVo vo, Model model,HttpSession session) {
 		
-		List<Employee> lst = employeeService.lists(vo);
+		List<Employee> lst = service.lists(vo);
 		
 		vo.setLst(lst);
 		model.addAttribute("vo",vo);
@@ -71,7 +71,7 @@ public class EmployeeController03 {
         // 删除数据
     	
     	for(String id : vo.getSelectedItems()) {
-            employeeService.delete(Integer.parseInt(id));
+            service.delete(Integer.parseInt(id));
     	}
         return "redirect:/employee03/lists";//跳转到员工列表
     }
@@ -89,7 +89,7 @@ public class EmployeeController03 {
         log.debug("更新之后员工信息: id:{},姓名:{},工资:{},生日:{},", employee.getId(), employee.getName(), employee.getSalary(), employee.getBirthday());
         
         // 直接更新基本信息
-        employeeService.update(employee);
+        service.update(employee);
         return "redirect:/employee03/lists";//更新成功,跳转到员工列表
     }
 
@@ -104,7 +104,7 @@ public class EmployeeController03 {
     public String detail(Integer id, Model model) {
         log.debug("当前查询员工id: {}", id);
         //1.根据id查询一个
-        Employee employee = employeeService.findById(id);
+        Employee employee = service.findById(id);
         model.addAttribute("employee", employee);
         return "emp03/updateEmp";//跳转到更新页面
     }
@@ -124,7 +124,7 @@ public class EmployeeController03 {
             return "emp03/updateEmp";//更新成功,跳转到员工列表
         }
         
-        employeeService.save(employee);
+        service.save(employee);
         return "redirect:/employee03/lists";//保存成功跳转到列表页面
     }
 
@@ -151,7 +151,7 @@ public class EmployeeController03 {
     public String lists(Model model,HttpSession session) {
         
     	EmployeeVo vo = (EmployeeVo)session.getAttribute("condEmp03");
-		List<Employee> lst = employeeService.lists(vo);
+		List<Employee> lst = service.lists(vo);
 		
 		vo.setLst(lst);
         model.addAttribute("vo",vo);

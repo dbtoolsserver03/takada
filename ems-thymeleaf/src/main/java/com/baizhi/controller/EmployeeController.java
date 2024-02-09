@@ -18,11 +18,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class EmployeeController {
 
-    private EmployeeService employeeService;
+    private EmployeeService service;
 
     @Autowired
-    public EmployeeController(EmployeeService employeeService) {
-        this.employeeService = employeeService;
+    public EmployeeController(EmployeeService service) {
+        this.service = service;
     }
 
     /**
@@ -36,7 +36,7 @@ public class EmployeeController {
     	
         log.debug("删除的员工id: {}",id);
         // 删除数据;
-        employeeService.delete(id);
+        service.delete(id);
 
         return "redirect:/employee/lists";//跳转到员工列表
     }
@@ -55,7 +55,7 @@ public class EmployeeController {
 
         
         // 直接更新基本信息
-        employeeService.update(employee);
+        service.update(employee);
         return "redirect:/employee/lists";//更新成功,跳转到员工列表
     }
 
@@ -70,7 +70,7 @@ public class EmployeeController {
     public String detail(Integer id, Model model) {
         log.debug("当前查询员工id: {}", id);
         //1.根据id查询一个
-        Employee employee = employeeService.findById(id);
+        Employee employee = service.findById(id);
         model.addAttribute("employee", employee);
         return "emp/updateEmp";//跳转到更新页面
     }
@@ -90,7 +90,7 @@ public class EmployeeController {
             return "emp/updateEmp";//更新成功,跳转到员工列表
         }
         
-        employeeService.save(employee);
+        service.save(employee);
         return "redirect:/employee/lists";//保存成功跳转到列表页面
     }
 
@@ -102,7 +102,7 @@ public class EmployeeController {
     @RequestMapping("lists")
     public String lists(Model model) {
         log.debug("查询所有员工信息");
-        List<Employee> employeeList = employeeService.lists();
+        List<Employee> employeeList = service.lists();
         model.addAttribute("employeeList", employeeList);
         return "emp/emplist";
     }
