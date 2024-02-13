@@ -29,7 +29,7 @@
 				<div id="navigation">
 				</div>
 			</div>
-			<div id="content">
+			<span id="content">
 				<p id="whereami">
 				</p>
 				<h1>
@@ -51,7 +51,13 @@
 							生日
 						</td>
 						<td>
+							性别
+						</td>
+						<td>
 							职能
+						</td>
+						<td>
+							语言
 						</td>
 						<td>
 							操作
@@ -71,9 +77,19 @@
 						<td>
 							<span th:text="${#dates.format(obj.birthday,'yyyy/MM/dd')}"></span>
 						</td>
-
 						<td style="text-align: right;">
-							<span th:text="${masterJobRole[obj.jobRole].mDisplay1}"></span>
+							<span th:if="${masterSex[obj.sex]!=null}" th:text="${masterSex[obj.sex].mDisplay1}"></span>
+						</td>
+						<td style="text-align: right;">
+							<span th:if="${masterJobRole[obj.jobRole]!=null}" th:text="${masterJobRole.get(obj.jobRole).mDisplay1}"></span>
+						</td>
+						<td style="text-align: right;">
+
+							<div th:if="${obj.foreignType!=null}" th:with="values=${obj.foreignType.split(',')}">
+								<ul>
+									<li th:each="value : ${values}" th:text="${masterForeignType.get(value).mDisplay1}"></li>
+								</ul>
+							</div>
 						</td>
 						<td>
 							<a href="javascript:;" th:onclick="'deleteEmployee('+${obj.id}+')'">删除</a>
@@ -99,13 +115,13 @@
 						}
 					</script>
 				</p>
-			</div>
 		</div>
-		<div id="footer">
-			<div id="footer_bg">
-				ABC@126.com
-			</div>
+	</div>
+	<div id="footer">
+		<div id="footer_bg">
+			ABC@126.com
 		</div>
+	</div>
 	</div>
 </body>
 

@@ -73,6 +73,7 @@
 							<td valign="middle" align="left">
 
 								<select name="jobRole">
+									<option></option>
 									<option th:each="entry : ${masterJobRole}" th:value="${entry.key}"
 										th:text="${entry.value.mDisplay1}"></option>
 								</select>
