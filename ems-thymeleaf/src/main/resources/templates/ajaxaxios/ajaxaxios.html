@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>emplist</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	<!--	<script th:src="@{/js/plug-in/axios1.6.7/axios.min.js}"></script>-->
+	<script th:src="@{/js/plug-in/jquery/jquery-3.7.1.min.js}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+						<a th:href="@{/menu}">返回菜单</a>
+						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
+						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
+					</p>
+					<p><label style="color: darkred;"> ajax axios test </label></p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+					<span th:if="${session.user==null}">游客</span>!
+				</h1>
+
+				<div>
+					<input type="button" class="button" value="axios get 无参" onclick="getALlEmp()" />
+					<script>
+						function getALlEmp() {
+							axios.get('axios/getAll')//发送请求的URL
+								.then(function (response) {
+									console.log(response);
+								})
+								.catch(function (error) {
+									console.log(error);
+								});
+						}
+					</script>
+
+					<input type="button" class="button" value="axios get 有参 01 &拼串" onclick="getEmp01()" />
+					<script>
+						function getEmp01() {
+							axios.get('axios/getEmp?name=zhang&salaryBegin=2&birthdayBegin=1991/01/01')  //发送请求的URL
+								.then(function (response) {
+									console.log(response);
+								})
+								.catch(function (error) {
+									console.log(error);
+								});
+						}
+					</script>
+
+				</div>
+
+				<div>
+					<input type="button" class="button" value="axios post 无参" onclick="saveEmp()" />
+					<script>
+						function saveEmp() {
+							axios.post('axios/save')//发送请求的URL
+								.then(function (response) {
+									console.log(response);
+								})
+								.catch(function (error) {
+									console.log(error);
+								});
+						}
+					</script>
+					<input type="button" class="button" value="axios post01 有参 prarams" onclick="saveEmp01()" />
+					<script>
+						function saveEmp01() {
+							axios.post('axios/save01?name=zhang&salaryBegin=2&birthdayBegin=1991/01/01')//发送请求的URL
+								.then(function (response) {
+									console.log(response);
+								})
+								.catch(function (error) {
+									console.log(error);
+								});
+						}
+					</script>
+					<input type="button" class="button" value="axios post02 有参obj" onclick="saveEmp02()" />
+					<script>
+						function saveEmp02() {
+							axios.post('axios/save02', {obj: {name: "zhang"}, salaryBegin: 2, birthdayBegin: new Date('1991/01/01')})//发送请求的URL
+								.then(function (response) {
+									console.log(response);
+								})
+								.catch(function (error) {
+									console.log(error);
+								});
+						}
+					</script>
+				</div>
+
+				<div>
+					<input type="button" class="button" value="axios 的并发请求" onclick="runAll()" />
+					<script>
+						function save01() {
+							axios.post('axios/save')//发送请求的URL
+								.then(function (response) {
+									console.log(response);
+								})
+								.catch(function (error) {
+									console.log(error);
+								});
+						}
+						function get01() {
+							axios.get('axios/getAll')//发送请求的URL
+								.then(function (response) {
+									console.log(response);
+								})
+								.catch(function (error) {
+									console.log(error);
+								});
+						}
+						// 在同一时间发送多个不同的请求到后端服务，最后统一处理不同服务的响应结果
+						function runAll() {
+
+							// 并行发送
+							axios.all([save01(), get01()]).then(
+								axios.spread(function (ret1, ret2) {
+									console.log(ret1);
+									console.log(ret2);
+								})// 用来统一处理多个并发请求的执行结果
+							);//all用来处理并发请求
+						}
+					</script>
+				</div>
+
+
+
+				<div>
+					<input type="button" class="button" value="axios 异步请求async" onclick="asyncRequest()" />
+					<script>
+						function asyncRequest() {
+							axios.get('axios/getAll')
+								.then(response => {
+									console.log(response.data);
+								})
+								.catch(error => {
+									console.error(error);
+								});
+							console.log('end..............');
+						}
+					</script>
+
+					<input type="button" class="button" value="axios 同步请求sync" onclick="syncRequest()" />
+					<script>
+						async function syncRequest() {
+							try {
+								const response = await axios.get('axios/getAll');
+								console.log(response.data);
+							} catch (error) {
+								console.error(error);
+							}
+
+							console.log('end..............');
+						}
+					</script>
+
+				</div>
+
+				<hr>
+
+				<div>
+					<input type="button" class="button" value="ajax 异步请求async" onclick="asyncAjaxRequest()" />
+					<script>
+						function asyncAjaxRequest() {
+							$.ajax({
+								url: 'axios/getAll',
+								type: 'GET',
+								dataType: 'json',
+								success: function (response) {
+									// 处理异步请求成功的响应数据
+									console.log(response);
+								},
+								error: function (error) {
+									// 处理异步请求失败的错误信息
+									console.log(error);
+								}
+
+							});
+							console.log('end..............');
+
+						}
+					</script>
+
+					<input type="button" class="button" value="ajax 同步请求sync" onclick="syncAjaxRequest()" />
+					<script>
+						async function syncAjaxRequest() {
+							$.ajax({
+								url: 'axios/getAll',
+								type: 'GET',
+								dataType: 'json',
+								async: false,
+								success: function (response) {
+									// 处理同步请求成功的响应数据
+									console.log(response);
+								},
+								error: function (error) {
+									// 处理同步请求失败的错误信息
+									console.log(error);
+								}
+							});
+							console.log('end..............');
+						}
+					</script>
+
+				</div>
+
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

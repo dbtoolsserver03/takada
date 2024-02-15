@@ -1,83 +1,98 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<title>emplist</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon"/>
-		
-		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
-	</head>
-	<body>
-		<div id="wrap">
-			<div id="top_content"> 
-				<div id="header">
-					<div id="rightheader">
-						<p>
-							2009/11/20 
-							<br />
-							<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
-							<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
-						</p>
-					</div>
-					<div id="topheader">
-						<h1 id="title">
-							<a href="#">main</a>
-						</h1>
-					</div>
-					<div id="navigation">
-					</div>
-				</div>
-				<div id="content">
-					<p id="whereami">
-					</p>
-					<h1>
-						欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
-							<span th:if="${session.user==null}" >游客</span>!
-					</h1>
 
-						<input type="button" class="button" value="员工管理" onclick="manageEmp()"/>
-						<script>
-							function manageEmp(){
-								location.href = '[[@{/manageEmp}]]';
-							}
-						</script>
-						<input type="button" class="button" value="员工管理02" onclick="manageEmp02()"/>
-						<script>
-							function manageEmp02(){
-								location.href = '[[@{/manageEmp02}]]';
-							}
-						</script>
-						<input type="button" class="button" value="员工管理03" onclick="manageEmp03()"/>
-						<script>
-							function manageEmp03(){
-								location.href = '[[@{/manageEmp03}]]';
-							}
-						</script>
-						<input type="button" class="button" value="员工管理04" onclick="manageEmp04()"/>
-						<script>
-							function manageEmp04(){
-								location.href = '[[@{/manageEmp04}]]';
-							}
-						</script>
-						<input type="button" class="button" value="简易上传下载" onclick="manageEasyUpload()"/>
-						<script>
-							function manageEasyUpload(){
-								location.href = '[[@{/easyUpload}]]';
-							}
-						</script>
-						<input type="button" class="button" value="企业级上传下载" onclick="manageUpload()"/>
-						<script>
-							function manageUpload(){
-								location.href = '[[@{/upload}]]';
-							}
-						</script>
+<head>
+	<title>emplist</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
+						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
+					</p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
 				</div>
 			</div>
-			<div id="footer">
-				<div id="footer_bg">
-				ABC@126.com
-				</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+					<span th:if="${session.user==null}">游客</span>!
+				</h1>
+
+				<input type="button" class="button" value="员工管理" onclick="manageEmp()" />
+				<script>
+					function manageEmp() {
+						location.href = '[[@{/manageEmp}]]';
+					}
+				</script>
+				<input type="button" class="button" value="员工管理02" onclick="manageEmp02()" />
+				<script>
+					function manageEmp02() {
+						location.href = '[[@{/manageEmp02}]]';
+					}
+				</script>
+				<input type="button" class="button" value="员工管理03" onclick="manageEmp03()" />
+				<script>
+					function manageEmp03() {
+						location.href = '[[@{/manageEmp03}]]';
+					}
+				</script>
+				<input type="button" class="button" value="员工管理04" onclick="manageEmp04()" />
+				<script>
+					function manageEmp04() {
+						location.href = '[[@{/manageEmp04}]]';
+					}
+				</script>
+				<input type="button" class="button" value="员工管理05" onclick="manageEmp05()" />
+				<script>
+					function manageEmp05() {
+						location.href = '[[@{/manageEmp05}]]';
+					}
+				</script>
+				<input type="button" class="button" value="ajax axios" onclick="manageAjaxAxios()" />
+				<script>
+					function manageAjaxAxios() {
+						location.href = '[[@{/manageAjaxAxios}]]';
+					}
+				</script>
+				<input type="button" class="button" value="简易上传下载" onclick="manageEasyUpload()" />
+				<script>
+					function manageEasyUpload() {
+						location.href = '[[@{/easyUpload}]]';
+					}
+				</script>
+				<input type="button" class="button" value="企业级上传下载" onclick="manageUpload()" />
+				<script>
+					function manageUpload() {
+						location.href = '[[@{/upload}]]';
+					}
+				</script>
 			</div>
 		</div>
-	</body>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>

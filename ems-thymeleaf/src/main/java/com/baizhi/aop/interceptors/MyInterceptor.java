@@ -16,6 +16,9 @@ public class MyInterceptor implements HandlerInterceptor {
 		//System.out.println("========1========");
 		System.out.println("****  "+request.getRequestURI());
 
+		if(request.getRequestURI().contains("error")) {
+			System.out.println(123);
+		}
 		if (request.getRequestURI().endsWith("/login") 
 				|| request.getRequestURI().endsWith("/favicon.ico")
 				|| request.getRequestURI().endsWith("/register")

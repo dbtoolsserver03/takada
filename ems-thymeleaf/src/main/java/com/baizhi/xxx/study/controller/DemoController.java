@@ -1,4 +1,4 @@
-package com.baizhi.controller;
+package com.baizhi.xxx.study.controller;
 
 import java.util.Date;
 import java.util.List;

@@ -31,6 +31,10 @@ public class MvcConfigEmp  implements WebMvcConfigurer {
         //-------------04-------------
     	registry.addViewController("/manageEmp04").setViewName("redirect:/employee04/lists");
         registry.addViewController("employee04/addEmp").setViewName("redirect:/employee04/addEmpInit");
+        
+        //-------------05-------------
+    	registry.addViewController("/manageEmp05").setViewName("redirect:/employee05/init");
+        registry.addViewController("employee05/addEmp").setViewName("emp05/addEmp");
 
     }
 }
