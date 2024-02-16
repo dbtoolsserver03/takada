@@ -1,26 +1,41 @@
 package com.baizhi.service;
 
-import com.baizhi.dao.UserDao;
-import com.baizhi.entity.User;
+import java.nio.charset.StandardCharsets;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.ObjectUtils;
 
-import java.nio.charset.StandardCharsets;
+import com.baizhi.dao.UserDao;
+import com.baizhi.dao.original.TUserMapper;
+import com.baizhi.entity.User;
+import com.baizhi.entity.original.TUserExample;
 
 @Service
 @Transactional
 public class UserServiceImpl  implements UserService{
 
     private UserDao userDao;
-
+    private  TUserMapper userMapper;
     @Autowired
-    public UserServiceImpl(UserDao userDao) {
+    public UserServiceImpl(UserDao userDao,TUserMapper userMapper) {
         this.userDao = userDao;
+        this.userMapper = userMapper;
     }
+    
+    @Override
+    public long findUserName(String username) {
+        //1.根据用户名查询用户
+    	TUserExample cond = new TUserExample();
+    	TUserExample.Criteria criteria = cond.createCriteria();
+		criteria.andUsernameEqualTo(username);
 
+    	long cnt = userMapper.countByExample(cond);
+        return cnt;
+    }
+    
 
     @Override//xiaochen  123 ====>     xiaochen   xxed
     public User login(String username, String password) {

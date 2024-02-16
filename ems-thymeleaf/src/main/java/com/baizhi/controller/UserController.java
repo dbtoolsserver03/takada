@@ -6,7 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.baizhi.entity.User;
 import com.baizhi.service.UserService;
@@ -95,5 +97,14 @@ public class UserController {
         ServletOutputStream os = response.getOutputStream();
         VerifyCodeUtils.outputImage(220,60, os,code);
     }
+    
+    
+	@GetMapping("findUserName")
+	@ResponseBody
+	//@CrossOrigin //允许请求跨域
+	public long findUserName(String username) throws Exception {
 
+		long cnt =userService.findUserName(username); 
+		return cnt;
+	}
 }
