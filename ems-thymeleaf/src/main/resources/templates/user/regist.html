@@ -6,6 +6,32 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	<script th:src="@{/js/plug-in/jquery/jquery-3.7.1.min.js}"></script>
+
+	<script>
+		/*$(document).ready(function () {
+			// 绑定ID事件
+			$('[name=username]').blur(function () {
+
+				console.log(111);
+				// 在此处执行Ajax请求
+				$.ajax({
+					url: 'user/findUserName?username=' + $('[name=username]').val(),
+					method: 'GET',
+					success: function (response, data) {
+						// 处理成功的响应
+						console.log("success:" + data);
+					},
+					error: function (error) {
+
+						console.log("error:" + error);
+						// 处理错误
+					}
+				});
+			});
+		})
+*/
+	</script>
 </head>
 
 <body>
@@ -31,7 +57,6 @@
 				</p>
 
 				<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
-
 
 				<h1>
 					注册

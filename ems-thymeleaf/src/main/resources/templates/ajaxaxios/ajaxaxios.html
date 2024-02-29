@@ -55,7 +55,7 @@
 						}
 					</script>
 
-					<input type="button" class="button" value="axios get 有参 01 &拼串" onclick="getEmp01()" />
+					<input type="button" class="button" value="axios get 有参 &拼串" onclick="getEmp01()" />
 					<script>
 						function getEmp01() {
 							axios.get('axios/getEmp?name=zhang&salaryBegin=2&birthdayBegin=1991/01/01')  //发送请求的URL
@@ -68,6 +68,20 @@
 						}
 					</script>
 
+					<input type="button" class="button" value="axios get 无参 返回int" onclick="getCnt()" />
+					<script>
+						function getCnt() {
+							axios.get('axios/getCnt')  //发送请求的URL
+								.then(function (response) {
+									console.log('then');
+									console.log(response);
+								})
+								.catch(function (error) {
+									console.log('catch');
+									console.log(error);
+								});
+						}
+					</script>
 				</div>
 
 				<div>
@@ -143,7 +157,7 @@
 						}
 					</script>
 				</div>
-
+				<hr>
 
 
 				<div>
@@ -179,6 +193,177 @@
 
 				<hr>
 
+
+<!--ajax-->
+				<div>
+					<input type="button" class="button" value="ajax get 无参" onclick="getALlEmpAjax()" />
+					<script>
+						function getALlEmpAjax() {
+							$.ajax({
+								url: 'axios/getAll',
+								type: 'GET',
+								dataType: 'json',
+								success: function (response) {
+									// 处理异步请求成功的响应数据
+									console.log('success');
+									console.log(response);
+								},
+								error: function (error) {
+									// 处理异步请求失败的错误信息
+									console.log('error');
+									console.log(error);
+								}
+							});
+						}
+					</script>
+
+					<input type="button" class="button" value="ajax get 有参 &拼串" onclick="getEmp01Ajax()" />
+					<script>
+						function getEmp01Ajax() {
+							
+							$.ajax({
+								url: 'axios/getEmp?name=zhang&salaryBegin=2&birthdayBegin=1991/01/01',
+								type: 'GET',
+								dataType: 'json',
+								success: function (response) {
+									// 处理异步请求成功的响应数据
+									console.log('success');
+									console.log(response);
+								},
+								error: function (error) {
+									// 处理异步请求失败的错误信息
+									console.log('error');
+									console.log(error);
+								}
+							});
+						}
+					</script>
+
+					<input type="button" class="button" value="ajax get 无参 返回int" onclick="getCntAjax()" />
+					<script>
+						function getCntAjax() {
+							
+							$.ajax({
+								url: 'axios/getCnt',
+								type: 'GET',
+								dataType: 'json',
+								success: function (response) {
+									// 处理异步请求成功的响应数据
+									console.log('success');
+									console.log(response);
+								},
+								error: function (error) {
+									// 处理异步请求失败的错误信息
+									console.log('error');
+									console.log(error);
+								}
+							});
+						}
+					</script>
+				</div>
+
+				<div>
+					<input type="button" class="button" value="ajax post 无参" onclick="saveEmpAjax()" />
+					<script>
+						function saveEmpAjax() {
+							
+							$.ajax({
+								url: 'axios/save',
+								type: 'POST',
+								dataType: 'json',
+								success: function (response) {
+									// 处理异步请求成功的响应数据
+									console.log('success');
+									console.log(response);
+								},
+								error: function (error) {
+									// 处理异步请求失败的错误信息
+									console.log('error');
+									console.log(error);
+								}
+							});
+						}
+					</script>
+					<input type="button" class="button" value="axios post01 有参 prarams" onclick="getEmp01Ajax()" />
+					<script>
+						function getEmp01Ajax() {
+							
+							$.ajax({
+								url: 'axios/save01?name=zhang&salaryBegin=2&birthdayBegin=1991/01/01',
+								type: 'POST',
+								dataType: 'json',
+								success: function (response) {
+									// 处理异步请求成功的响应数据
+									console.log('success');
+									console.log(response);
+								},
+								error: function (error) {
+									// 处理异步请求失败的错误信息
+									console.log('error');
+									console.log(error);
+								}
+							});
+						}
+					</script>
+					<input type="button" class="button" value="ajax post02 有参obj" onclick="saveEmp02Ajax()" />
+					<script>
+						function saveEmp02Ajax() {
+							
+							$.ajax({
+								url: 'axios/save02',
+								data:{obj: {name: "zhang"}, salaryBegin: 2, birthdayBegin: new Date('1991/01/01')},
+								type: 'POST',
+								dataType: 'json',
+								success: function (response) {
+									// 处理异步请求成功的响应数据
+									console.log('success');
+									console.log(response);
+								},
+								error: function (error) {
+									// 处理异步请求失败的错误信息
+									console.log('error');
+									console.log(error);
+								}
+							});
+						}
+					</script>
+				</div>
+
+				<div>
+					<input type="button" class="button" value="ajax 的并发请求" onclick="runAllAjax()" />
+					<script>
+						function save01Ajax() {
+							axios.post('axios/save')//发送请求的URL
+								.then(function (response) {
+									console.log(response);
+								})
+								.catch(function (error) {
+									console.log(error);
+								});
+						}
+						function get01Ajax() {
+							axios.get('axios/getAll')//发送请求的URL
+								.then(function (response) {
+									console.log(response);
+								})
+								.catch(function (error) {
+									console.log(error);
+								});
+						}
+						// 在同一时间发送多个不同的请求到后端服务，最后统一处理不同服务的响应结果
+						function runAllAjax() {
+
+							// 并行发送
+							axios.all([save01(), get01()]).then(
+								axios.spread(function (ret1, ret2) {
+									console.log(ret1);
+									console.log(ret2);
+								})// 用来统一处理多个并发请求的执行结果
+							);//all用来处理并发请求
+						}
+					</script>
+				</div>
+<hr>
 				<div>
 					<input type="button" class="button" value="ajax 异步请求async" onclick="asyncAjaxRequest()" />
 					<script>
@@ -224,6 +409,9 @@
 					</script>
 
 				</div>
+
+
+
 
 			</div>
 		</div>

@@ -30,7 +30,12 @@ public class AxiosController {
 	public List<Employee> getAll() {
 		return service.lists();
 	}
-
+	@GetMapping("getCnt")
+	@ResponseBody
+	//@CrossOrigin //允许请求跨域
+	public Integer getCnt() {
+		return 12345;
+	}
 	@GetMapping("getEmp")
 	@ResponseBody
 	//@CrossOrigin //允许请求跨域
