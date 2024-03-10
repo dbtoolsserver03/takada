@@ -14,16 +14,16 @@ USE `ems-thymeleaf`;
 -- ----------------------------
 DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `salary` double(10,2) DEFAULT NULL,
-  `birthday` datetime DEFAULT NULL,
-  `photo` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `sex` char(2) DEFAULT NULL,
-  `foreign_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `job_role` char(2) DEFAULT NULL,
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'NO',
+  `name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '名前',
+  `salary` double(10,2) DEFAULT NULL COMMENT '給料',
+  `birthday` datetime DEFAULT NULL COMMENT '年月日',
+  `photo` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'アイコン',
+  `sex` char(2) DEFAULT NULL COMMENT '性別',
+  `foreign_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '外語',
+  `job_role` char(2) DEFAULT NULL COMMENT '職位',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='社員テーブル';
 
 -- ----------------------------
 -- Records of employee
