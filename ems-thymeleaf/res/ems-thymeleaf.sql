@@ -25,20 +25,6 @@ CREATE TABLE `employee` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Records of employee
--- ----------------------------
-BEGIN;
-INSERT INTO `employee` (`id`, `name`, `salary`, `birthday`, `photo`, `sex`, `foreign_type`, `job_role`) VALUES (8, 's', 53.00, '1991-01-01 00:00:00', '20240209094603121.jpg', '02', '01,02', '04');
-INSERT INTO `employee` (`id`, `name`, `salary`, `birthday`, `photo`, `sex`, `foreign_type`, `job_role`) VALUES (9, 'cuishuangjia', 999.00, '1991-01-01 00:00:00', '20240209094620205.gif', '01', '01,02,03', '01');
-INSERT INTO `employee` (`id`, `name`, `salary`, `birthday`, `photo`, `sex`, `foreign_type`, `job_role`) VALUES (10, 'zhang31', 12.00, '1991-01-01 00:00:00', NULL, '00', '01,02', '05');
-INSERT INTO `employee` (`id`, `name`, `salary`, `birthday`, `photo`, `sex`, `foreign_type`, `job_role`) VALUES (11, 'a01dd', 2.00, '1991-01-01 00:00:00', '20240213160806482.jpg', '02', '01,03', '02');
-INSERT INTO `employee` (`id`, `name`, `salary`, `birthday`, `photo`, `sex`, `foreign_type`, `job_role`) VALUES (12, 'tanaka02', 53.00, '1991-01-01 00:00:00', NULL, '01', '02,03', '01');
-INSERT INTO `employee` (`id`, `name`, `salary`, `birthday`, `photo`, `sex`, `foreign_type`, `job_role`) VALUES (13, 'wang5', 120.00, '1991-01-01 00:00:00', NULL, '01', '01,03', '04');
-INSERT INTO `employee` (`id`, `name`, `salary`, `birthday`, `photo`, `sex`, `foreign_type`, `job_role`) VALUES (14, 'tanaka111', 53.00, '1991-01-01 00:00:00', NULL, '02', NULL, '02');
-INSERT INTO `employee` (`id`, `name`, `salary`, `birthday`, `photo`, `sex`, `foreign_type`, `job_role`) VALUES (15, 'aaaa', 53.00, '1991-01-01 00:00:00', NULL, '01', '02', '02');
-INSERT INTO `employee` (`id`, `name`, `salary`, `birthday`, `photo`, `sex`, `foreign_type`, `job_role`) VALUES (16, 'wang5aaaa', 121333.99, '1991-01-01 00:00:00', NULL, '02', '01,02', '');
-COMMIT;
 
 -- ----------------------------
 -- Table structure for m_code
@@ -126,12 +112,6 @@ CREATE TABLE `user` (
   `password` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `gender` tinyint unsigned DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Records of user
--- ----------------------------
-BEGIN;
-INSERT INTO `user` (`id`, `username`, `realname`, `password`, `gender`) VALUES (1, 'admin', 'tom', '202cb962ac59075b964b07152d234b70', 1);
-INSERT INTO `user` (`id`, `username`, `realname`, `password`, `gender`) VALUES (2, 'z3', 'tom', '202cb962ac59075b964b07152d234b70', 1);
-COMMIT;
+
