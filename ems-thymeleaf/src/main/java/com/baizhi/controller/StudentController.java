@@ -1,14 +1,14 @@
 package com.baizhi.controller;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.baizhi.entity.original.TStudent;
+import com.baizhi.service.StudentService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,6 +18,9 @@ import lombok.extern.slf4j.Slf4j;
 public class StudentController {
 
 	
+	@Autowired
+	StudentService service;
+	
     /**
      * 学生列表
      *
@@ -26,13 +29,7 @@ public class StudentController {
     @RequestMapping("lists")
     public String lists(Model model) {
         log.debug("查询所有员工信息");
-        List<TStudent> objList = new ArrayList<>();
-        
-        TStudent s = new TStudent();
-        s.setStudentId(1).setEmail("a@1.com").setStudentName("zhang3").setBirthdate(new Date());
-        
-        
-        objList.add(s);
+        List<TStudent> objList = service.lists();
         model.addAttribute("objLst", objList);
         return "student/studentlist";
     }
