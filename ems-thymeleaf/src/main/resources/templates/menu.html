@@ -37,6 +37,13 @@
 					<span th:if="${session.user==null}">游客</span>!
 				</h1>
 
+				<input type="button" class="button" value="学生管理" onclick="manageStudent()" />
+				<script>
+					function manageStudent() {
+						location.href = '[[@{/manageStudent}]]';
+					}
+				</script>
+				
 				<input type="button" class="button" value="员工管理" onclick="manageEmp()" />
 				<script>
 					function manageEmp() {
