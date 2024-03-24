@@ -11,4 +11,8 @@ public interface StudentService {
 
 	void save(TStudent obj);
 
+	TStudent findRecByPk(int id);
+
+	void update(TStudent obj);
+
 }

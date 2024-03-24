@@ -47,4 +47,34 @@ public class StudentController {
         return "redirect:lists";
     }
     
+    
+    /**
+     * 学生更新初期化
+     *
+     * @return
+     */
+    @RequestMapping("detail")
+    public String detail(Model model, int id) {
+    	
+    	TStudent s = service.findRecByPk(id);
+       
+    	model.addAttribute("obj", s);
+    	
+        return "student/updateStudent";
+    }
+    
+    /**
+     * 学生新规
+     *
+     * @return
+     */
+    @RequestMapping("update")
+    public String update(TStudent obj) {
+    	
+    	service.update(obj);
+       
+        return "redirect:lists";
+    }
+      
+    
 }

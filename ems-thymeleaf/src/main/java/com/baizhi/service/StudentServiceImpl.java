@@ -28,4 +28,17 @@ public class StudentServiceImpl  implements  StudentService{
 		
 	}
 
+	@Override
+	public TStudent findRecByPk(int id) {
+		
+		return mapper.selectByPrimaryKey(id);
+		
+	}
+
+	@Override
+	public void update(TStudent obj) {
+		// TODO 自動生成されたメソッド・スタブ
+		mapper.updateByPrimaryKeySelective(obj);
+	}
+
 }
