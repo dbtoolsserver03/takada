@@ -22,4 +22,10 @@ public class StudentServiceImpl  implements  StudentService{
 		return mapper.selectByExample(null);
 	}
 
+	@Override
+	public void save(TStudent obj) {
+		mapper.insertSelective(obj);
+		
+	}
+
 }

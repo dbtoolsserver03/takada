@@ -33,4 +33,18 @@ public class StudentController {
         model.addAttribute("objLst", objList);
         return "student/studentlist";
     }
+    
+    /**
+     * 学生新规
+     *
+     * @return
+     */
+    @RequestMapping("save")
+    public String lists(TStudent obj) {
+    	
+    	service.save(obj);
+       
+        return "redirect:lists";
+    }
+    
 }

@@ -19,9 +19,9 @@ public class MvcConfigStudent  implements WebMvcConfigurer {
     	
     	
     	
-//        // 增加员工
-//        registry.addViewController("employee/addStudent").setViewName("emp/addStudent");
-//
+        // 增加员工
+        registry.addViewController("student/addStudent").setViewName("student/addStudent");
+
 //        //-------------02-------------
 //    	registry.addViewController("/manageStudent02").setViewName("redirect:/employee02/lists");
 //        // 增加员工
