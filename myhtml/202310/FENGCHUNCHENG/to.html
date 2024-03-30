@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>to</title>
+<script>
+	function init(){
+		let url= new URL(window.location.href);
+		
+	let params =url.searchParams;
+	
+	    var el = document.getElementById("id_view");
+	    el.innerText=params.get('user')+"  "+params.get('password');
+	}
+</script>
+</head>
+
+<body style="background-color:aquamarine;"onload="init()">
+	
+	前のページ：
+	<div id="id_view">
+		
+		ministop
+	</div>
+     
+</body>
+</html>
