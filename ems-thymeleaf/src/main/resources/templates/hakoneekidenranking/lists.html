@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>list</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	<script th:src="@{/js/plug-in/jquery/jquery-3.7.1.min.js}"></script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						<span th:text="${#dates.format(#calendars.createNow(), 'yyyy-MM-dd HH:mm:ss')}"></span>
+						<br />
+						<a th:href="@{/menu}">返回菜单</a>
+						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
+						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
+						<p><label style="color: darkred;"> </label></p>
+					</p>
+					<p><label style="color: darkred;"></label></p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+					<span th:if="${session.user==null}">游客</span>!
+				</h1>
+				<table class="table">
+					<tr class="table_header">
+						<td>
+							编号
+						</td>
+						<td>
+							排名
+						</td>
+						<td>
+							队伍名称
+						</td>
+
+						<td>
+							记录时间
+						</td>
+						<td>
+							头像
+						</td>
+					</tr>
+					<tr th:each="obj,state:${objLst}" th:class="${state.odd?'row1':'row2'}">
+						<td>
+							<span th:text="${obj.id}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.position}"></span>
+						</td>
+
+						<td>
+							<span th:text="${obj.teamName}"></span>
+						</td>
+
+						<td style="text-align: right;">
+							<span th:text="${#dates.format(obj.record,'HH:mm:ss')}"></span>
+
+						</td>
+						<td>
+							<img th:src="@{/}+${obj.photo}" width="60">
+						</td>
+						<td>
+							<a href="javascript:;" th:onclick="'deleteTHakoneEkidenRanking('+${obj.id}+')'">删除</a>
+							<!--								<a th:href="@{/hakoneekidenranking/detail?id=}+${hakoneekidenranking.id}+'&name='+${hakoneekidenranking.TeamName}">更新</a>-->
+							<!--								<a th:href="@{/hakoneekidenranking/detail(id=${hakoneekidenranking.id},name=${hakoneekidenranking.TeamName})}">更新</a>-->
+							<a th:href="@{/hakoneekidenranking/detail(id=${obj.id})}">更新</a>
+
+						</td>
+					</tr>
+					<script>
+							function deleteTHakoneEkidenRanking(id){
+							console.log(id);
+							if (window.confirm('确定要删除这条记录吗?')) {
+								console.log('[[@{/hakoneekidenranking/delete?id=}]]' + id);
+								location.href = '[[@{/hakoneekidenranking/delete?id=}]]' + id;
+							}
+						}
+					</script>
+				</table>
+				<p>
+					<input type="button" class="button" value="添加" onclick="add()" />
+					<script>
+						function add() {
+							location.href = '[[@{/hakoneekidenranking/add}]]';
+						}
+					</script>
+				</p>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+
+    
+</body>
+
+</html>

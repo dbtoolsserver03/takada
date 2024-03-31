@@ -15,7 +15,7 @@
 			<div id="header">
 				<div id="rightheader">
 					<p>
-						2009/11/20
+						2024/03/24
 						<br />
 						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
 						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
@@ -36,7 +36,12 @@
 					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
 					<span th:if="${session.user==null}">游客</span>!
 				</h1>
-
+				<input type="button" class="button" value="箱根駅伝的排名" onclick="manageHakoneEkidenRanking()" />
+				<script>
+					function manageHakoneEkidenRanking() {
+						location.href = '[[@{/manageHakoneEkidenRanking}]]';
+					}
+				</script>
 				<input type="button" class="button" value="员工管理" onclick="manageEmp()" />
 				<script>
 					function manageEmp() {
