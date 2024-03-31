@@ -41,4 +41,10 @@ public class StudentServiceImpl  implements  StudentService{
 		mapper.updateByPrimaryKeySelective(obj);
 	}
 
+	@Override
+	public void delete(Integer id) {
+		// TODO 自動生成されたメソッド・スタブ
+		mapper.deleteByPrimaryKey(id);
+	}
+
 }

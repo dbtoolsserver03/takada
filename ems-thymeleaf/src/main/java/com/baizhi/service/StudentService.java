@@ -15,4 +15,6 @@ public interface StudentService {
 
 	void update(TStudent obj);
 
+	void delete(Integer id);
+
 }

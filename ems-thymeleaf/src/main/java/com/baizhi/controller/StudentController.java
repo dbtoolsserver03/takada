@@ -77,4 +77,20 @@ public class StudentController {
     }
       
     
+
+    /**
+     * 学生删除
+     *
+     * @return
+     */
+    @RequestMapping("delete")
+    public String delete(Integer studentId) {
+    	
+    	service.delete(studentId);
+       
+        return "redirect:lists";
+    }
+      
+    
+    
 }
