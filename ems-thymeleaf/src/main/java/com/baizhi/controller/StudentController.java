@@ -16,7 +16,6 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("student")
 @Slf4j
 public class StudentController {
-
 	
 	@Autowired
 	StudentService service;
@@ -31,11 +30,11 @@ public class StudentController {
         log.debug("查询所有员工信息");
         List<TStudent> objList = service.lists();
         model.addAttribute("objLst", objList);
-        return "student/studentlist";
+        return "stu/studentlist";
     }
     
     /**
-     * 学生新规
+     * 学生新规保存
      *
      * @return
      */
@@ -46,7 +45,6 @@ public class StudentController {
        
         return "redirect:lists";
     }
-    
     
     /**
      * 学生更新初期化
@@ -60,11 +58,11 @@ public class StudentController {
        
     	model.addAttribute("obj", s);
     	
-        return "student/updateStudent";
+        return "stu/updateStudent";
     }
     
     /**
-     * 学生新规
+     * 学生更新
      *
      * @return
      */
@@ -76,7 +74,6 @@ public class StudentController {
         return "redirect:lists";
     }
       
-    
 
     /**
      * 学生删除
@@ -90,7 +87,5 @@ public class StudentController {
        
         return "redirect:lists";
     }
-      
-    
     
 }

@@ -11,12 +11,11 @@ import com.baizhi.entity.original.TStudent;
 
 @Service
 @Transactional
-public class StudentServiceImpl  implements  StudentService{
+public class StudentServiceImpl implements StudentService {
 
-	
 	@Autowired
 	TStudentMapper mapper;
-	
+
 	@Override
 	public List<TStudent> lists() {
 		return mapper.selectByExample(null);
@@ -25,25 +24,22 @@ public class StudentServiceImpl  implements  StudentService{
 	@Override
 	public void save(TStudent obj) {
 		mapper.insertSelective(obj);
-		
+
 	}
 
 	@Override
 	public TStudent findRecByPk(int id) {
-		
 		return mapper.selectByPrimaryKey(id);
-		
+
 	}
 
 	@Override
 	public void update(TStudent obj) {
-		// TODO 自動生成されたメソッド・スタブ
 		mapper.updateByPrimaryKeySelective(obj);
 	}
 
 	@Override
 	public void delete(Integer id) {
-		// TODO 自動生成されたメソッド・スタブ
 		mapper.deleteByPrimaryKey(id);
 	}
 
