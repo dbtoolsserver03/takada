@@ -115,3 +115,18 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
 
+-- ----------------------------
+-- Table structure for student
+-- ----------------------------
+DROP TABLE IF EXISTS `student`;
+
+CREATE TABLE `student` (
+  `student_id` int NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `student_name` varchar(255) DEFAULT NULL COMMENT '学生の名前',
+  `student_pwd` varchar(255) DEFAULT NULL COMMENT '学生の暗証番号',
+  `birthdate` datetime DEFAULT NULL COMMENT '学生の誕生日',
+  `email` varchar(255) DEFAULT NULL COMMENT '学生のメールアドレス',
+  PRIMARY KEY (`student_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='学生テーブル';
+
+
