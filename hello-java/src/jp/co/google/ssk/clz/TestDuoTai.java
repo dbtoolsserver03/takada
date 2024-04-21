@@ -6,7 +6,7 @@ public class TestDuoTai {
 
 		
 		
-		// 类的多态
+		// 类的多态 (用父类定义变更，用new 生成父类或子类对象)
 		Cat cat = new Douraimeng();
 		cat.call();
 		
