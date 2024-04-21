@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<script>
+
+		function init() {
+
+			const searchParams = new URLSearchParams(window.location.search);
+			var tag = document.getElementById("id-div");
+
+
+			var divValue = "";
+			divValue += searchParams.get('user');
+			divValue += searchParams.get('salary');
+			divValue += searchParams.get('sex');
+			divValue += searchParams.get('pet');
+
+
+
+			tag.innerText = divValue;
+		}
+	</script>
+
+</head>
+
+
+<!--onload 代表画面在浏览器里加载完毕后，默认执行的方法-->
+
+<body onload="init()">
+
+
+	<div id="id-div">
+		XXX
+
+	</div>
+
+</body>
+
+</html>
