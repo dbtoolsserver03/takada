@@ -116,9 +116,9 @@ public class PrimitiveTypeTest  {
 	        System.out.println(strA);
 	        System.out.println(strB);
 	        
-	        System.out.println("strA==strB " + strA==strB);
+	        System.out.println("strA==strB " + (strA==strB));
 	        
-	        System.out.println("strA==strC " + strA==strC);
+	        System.out.println("strA==strC " + (strA==strC));
 
 	        
 	        // 字符串比较一定要用 equals方法
