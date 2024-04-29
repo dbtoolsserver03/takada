@@ -44,6 +44,9 @@ public class TestList {
 		
 		System.out.println("list ------------");
 		for (MyUser myUser : lst) {
+			
+			// 循环集合（LIST，SET，MAP）时，不可以改变集合的件数。
+			lst.remove(0);
 			System.out.println(myUser);
 		}
 		
