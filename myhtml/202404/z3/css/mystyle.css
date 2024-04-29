@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+/*通过标签名来设样式*/
+
+input[type="date"] {
+	background-color: cadetblue;
+}
