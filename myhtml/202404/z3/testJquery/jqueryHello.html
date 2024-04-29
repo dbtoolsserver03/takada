@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>jquery test</title>
+	<script src="./plug-in/jquery-3.7.1.js"></script>
+
+	<script>
+
+		$(document).ready(function () {
+			$("#id-login").click(function () {
+				// var tag = document.getElementById("id-user");
+				// tag.style.backgroundColor = 'yellow';
+
+				$('#id-user').css('background-color', 'yellow');
+
+			});
+
+
+			$("#id-confirm").click(function () {
+
+				var selectedCheckboxes = $('input[type="checkbox"]:checked');
+				//selectedCheckboxes.css('background-color', 'yellow');
+				selectedCheckboxes.parent().css('background-color', 'yellow');
+
+
+				selectedCheckboxes.each(function () {
+					$(this).parent().css('background-color', 'yellow');
+					console.log($(this).val()); // 输出选中的复选框的值
+				});
+
+			});
+
+		});
+
+
+	</script>
+
+</head>
+
+
+
+<body>
+
+	user : <input id="id-user" type="text">
+	password : <input type="passwword">
+	<input id="id-login" type="button" value="提交">
+
+	<br>
+	input hobby
+	<label><input type="checkbox" name="hob" value="sleepv">sleep</label>
+	<label><input type="checkbox" name="hob" value="eatv">eat</label>
+	<label><input type="checkbox" name="hob" value="gamev">game</label>
+	<label><input type="checkbox" name="hob" value="readv">read</label>
+
+	<input id="id-confirm" type="button" value="确认">
+
+
+
+
+</body>
+
+</html>
