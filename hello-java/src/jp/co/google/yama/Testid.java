@@ -1,6 +1,6 @@
 package jp.co.google.yama;
 
-public class Test {
+public class Testid {
 
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
@@ -26,7 +26,10 @@ public class Test {
 
 	private static int add(int a, int b) {
 		// TODO 自動生成されたメソッド・スタブ
-		int c = a + b;
+		int c = a + b;;
+		for(int i=0;i<100;i++) {
+			
+		}
 		return c;
 	}
 
