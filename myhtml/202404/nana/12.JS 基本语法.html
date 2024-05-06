@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> JS 基本语法 </title>
+<link rel="shortcut icon" href="./img/1713172188385.jpg">
+<link rel="stylesheet" href="./CSS/style.css">
+
+
+
+
+
+</head>
+
+<body>
+<script>
+	console.log('变量和数据类型');
+	var x; /*避免使用*/
+	let y = 5;
+	const PI = 3.14;
+	console.log(x,y,PI);
+	let name = '如花';
+	console.log(name);
+	let empty_value = null;
+	console.log(empty_value);
+	
+	
+	console.log('条件语句');
+	let age = 9;
+	if (age > 18) {
+		console.log ('你已经成年了');
+	} else {
+		console.log ('未成年');
+	}
+	
+	//let time = 22;
+	//if (time<12) {
+	//	alert('上午好');
+	//} else if (time<18) {
+	//	alert('下午好');
+	//} else {
+	//	alert('晚上好')
+	//}
+	
+	console.log('FOR 循环');
+	
+	for (let i = 1; i<11; i++) {
+		console.log(i);
+	}
+
+	console.log('while 循环');
+	let count =1;
+	while (count <= 10) {
+		console.log(count);
+		count++; /* 不加这个就会无限循环*/
+	}
+	
+	
+	console.log('循环关键字');
+	for (var i = 0; i<7; i++) {
+			if (i == 2) {
+				continue; /*跳过这个循环下面的继续*/
+			}
+			if (i == 5) {
+				break;  /* 终止了这个循环 */
+			}
+			console.log(i);
+		}
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+</script>
+
+	
+	
+</body>
+</html>

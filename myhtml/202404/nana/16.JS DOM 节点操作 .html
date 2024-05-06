@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 表格的增删改查 </title>
+<link rel="shortcut icon" href="./img/1713172188385.jpg">
+<link rel="stylesheet" href="./CSS/style.css">
+
+<style>
+	table {
+		width:100%;
+		border-collapse: collapse;
+		margin-top: 20px;
+	}
+	th,td {
+		border: 1px solid #ddd;
+		text-align: center;
+		padding: 8px;
+	}
+	th{
+		background-color: #ddd;
+	}
+	button {
+		margin-left: 5px;
+	}
+	
+	
+</style>
+
+
+
+</head>
+
+<body>
+
+<h1 style="text-align: center">表格的增删改查</h1>
+<button onclick = "addRow()">新增数据</button>
+	<table id = "table">
+		<tr>
+			<th> 姓名</th>
+			<th> 联系方式</th>
+			<th> 操作</th>
+		</tr>
+		
+		<tr>
+			<td> 罗大富</td>
+			<td> 12345678910</td>
+			<td>
+				<button onclick = "editRow(this)">编辑</button><button onclick = "deleteRow(this)">删除</button>
+            </td>
+	     </tr>
+		
+		
+		
+	</table>
+<script src="./JS/table.js"></script>
+	
+</body>
+</html>

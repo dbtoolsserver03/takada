@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> CSS 浮动 </title>
+<link rel="shortcut icon" href="./img/1713172188385.jpg">
+
+<style>
+	.father {
+		background-color: aquamarine;
+		height: 150px;
+		border: 3px solid brown;
+		/*如果这里没有设置高度的话
+		overflow: hidden;
+		上面这个可以填上背景色 */
+		
+	}
+	
+	
+	/*如果father样式里面没有设置高度的话
+	.father::after {
+		content:"";
+		display: table;
+		clear: both;
+		
+	}
+     上面这个也可以填上背景色 */
+	
+	
+	
+	
+	.left-son {
+		width: 100px;
+		height: 100px;
+		background-color: rgb(128, 255, 128);
+		float: left;
+	}
+	
+	
+	
+	.right-son {
+			width: 100px;
+			height: 100px;
+			background-color:yellow;
+			float: right;
+		}
+		
+</style>
+
+</head>
+
+<body>
+
+<div class="father">
+	<div class="left-son">左浮动</div>
+	<div class="right-son">右浮动</div>
+
+</div>
+	
+<p> 这是一段文本 这是一段文本 这是一段文本 这是一段文本 </p>	
+ 
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> JS 函数 </title>
+<link rel="shortcut icon" href="./img/1713172188385.jpg">
+<link rel="stylesheet" href="./CSS/style.css">
+
+
+
+
+
+</head>
+
+<body>
+<script>
+	function hello( ) {
+		console.log('hello,world!');
+	}
+	
+	hello();
+	
+	function hello_with_return() {
+		console.log('hello,world! - 返回值');
+	}
+		
+	let a = hello_with_return;
+	console.log(a);
+	console.log(hello_with_return);
+	
+	
+	function hello_with_params(name) {
+		console.log ('hello, ' + name);
+	}
+	
+	hello_with_params('如花') ;
+	
+	// 作用域
+	
+	let global_var = '全局变量';
+	
+	function local_var_function() {
+		let local_var = '局部变量';
+		console.log('函数内打印全局变量' + global_var);
+		console.log('函数内打印局部变量' + local_var);
+	}
+	local_var_function();
+	
+	console.log('函数外打印全局变量' + global_var);
+	/* 外部打印不了局部变量*/
+	// console.log('函数外打印局部变量' + local_var);
+	
+	
+</script>
+
+	
+	
+</body>
+</html>

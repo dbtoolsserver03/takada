@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> JS DOM </title>
+<link rel="shortcut icon" href="./img/1713172188385.jpg">
+<link rel="stylesheet" href="./CSS/style.css">
+
+
+
+
+
+</head>
+
+<body>
+<div id="box1">这是一个ID选择器标签</div>
+<div class="box2">这是一个类选择器标签</div>
+<div >普通的div 标签</div>
+
+<button>点击按钮</button>
+
+<script>
+	var element_id = document.getElementById('box1');
+	console.log(element_id);
+	
+	var element_class = document.getElementsByClassName('box2')[0];
+	/* 需要 [0] 索引值 */
+	console.log(element_class);
+	
+	var element_tag = document.getElementsByTagName('div')[2];
+	/* 需要 [2] 索引值 */
+	console.log(element_tag);
+	
+	
+	// 下面的两个可以修改上面的文本内容
+	element_id.innerHTML = '修改ID选择器标签文本内容';
+	//	innerText  任何放进去就是文本
+	element_class.innerText = '修改后的类选文本';
+	
+	
+	element_tag.style.color = 'red';
+	element_tag.style.fontSize = '20px';
+
+	// DOM 属性绑定事件
+	var button_element = document.getElementsByTagName('button')[0];
+	console.log(button_element);
+	
+	button_element.onclick = function() {
+		alert('DOM 属性 按键触发 ');
+	}
+	
+	
+	// 上面的第二种写法 匿名函数
+	//button_element.addEventListener	('click', function() {
+	//	alert('通过 addEventListenerd 触发按键')
+	// })
+	
+	
+	// 上面的第三种写法
+	//button_element.addEventListener	('click', click_event);
+	
+	//function click_event() {
+	//	alert('通过 addEventListenerd 触发按键');
+	//}
+	
+	
+	
+</script>
+	
+	
+	
+	
+</body>
+</html>

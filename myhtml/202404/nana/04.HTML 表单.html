@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> HTML 表单 </title>
+<link rel="shortcut icon" href="./img/1713172188385.jpg">
+</head>
+
+<body>
+
+	<form>
+		<label for="username">用户名:</label> <!--和前面效果一样 但是前面是配套使用的 <span>用户名:</span>-->
+		<input type="text" id="username" placeholder="请输入用户名">
+		<br> <br>
+		<label for="pwd">密码:</label> 		<!--和前面效果一样 但是前面是配套使用的 <span>密码:</span>-->
+		<input type="password"id="pwd" placeholder="请输入密码">
+		<br><br>
+		<label>性别:</label> 
+		<input type="radio" name="gender" >男
+		<input type="radio"	name="gender"  >女
+		<input type="radio" name="gender" >其他
+		<br><br>
+		<label>爱好:</label> 
+		<input type="checkbox" name="hobby" >唱歌
+		<input type="checkbox" name="hobby" >跳舞
+		<input type="checkbox" name="hobby" >RAP
+		<input type="checkbox" name="hobby" >篮球
+		<br><br>
+		<input type="submit" value="上传">
+		
+	</form>
+	
+	<!--action是后端提供给我们的API 服务器里面 现在没有后端服务器 用# 表示不跳转-->
+	/*<from action=""></from>	*/	<!--action里面需要填写一个url提交以后的地方-->
+	
+
+
+
+
+</body>
+</html>

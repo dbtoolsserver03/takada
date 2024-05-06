@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> CSS 定位 </title>
+<link rel="shortcut icon" href="./img/1713172188385.jpg">
+
+<style>
+	.box1 {
+		height:350px;
+		background-color: aqua;
+		
+	}
+	
+	.box-normal {
+		width:100px;
+		height:100px;
+		background-color: purple;
+	}
+	
+	.box-relative {
+		width:100px;
+		height:100px;
+		background-color: pink;
+		position: relative;
+		left:120px;
+		/*right:;*/
+		top:40px;
+		/*bottom:;*/
+		
+	}
+		
+	
+	.box2 {
+			height:350px;
+			background-color:yellow;
+			margin-bottom: 300px;
+		}
+	.box-absolute {
+			width:100px;
+			height:100px;
+			background-color:yellowgreen;
+			position: absolute;
+			left:120px;
+			/*right:;*/
+			/*top:;*/
+			/*bottom:;*/
+				
+		}	
+	.box-fixed {
+		width:100px;
+		height:100px;
+		background-color:brown;
+		position:fixed;
+		/*left:;*/
+		right:0;
+		top:300px;
+		/*bottom:;*/
+	}
+		
+</style>
+
+</head>
+
+<body>
+ <h1>相对定位</h1>
+ <div class="box1">
+	<div class="box-normal"></div> 
+	<div class="box-relative"></div> 
+	<div class="box-normal"></div> 
+ </div>
+
+ <h1>绝对定位</h1>
+ <div class="box2">
+ 	<div class="box-normal"></div> 
+ 	<div class="box-absolute"></div> 
+ 	<div class="box-normal"></div> 
+  </div>
+ 
+  <h1>固定定位</h1>
+  <div class="box-fixed"> </div>
+ 
+</body>
+</html>
