@@ -11,9 +11,10 @@ public class MvcConfigCompany  implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
 
-    	registry.addViewController("/manageCompany").setViewName("company/test.html");
-//        //viewController 请求路径    viewName: 跳转视图
-//    	registry.addViewController("/manageCompany").setViewName("redirect:/student/lists");
+//    	registry.addViewController("/manageCompany").setViewName("company/test.html");
+    	
+        //viewController 请求路径    viewName: 跳转视图
+    	registry.addViewController("/manageCompany").setViewName("redirect:/company/lists");
 //    	
 //        // 增加员工
 //        registry.addViewController("student/addStudent").setViewName("stu/addStudent");
