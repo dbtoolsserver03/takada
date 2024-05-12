@@ -14,7 +14,6 @@ public class Cat {
 	int weight;
 	
 	void call() {
-		
 		System.out.println("call miao");
 	}
 	
