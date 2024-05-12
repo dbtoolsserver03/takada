@@ -96,5 +96,6 @@
 		<table tableName="m_code" ></table>
 		<table tableName="user"  domainObjectName="TUser"></table>
 		<table tableName="student"  domainObjectName="TStudent"></table>
+		<table tableName="t_company"  domainObjectName="TCompany"></table>
 	</context>
 </generatorConfiguration>
