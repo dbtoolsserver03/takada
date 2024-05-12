@@ -38,6 +38,17 @@
 				</h1>
 
 				<input type="button" class="button" value="バイトメンバー" onclick="manageMember()" />
+
+				<input type="button" class="button" value="会社管理" onclick="manageCompany()" />
+				<script>
+					function manageCompany() {
+						location.href = '[[@{/manageCompany}]]';
+					}
+				</script>
+				
+				
+				<input type="button" class="button" value="学生管理" onclick="manageStudent()" />
+
 				<script>
 					function manageMember() {
 						location.href = '[[@{/manageMember}]]';
