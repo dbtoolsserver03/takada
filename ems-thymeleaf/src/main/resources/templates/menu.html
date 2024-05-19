@@ -38,10 +38,17 @@
 				</h1>
 
 
-				<input type="button" class="button" value="会社管理" onclick="manageCompany()" />
+				<input type="button" class="button" value="会社管理 重定向" onclick="manageCompany()" />
 				<script>
 					function manageCompany() {
 						location.href = '[[@{/manageCompany}]]';
+					}
+				</script>
+				
+				<input type="button" class="button" value="会社管理 controller" onclick="manageCompany()" />
+				<script>
+					function manageCompany() {
+						location.href = '[[@{/company/lists}]]';
 					}
 				</script>
 				
