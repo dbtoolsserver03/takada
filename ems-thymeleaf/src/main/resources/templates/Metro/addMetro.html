@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>地下鉄list</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+						<a th:href="@{/menu}">返回菜单</a>
+						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
+						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
+					</p>
+					<p><label style="color: darkred;"> 01.实现表的增删改查 </label></p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+					<span th:if="${session.user==null}">游客</span>!
+				</h1>
+
+
+				<form th:action="@{/metro/save}">
+
+					<table>
+						<tr>
+							<td>名前</td>
+							<td><input name="metroname"></input></td>
+						</tr>
+						<tr>
+							<td>駅名前</td>
+							<td><input name="station"></input></td>
+						</tr>
+						<tr>
+							<td>時刻表</td>
+							<td> <input name="timetable"></input></td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>運賃</td>
+							<td> <input name="fare"></input></td>
+						</tr>
+						<tr>
+							<td>乗換</td>
+							<td> <select name="transfer">
+							<option value="">--Please choose an option--</option>
+							<option value="00">可能</option>
+							<option value="01">不可</option>
+							</select></td>
+						</tr>
+
+					</table>
+
+					<p><input type="submit" class="button" value="追加"></p>
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+	<script th:inline="javascript">
+		var objLst = /*[[${objLst}]]*/ {};
+		console.log(objLst);
+	</script>
+
+</body>
+
+</html>

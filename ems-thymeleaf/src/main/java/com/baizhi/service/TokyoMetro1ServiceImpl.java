@@ -6,40 +6,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.baizhi.dao.original.TCompanyMapper;
-import com.baizhi.entity.original.TCompany;
+import com.baizhi.dao.original.TokyoMetro1Mapper;
+import com.baizhi.entity.original.TokyoMetro1;
 
 @Service
 @Transactional
-public class CompanyServiceImpl implements CompanyService {
+public class TokyoMetro1ServiceImpl implements TokyoMetro1Service {
 
 	@Autowired
-	TCompanyMapper mapper;
+	TokyoMetro1Mapper mapper;
 
 	@Override
-	public List<TCompany> lists() {
+	public List<TokyoMetro1> lists() {
 		return mapper.selectByExample(null);
 	}
-
+//
 	@Override
-	public void save(TCompany obj) {
+	public void save(TokyoMetro1 obj) {
 		mapper.insertSelective(obj);
 
 	}
 	@Override
-	public void update(TCompany obj) {
-		mapper.updateByPrimaryKeySelective(obj);
+	public void update(TokyoMetro1 obj) {
+			mapper.updateByPrimaryKeySelective(obj);
 	}
+//
+//	@Override
+//	public void delete(Integer id) {
+//		mapper.deleteByPrimaryKey(id);
+//	}
 
 	@Override
-	public TCompany findRecByPk(int id) {
+	public TokyoMetro1 findRecByPk(int id) {
 		// TODO 自動生成されたメソッド・スタブ
 		return mapper.selectByPrimaryKey(id);
 	}
 
-	@Override
-	public void delete(Integer id) {
-		mapper.deleteByPrimaryKey(id);
-	}
-
 }
+

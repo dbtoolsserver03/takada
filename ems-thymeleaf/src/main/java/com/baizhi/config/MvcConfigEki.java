@@ -12,10 +12,11 @@ public class MvcConfigEki  implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
 
         //viewController 请求路径    viewName: 跳转视图
-    	registry.addViewController("/manageMetro").setViewName("/Metro/Test");
+    	registry.addViewController("/manageMetro").setViewName("redirect:/metro/lists");
     	
         // 增加员工
-        //registry.addViewController("student/addStudent").setViewName("stu/addStudent");
+        registry.addViewController("Metro/addMetro").setViewName("Metro/addMetro");
+        registry.addViewController("metro/updateMetro").setViewName("Metro/updateMetro");
 
     }
 }

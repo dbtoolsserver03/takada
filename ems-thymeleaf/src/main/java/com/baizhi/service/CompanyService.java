@@ -9,12 +9,12 @@ public interface CompanyService {
 	//列表方法
 	List<TCompany> lists();
 
-	//	void delete(Integer id);
-
 	void save(TCompany obj);
 
 	TCompany findRecByPk(int id);
 
 	void update(TCompany obj);
+
+	void delete(Integer id);
 
 }
