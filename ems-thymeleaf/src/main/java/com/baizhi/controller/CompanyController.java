@@ -36,19 +36,19 @@ public class CompanyController {
     
     
     
-//    
-//    /**
-//     * 学生新规保存
-//     *
-//     * @return
-//     */
-//    @RequestMapping("save")
-//    public String lists(TStudent obj) {
-//    	
-//    	service.save(obj);
-//       
-//        return "redirect:lists";
-//    }
+    
+    /**
+     * 公司新规保存
+     *
+     * @return
+     */
+    @RequestMapping("save")
+    public String save(TCompany obj) {
+    	
+    	service.save(obj);
+       
+        return "redirect:lists";
+    }
 //    
 //    /**
 //     * 学生更新初期化

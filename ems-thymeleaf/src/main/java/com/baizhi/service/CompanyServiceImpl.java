@@ -20,12 +20,12 @@ public class CompanyServiceImpl implements CompanyService {
 	public List<TCompany> lists() {
 		return mapper.selectByExample(null);
 	}
-//
-//	@Override
-//	public void save(TStudent obj) {
-//		mapper.insertSelective(obj);
-//
-//	}
+
+	@Override
+	public void save(TCompany obj) {
+		mapper.insertSelective(obj);
+
+	}
 //
 //	@Override
 //	public TStudent findRecByPk(int id) {

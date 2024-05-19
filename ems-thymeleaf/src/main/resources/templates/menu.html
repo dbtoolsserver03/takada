@@ -38,6 +38,7 @@
 				</h1>
 
 
+<<<<<<< HEAD
 				<input type="button" class="button" value="地下铁信息" onclick="manageMetro()" />
 				
 				<script>
@@ -47,14 +48,36 @@
 				</script>
 				
 				<input type="button" class="button" value="会社管理" onclick="manageCompany()" />
+=======
+				<input type="button" class="button" value="会社管理 重定向" onclick="manageCompany()" />
+>>>>>>> refs/remotes/origin/202404_master
 				<script>
 					function manageCompany() {
 						location.href = '[[@{/manageCompany}]]';
 					}
 				</script>
 				
+<<<<<<< HEAD
 
 				<input type="button" class="button" value="学生管理" onclick="manageEmp()" />
+=======
+				<input type="button" class="button" value="会社管理 controller" onclick="manageCompany()" />
+				<script>
+					function manageCompany() {
+						location.href = '[[@{/company/lists}]]';
+					}
+				</script>
+				
+				
+				<input type="button" class="button" value="学生管理" onclick="manageStudent()" />
+				<script>
+					function manageStudent() {
+						location.href = '[[@{/manageStudent}]]';
+					}
+				</script>
+				
+				<input type="button" class="button" value="员工管理" onclick="manageEmp()" />
+>>>>>>> refs/remotes/origin/202404_master
 				<script>
 					function manageEmp() {
 						location.href = '[[@{/manageEmp}]]';
