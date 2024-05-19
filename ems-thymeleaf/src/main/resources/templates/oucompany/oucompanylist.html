@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>学生list</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+						<a th:href="@{/menu}">返回菜单</a>
+						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
+						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
+					</p>
+					<p><label style="color: darkred;"> 01.实现表的增删改查 </label></p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+					<span th:if="${session.user==null}">游客</span>!
+				</h1>
+				<table class="table">
+					<tr class="table_header">
+						<td>
+							编号
+						</td>
+						<td>
+							会社名前
+						</td>
+						<td>
+							会社類型
+						</td>
+						<td>
+							会社人数
+						</td>
+						<td>
+							会社設立年月日
+						</td>
+						<td>
+							会社图标
+						</td>
+						<td>
+							操作
+						</td>
+					</tr>
+					<tr th:each="obj,state:${objLst}" th:class="${state.odd?'row1':'row2'}">
+						<td>
+							<span th:text="${obj.id}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.client}"></span>
+						</td>
+
+						<td>
+							<span th:text="${obj.companyType}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.companyPeoplenum}"></span>
+						</td>
+						
+						<td>
+							<span th:text="${#dates.format(obj.companyBeginday,'yyyy/MM/dd')}"></span>
+						</td>
+
+						<td style="text-align: right;">
+							<span th:text="${obj.companyPhoto}"></span>
+
+						</td>
+						<td>
+							<a href="javascript:;" th:onclick="'deleteCompany('+${obj.id}+')'">删除</a>
+							<a th:href="@{/company/detail(id=${obj.id})}">更新</a>
+
+						</td>
+					</tr>
+					<script>
+						function deleteCompany(id) {
+							console.log(id);
+							if (window.confirm('确定要删除这条记录吗?')) {
+								console.log('[[@{/company/delete?id=}]]' + id);
+								location.href = '[[@{/company/delete?id=}]]' + id;
+							}
+						}
+					</script>
+				</table>
+				<p>
+					<input type="button" class="button" value="添加" onclick="addCompany()" />
+					<script>
+						function addCompany() {
+							location.href = '[[@{/oucompany/addOuCompany}]]';
+						}
+					</script>
+				</p>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+	    <script th:inline="javascript">
+        var objLst = /*[[${objLst}]]*/ {};
+        console.log(objLst);
+    </script>
+    
+</body>
+
+</html>
