@@ -8,13 +8,14 @@ public interface CompanyService {
 
 	//列表方法
 	List<TCompany> lists();
-//
-//	void save(TStudent obj);
+
 //
 //	TStudent findRecByPk(int id);
 //
 //	void update(TStudent obj);
 //
 //	void delete(Integer id);
+
+	void save(TCompany obj);
 
 }

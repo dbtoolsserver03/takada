@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>学生list</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+						<a th:href="@{/menu}">返回菜单</a>
+						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
+						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>
+					</p>
+					<p><label style="color: darkred;"> 01.实现表的增删改查 </label></p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+					<span th:if="${session.user==null}">游客</span>!
+				</h1>
+
+
+				<form th:action="@{/Member/save}">
+
+					<table>
+						<tr>
+							<td>编号</td>
+							<td><input name="id" th:value="${obj.id}"></td>
+						</tr>
+						<tr>
+							<td>スタッフ名前</td>
+							<td> <input name="name" 　th:value="${obj.name}>
+						<tr>
+							<td>給料</td>
+							<td> <input name=" salary" th:value="${obj.salary}"></td>
+						</tr>
+						<tr>
+							<td>誕生日</td>
+							<td> <input type="date" name="birthday"
+									th:value="${#dates.format(obj.birthday,'yyyy-MM-dd')}"></td>
+						</tr>
+						<tr>
+							<td>写真</td>
+							<td><input name="photo" th:value="${obj.photo}"></td>
+						</tr>
+						<tr>
+							<td>性別</td>
+							<td><input name="sex" th:value="${obj.sex}"></td>
+						</tr>
+						<tr>
+							　　<td>勤務表</td>
+							<td><input name="roster" th:value="${obj.roster}"></td>
+						</tr>
+						<tr>
+							　　<td>学歴</td>
+							<td><input name="position" th:value="${obj.position}"></td>
+						</tr>
+						<tr>
+							　　<td> 職務経歴書</td>
+							<td><input name="history" th:value="${obj.history}"></td>
+						</tr>
+
+
+					</table>
+
+					<p><input type="submit" class="button" value="追加"></p>
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+	<script th:inline="javascript">
+		var objLst = /*[[${objLst}]]*/ {};
+		console.log(objLst);
+	</script>
+
+</body>
+
+</html>

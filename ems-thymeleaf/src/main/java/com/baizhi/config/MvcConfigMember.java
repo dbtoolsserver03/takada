@@ -12,10 +12,11 @@ public class MvcConfigMember  implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
 
         //viewController 请求路径    viewName: 跳转视图
-    	registry.addViewController("/manageMember").setViewName("/Member/Test");
+    	registry.addViewController("/manageMember").setViewName("redirect:/Member/lists");
     	
         // 增加员工
-    	// registry.addViewController("student/addStudent").setViewName("stu/addStudent");
+    	
+        registry.addViewController("Akibaheadoffice/addMember").setViewName("Akibaheadoffice/addMember");
     }
    }
    
