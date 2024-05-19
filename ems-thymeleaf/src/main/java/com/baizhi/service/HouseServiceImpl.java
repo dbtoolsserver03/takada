@@ -46,25 +46,26 @@ public class HouseServiceImpl implements HouseService {
 	@Override
 	public void save(Thouse obj) {
 		// TODO 自動生成されたメソッド・スタブ
-		
+	   mapper.insertSelective(obj);
+	   
 	}
 
 	@Override
 	public Thouse findRecByPk(int id) {
 		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return mapper.selectByPrimaryKey(id);
 	}
 
 	@Override
 	public void update(Thouse obj) {
 		// TODO 自動生成されたメソッド・スタブ
-		
+		mapper.updateByPrimaryKeySelective(obj);
 	}
 
 	@Override
 	public void delete(Integer id) {
 		// TODO 自動生成されたメソッド・スタブ
-		
+		mapper.deleteByPrimaryKey(id);
 	}
 
 }

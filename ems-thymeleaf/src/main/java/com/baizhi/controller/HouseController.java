@@ -58,7 +58,7 @@ public class HouseController {
        
     	model.addAttribute("obj", s);
     	
-        return "house/updateHouset";
+        return "house/updateHouse";
     }
     
     /**

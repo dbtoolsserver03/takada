@@ -91,7 +91,7 @@
 						</td>
 						<td>
 							<a href="javascript:;" th:onclick="'deleteStudent('+${obj.id}+')'">删除</a>
-							<a th:href="@{/student/detail(id=${obj.id})}">更新</a>
+							<a th:href="@{/house/detail(id=${obj.id})}">更新</a>
 
 						</td>
 					</tr>
@@ -99,8 +99,8 @@
 						function deleteStudent(id) {
 							console.log(id);
 							if (window.confirm('确定要删除这条记录吗?')) {
-								console.log('[[@{/student/delete?studentId=}]]' + id);
-								location.href = '[[@{/student/delete?studentId=}]]' + id;
+								console.log('[[@{/house/delete?studentId=}]]' + id);
+								location.href = '[[@{/house/delete?studentId=}]]' + id;
 							}
 						}
 					</script>

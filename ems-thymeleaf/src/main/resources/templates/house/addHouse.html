@@ -32,7 +32,7 @@
 				<h1>
 					賃貸住宅追加:
 				</h1>
-				<form th:action="@{save}" method="post">
+				<form action="save" method="post">
 					<table cellpadding="0" cellspacing="0" border="0" class="form_table">
 						<tr>
 							<td valign="middle" align="right">
@@ -86,6 +86,7 @@
 					</table>
 					<p>
 						<input type="submit" class="button" value="确认添加" />
+						
 						<input type="button" class="button" value="返回列表" onclick="returnStudentLst()" />
 						<script>
 							function returnStudentLst() {
