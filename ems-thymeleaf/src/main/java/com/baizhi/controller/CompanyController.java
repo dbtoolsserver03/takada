@@ -77,20 +77,20 @@ public class CompanyController {
        
         return "redirect:lists";
     }
-//      
-//
-//    /**
-//     * 学生删除
-//     *
-//     * @return
-//     */
-//    @RequestMapping("delete")
-//    public String delete(Integer studentId) {
-//    	
-//    	service.delete(studentId);
-//       
-//        return "redirect:lists";
-//    }
+      
+
+    /**
+     * 公司删除
+     *
+     * @return
+     */
+    @RequestMapping("delete")
+    public String delete(Integer id) {
+    	
+    	service.delete(id);
+       
+        return "redirect:lists";
+    }
     
 }
 
