@@ -49,34 +49,34 @@ public class CompanyController {
        
         return "redirect:lists";
     }
-//    
-//    /**
-//     * 学生更新初期化
-//     *
-//     * @return
-//     */
-//    @RequestMapping("detail")
-//    public String detail(Model model, int id) {
-//    	
-//    	TStudent s = service.findRecByPk(id);
-//       
-//    	model.addAttribute("obj", s);
-//    	
-//        return "stu/updateStudent";
-//    }
-//    
-//    /**
-//     * 学生更新
-//     *
-//     * @return
-//     */
-//    @RequestMapping("update")
-//    public String update(TStudent obj) {
-//    	
-//    	service.update(obj);
-//       
-//        return "redirect:lists";
-//    }
+    
+    /**
+     * 公司更新初期化
+     *
+     * @return
+     */
+    @RequestMapping("detail")
+    public String detail(Model model, int id) {
+    	
+    	TCompany company = service.findRecByPk(id);
+       
+    	model.addAttribute("obj",company);
+    	
+        return "company/updateCompany";
+    }
+    
+    /**
+     * 公司更新
+     *
+     * @return
+     */
+    @RequestMapping("update")
+    public String update(TCompany obj) {
+    	
+    	service.update(obj);
+       
+        return "redirect:lists";
+    }
 //      
 //
 //    /**

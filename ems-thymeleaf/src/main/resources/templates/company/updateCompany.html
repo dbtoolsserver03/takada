@@ -39,35 +39,49 @@
 				</h1>
 
 
-				<form action="save" method="post">
+				<form action="update" method="post">
 
+				<input type="hidden" name="id" th:value="${obj.id}">
 					<table>
 						<tr>
 							<td>会社名前</td>
-							<td><input name="name"></input></td>
+							<td><input name="name" th:value="${obj.name}"></td>
 						</tr>
 						<tr>
 							<td>会社類型</td>
 							<td> <select name="type">
 									<option value="">--Please choose an option--</option>
-									<option value="00">株式会社</option>
-									<option value="01">合同会社</option>
+									<option value="00" th:selected="${'00' == obj.type}" >株式会社</option>
+									<option value="01" th:selected="${'01' == obj.type}" >合同会社</option>
 								</select></td>
 						</tr>
 						<tr>
 							<td>会社人数</td>
-							<td> <input name="peoplenum"></input></td>
+							<td> <input name="peoplenum" th:value="${obj.peoplenum}"></td>
 						</tr>
 						<tr>
 							<td>会社設立年月日</td>
-							<td> <input type="date" name="beginday"></input></td>
+							<td> <input type="date" name="beginday"  th:value="${#dates.format(obj.beginday,'yyyy-MM-dd')}"></td>
 						</tr>
 
 					</table>
 
-					<p><input type="submit" class="button" value="追加"></p>
+					<p><input type="submit" class="button" value="更新"></p>
 				</form>
+				
+
+					
 			</div>
+			
+								<p>
+						<input type="button" class="button" value="返回列表" onclick="returnLst()" />
+						<script>
+							function returnLst() {
+								location.href = '[[@{/company/lists}]]';
+							}
+
+						</script>
+					</p>
 		</div>
 		<div id="footer">
 			<div id="footer_bg">
