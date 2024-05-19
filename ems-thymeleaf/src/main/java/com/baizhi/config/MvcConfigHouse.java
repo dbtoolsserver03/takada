@@ -11,12 +11,12 @@ public class MvcConfigHouse  implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
 
-    	registry.addViewController("/managehouse").setViewName("/house/house_fee.html");
-		/*        //viewController 请求路径    viewName: 跳转视图
-		    	registry.addViewController("/manageStudent").setViewName("redirect:/student/lists");
+    	//registry.addViewController("/managehouse").setViewName("/house/house_fee.html");
+    	registry.addViewController("/managehouse").setViewName("redirect:/house/lists");
+       //viewController 请求路径    viewName: 跳转视图
+		registry.addViewController("/manageStudent").setViewName("redirect:/student/lists");
 		    	
 		// 增加员工
-		registry.addViewController("student/addStudent").setViewName("stu/addStudent");
-		*/
+		registry.addViewController("/house/addHouse").setViewName("house/addHouse");
     }
 }

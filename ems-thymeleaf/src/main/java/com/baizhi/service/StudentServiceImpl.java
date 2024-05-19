@@ -11,7 +11,7 @@ import com.baizhi.entity.original.TStudent;
 
 @Service
 @Transactional
-public class StudentServiceImpl implements StudentService {
+public  class StudentServiceImpl implements StudentService {
 
 	@Autowired
 	TStudentMapper mapper;
@@ -42,5 +42,7 @@ public class StudentServiceImpl implements StudentService {
 	public void delete(Integer id) {
 		mapper.deleteByPrimaryKey(id);
 	}
+
+
 
 }

@@ -8,13 +8,13 @@ public interface HouseService {
 
 	//列表方法
 	List<Thouse> lists();
-//
-//	void save(TStudent obj);
-//
-//	TStudent findRecByPk(int id);
-//
-//	void update(TStudent obj);
-//
-//	void delete(Integer id);
+
+	void save(Thouse obj);
+
+	Thouse findRecByPk(int id);
+
+	void update(Thouse obj);
+
+	void delete(Integer id);
 
 }

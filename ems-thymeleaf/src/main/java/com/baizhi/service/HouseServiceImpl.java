@@ -43,4 +43,28 @@ public class HouseServiceImpl implements HouseService {
 //		mapper.deleteByPrimaryKey(id);
 //	}
 
+	@Override
+	public void save(Thouse obj) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	@Override
+	public Thouse findRecByPk(int id) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	@Override
+	public void update(Thouse obj) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	@Override
+	public void delete(Integer id) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
 }
