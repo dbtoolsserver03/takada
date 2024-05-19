@@ -20,27 +20,26 @@ public class CompanyServiceImpl implements CompanyService {
 	public List<TCompany> lists() {
 		return mapper.selectByExample(null);
 	}
-//
-//	@Override
-//	public void save(TStudent obj) {
-//		mapper.insertSelective(obj);
-//
-//	}
-//
-//	@Override
-//	public TStudent findRecByPk(int id) {
-//		return mapper.selectByPrimaryKey(id);
-//
-//	}
-//
-//	@Override
-//	public void update(TStudent obj) {
-//		mapper.updateByPrimaryKeySelective(obj);
-//	}
+
+	@Override
+	public void save(TCompany obj) {
+		mapper.insertSelective(obj);
+
+	}
+	@Override
+	public void update(TCompany obj) {
+		mapper.updateByPrimaryKeySelective(obj);
+	}
 //
 //	@Override
 //	public void delete(Integer id) {
 //		mapper.deleteByPrimaryKey(id);
 //	}
+
+	@Override
+	public TCompany findRecByPk(int id) {
+		// TODO 自動生成されたメソッド・スタブ
+		return mapper.selectByPrimaryKey(id);
+	}
 
 }

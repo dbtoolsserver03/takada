@@ -38,13 +38,14 @@
 				</h1>
 
 
-				<input type="button" class="button" value="会社管理" onclick="manageCompany()" />
+				<input type="button" class="button" value="会社管理 重定向" onclick="manageCompany()" />
 				<script>
 					function manageCompany() {
 						location.href = '[[@{/manageCompany}]]';
 					}
 				</script>
 				
+
 				<input type="button" class="button" value="OU会社管理" onclick="manageOUCompany()" />
 				<script>
 					function manageOUCompany() {
@@ -52,6 +53,16 @@
 					}
 				</script>
 					
+
+				<input type="button" class="button" value="会社管理 controller" onclick="manageCompany()" />
+				<script>
+					function manageCompany() {
+						location.href = '[[@{/company/lists}]]';
+					}
+				</script>
+				
+				
+
 				<input type="button" class="button" value="学生管理" onclick="manageStudent()" />
 				<script>
 					function manageStudent() {
