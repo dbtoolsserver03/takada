@@ -15,8 +15,7 @@ public class MvcConfigCompany  implements WebMvcConfigurer {
     	
         //viewController 请求路径    viewName: 跳转视图
     	registry.addViewController("/manageCompany").setViewName("redirect:/company/lists");
-//    	
-        // 增加员工
+        // 增加公司
         registry.addViewController("company/addCompany").setViewName("company/addCompany");
 
     }

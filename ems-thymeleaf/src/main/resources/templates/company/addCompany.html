@@ -37,23 +37,35 @@
 					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
 					<span th:if="${session.user==null}">游客</span>!
 				</h1>
-				
-				
-				<form action="save">
-					
-				<table >
-					<tr><td>会社名前</td><td><input name="name"></input></td></tr>
-					<tr><td>会社類型</td><td>				 <select name="type">
-							  <option value="">--Please choose an option--</option>
-							  <option value="00">株式会社</option>
-							  <option value="01">合同会社</option>
-							</select></td></tr>
-					<tr><td>会社人数</td><td> <input name="peoplenum"></input></td></tr>
-					<tr><td>会社設立年月日</td><td> <input type="date" name="beginday"></input></td></tr>
-					
-				</table>
 
-				<p><input type="submit" class="button" value="追加"></p>
+
+				<form action="save">
+
+					<table>
+						<tr>
+							<td>会社名前</td>
+							<td><input name="name"></input></td>
+						</tr>
+						<tr>
+							<td>会社類型</td>
+							<td> <select name="type">
+									<option value="">--Please choose an option--</option>
+									<option value="00">株式会社</option>
+									<option value="01">合同会社</option>
+								</select></td>
+						</tr>
+						<tr>
+							<td>会社人数</td>
+							<td> <input name="peoplenum"></input></td>
+						</tr>
+						<tr>
+							<td>会社設立年月日</td>
+							<td> <input type="date" name="beginday"></input></td>
+						</tr>
+
+					</table>
+
+					<p><input type="submit" class="button" value="追加"></p>
 				</form>
 			</div>
 		</div>
@@ -63,11 +75,11 @@
 			</div>
 		</div>
 	</div>
-	    <script th:inline="javascript">
-        var objLst = /*[[${objLst}]]*/ {};
-        console.log(objLst);
-    </script>
-    
+	<script th:inline="javascript">
+		var objLst = /*[[${objLst}]]*/ {};
+		console.log(objLst);
+	</script>
+
 </body>
 
 </html>
