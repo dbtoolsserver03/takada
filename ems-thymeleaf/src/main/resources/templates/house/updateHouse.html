@@ -32,9 +32,12 @@
 				<h1>
 					更新住房信息:
 				</h1>
-				<form th:action="@{update}" method="post">
+<!--				th:action="@{update}"
+	action="update"
+-->
+				<form th:action="@{/house/update}" method="post">
 					
-						<input type="hidden" name="studentId"   th:value="${obj.id}" />
+						<input type="hidden" name="id"   th:value="${obj.id}" />
 
 
 					<table cellpadding="0" cellspacing="0" border="0" class="form_table">
@@ -52,7 +55,7 @@
 								賃料:
 							</td>
 							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="rent_Fee" th:value="${obj.rentFee}" />
+								<input type="text" class="inputgri" name="rentFee" th:value="${obj.rentFee}" />
 							</td>
 						</tr>
 						<tr>
@@ -60,7 +63,7 @@
 								建立年月日:
 							</td>
 							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="birthdate" th:value="${#dates.format(obj.birthdate,'yyyy/MM/dd')}" />
+								<input type="text" class="inputgri" name="houseBilld" th:value="${#dates.format(obj.houseBilld,'yyyy/MM/dd')}" />
 							</td>
 						</tr>
 						<tr>

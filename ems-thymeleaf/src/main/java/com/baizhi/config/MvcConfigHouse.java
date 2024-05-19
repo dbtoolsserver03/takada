@@ -14,7 +14,7 @@ public class MvcConfigHouse  implements WebMvcConfigurer {
     	//registry.addViewController("/managehouse").setViewName("/house/house_fee.html");
     	registry.addViewController("/managehouse").setViewName("redirect:/house/lists");
        //viewController 请求路径    viewName: 跳转视图
-		registry.addViewController("/manageStudent").setViewName("redirect:/student/lists");
+		registry.addViewController("/house/updateHouse").setViewName("redirect:/house/updateHouse");
 		    	
 		// 增加员工
 		registry.addViewController("/house/addHouse").setViewName("house/addHouse");
