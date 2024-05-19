@@ -30,16 +30,16 @@ public class CompanyServiceImpl implements CompanyService {
 	public void update(TCompany obj) {
 		mapper.updateByPrimaryKeySelective(obj);
 	}
-//
-//	@Override
-//	public void delete(Integer id) {
-//		mapper.deleteByPrimaryKey(id);
-//	}
 
 	@Override
 	public TCompany findRecByPk(int id) {
 		// TODO 自動生成されたメソッド・スタブ
 		return mapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public void delete(Integer id) {
+		mapper.deleteByPrimaryKey(id);
 	}
 
 }
