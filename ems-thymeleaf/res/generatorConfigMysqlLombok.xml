@@ -84,13 +84,6 @@
 		<!-- identity="true" /> -->
 		<!-- </table> -->
 		
-
-
-
-		
-<!-- employee -->
-<!-- user -->
-		
 		<table tableName="employee" ></table>
 		<table tableName="t_files"  domainObjectName="UserFile"></table>
 		<table tableName="m_code" ></table>
