@@ -10,6 +10,15 @@ public class NumUtils {
 		} else if ("+".equals(ch)) {
 			ret = a + b;
 		}
+		
+		int aa=1;
+		int bb=2;
+		if(aa>bb) {
+			System.out.println(123);
+		}
 		return ret;
 	}
+	
+	
+	
 }
