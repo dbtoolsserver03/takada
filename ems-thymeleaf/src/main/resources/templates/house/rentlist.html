@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>住房list</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+<!--					<p>-->
+<!--						2009/11/20-->
+<!--						<br />-->
+<!--						<a th:href="@{/menu}">返回菜单</a>-->
+<!--						<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>-->
+<!--						<a th:if="${session.user==null}" th:href="@{/login}">点我登录</a>-->
+<!--					</p>-->
+					<p><label style="color: darkred;"> 01.实现表的增删改查 </label></p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+					<span th:if="${session.user==null}">游客</span>!
+				</h1>
+				<table class="table">
+					<tr class="table_header">
+						<td>
+							No
+						</td>
+						<td>
+							ルームID
+						</td>
+						<td>
+							賃貸開始時期
+						</td>
+						</td>
+						<td>
+							賃貸完了時期
+						</td>
+						<td>
+							賃料
+						</td>
+<!--						<td>-->
+<!--							室内写真-->
+<!--						</td>-->
+<!--						<td>-->
+<!--							グレード-->
+<!--						</td>-->
+<!--						<td>-->
+<!--							住所-->
+<!--						</td>-->
+						<td>
+							操作
+						</td>
+					</tr>
+					<tr th:each="obj,state:${objLst}" th:class="${state.odd?'row1':'row2'}">
+						<td>
+							<span th:text="${obj.houseid}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.rentdate_start}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.rentdate_end}"></span>
+						</td>
+						
+						<td>
+							<span th:text="${obj.rentvalue}"></span>
+						</td>
+<!--						<td>-->
+<!--							<span th:text="${#dates.format(obj.houseBilld,'yyyy/MM/dd')}"></span>-->
+<!--						</td>-->
+						
+<!--						<td style="text-align: right;">-->
+<!--							<span th:text="${obj.photo}"></span>-->
+						
+<!--						</td>-->
+<!--						<td>-->
+<!--							<span th:text="${obj.grade}"></span>-->
+<!--						</td>-->
+<!--						<td>-->
+<!--							<span th:text="${obj.addres}"></span>-->
+<!--						</td>-->
+						<td>
+							<a href="javascript:;" th:onclick="'deleterentlist('+${obj.houseid}+')'">删除</a>
+							<a th:href="@{/rent/detail(id=${obj.houseid})}">更新</a>
+
+						</td>
+					</tr>
+					<script>
+						function deleterentlist(id) {
+							console.log(id);
+							if (window.confirm('确定要删除这条记录吗?')) {
+								console.log('[[@{/rent/delete?houseid=}]]' + id);
+								location.href = '[[@{/rent/delete?houseid=}]]' + id;
+							}
+						}
+					</script>
+				</table>
+				<p>
+					<input type="button" class="button" value="添加" onclick="addrent()" />
+					<script>
+						function addrentt() {
+							location.href = '[[@{/rent/addrent}]]';
+						}
+					</script>
+				</p>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+	    <script th:inline="javascript">
+        var objLst = /*[[${objLst}]]*/ {};
+        console.log(objLst);
+    </script>
+    
+</body>
+
+</html>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE generatorConfiguration
-        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
-        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 
 	<!--包含了两种方式 1.application.properties与1.1 通过1.1扫描properties获得mysql驱动 用户 密码 
@@ -32,7 +30,8 @@
 			connectionURL="${spring.datasource.url}"
 			userId="${spring.datasource.username}"
 			password="${spring.datasource.password}">
-			<!-- 从mysql-connector-java 5.x 版本起，nullCatalogMeansCurrent属性由原来的默认true改为了false -->
+			<!-- 从mysql-connector-java 5.x
+			版本起，nullCatalogMeansCurrent属性由原来的默认true改为了false -->
 			<!-- nullCatalogMeansCurrent = true: 返回指定库涉及表 -->
 			<!-- nullCatalogMeansCurrent = false: 返回所有库涉及表 -->
 			<!-- 我们在使用activiti 或者flowable的时候，如果存在了相应的测试库，那么在创建表的时候就会报错。 -->
@@ -55,7 +54,8 @@
 			<property name="trimStrings" value="false" />
 		</javaModelGenerator>
 		<!-- targetProject:mapper映射文件生成的位置 -->
-		<!-- <sqlMapGenerator targetPackage="com.baizhi.mapper.original" targetProject="./src/main/resources"> -->
+		<!-- <sqlMapGenerator targetPackage="com.baizhi.mapper.original"
+		targetProject="./src/main/resources"> -->
 		<sqlMapGenerator
 			targetPackage="com.baizhi.dao.original"
 			targetProject="./src/main/resources">
@@ -71,9 +71,12 @@
 		</javaClientGenerator>
 
 		<!-- 指定数据库表 -->
-		<!-- <table schema="" tableName="tb_item" domainObjectName="Item"></table> 
-			domainObjectName 可以配置生成的pojo名字 如不需要example类添加下面四个属性 enableCountByExample="false" 
-			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table schema="" tableName="tb_item"
+		domainObjectName="Item"></table> 
+			domainObjectName 可以配置生成的pojo名字 如不需要example类添加下面四个属性
+		enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false"
+		enableUpdateByExample="false"></table> -->
 
 		<!-- <table schema="" tableName="t_files" domainObjectName="TFiles" -->
 		<!-- enableCountByExample="false" enableUpdateByExample="false" -->
@@ -83,20 +86,18 @@
 		<!-- <generatedKey column="id" sqlStatement="Mysql" -->
 		<!-- identity="true" /> -->
 		<!-- </table> -->
-		
 
 
+		<!-- employee -->
+		<!-- user -->
 
-		
-<!-- employee -->
-<!-- user -->
-		
-		<table tableName="employee" ></table>
-		<table tableName="t_files"  domainObjectName="UserFile"></table>
-		<table tableName="m_code" ></table>
-		<table tableName="user"  domainObjectName="TUser"></table>
-		<table tableName="student"  domainObjectName="TStudent"></table>
-		<table tableName="t_company"  domainObjectName="TCompany"></table>
+		<table tableName="employee"></table>
+		<table tableName="t_files" domainObjectName="UserFile"></table>
+		<table tableName="m_code"></table>
+		<table tableName="user" domainObjectName="TUser"></table>
+		<table tableName="student" domainObjectName="TStudent"></table>
+		<table tableName="t_company" domainObjectName="TCompany"></table>
 		<table tableName="house" domainObjectName="Thouse"></table>
+		<table tableName="rentlist" domainObjectName="Trent"></table>
 	</context>
 </generatorConfiguration>

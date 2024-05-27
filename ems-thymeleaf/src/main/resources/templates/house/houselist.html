@@ -92,7 +92,8 @@
 						<td>
 							<a href="javascript:;" th:onclick="'deleteStudent('+${obj.id}+')'">删除</a>
 							<a th:href="@{/house/detail(id=${obj.id})}">更新</a>
-
+							//把id，房租傳遞
+							<a th:href="@{/rent/save(houseid=${obj.id},obj.rentvalue=${rentFee)}}">賃貸追加</a>
 						</td>
 					</tr>
 					<script>

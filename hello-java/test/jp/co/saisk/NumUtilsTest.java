@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 /**
  * 
  */
-class NumUtilsTest {
+public class NumUtilsTest {
 
 	@Test
 	void testAdd() {
@@ -27,4 +27,18 @@ class NumUtilsTest {
 
 	}
 
+	@Test
+	void testOther() {
+
+		int ret = NumUtils.getRet(5, 3, "$");
+		Assert.assertEquals(0, ret);
+
+	}
+	@Test
+	void testNew() {
+
+		NumUtils  ret = new NumUtils(); 
+		Assert.assertNotEquals(null, ret);
+
+	}
 }
