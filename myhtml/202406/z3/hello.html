@@ -1,10 +1,79 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Yahoo! japan</title>
 
-</body>
+<!--		注释代码-->
+<!--		1。选中要注释的代码-->
+<!--		2。ctrl + shift + c -->
+
+<link rel="shortcut icon" href="https://www.baidu.com/favicon.ico" type="image/x-icon">
+
+<link  rel="stylesheet" href="./css/my.css">
+<style>
+	
+</style>
+	</head>
+	
+	<body>
+
+	<div style="background-color: aquamarine;">
+		<table>
+			<tr><td id="id_user">user</td><td><input value="zhang3" type="text" style="color: red;background-color: rgb(128, 255, 0);" ></td></tr>
+			<tr><td>password</td><td><input type="password" style="background-color: antiquewhite;"></td></tr>
+		</table>
+		
+		<input type="button" value="login">
+	</div>
+
+		<hr>
+		
+		<div>
+			sex: 
+				<input type="radio" name="sex" id="id_man"> <label for="id_man">man</label>
+			 	 <label><input type="radio" name="sex">woman</label> 
+			<br>
+			hobby:
+				<label><input type="checkbox" name="hob">sleep</label>
+				<label><input type="checkbox" name="hob">run</label>
+				<label><input type="checkbox" name="hob">study</label>
+			
+			<br>
+			
+			coutry:
+			<select name="country">
+			  <option value="">--Please choose an option--</option>
+			  <option value="j">japan</option>
+			  <option value="c">china</option>
+			  <option value="e">english</option>
+			</select>
+		
+			<br>
+
+			PR:
+			<textarea rows="10" cols="30"></textarea>
+			<br>
+			birthday:<input type="date" class="cs_date" >
+			<br>
+			
+			homepage:<a href="http://www.baidu.com" target="_blank">www.baidu.com</a>     
+			
+			<br>
+			
+			photo:
+			<a href="http://www.baidu.com" target="_blank">
+				<input type="image" height="50" width="80"
+				 src="./img/pander.jpg">
+			</a>
+				
+		</div>
+	
+		<table border="1" width="100%">
+			<tr><th>NO.</th><th>name</th><th>birthday</th><th>salary</th></tr>
+			<tr><td>1</td><td>zhang3</td><td align="center">2001/01/01</td><td align="right">200,000</td></tr>
+			<tr><td>2</td><td>li4</td><td align="center">2002/01/01</td><td align="right">210,000</td></tr>
+		</table>
+		
+	</body>
 </html>
