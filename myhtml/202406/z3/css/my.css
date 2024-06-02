@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+
+/* 当classs样式和style样式发生冲突时，以style为主 */
+	
+	
+	/* 1.要在HTML标签里面加 class 属性 */
+	.cs_date {
+		background-color: burlywood;
+	}
+
+	/* 2.要在HTML标签里面加 id  属性 */
+	#id_user{
+		background-color:darkcyan;
+	}
+	
+	/* 3.通过过滤标签来设样式，不需要改HTML标签里的代码 */
+	input[type="button"] {
+		background-color:indianred;
+	}
+	
+	
