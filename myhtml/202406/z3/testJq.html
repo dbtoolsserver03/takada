@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>test jquery</title>
+  <script src="./plug-in/jquery-3.7.1.js">
+  </script>
+  <script>
+    //alert(1);
+    $(document).ready(function () {
+
+      //alert($("#id_div").html());
+      /*
+        $("div").click(function () {
+        $(this).hide();
+        });
+        */
+      $("#id_div").click(function () {
+
+        debugger;
+
+         var sexVal = $("input[name='mysex']:checked").val();
+
+      $("label").css('background-color', '#ff0000');
+        // alert(sexVal);
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id="id_div">
+    aaaa
+  </div>
+
+  sex: <label><input type="radio" name="mysex" value="1">man</label>
+  <label><input type="radio" name="mysex" value="0" >women</label>
+
+<br>
+
+<input type="date">
+
+</body>
+
+</html>
