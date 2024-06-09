@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test javascript</title>
+
+<script>
+	
+	function testLogin() {
+		alert(123);
+	}
+	
+	/*
+	function funLogin(num) {
+		alert(num);
+	}*/
+	
+	
+	function funLogin(tag) {
+		alert(tag.value);
+	}
+	
+	
+	function funAlert(num) {
+		alert(num);
+	}
+	
+	function funSum() {
+		
+		var tag = document.getElementById("id_num");
+		
+		var sum = 0;
+		for(var i = 0 ; i<=tag.value; i++) {
+			sum = sum + i;
+		}
+		
+		var tag = document.getElementById("id_result");
+		tag.innerHTML= sum;
+		tag.style.backgroundColor="green";
+	}
+	
+</script>
+</head>
+<body>
+
+user<input type="text" value="zhang3">
+
+<input type="button" value="login" onclick="testLogin()">
+
+<input type="button" value="login1" onclick="funLogin(this)">
+<input type="button" value="login2" onclick="funLogin(this)">
+
+<!--alt + /   快捷键 弹出自动联想框 -->
+<input type="button" value="alert1" onclick="funAlert('abc')">
+
+<div>
+	num:<input id="id_num" type="text">
+	 <input type="button" value="sum" onclick="funSum()">
+</div>
+<div style=" background-color: bisque;">
+	result: <label id="id_result"> 未知</label>
+</div>
+</body>
+</html>
