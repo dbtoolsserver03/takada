@@ -10,9 +10,25 @@ public class TesstBasic8 {
 		byte b = 1; // -128~127
 		short s = 32767; // -32768至32767
 		System.out.println(s);
-		int i = 100000;
+		
+		
+		int i = 100;
+		System.out.println(" ++++ i ");
+		System.out.println(i);
+		System.out.println(++i); // i = i + 1; syso;
+		System.out.println(i);
+		System.out.println(" ++++ i");
+		
+		i = 100;
+		System.out.println(" i++++  ");
+		System.out.println(i);
+		System.out.println(i++); // syso; i = i + 1;
+		System.out.println(i);
+		System.out.println(" i++++ ");
+		
 		// 超过int 范围时，要在数值后面加上字母l
 		long myLong = 1000000000000l;
+		
 		
 		
 		// 浮点型
