@@ -10,6 +10,13 @@ import java.util.Date;
 
 public class Car {
 
+
+    // alt + shift + s   s
+    @Override
+    public String toString() {
+        return "Car [brand=" + brand + ", madeDay=" + madeDay + ", height=" + height + ", price=" + price + "]";
+    }
+
     // 如果没有构造方法，那么就默认提供无参的构造方法
     // 如果提供了构造方法，那么无参的构造方法就不再默认提供，
     // 如果还想提供无参的构造方法，就需要在代码里手动加上
