@@ -8,6 +8,9 @@ package com.jingdong.bank.basic;
 // 规约 类名的首字线要大写
 class Test02 {
 
+    public static void print() {
+        System.out.println("test02...");
+    }
 }
 
 // public的类名和文件名一定要一致
@@ -30,6 +33,7 @@ class Test02 {
      // args 参数变量名
     public static void main(String[] args) {
 
+        Test02.print();
         // 1.syso
         // 2.alt + / 或者   ctrl + space
 
