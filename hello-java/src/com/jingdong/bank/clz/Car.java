@@ -5,7 +5,7 @@ import java.util.Date;
 
 // 类的三个特征
 // 1。封装   对属性进行封装
-// 2。继承
+// 2。继承    子类拥有父类的属性和方法（非private）
 // 3。多态
 
 public class Car {
@@ -22,23 +22,22 @@ public class Car {
 
     // 默认的无参构造方法
     public Car() {
-
+        System.out.println("car...");
     }
 
-    // 下面是类的项目/属性/字段
+    // 下面是类的项目/属性/字段 可视范围
 
-    // 无修饰
+    // 无修饰 无修饰成员没有特殊的继承限制，只要在同一个包中即可访问。
     String brand;
 
     // 私有
     private Date madeDay;
 
-    // 可继承
+    // 可继承 有无修饰的特性，也可以被继承的子类访问
     protected int height;
 
     // 公开
     public int price;
-
 
     // 通过eclipse自动生成对类成员访问的公开方法
     public String getBrand() {
@@ -73,5 +72,9 @@ public class Car {
         this.price = price;
     }
 
+    // 多态
+    public void run() {
+        System.out.println("car wengweng");
+    }
 
 }
