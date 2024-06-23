@@ -26,6 +26,7 @@ public class TestList {
         strLst.add("world");
         strLst.add("good");
         strLst.add("morning");
+        strLst.add("hello");
         strLst.remove("world");
         for (int i = 0; i < strLst.size(); i++) {
             String str = strLst.get(i);
