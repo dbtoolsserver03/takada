@@ -33,6 +33,7 @@ public class TestClzMethod {
 
     private static void canNotedit(String str, Date myDate, Car myCar) {
         str = "123";
+        // 废止的方法，不要使用。
         myDate = new Date(1991, 1, 1);
         myCar = new Car("byd",null,1550,5000000);
     }
