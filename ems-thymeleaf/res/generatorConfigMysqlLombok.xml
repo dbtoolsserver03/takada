@@ -92,5 +92,6 @@
 
 <!--  根据teacher表的定义自动生成  TTeacher 类  -->
     <table tableName="teacher"  domainObjectName="TTeacher"></table>
+    <table tableName="Mymessage"  domainObjectName="TMymessage"></table>
   </context>
 </generatorConfiguration>
