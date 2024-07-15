@@ -32,6 +32,12 @@ public class TeacherServiceImpl implements TeacherService {
         return mapper.selectByPrimaryKey(id);
     }
 
+    @Override
+    public void update(TTeacher obj) {
+
+        mapper.updateByPrimaryKey(obj);
+    }
+
 //
 //    @Override
 //    public void save(TStudent obj) {

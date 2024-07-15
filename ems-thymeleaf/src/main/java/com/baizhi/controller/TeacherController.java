@@ -51,5 +51,15 @@ public class TeacherController {
       model.addAttribute("obj", obj);
       return "teacher/updateTeacher";
   }
+  @RequestMapping("teacher/update")
+  public String update(TTeacher obj) {
+
+      log.debug("更新老师信息");
+
+      service.update(obj);
+      return "redirect:/manageTeacher";
+  }
+
+
 
 }

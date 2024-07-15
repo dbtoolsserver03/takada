@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymealf.org">
 
 <head>
-  <title>添加老师信息</title>
+  <title>更新老师信息</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
   <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
@@ -30,9 +30,11 @@
         <p id="whereami">
         </p>
         <h1>
-          添加老师信息:
+         更新老师信息:
         </h1>
         <form th:action="@{/teacher/update}" method="post">
+
+      <input type="hidden"  name="id" th:value="${obj.id}"/>
           <table cellpadding="0" cellspacing="0" border="0" class="form_table">
             <tr>
               <td valign="middle" align="right">

@@ -13,6 +13,8 @@ public interface TeacherService {
 
     TTeacher findRecByPk(int id);
 
+    void update(TTeacher obj);
+
 //	void save(TStudent obj);
 //
 //	TStudent findRecByPk(int id);
