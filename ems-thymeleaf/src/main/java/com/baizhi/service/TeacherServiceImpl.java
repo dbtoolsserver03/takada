@@ -21,6 +21,12 @@ public class TeacherServiceImpl implements TeacherService {
         return mapper.selectByExample(null);
     }
 
+    @Override
+    public void save(TTeacher obj) {
+        mapper.insert(obj);
+
+    }
+
 //
 //    @Override
 //    public void save(TStudent obj) {

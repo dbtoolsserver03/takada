@@ -9,6 +9,8 @@ public interface TeacherService {
     //列表方法
     List<TTeacher> lists();
 
+    void save(TTeacher obj);
+
 //	void save(TStudent obj);
 //
 //	TStudent findRecByPk(int id);
