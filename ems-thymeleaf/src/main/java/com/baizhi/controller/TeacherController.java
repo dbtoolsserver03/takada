@@ -40,4 +40,16 @@ public class TeacherController {
       service.save(obj);
       return "redirect:/manageTeacher";
   }
+
+  @RequestMapping("teacher/detail")
+  public String detail(int id,Model model) {
+
+      log.debug("显示老师详细信息");
+
+      TTeacher obj = service.findRecByPk(id);
+
+      model.addAttribute("obj", obj);
+      return "teacher/updateTeacher";
+  }
+
 }
