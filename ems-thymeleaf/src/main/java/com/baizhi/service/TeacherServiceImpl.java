@@ -38,27 +38,11 @@ public class TeacherServiceImpl implements TeacherService {
         mapper.updateByPrimaryKey(obj);
     }
 
-//
-//    @Override
-//    public void save(TStudent obj) {
-//        mapper.insertSelective(obj);
-//
-//    }
-//
-//    @Override
-//    public TStudent findRecByPk(int id) {
-//        return mapper.selectByPrimaryKey(id);
-//
-//    }
-//
-//    @Override
-//    public void update(TStudent obj) {
-//        mapper.updateByPrimaryKeySelective(obj);
-//    }
-//
-//    @Override
-//    public void delete(Integer id) {
-//        mapper.deleteByPrimaryKey(id);
-//    }
+    @Override
+    public void delete(int id) {
+        mapper.deleteByPrimaryKey(id);
+
+    }
+
 
 }
