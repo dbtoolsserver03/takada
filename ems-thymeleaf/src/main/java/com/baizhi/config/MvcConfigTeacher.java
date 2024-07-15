@@ -13,5 +13,7 @@ public class MvcConfigTeacher  implements WebMvcConfigurer {
 
         // 接收请求后，直接返回到画面
 //        registry.addViewController("manageTeacher").setViewName("teacher/testTeacher");
+      registry.addViewController("teacher/addTeacher").setViewName("teacher/addTeacher");
+
     }
 }
