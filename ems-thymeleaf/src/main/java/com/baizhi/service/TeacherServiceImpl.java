@@ -27,6 +27,11 @@ public class TeacherServiceImpl implements TeacherService {
 
     }
 
+    @Override
+    public TTeacher findRecByPk(int id) {
+        return mapper.selectByPrimaryKey(id);
+    }
+
 //
 //    @Override
 //    public void save(TStudent obj) {
