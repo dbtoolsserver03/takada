@@ -60,6 +60,15 @@ public class TeacherController {
       return "redirect:/manageTeacher";
   }
 
+  @RequestMapping("teacher/delete")
+  public String delete(int id) {
+
+      log.debug("删除老师信息");
+
+      service.delete(id);
+      return "redirect:/manageTeacher";
+  }
+
 
 
 }

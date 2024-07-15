@@ -100,8 +100,8 @@
             function deleteTeacher(id) {
               console.log(id);
               if (window.confirm('确定要删除这条记录吗?')) {
-                console.log('[[@{/teacher/delete?teacherId=}]]' + id);
-                location.href = '[[@{/teacher/delete?teacherId=}]]' + id;
+                console.log('[[@{/teacher/delete?id=}]]' + id);
+                location.href = '[[@{/teacher/delete?id=}]]' + id;
               }
             }
           </script>
