@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>人事情報</title>
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+
+<script src="./plug-in/jquery/jquery-3.4.1.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./plug-in/lightbox2-dev/dist/css/lightbox.css" />
+<script type="text/javascript" src="./plug-in/lightbox2-dev/dist/js/lightbox.js"></script>
+
+<script>
+
+function setReadOnly() {
+	$("#id_info").find("*").each(function(){
+		$(this).attr("disabled",true);
+		}
+	);
+}
+$(document).ready(function(){
+	
+	String.prototype.getQuery = function(name)
+	{
+	    var reg = new RegExp("(^|&)"+ name+"=([^&]*)(&|$)");
+	    var r = this.substr(this.indexOf("?")+1).match(reg);
+	    if(r!=null) return decodeURIComponent(r[2]); 
+	    return null;
+	}
+	var str = location.search;
+	var paraUserIdVal = str.getQuery("userId");
+	$("#id_user_id").text(paraUserIdVal);
+	var paraSelectVal = str.getQuery("selectVal");
+	var paraModeVal = str.getQuery("mode");
+	
+	var type = "";
+	if("new" == paraModeVal) {
+		type = "新規";
+	} else if("detail" == paraModeVal) {
+		type = "詳細";
+		$("#id_btn_clear").addClass("btn-pink-display-none");
+		$("#id_btn_ok").addClass("btn-pink-display-none");
+		setReadOnly();
+	} else if("update" == paraModeVal) {
+		type = "更新";
+		
+	} else if("delete" == paraModeVal) {
+		type = "削除";
+		$("#id_btn_clear").addClass("btn-pink-display-none");
+		setReadOnly();
+	}
+	
+	if ("new" != paraModeVal) {
+
+		debugger;
+		$("#id_text_sei").val("zhang");
+		$("#id_text_mei").val(paraSelectVal);
+		$("#id_text_tel").val("080-0001-000"+paraSelectVal);
+		$("#id_text_address").val("東京都中央区日本橋3-1-"+paraSelectVal);
+		$("#id_text_birthday").val("1998-01-0"+paraSelectVal);
+		$("#id_radio_sex_man").attr("checked",true);
+		$("#id_radio_level_pg").attr("checked",true);
+		
+		$("#id_chk_skill_java").attr("checked",true);
+		$("#id_chk_skill_c").attr("checked",true);
+		$("#id_chk_lan_japan").attr("checked",true);
+		
+		$("#id_select_salary")[0][3].selected = true;
+	}
+	$('title').text('人事情報'+type);
+	
+	  $("#id_btn_back").click(function(){
+		  
+		  var paraSelectVal = str.getQuery("selectVal");
+		  var paraSei = str.getQuery("sei");
+		  window.location = 'list.html?userId='+paraUserIdVal+'&selectVal='+paraSelectVal+'&sei='+paraSei;
+			
+	  });
+	  $("#id_btn_clear").click(function(){
+
+		  // https://www.cnblogs.com/fanbi/p/7705235.html
+		  $("#id_select_salary")[0][0].selected=true;
+		  
+		  $("input[type='text'],[type='date']").each(function(){
+				$(this).val("");
+				}
+			);
+		  $("input[type='checkbox']").each(function(){
+				$(this).prop("checked",false);
+				}
+			);
+		  $("input[type='radio']").each(function(){
+				$(this).prop("checked",false);
+				}
+			);
+	  });
+	  
+	  $("#id_btn_ok").click(function(){
+
+		  if(confirm(type + "処理を行います。")){
+			  window.location = 'list.html?userId='+paraUserIdVal+'&result=notView';
+		  }
+	  });
+	  
+	  
+	  
+	  
+	});
+	
+</script>
+
+</head>
+
+
+<body>
+<div id="id_user_id" class="align-right">
+
+</div>
+<div class="background-color">
+    <table width="100%">
+        <tr>
+            <td width="5%"></td>
+            <td width="20%">
+                <div align="right"><img src="./images/logo.png"/></div>
+            </td>
+            <td width="50%"><p align="center" style="color:white">人事システム</p></td>
+            <td align="right" width="25%"><a href="login.html" style="color: white;font-size: 12px">ログアウト</a></td>
+        </tr>
+    </table>
+</div>
+
+<div id="id_info">
+	<table width="100%">
+		<tr>
+			<td width="20%" class="background-color-td">免許正面</td>
+			<td width="30%" class="imgWrap"><a href="images/cart-front.png" data-lightbox="group-card"><img src="images/cart-front.png" width="258" height="120" /></a></td>
+			<td width="20%" class="background-color-td">免許裏面</td>
+			<td width="30%" class="imgWrap"><a href="images/cart-back.png" data-lightbox="group-card"><img src="images/cart-back.png" width="258" height="120" /></a></td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">姓</td>
+			<td width="30%"><input id="id_text_sei" width="100%" type="text"></td>
+			<td width="20%" class="background-color-td">名</td>
+			<td width="30%"><input id="id_text_mei" width="100%" type="text"></td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">電話番号</td>
+			<td width="30%"><input id="id_text_tel" width="100%" type="text"></td>
+			<td width="20%" class="background-color-td">住所</td>
+			<td width="30%"><input id="id_text_address" width="100%" type="text"></td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">生年月日</td>
+			<td width="30%"><input id="id_text_birthday" width="100%" type="date"></td>
+			<td width="20%" class="background-color-td">性別</td>
+			<td width="30%"><input id="id_radio_sex_man" name="sex" type="radio" value="男" />男 
+			                <input id="id_radio_sex_woman" name="sex" type="radio" value="女" />女</td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">職別</td>
+			<td width="30%"><input id="id_radio_level_pg" name="level" type="radio"  value="PG"/>PG <input name="level" type="radio" value="SE"/>SE<input name="level" type="radio" value="PM" />PM</td>
+			<td width="20%" class="background-color-td">年収</td>
+			<td width="30%">
+				<select id="id_select_salary">
+					<option value="z" selected="selected"></option>
+					<option value="a">1W-10W</option>
+					<option value="b">11W-20W</option>
+					<option value="c">21W-30W</option>
+					<option value="d">31W-40W</option>
+					<option value="e">41W-50W</option>
+				</select> 
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">技術スキル</td>
+			<td  colspan="3" width="80%">
+				<input id="id_chk_skill_java" type="checkbox" value="1">JAVA
+				<input id="id_chk_skill_c" type="checkbox" value="2">C
+				<input type="checkbox" value="3">C++
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">外国語</td>
+			<td  colspan="3" width="80%">
+				<input type="checkbox" name="foreign" value="1">ENGLISH
+				<input type="checkbox" name="foreign" value="2">CHINA
+				<input id="id_chk_lan_japan" type="checkbox" name="foreign" value="3">JAPAN 
+			</td>
+		</tr>
+
+	</table>
+
+</div>
+	<div align="right">
+		<input id="id_btn_back" class="btn-pink" type="button" value="戻る">
+		<input id="id_btn_clear" class="btn-pink" type="button" value="クリア">
+		<input id="id_btn_ok" class="btn-pink" type="button" value="確定">
+	</div>
+	<div class="footer">cuishuangjia © Copyright 2021</div>
+
+</body>
+</html>

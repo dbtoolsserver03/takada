@@ -1,0 +1,65 @@
+.background-color {
+	background-color: rgb(255, 255, 0);
+	color: white;
+}
+
+.btn-pink {
+	background-color: rgb(255, 128, 128);
+	color: white;
+	width: 100px;
+}
+
+.btn-pink-gray {
+	background-color: rgb(192, 192, 192);
+	color: white;
+	width: 100px;
+}
+
+.btn-pink-display-none {
+	background-color: rgb(192, 192, 192);
+	color: white;
+	width: 100px;
+	display: none;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.background-color-td {
+	background-color: LightSkyBlue;
+	color: black;
+}
+
+.background-color {
+	background-color: CornflowerBlue;
+	color: white;
+}
+
+td input[type="text"] {
+	border: 1;
+	overflow: hidden;
+	height: 100%;
+	width: 99%;
+}
+.footer {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 50px;
+	color: #9e9ea6;
+	background-color: #2b50af47;
+	z-index: 9999;
+	text-align: center;
+}
+/* footer{ */
+/*     width: 100%; */
+/* 	color: #9e9ea6; */
+/* 	background-color: #2b50af47; */
+/*     text-align: center; */
+/*     padding: 5px 0; */
+
+/*     position: absolute;←絶対位置 */
+/*     bottom: 0; 下に固定 */
+/* } */

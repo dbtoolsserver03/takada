@@ -32,7 +32,7 @@ public class TeacherController {
   }
 
 
-  @RequestMapping("teacher/save")
+  @RequestMapping("teacher/save1")
   public String save(TTeacher obj) {
 
       log.debug("保存老师信息");
