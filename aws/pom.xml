@@ -33,13 +33,13 @@
 		</dependency>
 
 
-<dependency>
-    <groupId>com.ibm.db2</groupId>
-    <artifactId>db2jcc</artifactId>
-    <version>11.5.6</version> <!-- 根据实际版本替换 -->
-    <scope>system</scope>
-    <systemPath>/Users/user/git/0723/takada/aws/lib/db2jcc4.jar</systemPath> <!-- 根据实际路径替换 -->
-</dependency>
+<!--<dependency>-->
+<!--    <groupId>com.ibm.db2</groupId>-->
+<!--    <artifactId>db2jcc</artifactId>-->
+<!--    <version>11.5.6</version>  根据实际版本替换 -->
+<!--    <scope>system</scope>-->
+<!--    <systemPath>/Users/user/git/0723/takada/aws/lib/db2jcc4.jar</systemPath>  根据实际路径替换 -->
+<!--</dependency>-->
 
 	</dependencies>
 
