@@ -1,25 +1,54 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>jp.co.saisk</groupId>
-  <artifactId>aws</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>jp.co.saisk</groupId>
+	<artifactId>aws</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
-  <dependencies>
-    <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-s3</artifactId>
-      <version>1.11.1000</version>
-    </dependency>
-  </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-s3</artifactId>
+			<version>1.11.1000</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>23.4.0.24.05</version>
+		</dependency>
+
+		<!-- MySQL JDBC driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.28</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.23</version> 
+		</dependency>
 
 
-  <!--  <dependencies>-->
-  <!--  <dependency>-->
-  <!--    <groupId>com.amazonaws</groupId>-->
-  <!--    <artifactId>aws-java-sdk</artifactId>-->
-  <!--    <version>1.11.1000</version>-->
-  <!--  </dependency>-->
-  <!--</dependencies>-->
+<!--<dependency>-->
+<!--    <groupId>com.ibm.db2</groupId>-->
+<!--    <artifactId>db2jcc</artifactId>-->
+<!--    <version>11.5.6</version>  根据实际版本替换 -->
+<!--    <scope>system</scope>-->
+<!--    <systemPath>/Users/user/git/0723/takada/aws/lib/db2jcc4.jar</systemPath>  根据实际路径替换 -->
+<!--</dependency>-->
+
+	</dependencies>
+
+
+	<!--  <dependencies>-->
+	<!--  <dependency>-->
+	<!--    <groupId>com.amazonaws</groupId>-->
+	<!--    <artifactId>aws-java-sdk</artifactId>-->
+	<!--    <version>1.11.1000</version>-->
+	<!--  </dependency>-->
+	<!--</dependencies>-->
 </project>

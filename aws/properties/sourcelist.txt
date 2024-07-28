@@ -1,0 +1,2 @@
+/Users/user/git/0723/takada/aws/src/main/java/co/jp/saisk/utils/BeanRowInfo.java
+
