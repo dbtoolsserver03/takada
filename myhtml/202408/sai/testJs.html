@@ -1,0 +1,35 @@
+
+<!-- ソースフォマード　ctrl + shift + f -->
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>test js</title>
+		
+		<script src="./js/testJs.js"></script>
+		
+		<script>
+		
+		</script>
+	</head>
+	
+	<body onload="init()">
+		user <input type="text">
+		password  <input type="password">
+		
+<!--数字の場合、"",''要らない-->
+<!--文字列場合、"",''必要、
+	ネスト場合　"alert('xxx')",'alert("xxx"")'-->
+		<input type="button" value="AlertTest" 
+		onclick='alert("hello")'>
+		
+		<hr>
+		数字
+		<input id="id_num" type="text" value="100">
+		<input type="button" value="sum計算" onclick="funSum(this)">
+		
+	</body>
+
+</html>
