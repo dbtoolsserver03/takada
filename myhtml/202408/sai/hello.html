@@ -16,12 +16,119 @@
 <!--		<link rel="shortcut icon" href="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" type="image/x-icon">-->
 		<link rel="icon" href="https://s.yimg.jp/c/icon/s/bsc/2.0/favicon.ico" type="image/vnd.microsoft.icon">
 	
+		<!--	画像などはローカルpcに参照したほうがいい　※wifiがない場合でも、表示できること-->		
 		<link rel="icon" href="./img/favicon.ico" type="image/vnd.microsoft.icon">
 	
 	</head>
 	
-	
 	<body>
-		123abc
+		
+		<table>
+			<tr><td>USER:</td><td><input type="text"></td></tr>
+			<tr><td>PASSWORD:</td><td><input type="password"></td></tr>
+			<tr><td><input type="button" value="登録"></td><td></td></tr>
+		</table>		
+		
+		<!-- 入力アシスタント出したい場合 ctrl + space -->
+		
+		<hr>
+        <!-- typeはradio,checkboxの場合、グループ化が必要 name属性利用-->
+		性別：
+		      
+		       <input id="id_man" name="sex" type="radio"> 
+			   <label for="id_man">男性</label> 
+		      
+			  <!-- 勧め書き方  ネスト-->
+			  <label><input name="sex" type="radio">女性</label>
+		<br>  
+		担当役:
+			<label><input name="job" type="radio">PM</label>
+			<label><input name="job" type="radio">PL</label>
+			<label><input name="job" type="radio">SPL</label>
+			<label><input name="job" type="radio">SE</label>
+			<label><input name="job" type="radio">BSE</label>
+			<label><input name="job" type="radio">PG</label>
+		<br>
+		技術言語
+			<label><input name="itLanuage" type="checkbox">JAVA</label>
+			<label><input name="itLanuage" type="checkbox">C</label>
+			<label><input name="itLanuage" type="checkbox">HTML</label>
+		<br>
+		外国語
+			<label><input name="lan" type="checkbox">日本語</label>
+			<label><input name="lan" type="checkbox">中国語</label>
+			<label><input name="lan" type="checkbox">英語</label>
+			<label><input name="lan" type="checkbox">フランス語</label>
+		<hr>
+			  
+		生年月日 <input type="date">
+		<br>
+		好きな色<input type="color">
+		<br>
+		アップロードファイル<input type="file"> 
+		<br>
+		<hr> 
+		
+		<!--target　新タブで表示する-->
+		ホームページ <a href="https://www.yahoo.co.jp/" target="_blank">yahoo</a> 
+		<br>
+		個人PR<textarea rows="10" cols="200"></textarea>
+		<br>
+		免許写真
+		<!--開発モードのsourcesの左側を見て、サーバーは２件以上の場合、別のサーバーを参照することになる-->
+		<!--<input type="image" height="50" width="100" src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG-xKvJwQnkeyLnzHIwxQnNVUiqOwSH0S2Jw681t3oNuVzd4R1G-V7NtFwo_AFjnvcdhDGTr4NkiPpQ7HAhdd2Sbx4Su-ZAjTqyGkl7nlS4Ik6wyCFBNZfCIcxsA9WhB11UrYNtbMa1PIdmYS5bqsMeMi8-qts0FxoU0TtV5sh2Fk/____.png?errorImage=false">-->
+			 <input type="image"  height="50" width="100" src="./img/mennkyo.png">
+		<br>
+		ホームページ
+		<a href="https://www.yahoo.co.jp/" target="_blank">
+			<input type="image" height="50" width="100" src="./img/mennkyo.png">
+		</a> 
+		
+		<br>
+		
+		<!-- 数多い場合、radio使わない-->
+		国籍
+		<select>
+			<option>---</option>
+			<option>china</option>
+			<option>japan</option>
+			<option>english</option>
+			<option>ostria</option>
+			<option>aaaa</option>
+			<option>bbbb</option>	
+		</select>
+		<hr>
+		
+		明細一覧
+		<table border="1" width="100%">
+			<!--tr: table row-->
+			<!--th: table head-->
+			<!--td: table detail/data-->
+			<tr>
+				<th>NO.</th>
+				<th>name</th>
+				<th>birthday</th>
+				<th>salary</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>tanaka</td>
+				<td align="center">1999/01/01</td>
+				<td align="right">210000</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>yasuda</td>
+				<td align="center">1998/01/01</td>
+				<td align="right">220000</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>li</td>
+				<td align="center"><input type="date"></td>
+				<td align="right">180000</td>
+			</tr>
+		</table>
+  	
 	</body>
 </html>
