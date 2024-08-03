@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/*　タグに、class属性が必要　*/
+.ps {
+	background-color: rgb(255, 128, 128);
+}
+.ps_font_white {
+	color: rgb(255, 255, 255);
+}
+
+.ps_font {
+	color: rgb(128, 128, 255);
+}
+
+/*　タグに有効　*/
+input[type="date"] {
+	background-color: aquamarine;
+}
+
+/*　タグID属性の指定が必要　*/
+#id_pm{
+	background-color: red;
+}

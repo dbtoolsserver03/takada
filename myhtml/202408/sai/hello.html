@@ -5,6 +5,16 @@
 
 <html>
 	<head>
+		<style>
+			
+			/*
+			   cssの順位は後ろやつ有効
+			*/
+
+		</style>	
+		
+		<link rel="stylesheet" href="./css/hello.css" type="text/css">
+	
 		<!--文字コード-->
 		<!--別の文字コードで開きましたら、文字化け発生する-->
 		
@@ -22,16 +32,27 @@
 	</head>
 	
 	<body>
+		<!--通常の場合、ソースを修正します。その後CHOMEを開いてから、表示形式を確認します。-->
+		<!--数回が必要-->
 		
-		<table>
-			<tr><td>USER:</td><td><input type="text"></td></tr>
-			<tr><td>PASSWORD:</td><td><input type="password"></td></tr>
-			<tr><td><input type="button" value="登録"></td><td></td></tr>
+		<!--CSS追加の場合、CHOMEを開いてから、CHOMEでソースを修正します。すぐに画面の表示形式見えます。-->
+		<!--問題ない場合、CSSのコードをソースに貼り付けまう。一回でOK-->
+		
+		<div style="background-color: aquamarine;">
+		<table> 
+			
+			<!--style class 両方ある場合、style勝ち-->
+			<tr><td>USER:</td><td><input type="text" class="ps" style="background-color: rgb(128, 255, 128);"></td></tr>
+			
+			<tr><td>PASSWORD:</td><td><input type="password" class="ps ps_font_white ps_font "></td></tr>
+			
+			<tr><td><input type="button" value="登録" class="ps"></td><td></td></tr>
 		</table>		
-		
+		</div>
 		<!-- 入力アシスタント出したい場合 ctrl + space -->
 		
 		<hr>
+		<div style="background-color: bisque;">
         <!-- typeはradio,checkboxの場合、グループ化が必要 name属性利用-->
 		性別：
 		      
@@ -42,7 +63,7 @@
 			  <label><input name="sex" type="radio">女性</label>
 		<br>  
 		担当役:
-			<label><input name="job" type="radio">PM</label>
+			<label id="id_pm"><input name="job" type="radio">PM</label>
 			<label><input name="job" type="radio">PL</label>
 			<label><input name="job" type="radio">SPL</label>
 			<label><input name="job" type="radio">SE</label>
@@ -59,6 +80,7 @@
 			<label><input name="lan" type="checkbox">中国語</label>
 			<label><input name="lan" type="checkbox">英語</label>
 			<label><input name="lan" type="checkbox">フランス語</label>
+		</div>
 		<hr>
 			  
 		生年月日 <input type="date">
