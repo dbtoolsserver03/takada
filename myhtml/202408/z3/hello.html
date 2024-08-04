@@ -1,10 +1,89 @@
+<!--ctrl + shift + c-->
+<!--HTML标识-->
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
-</body>
+<html>
+
+	<head>
+		<!--utf-8 支持所有语言-->
+		<!--shift-jis 仅支持日语-->
+		<meta charset="UTF-8">
+		<title>hello world</title>
+		
+<!--		<link rel="icon" href="https://s.yimg.jp/c/icon/s/bsc/2.0/favicon.ico" type="image/vnd.microsoft.icon">-->
+		<!--  相对路径 ./  代表当前文件所在的文件夹  -->
+		<!--  不要使用绝对路径 C:\Users\admin\git0804\takada\myhtml\202408\z3\img\favicon.ico -->
+		<link rel="icon" href="./img/favicon.ico" type="image/vnd.microsoft.icon">
+	</head>
+	
+	<body>
+	
+		user:<input type="text">
+		<br>
+		password:<input type="password">
+		<br>
+		<input type="button" value="login">
+<!-- ctrl + space 代码入力智能联想 自动弹出小框	-->
+<!-- <input ty>-->
+		<hr>
+<!--组的概念 在单选按钮和多选按钮里一定要体现-->
+		 性别：
+		 
+<!--下面的写法 input，label是同级关系，所以需要明确指定label是为哪个标签而服务-->
+		 <input id="id_sex" name="sex" type="radio"> 
+		 <label for="id_sex">男性</label>
+			
+<!--下面的写法 input，label是嵌套关系，所以不需要明确指定label为里面的标签服务-->
+		     <label><input name="sex" type="radio">女性</label> 
+		<br>
+		职务：
+		<label><input name="job" type="radio">PM</label>
+		<label><input name="job" type="radio">PL</label>
+		<label><input name="job" type="radio">SPL</label>
+		<label><input name="job" type="radio">SE</label>
+		<label><input name="job" type="radio">BSE</label>
+		<label><input name="job" type="radio">PG</label>
+		<br>
+		外语：	
+		<label><input name="lan" type="checkbox">english</label>
+		<label><input name="lan" type="checkbox">japan</label>
+		<label><input name="lan" type="checkbox">china</label>
+		<label><input name="lan" type="checkbox">france</label>
+		<br>
+		兴趣：	
+		<label><input name="hob" type="checkbox">eat</label>
+		<label><input name="hob" type="checkbox">sing</label>
+		<label><input name="hob" type="checkbox">sleep</label>
+		<br>
+		国籍：
+		<select>
+			<option>----</option>
+			<option>china</option>
+			<option>japan</option>
+			<option>english</option>
+			<option>aaaaa</option>
+			<option>bbbb</option>
+			<option>cccccc</option>			
+		</select>
+		<hr>
+		喜欢的颜色<input type="color">
+		<br>上传文件<input type="file">
+		<br>出生年月日<input type="date">
+		<br>自我介绍<textarea rows="5" cols="20"></textarea>
+		
+		<br>个人网站 <a href="https://www.yahoo.co.jp/" target="_blank">click me</a> 
+		
+		<!--HTML所用到的图片要保存到本地，可以在开发者模式里的sources标签里面看是否只有1个服务器-->
+		<br>个人照片<input type="image" width="80" height="50" src="./img/panda.jpg">
+		<br>个人网站 <a href="https://www.yahoo.co.jp/" target="_blank">
+						<input type="image" width="80" height="50" src="./img/panda.jpg">
+					 </a> 
+		<hr>
+	
+	</body>
+
 </html>
+
+
+<!-- ctrl + [+]  字体放大-->
+<!-- ctrl + [-]  字体缩小-->
