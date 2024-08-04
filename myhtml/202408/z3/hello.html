@@ -14,20 +14,37 @@
 		<!--  相对路径 ./  代表当前文件所在的文件夹  -->
 		<!--  不要使用绝对路径 C:\Users\admin\git0804\takada\myhtml\202408\z3\img\favicon.ico -->
 		<link rel="icon" href="./img/favicon.ico" type="image/vnd.microsoft.icon">
+	
+		<link rel="stylesheet" href="./css/hello.css" type="text/css">
+
+	<style>
+
+	</style>
+	
 	</head>
 	
 	<body>
 	
+		<div>
+	
 		<table>
-			<tr><td>user:</td><td><input type="text"></td></tr>
-			<tr><td>password:</td><td><input type="password"></td></tr>
+
+			<!--传统开发时，先改代码，之后在CHROME里看效果，效果不行，再改代码，反复测试-->
+			<!--在做前台HTML开发时，先在CHROME里把样式调好后，再将样式写回到代码里，一遍成-->
+			
+			<!-- 当style和class所设槎式有冲突时，以style为主-->
+			<tr><td>user:</td><td><input type="text"  class="pw" style="background-color: #d3d19c;"></td></tr>
+			<tr><td>password:</td><td><input type="password" class="pwred pw "></td></tr>
 			<tr><td><input type="button" value="login"></td><td></td></tr>
 						
 		</table>
 		
+		
+		</div>
 <!-- ctrl + space 代码入力智能联想 自动弹出小框	-->
 <!-- <input ty>-->
 		<hr>
+<div class="pw">
 <!--组的概念 在单选按钮和多选按钮里一定要体现-->
 		 性别：
 		 
@@ -60,13 +77,14 @@
 		国籍：
 		<select>
 			<option>----</option>
-			<option>china</option>
+			<option id="id_china">china</option>
 			<option>japan</option>
 			<option>english</option>
 			<option>aaaaa</option>
 			<option>bbbb</option>
 			<option>cccccc</option>			
 		</select>
+</div>
 		<hr>
 		喜欢的颜色<input type="color">
 		<br>上传文件<input type="file">
