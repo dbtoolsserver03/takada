@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script>
+/*	
+	// 浏览器解析HTML文件时，是逐行读入执行的
+
+	// 此时id_user所对应的HTML标签，还没有在浏览器内存里生成，所以取得为·null
+	var tag = document.getElementById("id_user");
+	// 对null取值，会报错。
+	alert(tag.value);
+	
+*/
+	alert("setp 1:画面初期表示时，最先执行");
+	
+	
+	function funTest() {
+		
+		alert("2");
+		
+		// document: 当前的HTML文件
+		// getElementById:通过ID从当前HTML取得标签
+		// tag 定义变量，用来接收返回值
+		var tag = document.getElementById("id_user");
+		
+		alert(tag.value);
+	}
+	
+	function funCal(btn) {
+		
+		var tag = document.getElementById("id_num");
+		
+		var sum = 0;
+		
+		// ctrl + shift + f  代码整形
+		for (var i = 0; i <= tag.value; i++) {
+			sum = sum + i;
+		}
+		
+		var tagRet = document.getElementById("id_ret");
+		tagRet.textContent=sum;
+		
+		debugger;
+		if(sum<1000) {
+			btn.style.backgroundColor = "pink";
+		} else {
+			btn.style.backgroundColor = "green";
+		}
+		
+
+	}
+	
+	function init() {
+		var tag = document.getElementById("id_user");
+		alert(tag.value);
+		
+		alert("step 2: 当画面上的所有控件全部加载完毕时，执行的方法");
+	}
+	
+</script>
+</head>
+<body onload="init()">
+
+	USER:<input id="id_user" type="text" value="tanaka">
+	<input type="button" value="testJsAlert" onclick="alert('abc')">
+	<input type="button" value="testJs" onclick="funTest()">
+	<hr>
+	
+	num:<input id="id_num" type="number"> 
+	<input type="button" value="计算" onclick="funCal(this)">
+	<br>
+	result:<label id="id_ret"></label>
+	
+	
+</body>
+</html>
