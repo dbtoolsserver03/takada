@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/*当样式发生冲突时，以最后出现的样式为主。*/
+/*当class名和标签发生冲突时，以class名样式为主。*/
+
+/* 写法①。指定class名的写法*/
+.pwred {
+	background-color: red;
+}
+
+.pw {
+	background-color: rgb(255, 255, 128);
+}
+
+/* 写法②。指定标签名的写法*/
+input[type="date"] {
+	background-color: rgb(255, 128, 128);
+}
+
+/* 写法③。指定ID的写法*/
+#id_china {
+	background-color: rgb(0, 0, 255);
+}
