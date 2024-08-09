@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js的简单计算器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>js的简单计算器</h1>
+    <div>
+        <input type="text" id="number1" placeholder="数字1">
+        <input type="text" id="number2" placeholder="数字2">
+    </div>
+   <div>
+        <button onclick="setOperation('add')">加法 (+)</button>
+        <button onclick="setOperation('subtract')">减法 (-)</button>
+        <button onclick="setOperation('multiply')">乘法 (×)</button>
+        <button onclick="setOperation('divide')">除法 (÷)</button>
+    <div>
+	<div>
+		 <button onclick="calculate()">计算</button>
+    </div>
+    <h2 id="result">答案: </h2>
+
+    <script>
+		let operation = null;
+
+		        function setOperation(op) {
+		            operation = op;
+		        }
+        function calculate() {
+            const number1 = parseFloat(document.getElementById('number1').value);
+            const number2 = parseFloat(document.getElementById('number2').value);
+            let result;
+
+            if (isNaN(number1) || isNaN(number2)) {
+                result = "请输入有效数字";
+				} else if (!operation) {
+				result = "请选择运算方式";
+            } else {
+                switch(operation) {
+                    case 'add':
+                        result = number1 + number2;
+                        break;
+                    case 'subtract':
+                        result = number1 - number2;
+                        break;
+                    case 'multiply':
+                        result = number1 * number2;
+                        break;
+                    case 'divide':
+                        result = number1 / number2;
+                        break;
+                }
+            }
+
+            document.getElementById('result').innerText = "答案: " + result;
+        }
+    </script>
+</body>
+</html>
