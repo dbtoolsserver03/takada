@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- key  拡大　ctrl + [+]　-->
+<!--            ctrl + [-]　-->
+	
+<script src="./js/testCal.js"></script>
+<script>
+
+</script>
+
+</head>
+<body>
+	
+	<div id="id_msg" style="color: red;">
+
+	</div>
+		
+	計算記号
+	<label id="id_kigo"><input name="kigo" type="radio" value="add">+</label>
+	<label><input name="kigo" type="radio"  value="minus">-</label>
+	 <br>
+	数字１  <input id="num1" type="number">数字２<input id="num2" type="number">
+
+	<input type="button" value="計算ボタン" onclick="funCalc()">
+	<input type="button" value="クリアボタン" onclick="funClear()">
+		
+	<hr>
+
+	結果：
+	<div id="id_ret">
+	
+	</div>
+	
+</body>
+</html>
+
+<!--
+	
+	異常系：
+	計算記号は選択されていない場合、
+	数字１、数字２には数字が入力されていない場合
+	適当なエラーメッセージを表示ください。
+	
+	正常系：
+	計算結果を出します
+　　
+-->
