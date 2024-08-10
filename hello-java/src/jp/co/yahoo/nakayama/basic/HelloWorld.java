@@ -23,6 +23,11 @@ public class HelloWorld {
 		
 		// consoleに指定文字列を出力する
 		System.out.println("hello world 2");
+		
+		
+		for(int i = 0; ; ) {
+			System.out.println("---" + i);
+		}
 	}
 	
 /*
