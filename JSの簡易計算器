@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計算フォーム</title>
+</head>
+<body>
+    <form id="calcForm">
+        計算記号: 
+        <select id="operator">
+            <option value="">選択してください</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+        </select><br><br>
+
+        数字１: <input type="number" id="num1"><br><br>
+        数字２: <input type="number" id="num2"><br><br>
+
+        <input type="button" value="計算" onclick="calculate()">
+    </form>
+
+    <div id="result">
+        結果
+    </div>
+
+    <script>
+        function calculate() {
+            const operator = document.getElementById("operator").value;
+            const num1 = document.getElementById("num1").value;
+            const num2 = document.getElementById("num2").value;
+            const resultDiv = document.getElementById("result");
+
+            // エラーチェック
+            if (operator === "") {
+                resultDiv.innerHTML = "エラー: 計算記号が選択されていません。";
+                return;
+            }
+
+            if (num1 === "" || num2 === "") {
+                resultDiv.innerHTML = "エラー: 数字１または数字２が入力されていません。";
+                return;
+            }
+
+            // 正常系の計算
+            let result;
+            if (operator === "+") {
+                result = parseFloat(num1) + parseFloat(num2);
+            } else if (operator === "-") {
+                result = parseFloat(num1) - parseFloat(num2);
+            }
+
+            resultDiv.innerHTML = "結果: " + result;
+        }
+    </script>
+</body>
+</html>
