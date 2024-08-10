@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+	.pw{
+			background-color: aqua;
+		}
+	 			
+		.pwred{
+			background-color: brown;
+		}
+		
+		input[type="data"]{
+			background-color: blue;
+		}
+		
+		#id_taiwan{
+			background-color: cornflowerblue;
+		}
