@@ -3,29 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="./js/練習JS.js"> </script>
 </head>
 <body>
-	
-	計算記号　◎+　◎-　
-	数字１  <input type="number">数字２<input type="text">
+    
+	計算記号:
+	<select id="operation">
+	    <option value="">選択してください</option>
+	    <option value="add">+</option>
+	    <option value="subtract">-</option>
+	</select>
+	<br><br>
+	   数字１: <input type="number" id="num1">
+	   数字２: <input type="number" id="num2">
 
-	計算ボタン<input type="button">
+	<br><br>
+    計算ボタン
 
-	<div>
-	結果
+	<input type="button" value="計算" onclick="calculate()">
+
+	<div id="result">
+	    結果:
 	</div>
-	
 </body>
 </html>
 
 <!--
-	
-	異常系：
-	計算記号は選択されていない場合、
-	数字１、数字２には数字が入力されていない場合
-	適当なエラーメッセージを表示ください。
-	
-	正常系：
-	計算結果を出します
+    
+    異常系：
+    計算記号は選択されていない場合、
+    数字１、数字２には数字が入力されていない場合
+    適当なエラーメッセージを表示ください。
+    
+    正常系：
+    計算結果を出します
 　　
 -->
