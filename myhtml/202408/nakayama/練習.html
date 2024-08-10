@@ -11,18 +11,21 @@
 
 </head>
 <body>
-	
+	<div id="id_msg" style="color:red;">
+		
+	</div>
 	計算記号
-	<label id="id_kigo"><input name="kigo"type=radio>+</label>
-	　<label><input name="kigo"type=radio>-</label>
+	<label id="id_kigo"><input name="kigo"type="radio" value="add">+</label>
+	　<label><input name="kigo"type="radio" value="minus">-</label>
 	 <br>
-	数字１  <input type="number">数字２<input type="text">
+	数字１  <input id="num1" type="number">数字２<input id="num2" type="number">
 
-	計算ボタン<input type="button">
+	<input type="button" value="計算" onclick="funCalc()">
+	<input type="button" value="クリア" onclick="funClear()">
 	<hr>
 
-	<div>
-	結果
+	結果:
+	<div id="id_ret">
 	</div>
 	
 </body>
