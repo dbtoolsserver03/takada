@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+</head>
+<body>
+
+    計算記号　
+    <select id="operator">
+        <option value="">選択してください</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+    </select>
+    
+    <br><br>
+    
+    数字１  <input type="number" id="num1"> 
+    数字２  <input type="number" id="num2">
+
+    <br><br>
+    
+    計算ボタン <input type="button" value="計算" onclick="calculate()">
+
+    <div id="result">
+        結果
+    </div>
+
+    <script>
+        function calculate() {
+            const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+            const operator = document.getElementById('operator').value;
+            const resultDiv = document.getElementById('result');
+            
+            if (!operator) {
+                resultDiv.innerHTML = "エラー: 計算記号を選択してください。";
+                return;
+            }
+
+            if (num1 === "" || num2 === "") {
+                resultDiv.innerHTML = "エラー: 数字１と数字２を入力してください。";
+                return;
+            }
+
+            let result;
+            if (operator === "+") {
+                result = parseFloat(num1) + parseFloat(num2);
+            } else if (operator === "-") {
+                result = parseFloat(num1) - parseFloat(num2);
+            }
+
+            resultDiv.innerHTML = "結果: " + result;
+        }
+    </script>
+
+</body>
+</html>
