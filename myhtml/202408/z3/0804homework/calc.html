@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>calc</title>
+<script src="./js/calc.js"></script>
+<link rel="stylesheet" href="./css/calc.css" type="text/css">
+</head>
+<body>
+	
+	<div id="id_msg" class="err">
+		
+	</div>
+	計算記号 <label> <input type="radio" name="cal" value="add" > +</label> 
+	<label> <input type="radio" name="cal"  value="minus"> -</label> 
+	<br>
+	数字１<input id="id_num1" type="number">
+	<br>
+	数字２<input  id="id_num2" type="number">
+	<br>
+	<input type="button" value="計算ボタン" onclick="funCal()">
+	<input type="button" value="クリアボタン" onclick="funClear()">
+	<br>
+	
+	<div>
+		result:<span id="id_div"></span>
+	</div>
+
+</body>
+</html>
