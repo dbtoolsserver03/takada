@@ -1,10 +1,91 @@
+<!--ctrl+shift+ｃ-->
+<!--html标识-->
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
+
+<html>
+
+    <head>
+<!--		UTF-8支持所有语言-->
+<!--shiift-jis只支持日语-->
+        <meta charset="UTF-8">
+		
+		<title>helloword</title>
+
+<!--		<link rel="icon" href="https://s.yimg.jp/c/icon/s/bsc/2.0/favicon.ico" type="image/vnd.microsoft.icon">-->
+<!--	./	代表当前文件所在的文件   相对路径-->
+		<link rel="icon" href="https://s.yimg.jp/c/icon/s/bsc/2.0/favicon.ico" type="image/vnd.microsoft.icon">
+</head>
+
+
+
+
+<body>
+user:<input type="text">
+<br>
+passeord:<input type="password">
+<br>
+<input type="button" value="login">
+
+
+<!--ctrl+space 代码入力智能联想 自动弹出小框-->
+<!--<input ty>-->
+<hr>
+
+<!--组的概念  在单选按钮和多选按钮里一定要体现-->
+性别：
+
+<!--下面的写法input，label是同级关系，所以需要明确指定label是为那个标签而服务-->
+<input name="id_sex" type="radio">
+     <label for="id_sex">男性</label>
+	
+
+	 <!--下面的写法input，label是嵌套关系，所以不需要明确指定label是为那个标签而服务-->
+	 
+     <label><input name="sex" type="radio">女性</label> 
+	 <br>
+	 职务：
+	 <label><input name="job" type="radio">PM</label>
+	 <label><input name="job" type="radio">PL</label>
+	 <label><input name="job" type="radio">SPL</label>
+	 <label><input name="job" type="radio">SE</label>
+	 <label><input name="job" type="radio">BSE</label>
+	 <label><input name="job" type="radio">PG</label>
+	 <br>
+	 外语：
+	  <label><input name="lan" type="checkbox">English</label>
+	 <label><input name="lan" type="checkbox">japan</label>
+	 <label><input name="lan" type="checkbox">China</label>
+	 <label><input name="lan" type="checkbox">France</label>
+	 <br>
+	 国籍:
+	 <select>	 
+		<option>___</option>
+	 		<option>china</option>
+	 		<option>japan</option>
+	 		<option>qq</option>
+		</select>
+		<hr>
+		喜欢的颜色<input type="color">
+				<br>上传文件<input type="file">
+				<br>出生年月日<input type="date">
+				<br>自我介绍<textarea rows="5" cols="20"></textarea>
+				
+				<br>个人网站 <a href="https://www.yahoo.co.jp/" target="_blank">click me</a> 
+				
+				<!--HTML所用到的图片要保存到本地，可以在开发者模式里的sources标签里面看是否只有1个服务器-->
+				<br>个人照片<input type="image" width="80" height="50" src="< src=./file:///C:/%E7%8E%8B%E9%87%91%E3%81%97%E3%82%93/jingyu.jpg">
+								<input type="image" width="80" height="50" src="./file:///C:/%E7%8E%8B%E9%87%91%E3%81%97%E3%82%93/jingyu.jpg">
+							 </a> 
+				<hr>
 </body>
 </html>
+
+
+
+
+
+
+
+<!--ctrl+   +    放大-->
+<!--carl+        缩小-->
