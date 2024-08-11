@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>calculator.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+calculator.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+  <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+  <span class="s0">&lt;title&gt;</span><span class="s1">電卓</span><span class="s0">&lt;/title&gt;</span>
+  <span class="s0">&lt;script&gt;</span>
+       <span class="s1">function a() {</span>
+       <span class="s1">var x = document.getElementById(&quot;id_a0&quot;).value;</span>
+       <span class="s1">var y = document.getElementById(&quot;id_a1&quot;).value;</span>
+       <span class="s1">var z = document.getElementById(&quot;id_a2&quot;);</span>
+       <span class="s1">var x1 = parseFloat(x);</span>
+       <span class="s1">var y1 = parseFloat(y);</span>
+       <span class="s1">var operation = document.querySelector('input[name=&quot;option&quot;]:checked');</span>
+            <span class="s1">if (operation) {</span>
+                <span class="s1">var selectedValue = operation.value;</span>
+                <span class="s1">if (selectedValue == &quot;1&quot;) {</span>
+                    <span class="s1">z1 = x1 + y1;</span>
+                <span class="s1">} else {</span>
+                    <span class="s1">z1 = x1 - y1;</span>
+                <span class="s1">}</span>
+            <span class="s1">} else {</span>
+                <span class="s1">z1 = &quot;加法または減法を選択してください&quot;;</span>
+            <span class="s1">}</span>
+       <span class="s1">z.textContent = z1;</span>
+       <span class="s1">}</span>
+    <span class="s0">&lt;/script&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;</span>
+<span class="s0">&lt;input </span><span class="s2">id </span><span class="s3">= &quot;id_a0&quot; </span><span class="s2">type</span><span class="s3">=&quot;text&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;br&gt;</span>
+<span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;option1&quot; </span><span class="s2">name</span><span class="s3">=&quot;option&quot; </span><span class="s2">value</span><span class="s3">=&quot;1&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;option1&quot;</span><span class="s0">&gt;</span><span class="s1">+</span><span class="s0">&lt;/label&gt;</span>
+<span class="s0">&lt;br&gt;</span>
+<span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;radio&quot; </span><span class="s2">id</span><span class="s3">=&quot;option2&quot; </span><span class="s2">name</span><span class="s3">=&quot;option&quot; </span><span class="s2">value</span><span class="s3">=&quot;2&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;option2&quot;</span><span class="s0">&gt;</span><span class="s1">-</span><span class="s0">&lt;/label&gt;</span>
+<span class="s0">&lt;br&gt;</span>
+<span class="s0">&lt;input </span><span class="s2">id </span><span class="s3">= &quot;id_a1&quot; </span><span class="s2">type</span><span class="s3">=&quot;text&quot;</span><span class="s0">&gt; &lt;input </span><span class="s2">type</span><span class="s3">=&quot;button&quot; </span><span class="s2">value</span><span class="s3">=&quot;=&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;a()&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;br&gt;</span>
+<span class="s1">結果: </span><span class="s0">&lt;label </span><span class="s2">id </span><span class="s3">= &quot;id_a2&quot;</span><span class="s0">&gt;&lt;/label&gt;</span>
+<span class="s0">&lt;br&gt;</span>
+<span class="s1">1) 数一と数二を入力してください。</span>
+<span class="s1">2) 加法または減法を選択してください。</span>
+<span class="s1">3) 等号ボタンをクリックして結果を表示します。</span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>
