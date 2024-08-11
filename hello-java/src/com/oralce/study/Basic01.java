@@ -1,5 +1,8 @@
 package com.oralce.study;
 
+// 一个JAVA文件里只能有一个public class,
+//并且class名和文件名要一致。
+
 public class Basic01 {
 
 	public static void main(String[] args) {
@@ -50,4 +53,7 @@ public class Basic01 {
 		System.out.println(num);
 	}
 
+}
+class A{
+	
 }
