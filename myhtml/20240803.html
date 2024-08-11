@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>簡単な計算機</title>
+</head>
+<body>
+	
+	計算記号　
+	<input type="radio" name="operator" value="add">＋
+	<input type="radio" name="operator" value="subtract">－　
+	<br>
+	数字１  <input type="number" id="number1"> 
+	数字２  <input type="number" id="number2"> 
+	<br>
+	計算ボタン <input type="button" value="計算" onclick="calculate()">
+	<div id="result">
+	結果
+	</div>
+	
+	<script>
+		function calculate() {
+			const num1 = document.getElementById('number1').value;
+			const num2 = document.getElementById('number2').value;
+			const operator = document.querySelector('input[name="operator"]:checked');
+
+			if (!operator || !num1 || !num2) {
+				document.getElementById('result').innerText = "エラー: すべての項目を入力してください。";
+				return;
+			}
+
+			let result = operator.value === "add"
+				? parseFloat(num1) + parseFloat(num2)
+				: parseFloat(num1) - parseFloat(num2);
+
+			document.getElementById('result').innerText = "結果: " + result;
+		}
+	</script>
+
+</body>
+</html>
