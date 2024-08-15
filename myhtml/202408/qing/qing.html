@@ -1,10 +1,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	 <title>株名表</title>
+	 <style>
+	     table {
+	         border-collapse: collapse; /* 合并边框 */
+	         width: 100%; /* 表格宽度 */
+	     }
+	     th, td {
+	         border: 1px solid #ccc; /* 设置细线边框 */
+	         padding: 8px; /* 添加内边距 */
+	         text-align: left; /* 左对齐 */
+	     }
+	     th {
+	         background-color: #f2f2f2; /* 表头背景颜色 */
+	     }
+		 .p1 {
+		 	background-color: rgb(239, 158, 143);
+		 }
+		 .p2 {
+		  	background-color: rgb(128, 255, 128);
+		  }
+	 </style>
+	 
+	 <script>
+	     function updateValue(amount) {
+	         const inputField = document.getElementById('stockValue');
+	         let currentValue = parseInt(inputField.value);
+	         currentValue += amount;
+			 if (currentValue > 0){
+				inputField.value = currentValue;
+			}
+			else{
+				inputField.value = 0+"别灰心，再来一把";
+			}
+			
+	         if (currentValue > 1000) {
+	             inputField.style.backgroundColor = 'orange';
+	         } else if (currentValue < 1000) {
+	             inputField.style.backgroundColor = 'green';
+	         } else {
+	             inputField.style.backgroundColor = ''; 
+	         }
+	     }
+
+	     window.onload = function() {
+	         const inputField = document.getElementById('stockValue');
+	         inputField.style.backgroundColor = ''; 
+	     }
+		 
+		 function updateValue1(amount) {
+		 	         const inputField = document.getElementById('stockValue1');
+		 	         let currentValue = parseInt(inputField.value);
+		 	         currentValue += amount;
+		 			 if (currentValue > 0){
+		 				inputField.value = currentValue;
+		 			}
+		 			else{
+		 				inputField.value = 0+"大侠，下次记得存档";
+		 			}
+		 			
+		 	         if (currentValue > 2000) {
+		 	             inputField.style.backgroundColor = 'orange';
+		 	         } else if (currentValue < 2000) {
+		 	             inputField.style.backgroundColor = 'green';
+		 	         } else {
+		 	             inputField.style.backgroundColor = ''; 
+		 	         }
+		 	     }
+
+		 	     window.onload = function() {
+		 	         const inputField = document.getElementById('stockValue1');
+		 	         inputField.style.backgroundColor = ''; 
+		 	     }
+				 
+				 function updateValue2(amount) {
+				 	         const inputField = document.getElementById('stockValue2');
+				 	         let currentValue = parseInt(inputField.value);
+				 	         currentValue += amount;
+				 			 if (currentValue > 0){
+				 				inputField.value = currentValue;
+				 			}
+				 			else{
+				 				inputField.value = 0+"奥利给";
+				 			}
+				 			
+				 	         if (currentValue > 3000) {
+				 	             inputField.style.backgroundColor = 'orange';
+				 	         } else if (currentValue < 3000) {
+				 	             inputField.style.backgroundColor = 'green';
+				 	         } else {
+				 	             inputField.style.backgroundColor = ''; 
+				 	         }
+				 	     }
+
+				 	     window.onload = function() {
+				 	         const inputField = document.getElementById('stockValue');
+				 	         inputField.style.backgroundColor = ''; 
+				 	     }
+	 </script>
 </head>
 <body>
-
+    <table border="1">
+        <thead>
+            <tr>
+                <th>株名</th>
+                <th>始値</th>
+                <th>時価</th>
+                <th>時価アップ</th>
+                <th>時価ダウン</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>トヨタ</td>
+                <td>1000</td>
+				<td><input type="text" id="stockValue" value="1000" readonly /></td>
+			    <td><button onclick="updateValue(100)" class="p1">+100ボタン</button></td>
+				<td><button onclick="updateValue(-100)" class="p2">-100ボタン</button></td>
+            </tr>
+            <tr>
+                <td>みずほ銀行</td>
+                <td>2000</td>
+				<td><input type="text" id="stockValue1" value="2000" readonly /></td>
+				<td><button onclick="updateValue1(100)" class="p1">+100ボタン</button></td>
+				<td><button onclick="updateValue1(-100)" class="p2">-100ボタン</button></td>
+            </tr>
+            <tr>
+                <td>三菱UFJ</td>
+                <td>3000</td>
+				<td><input type="text" id="stockValue2" value="3000" readonly /></td>
+				<td><button onclick="updateValue2(100)" class="p1">+100ボタン</button></td>
+				<td><button onclick="updateValue2(-100)" class="p2">-100ボタン</button></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
