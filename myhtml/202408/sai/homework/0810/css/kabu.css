@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.upBtn {
+	background-color: orange;
+}
+.downBtn {
+	background-color: lightgreen;
+}
+.headTitle {
+	background-color: rgb(192, 192, 192);
+}
+
+.upTd {
+	background-color: orange;
+}
+.downTd {
+	background-color: lightgreen;
+}

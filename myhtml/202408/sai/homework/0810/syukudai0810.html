@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="./css/kabu.css" type="text/css">
+<script src="./js/kabu.js"></script>
+
+<style>
+</style>
+<script>
+</script>
+
+</head>
+<body>
+	<table border="1" width="100%">
+				
+			<tr class="headTitle">
+			<th>株名</th>
+			<th>始値</th>
+			<th>時価</th>
+			<th>時価アップ</th>
+			<th>時価ダウン</th>
+			</tr>
+			<tr>
+			<td>トヨタ</td>
+			<td id="id_hajimene_1" align="right">1000</td>
+			<td id="id_jika_1" align="right">1000</td>
+			<td align="center" ><input type="button" value="+100ボタン" class="upBtn" onclick="funCal(1,'add')"></td>
+			<td align="center"> <input type = "button" value="-100ボタン"  class="downBtn"  onclick="funCal(1,'minus')"></td>
+			</tr>
+			<tr>
+			<td>みずほ銀行</td>
+			<td id="id_hajimene_2"  align="right">2000</td>
+			<td id="id_jika_2"  align="right">2000</td >
+			<td align="center" ><input type="button" value="+100ボタン" class="upBtn" onclick="funCal(2,'add')"></td>
+			<td align="center" ><input type="button" value="-100ボタン"  class="downBtn" onclick="funCal(2,'minus')"></td>
+			</tr>
+			<tr>
+			<td>三菱UFJ</td>
+			<td id="id_hajimene_3"  align="right">3000</td>
+			<td id="id_jika_3"  align="right">3000</td>
+			<td align="center" ><input type="button" value="+100ボタン"  class="upBtn" onclick="funCal(3,'add')"></td>
+			<td align="center" ><input type="button" value="-100ボタン"  class="downBtn"  onclick="funCal(3,'minus')"></td>
+			</tr>
+	</table>
+
+</body>
+</html>
