@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>株価テーブル</title>
+<link rel="stylesheet" href="./css/js0811.css" type="text/css">
+</head>
+<body>
+	<h1>JSの株価指値画面</h1>
+		 <table>
+		        <tr>
+		            <th>株名</th>
+		            <th>始値</th>
+		            <th>時価</th>
+		            <th>時価アップ</th>
+		            <th>時価ダウン</th>
+		        </tr>
+		        <tr>
+		            <td>トヨタ</td>
+		            <td>1000</td>
+		            <td id="price-toyota" class="green">900</td>
+		            <td><button onclick="changePrice('price-toyota', 100)">+100ボタン</button></td>
+		            <td><button onclick="changePrice('price-toyota', -100)">-100ボタン</button></td>
+		        </tr>
+		        <tr>
+		            <td>みずほ銀行</td>
+		            <td>2000</td>
+		            <td id="price-mizuho" class="green">2000</td>
+		            <td><button onclick="changePrice('price-mizuho', 100)">+100ボタン</button></td>
+		            <td><button onclick="changePrice('price-mizuho', -100)">-100ボタン</button></td>
+		        </tr>
+		        <tr>
+		            <td>三菱UFJ</td>
+		            <td>3000</td>
+		            <td id="price-ufj" class="yellow">3100</td>
+		            <td><button onclick="changePrice('price-ufj', 100)">+100ボタン</button></td>
+		            <td><button onclick="changePrice('price-ufj', -100)">-100ボタン</button></td>
+		        </tr>
+		    </table>
+
+		    <script src="./js/js0811.js"></script>
+		</body>
+		</html>
