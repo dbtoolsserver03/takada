@@ -1,4 +1,4 @@
-package com.oralce.study;
+package com.oralce.study.basic;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

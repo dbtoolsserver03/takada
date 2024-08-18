@@ -1,4 +1,4 @@
-package com.oralce.study;
+package com.oralce.study.basic;
 //sum=200;
 public class Basic05Debug {
 

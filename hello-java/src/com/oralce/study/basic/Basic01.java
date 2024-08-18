@@ -1,4 +1,4 @@
-package com.oralce.study;
+package com.oralce.study.basic;
 
 // 一个JAVA文件里只能有一个public class,
 //并且class名和文件名要一致。
