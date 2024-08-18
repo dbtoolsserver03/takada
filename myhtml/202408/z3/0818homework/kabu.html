@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>株</title>
+
+	<link rel="stylesheet" href="./css/kabu.css" type="text/css">
+	<script src="./js/kabu.js">
+	</script>
+</head>
+
+<body>
+	<table>
+
+		<tr>
+			<th>株名</th>
+			<th>始値</th>
+			<th>時価</th>
+			<th>時価アップ</th>
+			<th>時価ダウン</th>
+		</tr>
+
+		<tr>
+			<td>トヨタ</td>
+			<td id="id_init_1">1000</td>
+			<td id="id_jika_1">1000</td>
+			<td><button onclick="funCalc(1,'add')">+100</button></td>
+			<td><button onclick="funCalc(1,'minus')">-100</button></td>
+		</tr>
+		<tr>
+			<td>みずほ銀行</td>
+			<td id="id_init_2">2000</td>
+			<td id="id_jika_2">2000</td>
+			<td><button onclick="funCalc(2,'add')">+100</button></td>
+			<td><button onclick="funCalc(2,'minus')">-100</button></td>
+		</tr>
+		<tr>
+			<td>三菱UFJ</td>
+			<td id="id_init_3">3000</td>
+			<td id="id_jika_3">3000</td>
+			<td><button onclick="funCalc(3,'add')">+100</button></td>
+			<td><button onclick="funCalc(3,'minus')">-100</button></td>
+		</tr>
+	</table>
+</body>
+
+</html>
