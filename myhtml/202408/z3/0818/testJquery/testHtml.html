@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="./js/jquery-3.7.1.js">
+	</script>
+	<script>
+		$(document).ready(function () {
+
+			//alert(document.getElementById("id_user").value);
+
+			$("#id_btn").click(function () {
+
+				// var pw = document.getElementById("id_pw").value
+				var pw = $("#id_pw").val();
+				
+				var pw2 = $("#id_pw_c").val();
+
+				if (pw == pw2) {
+					$("#id_div").text("ok");
+				} else {
+					$("#id_div").text("ng");
+				}
+			});
+
+			$("input").mouseover(function () {
+				$(this).css("background-color","red");
+			});
+			$("input").mouseleave(function () {
+				$(this).css("background-color","");
+			});
+
+		});
+
+	</script>
+</head>
+
+<body>
+
+	user<input id="id_user" type="text" value="tanaka">
+	password <input id="id_pw" type="password">
+	<br>
+	password confirm <input id="id_pw_c" type="password">
+	<br>
+	<input id="id_btn" type="button" value="click me">
+
+	<div id="id_div">
+
+	</div>
+
+</body>
+
+</html>
