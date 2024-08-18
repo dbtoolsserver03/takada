@@ -1,4 +1,4 @@
-package com.oralce.study;
+package com.oralce.study.basic;
 
 public class Basic04Array {
 
