@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	function init() {
+		var tagUser =  document.getElementById("id_user");
+		var tagSex =  document.getElementById("id_sex");
+		var tagAge =  document.getElementById("id_age");
+		var tagCountry =  document.getElementById("id_country");
+		
+		// URLを取得
+		let url = new URL(window.location.href);
+
+		// URLSearchParamsオブジェクトを取得
+		let params = url.searchParams;
+
+		// getメソッド
+		console.log(params.get('contry')); // 5
+		
+		tagUser.innerText = params.get('userNm');
+		tagSex.innerText = params.get('sex');
+		tagAge.innerText = params.get('age');
+		tagCountry.innerText = params.get('contry');
+		
+	}
+	
+	
+</script>
+</head>
+<body onload="init()">
+TO HTML
+<hr>
+user:<span id="id_user"></span>
+<hr>
+sex:<span id="id_sex"></span>
+<hr>
+age:<span id="id_age"></span>
+<hr>
+country:<span id="id_country"></span>
+
+
+</body>
+</html>
