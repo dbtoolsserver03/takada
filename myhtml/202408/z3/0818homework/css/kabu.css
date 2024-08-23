@@ -1,0 +1,26 @@
+@charset "UTF-8";
+table {
+	width: 50%;
+	margin: 20px auto;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	padding: 10px;
+	text-align: center;
+	border: 1px solid #000;
+}
+
+button {
+	padding: 5px 10px;
+	font-size: 14px;
+	margin: 0 5px;
+}
+
+.td_pin{
+	background-color: pink;
+}
+.td_green{
+	background-color: greenyellow;
+}
