@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>From</title>
+</head>
+
+<body>
+
+<!--	// 表单提交-->
+<!--	// 表单提交对象-->
+<!--	// 1.要有name属性-->
+<!--	// 2.不是disable-->
+<!--	// 3.form 标签内-->
+<!--	// 4.submit 提交的是该标签所在的表单-->
+
+<!--post 数据不在URL上显示 ，所以安全些，传数据无限制-->
+<!--get 数据在URL上显示 ，不安全， 传数据有限制（URL最大长度）-->
+	<form action="to.html" method="get">
+		userName: <input name="userNm"  type="text" value="z3">
+		<br>
+		sex: <label> <input type="radio" name="sex" value="m"> man</label>
+		     <label> <input type="radio" name="sex" value="w"> woman</label>
+		<br>
+		
+		<br>
+		contry: <select name="contry">
+			<option value="ch">china</option>
+			<option value="jp">japan</option>
+			<option value="en">english</option>
+		</select>
+		<hr>
+		<input type="submit" value="提交">
+		
+		age: <input name="age" type="text">
+	</form>
+
+	<form action="to.html">
+		<input type="submit" value="提交2">
+	</form>
+</body>
+
+</html>
