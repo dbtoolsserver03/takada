@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FROM</title>
+</head>
+<body>
+FROM
+<hr>
+	<a href="./to.html">to html</a>
+	<hr>
+	
+<!-- form 利用時　ポイントまとめ -->
+<!-- 1.name属性が必要 -->
+<!-- 2.disable　ではない -->
+<!-- 3.tagはform開始とform終了タグの間が必要 -->
+
+<!--submit について-->
+<!-- submitの対象は親formのみ-->
+
+<!--get post区別-->
+<!--get：　パラメーターはURL欄に表示する。セキュリティが低い。データー制限あり（1M）-->
+
+	<form action="./to.html" method="get">
+		user:<input type="text"  name="nUser" value="tanaka">
+		<br>
+		password:<input type="password"  name="nPassword" value="123">
+		<br>
+		sex: <label><input type="radio" name="nSex" value="m" checked> man</label> 
+			<label><input type="radio" name="nSex" value="w"> woman</label>
+		<br>
+
+		height:<input type="number" name="nHeight" disabled value="170">
+		weight:<input type="text"  value="80kg">
+		<br>
+		<input type="submit" value="submit form1 get">
+	</form>		
+	
+<hr>
+<!--post：　パラメーターはURL欄に表示しない。セキュリティが高い。データー制限ない-->
+	<form action="./to.html" method="post" style="background-color: antiquewhite;">
+		user:<input type="text"  name="nUser" value="tanaka">
+		<br>
+		password:<input type="password"  name="nPassword" value="123">
+		<br>
+		sex: <label><input type="radio" name="nSex" value="m" checked> man</label> 
+			<label><input type="radio" name="nSex" value="w"> woman</label>
+		<br>
+
+		height:<input type="number" name="nHeight" disabled value="170">
+		weight:<input type="text"  value="80kg">
+		<br>
+		<input type="submit" value="submit form1 post">
+	</form>			
+	
+	
+	
+	<hr>
+	<form action="./to.html">
+		birthday:<input type="date" name="nBirthday" value="2000-01-01">
+		<br>
+		<input type="submit" value="submit form2">
+	</form>		
+
+	<br>
+	
+</body>
+</html>

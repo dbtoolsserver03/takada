@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TO</title>
+
+<script>
+	
+	function init() {
+		
+		
+		// 対象URL：file:///C:/Users/admin/git080302/takada/myhtml/202408/sai/forrm/to.html?nUser=tanaka&nPassword=123&nSex=m&nBirthday=2000-01-01&nHeight=170
+
+		// URLを取得
+		let url = new URL(window.location.href);
+
+		// URLSearchParamsオブジェクトを取得
+		let params = url.searchParams;
+
+		// getメソッド
+		console.log(params.get('nUser')); 
+		console.log(params.get('nPassword'));
+		console.log(params.get('nSex'));
+		console.log(params.get('nBirthday'));
+		console.log(params.get('nHeight'));
+		
+		document.getElementById("id_user").innerText = params.get('nUser');
+		document.getElementById("id_password").innerText = params.get('nPassword');
+		document.getElementById("id_sex").innerText = params.get('nSex');
+		document.getElementById("id_birthday").innerText = params.get('nBirthday');
+		document.getElementById("id_height").innerText = params.get('nHeight');
+				
+	}
+</script>
+</head>
+<body onload="init()">
+TO
+
+<div>
+	user:<span id="id_user"></span><br>
+	password:<span id="id_password"></span><br>
+	sex:<span id="id_sex"></span><br>
+	birthday:<span id="id_birthday"></span><br>
+	height:<span id="id_height"></span><br>
+	
+</div>
+<hr>
+</body>
+</html>

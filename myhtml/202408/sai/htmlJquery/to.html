@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TO</title>
+
+
+<script src="./js/jquery-3.7.1.js"></script>
+<script>
+	
+	
+	$(function(){
+
+		// URLを取得
+		let url = new URL(window.location.href);
+
+		// URLSearchParamsオブジェクトを取得
+		let params = url.searchParams;
+
+		// by id
+		$("#id_user").text( params.get('nUser'));
+		$("#id_password").text( params.get('nPassword'));
+		$("#id_sex").text( params.get('nSex'));
+		$("#id_birthday").text( params.get('nBirthday'));
+		$("#id_height").text( params.get('nHeight'));
+		
+		// tag	
+		$("div").css("color","red");
+		
+		// css	
+		$('.test').css('background-color', 'green');
+	});
+	
+</script>
+
+<style>
+	.test {
+		background-color: aqua;
+	}
+	
+</style>
+</head>
+<body>
+TO
+
+<div>
+	user:<span id="id_user" class="test"></span><br>
+	password:<span id="id_password"></span><br>
+	sex:<span id="id_sex" class="test" ></span><br>
+	birthday:<span id="id_birthday"></span><br>
+	height:<span id="id_height"></span><br>
+	
+</div>
+<hr>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FROM</title>
+</head>
+<body>
+FROM
+<hr>
+	<a href="./to.html">to html</a>
+	<hr>
+	
+<!-- form 利用時　ポイントまとめ -->
+<!-- 1.name属性が必要 -->
+<!-- 2.disable　ではない -->
+<!-- 3.tagはform開始とform終了タグの間が必要 -->
+
+<!--submit について-->
+<!-- submitの対象は親formのみ-->
+
+<!--get post区別-->
+<!--get：　パラメーターはURL欄に表示する。セキュリティが低い。データー制限あり（1M）-->
+
+	<form action="./to.html" method="get">
+		user:<input type="text"  name="nUser" value="tanaka">
+		<br>
+		password:<input type="password"  name="nPassword" value="123">
+		<br>
+		sex: <label><input type="radio" name="nSex" value="m" checked> man</label> 
+			<label><input type="radio" name="nSex" value="w"> woman</label>
+		<br>
+
+		height:<input type="number" name="nHeight" disabled value="170">
+		weight:<input type="text"  value="80kg">
+		<br>
+		<input type="submit" value="submit form1 get">
+	</form>		
+	
+	
+</body>
+</html>
