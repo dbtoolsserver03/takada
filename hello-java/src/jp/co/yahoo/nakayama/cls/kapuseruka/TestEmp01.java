@@ -1,4 +1,4 @@
-package jp.co.yahoo.nakayama.cls;
+package jp.co.yahoo.nakayama.cls.kapuseruka;
 
 public class TestEmp01 {
 

@@ -1,4 +1,4 @@
-package jp.co.yahoo.nakayama.cls;
+package jp.co.yahoo.nakayama.cls.kapuseruka;
 
 import java.util.Date;
 
@@ -43,6 +43,56 @@ public class Emp {
 	public String toString() {
 		return "Emp [no=" + no + ", name=" + name + ", sex=" + sex + ", isLeader=" + isLeader + ", sign=" + sign
 				+ ", hireDate=" + hireDate + "]";
+	}
+
+	
+	
+	public String getNo() {
+		return no;
+	}
+
+	public void setNo(String no) {
+		this.no = no;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getSex() {
+		return sex;
+	}
+
+	public void setSex(int sex) {
+		this.sex = sex;
+	}
+
+	public boolean isLeader() {
+		return isLeader;
+	}
+
+	public void setLeader(boolean isLeader) {
+		this.isLeader = isLeader;
+	}
+
+	public char getSign() {
+		return sign;
+	}
+
+	public void setSign(char sign) {
+		this.sign = sign;
+	}
+
+	public Date getHireDate() {
+		return hireDate;
+	}
+
+	public void setHireDate(Date hireDate) {
+		this.hireDate = hireDate;
 	}
 
 	public static void main(String[] args) {
