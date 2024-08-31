@@ -1,6 +1,6 @@
 package jp.co.yahoo.nakayama.cls.keisho.test;
 
-import jp.co.yahoo.nakayama.cls.keisho.People;
+import jp.co.yahoo.nakayama.cls.keisho.sub.People;
 
 public class TestCls {
 

@@ -1,9 +1,21 @@
-package jp.co.yahoo.nakayama.cls.keisho;
+package jp.co.yahoo.nakayama.cls.keisho.sub;
 
+import jp.co.yahoo.nakayama.cls.keisho.Animal;
 
 //extends only one
 public class People extends Animal{
 
+	// 新しい項目
+	protected String job;
+	protected String education;
+	
+	// 新しいメソッド
+	protected void singSong() {
+	}
+	
+	// Animal クラスのpublic,protected項目そのまま利用或いはオーバーロード
+
+	
 	public People(boolean isSea, int sex, int legNum, String dna) {
 		
 		// super 直前メソッド利用
@@ -17,7 +29,9 @@ public class People extends Animal{
 	public static void main(String[] args) {
 		People p = new People();
 		System.out.println(p.isSea);
-		System.out.println(p.sex);
+		
+		// 同じパッケージ必要
+		// System.out.println(p.sex);
 		System.out.println(p.legNum);
 		
 		// dna項目を継承できない
