@@ -39,13 +39,20 @@ public class Emp {
 		this.hireDate = hireDate;
 	}
 
+	
+	
+//	@Override
+//	public boolean equals(Object obj) {
+//		
+//		return this.name.equals(((Emp)obj).getName());
+//	}
+
 	@Override
 	public String toString() {
 		return "Emp [no=" + no + ", name=" + name + ", sex=" + sex + ", isLeader=" + isLeader + ", sign=" + sign
 				+ ", hireDate=" + hireDate + "]";
 	}
 
-	
 	
 	public String getNo() {
 		return no;

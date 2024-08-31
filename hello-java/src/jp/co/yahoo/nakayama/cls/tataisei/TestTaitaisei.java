@@ -63,6 +63,9 @@ public class TestTaitaisei {
 		dogJp2.call();
 		System.out.println("----");
 		
+		// Object supperテスト
+		Monkey m = new Monkey();
+		m.call();
 		
 	}
 

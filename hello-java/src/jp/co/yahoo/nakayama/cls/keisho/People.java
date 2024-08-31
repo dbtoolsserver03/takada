@@ -1,8 +1,12 @@
 package jp.co.yahoo.nakayama.cls.keisho;
 
+
+//extends only one
 public class People extends Animal{
 
 	public People(boolean isSea, int sex, int legNum, String dna) {
+		
+		// super 直前メソッド利用
 		super(isSea, sex, legNum, dna);
 	}
 	

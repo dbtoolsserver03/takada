@@ -57,6 +57,7 @@ public class Animal {
 	}
 	
 	public void call() {
+		System.out.println("i am animal");
 		
 	}
 	
