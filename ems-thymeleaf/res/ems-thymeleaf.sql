@@ -23,7 +23,7 @@ CREATE TABLE `employee` (
   `foreign_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '外語',
   `job_role` char(2) DEFAULT NULL COMMENT '職位',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='社員テーブル';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4  COMMENT='社員テーブル';
 
 
 -- ----------------------------
@@ -50,7 +50,7 @@ CREATE TABLE `m_code` (
   `update_time` datetime DEFAULT NULL COMMENT '更新日時',
   `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
   PRIMARY KEY (`m_key`,`m_code`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='マスタコード';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='マスタコード';
 
 -- ----------------------------
 -- Records of m_code
@@ -91,7 +91,7 @@ CREATE TABLE `t_files` (
   `update_time` datetime DEFAULT CURRENT_TIMESTAMP,
   `update_user_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- ----------------------------
 -- Records of t_files
@@ -112,7 +112,7 @@ CREATE TABLE `user` (
   `password` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `gender` tinyint unsigned DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 ;
 
 
 -- ----------------------------
@@ -127,6 +127,16 @@ CREATE TABLE `student` (
   `birthdate` datetime DEFAULT NULL COMMENT '学生の誕生日',
   `email` varchar(255) DEFAULT NULL COMMENT '学生のメールアドレス',
   PRIMARY KEY (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='学生テーブル';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='学生テーブル';
+
+CREATE TABLE `t_company` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'NO',
+  `name` varchar(60)  DEFAULT NULL COMMENT '会社名前',
+  `type` char(2)  DEFAULT NULL COMMENT '会社類型　00:株式会社　01:合同会社',
+  `peopleNum` int DEFAULT NULL COMMENT '会社人数',
+  `beginDay` datetime DEFAULT NULL COMMENT '会社設立年月日',
+  `photo` varchar(200)  DEFAULT NULL COMMENT 'アイコン',
+  PRIMARY KEY (`id`) 
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4  COMMENT='会社テーブル';
 
 

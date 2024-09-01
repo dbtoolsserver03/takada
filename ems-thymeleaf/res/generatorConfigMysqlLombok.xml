@@ -90,7 +90,7 @@
     <table tableName="user"  domainObjectName="TUser"></table>
     <table tableName="student"  domainObjectName="TStudent"></table>
 
-<!--  根据teacher表的定义自动生成  TTeacher 类  -->
-    <table tableName="teacher"  domainObjectName="TTeacher"></table>
+<!--  根据t_company表的定义自动生成类  -->
+    <table tableName="t_company"  domainObjectName="TCompany"></table>
   </context>
 </generatorConfiguration>
