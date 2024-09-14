@@ -1,135 +1,253 @@
 
---SQL 执行先后顺序
 
---step3 :   select * 
-            
---step1 :   from    employee 
---step2 :   where   salary > 1 
---step4 :   order by name
---step5 :   limit 1,2
 
+CREATE TABLE TEACHER( 
+    id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'NO'
+    , name VARCHAR (60) COMMENT '名前'
+    , salary int COMMENT '月給'
+    , birthday datetime COMMENT '誕生日'
+    , sex char (2) COMMENT '性別'
+) comment '先生テーブル'
+
+
+
+CREATE TABLE example_table (
+    id INT AUTO_INCREMENT PRIMARY KEY COMMENT '主キーID',  -- 数字（整数）のカラムにコメントを追加
+    name VARCHAR(100) COMMENT '商品名',                    -- 文字列カラムにコメントを追加
+    price DECIMAL(10, 2) COMMENT '価格',                   -- 小数を扱うカラムにコメントを追加
+    created_at DATE COMMENT '作成日',                      -- 日付カラムにコメントを追加
+    image LONGBLOB COMMENT '商品画像'                      -- 画像を扱うカラムにコメントを追加
+) COMMENT = '商品情報を格納するテーブル';                 -- テーブル自体にコメントを追加
+
+
+--  検索SQL文
+select
+    salary 
+from
+    TEACHER 
+where
+    name = 'tanaka'
 
 select
     * 
 from
-    employee 
+    TEACHER 
 where
-    salary > 1 
-order by name
+    name = 'tanaka' 
 
-limit 1,2
 
-------------------------------------
-
---取表里工资最多的员工名
+-- 曖昧検索
 select
-    name 
+    * 
 from
-    employee 
+    TEACHER 
 where
-    salary = (select max(salary) from employee)
+    name like 'sa%'  
     
--------------------------------------
-
--- 检索表里的工资（去重复）
 select
-  distinct t.salary as '工资'
-  from employee t
---------------------------------------
+    * 
+from
+    TEACHER 
+where
+    name like '_a%'  
+
+--　from to
+select
+    name ,salary
+from
+    TEACHER 
+where
+    salary <= 300000  and salary >= 200000
+    
+select
+    name,salary
+from
+    TEACHER 
+where
+    salary between 200000 and 300000  -- =含め
+    
+-- SQL実行順位
+-- from,where,select
+
+select
+    name,salary
+from
+    TEACHER 
+where
+    salary between 200000 and 300000  -- =含め
+order by salary,name desc
+
+-- ３番目レコード取得したい場合　limit　利用
+select
+    name,salary
+from
+    TEACHER  
+order by salary,name -- default 値　asc 昇順
+
+limit 2,1
+
+-- 分ページ
+-- 1,2番目レコード取得したい場合
+select
+    name,salary
+from
+    TEACHER  
+order by salary,name -- default 値　asc 昇順
+limit 0,2
+
+-- 3,4番目レコード取得したい場合
+select
+    name,salary
+from
+    TEACHER  
+order by salary,name -- default 値　asc 昇順
+limit 2,2
+
+-- 月給を取得する。重複場合、一つ残ります
+select distinct salary
+from teacher
+
+-- union all/ union
+
+select salary from teacher where sex ='1'
+union all 
+select salary from teacher where sex ='0'
+
+-- union 重複レコード削除できる
+select salary from teacher where sex ='1'
+union 
+select salary from teacher where sex ='0'
 
 
-select 1
+-- 男性、女性　人数
+select 
+sex, count(*) cnt
+from 
+teacher
+group by sex
 
-select 1 as 'no' 
+-- 男性、女性　最大最小月給
+select 
+sex, max(salary) max_salary,min(salary) min_salary
+from 
+teacher
+group by sex
 
--------------------------------
-select 1 as 'no'
-union all
-select 1 as 'no'
-union all
-select 1 as 'no'
-
----------------------------
-
-select distinct no from 
-(
-select 1 as 'no'
-union all
-select 1 as 'no'
-) t
-
---------------------------
-
-----------  union 只是比union all 多了去重复功能 ---------
-select 1 as 'no'
-union
-select 1 as 'no'
-
---------------------------------
-
--------- 检索 工资>100的记录  （SQL的写法决定了SQL检索性能） ---------
-
-select * from employee where salary > 100     --推荐写法
-  
-
- --不推荐写法  如果检索条件是索引的话，会丢失索引
- -- 数据库里所有记录的salary字段先减100 之后和 0对比， 有运算操作
-select * from employee where salary -100 > 0  
+-- case when then
+select
+    CASE 
+        WHEN sex='1' THEN 'men'
+        WHEN sex='0' THEN 'women'
+        ELSE '未知'
+    END AS sex
+    , max(salary) max_salary
+    , min(salary) min_salary 
+from
+    teacher 
+group by
+    sex
 
 
----------------
+--  下記の書き方はだめ
+select
+    name,sex
+    , count(*) 
+from
+    teacher 
+group by
+    sex
 
 
-
--- SQL多表查询 要用inner join(内连接) 或left join(外连接)
---- 取员工的人名，工资，性别 
-
--- 多表联合查询时，如果不加检索条件，会出现迪卡尔积现象
-select e.name,e.salary,u.gender
-from employee e, user u
-
-
-
--- 写法可以，但不推荐
-select e.name,e.salary,u.gender
-from employee e, user u
-where e.name = u.username
+-- コツ：　select文のところに、分析関数以外の項目はgroup byに書かないといけない
+select
+    name,sex
+    , count(*) 
+from
+    teacher 
+group by
+    name,sex
 
 
--- 多表联合查询 推荐的写法
--- 表的内连接，直连接
-select e.name,e.salary,u.gender
-from employee e inner join user u on e.name = u.username
+--  挿入SQL文
+INSERT 
+INTO `TEACHER`( 
+     name                                      -- 名前
+    , salary                                    -- 月給
+    , birthday                                  -- 誕生日
+    , sex                                       -- 性別
+) 
+VALUES ( 
+    'user01'                                     -- 名前
+    , 200000                                   -- 月給
+    , '2020/01/01'                                 -- 誕生日
+    , '1'                                      -- 性別
+)
 
+-- 更新SQL文(自分データ確認必要)
+select * from  TEACHER where sex = '0'
+update TEACHER set salary = salary + 1000 where sex = '0'
 
---- 取员工的人名，工资，性别 (找不到相关记录性别为空)
-select e.name,e.salary,u.gender
-from employee e left join user u on e.name = u.username
- 
+-- 削除SQL文(自分データ確認必要)
+select * from  TEACHER where name = 'user01'
+delete from  TEACHER where name = 'user01'
 
--- right join  不要用 要改成左连写法。
-select e.name,e.salary,u.gender
-from employee e right join user u on e.name = u.username
- 
-
---分级查询 
-SELECT COUNT(*) AS CNT  FROM USER
-
-
---查询USER表中男女各多少名
-SELECT GENDER SEX , COUNT(*) 人数 FROM USER GROUP BY GENDER
-
-SELECT
-    case GENDER 
-        WHEN '1' THEN 'MAN' 
-        WHEN '0' THEN 'WOMAN' 
-        ELSE '未知' 
-        end  SEX
-    , COUNT(*) 人数 
-FROM
-    USER 
-GROUP BY
-    GENDER
+-- その他　データベース名前、テーブル名、項目名前には、半角スペースある場合、下記の書き方で解決できる
+`TEACHER A`
 
 
 
+CREATE TABLE `identify_card` (
+  `name` varchar(60) not NULL COMMENT 'my name',
+  `birthday` datetime DEFAULT NULL COMMENT 'my birthday',
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB  COMMENT='在留カード money ';
+
+CREATE TABLE `year_money` (
+  `name` varchar(60) not null COMMENT 'my name',
+  `money` int DEFAULT NULL COMMENT 'my salary',
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB  COMMENT='国民年金year money talbe'
+
+
+--　全員の年金状況を知りたい場合
+
+-- ×
+select name,money from year_money
+
+-- ×　両テーブル条件満足が必要
+select identify_card.name,money,identify_card.birthday from identify_card, year_money  where identify_card.name = year_money.name
+
+
+-- 主テーブル　と　副テーブル
+-- 主テーブルのレコード全部抽出すること
+--　副テーブルがない場合、空で表示する
+select
+    i.name
+    , y.money 
+from
+    identify_card i 
+    left join year_money y 
+        on i.name = y.name
+        
+---全員の年金状況を知りたい、年金55000より大きいレコード
+
+select
+    i.name
+    , y.money 
+from
+    identify_card i 
+    left join year_money y 
+        on i.name = y.name and y.money>55000
+
+
+-- where 条件に副テーブルの条件がありましたら、 left join は　inner joinに強制転換する
+select
+    i.name
+    , y.money 
+from
+    identify_card i 
+    left join year_money y 
+        on i.name = y.name
+where  y.money>55000
+
+        
