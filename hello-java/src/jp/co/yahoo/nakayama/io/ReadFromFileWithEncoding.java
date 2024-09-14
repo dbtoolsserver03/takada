@@ -1,44 +1,34 @@
 package jp.co.yahoo.nakayama.io;
 
-import java.io.BufferedWriter;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
-public class WriteToFileWithEncoding {
+public class ReadFromFileWithEncoding {
     public static void main(String[] args) {
     	
-    	 BufferedWriter writer =null;
+    	BufferedReader reader = null;
         try {
+            // FileInputStreamでバイトストリームを作成し、InputStreamReaderでエンコーディングを指定
         	
         	// File.separator File.separatorを使用してOSに依存しないパスを扱うことが推奨されます。
         	// これにより、プログラムがどのOSで実行されても正しい区切り記号が使用されます。
-        	
-        	File f = new File("."+File.separator+ "file"+File.separator+"0914"+File.separator);
-        	
-        	f.mkdirs();
-        	
-        	
-            // FileOutputStreamでバイトストリームを作成し、OutputStreamWriterでエンコーディングを指定
-            writer = new BufferedWriter(
-                    new OutputStreamWriter(
-                            new FileOutputStream("."+File.separator+"file"+File.separator+"0914"+File.separator+"example.txt"), StandardCharsets.UTF_8));
+        	reader = new BufferedReader(
+                    new InputStreamReader(
+                            new FileInputStream("."+File.separator+"file"+File.separator+"0914"+File.separator+"example.txt"), StandardCharsets.UTF_8));
             
             // "shift-jis" 日本語専用エンコード
             
-            writer.write("こんにちは、Java！");
-            writer.newLine();
+            while (reader.ready()) {
+				System.out.println(reader.readLine());
+			}
             
-            // bufferの内容をファイルに一気に書き込みする
-            writer.flush();
-            writer.write("これはUTF-8で書かれたファイルです。");
             
-
-            
-            System.out.println("ファイルに成功しました。");
+            System.out.println("ファイル読み込み成功しました。");
         } catch(FileNotFoundException ef) {
         	// 役割: ファイル操作時に、指定されたファイルが見つからない場合にスローされる例外です。
         	// 具体的なエラー
@@ -55,10 +45,10 @@ public class WriteToFileWithEncoding {
             System.out.println("IOExceptionエラーが発生しました。");
             e.printStackTrace();
         } finally {
-        	if (writer!=null) {
+        	if (reader!=null) {
                 // ファイルを閉じる　★★★重要
                 try {
-					writer.close();
+                	reader.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
