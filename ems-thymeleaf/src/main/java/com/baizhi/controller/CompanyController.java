@@ -41,4 +41,21 @@ public class CompanyController {
         return "company/companylist";
     }
    
+    
+    
+    /**
+     * 公司保存
+     *
+     * @return
+     */
+    @RequestMapping("company/save")
+    public String save(TCompany obj) {
+        log.debug("保存公司信息");
+        
+        service.save(obj);
+        
+        return "redirect:/company/lists";
+    }
+    
+    
 }

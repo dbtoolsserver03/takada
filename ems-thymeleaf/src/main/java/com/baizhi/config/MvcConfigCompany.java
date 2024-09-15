@@ -17,8 +17,9 @@ public class MvcConfigCompany  implements WebMvcConfigurer {
 //    	registry.addViewController("/manageCompany").setViewName("/company/test");
     	registry.addViewController("/manageCompany").setViewName("redirect:/company/lists");
     	
-        // 增加员工
-//        registry.addViewController("student/addStudent").setViewName("stu/addStudent");
+        // 增加公司
+    	// 当前台来了一个company/addCompany的请求时，后台就直接返还给前台company/addCompany画面
+        registry.addViewController("company/addCompany").setViewName("company/addCompany");
 
     }
 }

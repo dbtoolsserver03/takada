@@ -9,5 +9,8 @@ public interface CompanyService {
 	//列表方法
 	List<TCompany> lists();
 
+	// 保存
+	void save(TCompany obj);
+
 
 }

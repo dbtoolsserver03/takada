@@ -21,5 +21,11 @@ public class CompanyServiceImpl implements CompanyService {
 		return mapper.selectByExample(null);
 	}
 
+	@Override
+	public void save(TCompany obj) {
+		mapper.insertSelective(obj);
+		
+	}
+
 
 }
