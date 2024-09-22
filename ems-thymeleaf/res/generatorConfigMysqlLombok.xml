@@ -92,5 +92,6 @@
 
 <!--  根据t_company表的定义自动生成类  -->
     <table tableName="t_company"  domainObjectName="TCompany"></table>
+    <table tableName="zoo"  domainObjectName="Zoo"></table>
   </context>
 </generatorConfiguration>

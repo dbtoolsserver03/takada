@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function init() {
+		var tagItem =  document.getElementById("item");
+		var tagPay =  document.getElementById("pay");
+		var tagPrice =  document.getElementById("price");
+		
+		// URLを取得
+		//let url = new URL(window.location.href);
+
+		// URLSearchParamsオブジェクトを取得
+		//let params = url.searchParams;
+
+		// getメソッド
+		//console.log(params.get('contry')); // 5
+		
+		tagUser.innerText = params.get('uitem');
+		tagSex.innerText = params.get('pay');
+		tagAge.innerText = params.get('price');
+		
+	}
+	
+	
+</script>
+</head>
+<body onload="init()">
+TO HTML
+<hr>
+user:<span id="item"></span>
+<hr>
+sex:<span id="pay"></span>
+<hr>
+age:<span id="price"></span>
+<hr>
+
+</body>
+</html>

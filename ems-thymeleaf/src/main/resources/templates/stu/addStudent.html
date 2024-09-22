@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymealf.org">
 
 <head>
-	<title>abc添加学生信息</title>
+	<title>abc添加公司信息</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
@@ -30,13 +30,13 @@
 				<p id="whereami">
 				</p>
 				<h1>
-					添加学生信息:
+					添加公司信息:
 				</h1>
 				<form th:action="@{/student/save}" method="post">
 					<table cellpadding="0" cellspacing="0" border="0" class="form_table">
 						<tr>
 							<td valign="middle" align="right">
-								姓名:
+								公司名:
 							</td>
 							<td valign="middle" align="left">
 								<input type="text" class="inputgri" name="studentName" />
@@ -45,15 +45,17 @@
 
 						<tr>
 							<td valign="middle" align="right">
-								暗証番号:
+								公司类型:
 							</td>
-							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="studentPwd" />
+								<td valign="middle" align="left">
+
+									<label><input type="radio" class="inputgri" name="type" value="00">株式会社</label>
+								<label> <input type="radio" class="inputgri" name="type" value="01">合同会社</label>
 							</td>
 						</tr>
 						<tr>
 							<td valign="middle" align="right">
-								生日:
+								会社設立年月日:
 							</td>
 							<td valign="middle" align="left">
 								<input type="text" class="inputgri" name="birthdate" />
@@ -61,7 +63,7 @@
 						</tr>
 						<tr>
 							<td valign="middle" align="right">
-								メールアドレス:
+								公司人数:
 							</td>
 							<td valign="middle" align="left">
 								<input type="text" class="inputgri" name="email" />
