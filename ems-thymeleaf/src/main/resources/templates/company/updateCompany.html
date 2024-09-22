@@ -32,8 +32,11 @@
 				<h1>
 					添加公司信息:
 				</h1>
-				<form th:action="@{/company/save}" method="post">
+				<form th:action="@{/company/updateRec}" method="post">
 					<table cellpadding="0" cellspacing="0" border="0" class="form_table">
+						
+						<input type="hidden" class="inputgri" name="id" th:value="${obj.id}" />
+						
 						<tr>
 							<td valign="middle" align="right">
 								公司名:
@@ -73,7 +76,7 @@
 						</tr>
 					</table>
 					<p>
-						<input type="submit" class="button" value="确认添加" />
+						<input type="submit" class="button" value="确认更新" />
 						<input type="button" class="button" value="返回列表" onclick="returnCompanyLst()" />
 						<script>
 							function returnCompanyLst() {

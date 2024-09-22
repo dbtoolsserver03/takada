@@ -74,4 +74,22 @@ public class CompanyController {
         model.addAttribute("obj", rec);
         return "company/updateCompany";
     }
+    
+    
+    
+    /**
+     * 公司更新画面更新実行
+     *
+     * @return
+     */
+    @RequestMapping("company/updateRec")
+    public String updateInit(TCompany obj) {
+        log.debug("公司更新画面更新実行");
+        
+        
+        service.updateRec(obj);
+        
+        return "redirect:/company/lists";
+    }
+    
 }

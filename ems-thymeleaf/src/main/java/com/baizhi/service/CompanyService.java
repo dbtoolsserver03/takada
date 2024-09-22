@@ -14,5 +14,7 @@ public interface CompanyService {
 
 	TCompany getOne(TCompany obj);
 
+	void updateRec(TCompany obj);
+
 
 }

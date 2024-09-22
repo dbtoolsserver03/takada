@@ -32,5 +32,11 @@ public class CompanyServiceImpl implements CompanyService {
 		return mapper.selectByPrimaryKey(obj.getId());
 	}
 
+	@Override
+	public void updateRec(TCompany obj) {
+		mapper.updateByPrimaryKeySelective(obj);
+		
+	}
+
 
 }
