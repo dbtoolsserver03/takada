@@ -12,5 +12,7 @@ public interface CompanyService {
 	// 保存
 	void save(TCompany obj);
 
+	TCompany getOne(TCompany obj);
+
 
 }

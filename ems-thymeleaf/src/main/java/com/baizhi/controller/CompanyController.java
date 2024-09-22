@@ -58,4 +58,20 @@ public class CompanyController {
     }
     
     
+    /**
+     * 公司更新画面初期化
+     *
+     * @return
+     */
+    @RequestMapping("company/detail")
+    public String updateInit(TCompany obj,Model model) {
+        log.debug("公司更新画面初期化");
+        
+        
+        System.out.println(obj.getId());
+        TCompany rec = service.getOne(obj);
+        
+        model.addAttribute("obj", rec);
+        return "company/updateCompany";
+    }
 }

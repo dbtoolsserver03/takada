@@ -27,5 +27,10 @@ public class CompanyServiceImpl implements CompanyService {
 		
 	}
 
+	@Override
+	public TCompany getOne(TCompany obj) {
+		return mapper.selectByPrimaryKey(obj.getId());
+	}
+
 
 }
