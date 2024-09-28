@@ -56,16 +56,16 @@
 				<p id="whereami">
 				</p>
 
-				<a th:if="${session.user!=null}" th:href="@{/user/logout}">安全退出</a>
+				<a th:if="${session.user!=null}" th:href="@{/user/logout}">EXIT</a>
 
 				<h1>
-					注册
+					アカウント申し込み画面
 				</h1>
 				<form th:action="@{/user/register}" method="post">
 					<table cellpadding="0" cellspacing="0" border="0" class="form_table">
 						<tr>
 							<td valign="middle" align="right">
-								用户名:
+								ユーザ名:
 							</td>
 							<td valign="middle" align="left">
 								<input type="text" class="inputgri" name="username" />
@@ -73,7 +73,7 @@
 						</tr>
 						<tr>
 							<td valign="middle" align="right">
-								真实姓名:
+								実名:
 							</td>
 							<td valign="middle" align="left">
 								<input type="text" class="inputgri" name="realname" />
@@ -81,7 +81,7 @@
 						</tr>
 						<tr>
 							<td valign="middle" align="right">
-								密码:
+								パスワード:
 							</td>
 							<td valign="middle" align="left">
 								<input type="password" class="inputgri" name="password" />
@@ -89,7 +89,7 @@
 						</tr>
 						<tr>
 							<td valign="middle" align="right">
-								性别:
+								性別:
 							</td>
 							<td valign="middle" align="left">
 								男
@@ -101,9 +101,9 @@
 
 						<tr>
 							<td valign="middle" align="right">
-								验证码:
+								コード:
 								<img id="num" th:src="@{/user/generateImageCode}" />
-								<a href="javascript:;" onclick="changeImageCode()">换一张</a>
+								<a href="javascript:;" onclick="changeImageCode()">次コード</a>
 								<script>
 									function changeImageCode() {
 										document.getElementById('num').src = '[[@{/user/generateImageCode}]]?' + (new Date()).getTime()
@@ -116,8 +116,8 @@
 						</tr>
 					</table>
 					<p>
-						<input type="submit" class="button" value="立即注册 &raquo;" />
-						<a th:href="@{/login}">已有账号,返回登录</a>
+						<input type="submit" class="button" value="申込&raquo;" />
+						<a th:href="@{/login}">既存アカウント使います</a>
 					</p>
 				</form>
 			</div>
