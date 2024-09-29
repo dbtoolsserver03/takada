@@ -16,5 +16,7 @@ public interface CompanyService {
 
 	void updateRec(TCompany obj);
 
+	void deleteRec(TCompany obj);
+
 
 }

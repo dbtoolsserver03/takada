@@ -91,5 +91,20 @@ public class CompanyController {
         
         return "redirect:/company/lists";
     }
+   
+    
+    /**
+     * 公司删除実行
+     *
+     * @return
+     */
+    @RequestMapping("company/delete")
+    public String delete(TCompany obj) {
+        log.debug("公司删除実行");
+        
+        service.deleteRec(obj);
+        
+        return "redirect:/company/lists";
+    }
     
 }

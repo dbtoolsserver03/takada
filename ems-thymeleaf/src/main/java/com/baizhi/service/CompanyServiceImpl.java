@@ -38,5 +38,11 @@ public class CompanyServiceImpl implements CompanyService {
 		
 	}
 
+	@Override
+	public void deleteRec(TCompany obj) {
+		mapper.deleteByPrimaryKey(obj.getId());
+		
+	}
+
 
 }
