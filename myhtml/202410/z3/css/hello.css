@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.txtColor{
+	background-color: rgb(128, 255, 128);
+	color: rgb(0, 128, 192);
+}
+input[type="date"]{
+	background-color: rgb(255, 128, 64);
+	color: rgb(0, 128, 192);
+}
+#id_country{
+	background-color: rgb(128, 0, 255);
+	color: rgb(255, 0, 128);
+}
