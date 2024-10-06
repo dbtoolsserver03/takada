@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS study2</title>
+
+<!--JS执行顺序 -->
+<!--javascript 从上至下执行 -->
+<!--当画面里的元素全加载到浏览器后，会自动调用body的onload方法-->
+<!--其他的function 就是当激发事件时才执行-->
+
+
+<!--HTML文件是被浏览器逐行解析执行-->
+<script>
+	alert(1);
+	
+	// 因为 id_user 这个控件还没有解析到浏览器里，所以这里会报NULL错误
+	var userTag = document.getElementById("id_user");
+	alert(userTag.value);
+	
+	function loginFun(obj) {
+
+		var userTag = document.getElementById("id_user");
+		console.log(userTag.value);
+		
+		alert(obj.value);
+	}
+	function testFun() {
+		
+		var a = 1;
+		var b =2;
+		var c=a+b;
+		
+		c="hello";
+		alert("c:" + c);
+	}
+
+	
+	function init() {
+		var userTag = document.getElementById("id_user");
+		alert("init:" + userTag.value);
+	}
+	
+</script>
+</head>
+<body onload="init()">
+	
+	user:<input id="id_user" type="text" value="tanaka">
+	<br>
+	pwd:<input id="id_pwd" type="password">
+	<br>
+	<input type="button" value="login1" onclick="loginFun(this)">
+	<input type="button" value="login2" onclick="loginFun(this)">
+	
+	<input type="button" value="test" onclick="testFun()">
+	
+	<script>
+		// 因为 id_user 这个控件已经解析到浏览器里了，所以这里不会报错
+		var userTag = document.getElementById("id_user");
+		alert("body:" + userTag.value);
+	</script>
+</body>
+</html>
