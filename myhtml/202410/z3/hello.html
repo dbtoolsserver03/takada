@@ -1,0 +1,46 @@
+
+<!--代表这个文件是HTML文件-->
+<!DOCTYPE html>
+
+<!-- 选中要注释掉的代码后 ctrl + shift + [c]-->
+<!--字体放大 ctrl + [+]-->
+<!--字体缩小 ctrl + [-]-->
+
+<html>
+	<head>
+		
+<!--エンコード encode -->
+<!--UTF-8 	支持世界上所有语言　相比其他编码占的空间大-->
+<!--SHIFT-JIS	日语-->
+<!--GBK			中文-->
+<!--文字化け-->
+		<meta charset="UTF-8">
+		<title>hello world</title>
+		<link rel="shortcut icon" 
+			href="./img/favicon.ico" 
+			type="image/vnd.microsoft.icon">
+	</head>
+	
+	<body>
+		hello world<br>
+		user<input type="text" value="tanaka"><br>
+		password<input type="password"><br>
+		<input type="button" value="login">
+		
+		<hr>
+		
+		<!--单选或复选框一定要有name属性，相同的name代表同组-->
+		
+		sex:
+		<label> <input type="radio" name="sex">man</label>
+		<label> <input type="radio" name="sex">woman</label>
+		<input id="id_xx" type="radio" name="sex"> <label for="id_xx">xxx</label>
+		
+		hobby:
+		<label> <input type="checkbox" name="hob">eat</label>
+		<label> <input type="checkbox" name="hob">say</label>
+		<label> <input type="checkbox" name="hob">run</label>
+		
+				
+	</body>
+</html>
