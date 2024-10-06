@@ -19,6 +19,13 @@
 		<link rel="shortcut icon" 
 			href="./img/favicon.ico" 
 			type="image/vnd.microsoft.icon">
+
+			<link rel="stylesheet" href="./css/hello.css" type="text/css">	
+			
+			<!--当class里的样式属性和style发生冲突时，以style为主-->
+			<!--定义class的好处  共通效果-->
+			<style>
+			</style>
 	</head>
 	
 	<body>
@@ -27,10 +34,10 @@
 		
 		<div style="background-color: antiquewhite;">
 			<table>
-					<tr><td>user</td><td><input type="text" value="tanaka"></td></tr>
-					<tr><td>password</td><td><input type="password"></td></tr>
-					<tr><td></td><td align="right"><input type="button" value="login"></td></tr>
-				</table>
+				<tr><td>user</td><td><input style="background-color: aqua;" type="text" value="tanaka"></td></tr>
+				<tr><td>password</td><td><input  style="background-color: aqua;" class="txtColor" type="password" value="123456"></td></tr>
+				<tr><td></td><td align="right"><input class="txtColor" type="button" value="login"></td></tr>
+			</table>
 		</div>
 		<!--table标签不仅可以用来显示数据，也可以用来画面布局 -->
 	
@@ -54,7 +61,7 @@
 			<label> <input type="checkbox" name="hob">run</label>
 			<br>
 			country:
-			<select>
+			<select id="id_country">
 				<option>---</option>
 				<option>china</option>
 				<option>japan</option>
@@ -63,7 +70,7 @@
 
 			<br>
 			birthday:
-			<input type="date">
+			<input  class="txtColor" type="date">
 			<br>
 			pr:
 			<textarea rows="3" cols="50"></textarea>
@@ -95,7 +102,7 @@
 				<td>1</td><td>zhang3</td><td>2002/01/01</td><td>200000</td>
 			</tr>
 			<tr>
-				<td>2</td><td>li4</td><td align="center">2003/01/01</td><td align="right">300000</td>
+				<td>2</td><td>li4</td><td align="center"><input type="date"></td><td align="right">300000</td>
 			</tr>
 		</table>
 	
