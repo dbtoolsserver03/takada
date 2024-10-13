@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>easy calc</title>
+	
+	<script>
+		
+		function calcFun() {
+			
+			var tagNum1 = document.getElementById("id_num1");
+			var tagNum2 = document.getElementById("id_num2");
+			var signTags = document.getElementsByName("sign");
+			
+			console.log(tagNum1);
+			console.log(tagNum2);
+			console.log(signTags);
+			
+			console.log(tagNum1.value);
+			console.log(tagNum2.value);
+			
+			console.log(signTags[0].checked);
+			console.log(signTags[1].checked);
+											
+			var sign = "";
+			
+			for(var i=0 ;i<signTags.length; i++) {
+				
+				var signTag = signTags[i];
+				
+				if(signTag.checked && signTag.value =="add") {
+					sign ="add";
+					break;
+				} 
+				if(signTag.checked && signTag.value =="minus") {
+					sign ="minus";
+					break;
+				} 
+			}	
+			
+			var msgTag = document.getElementById("id_msg");
+			msgTag.innerHTML = "";
+			
+			if(sign == "") {
+				msgTag.innerHTML = "計算記号を選択してください。<br>";
+			} 
+			
+			if(tagNum1.value == "") {
+				msgTag.innerHTML += "数字１を入力してください。<br>";
+			}
+			if(tagNum2.value == "") {
+				msgTag.innerHTML += "数字２を入力してください。<br>";
+			}
+			
+			if(msgTag.innerHTML != "") {
+				return;
+			}
+			
+			var ret = 0;
+			
+			// 取出的内容是字符串，需要转成数字进行加减运算
+			if(sign =="add") {
+				ret = Number(tagNum1.value) + Number(tagNum2.value);
+			} else if(sign =="minus") {
+				ret = Number(tagNum1.value) - Number(tagNum2.value);
+			}
+			
+			console.log(ret);
+
+			var tagRet = document.getElementById("id_ret");
+			tagRet.innerText=ret;
+			
+		}
+	</script>
+	</head>
+	
+	<body>
+	
+		<div id="id_msg" style="color: red;">
+			
+		</div>
+		
+		<div>
+
+			計算記号
+			<label><input type="radio" name="sign" value="add">+</label>
+			<label><input type="radio" name="sign" value="minus">-</label>	
+			
+			<br>
+			数字１<input id="id_num1" type="number">
+			<br>
+			数字２<input id="id_num2" type="number">
+			
+			<br>
+		    <input type="button" value="計算" onclick="calcFun()">
+			
+			<label id="id_ret"></label>
+			
+		</div>
+		
+	</body>
+
+</html>
