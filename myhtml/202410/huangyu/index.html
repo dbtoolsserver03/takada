@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+	
+<head>
+	
+	<meta charset="UTF-8">
+	<title>简易计算机</title>
+	
+<!--	link rel="icon" ：用于指定网站的图标。rel关系
+ 		href=" "		：设置图标文件的路径
+		type            ：提高网页兼容性而设置-->
+	<link rel="icon" href="denntaku.png" type="image/png">
+
+	
+	<style>
+		table{
+			border-collapse: collapse; /* 相邻单元格的边框会合并为一个边框*/
+		/*	border: none;*/
+			width: 100%;
+		/*	transform: translate(0px, 10px);*/
+		}
+		.table{		
+			margin-left: 130px;
+		}/*	
+		.trmove{
+			transform: translate(0px, 20px);
+		}
+*/
+		.td0{
+			width: 160px;
+		}
+		td{
+			margin: 0;       /* 设置外边距为 0*/
+			padding: 0;      /* 设置内边距为 0*/
+			line-height: 0.5;/* 行高0.5*/
+		}
+		.td1{
+			font-size: 23px;			
+		}
+
+		.input{
+			height: 160px;
+		}
+		
+		.denntaku{
+			width: 810px;
+			height: 544px;
+			border: 3px solid;
+			border-color: black;
+			border-radius: 1px;
+		}		
+		.msgclass{
+			font-size: 23px;
+			width: 810px;
+			margin-top: 5px;
+			margin-left: 2px;
+
+		}
+		
+		.button{
+			width: 150px;
+			height: 125px;
+			border-radius: 50%;
+			font-size: 120px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-color: black;
+		 	margin-left: 80px;      /*距离左边元素距离*/
+			margin-bottom: 20px;    /*距离下边元素距离*/
+		}
+
+		.yunsuanfu{
+			width: 115px;
+			height: 105px;
+			border-radius: 20%;
+			border: 3px solid;
+			border-color: black;
+			font-size: 45px;
+			font-weight: 900;
+			display: flex;          /*使用Flexbox布局 */
+			justify-content: center;/* 水平居中 */
+			align-items: center;    /* 垂直居中 */
+			background-color: rgb(255, 255, 255);
+			}
+		.div__button--yuan{
+			width: 55px;
+			height: 55px;
+			border-radius: 50%;
+			border: 2px solid;
+			border-color: black;
+			
+		}
+		.form,.text{
+			background-color: rgb(237, 125, 49);
+			width: 180px;
+			height: 45px;
+			font-size: 23px;			
+			}
+		.form{	
+			border-top: none;
+			}
+		,text{
+			border-bottom: none;
+		}
+		.tr3{
+			width: 180px;
+			height: 90px;
+			margin-top: 96px;
+		}
+		.result{
+			width: 250;
+		}
+		.mes,.denntaku{
+			background-color: rgb(255, 255, 255);
+		}
+		.tr3,.button{
+			background-color: rgb(91, 155, 213);
+		}
+		.msgclass,
+		#msgdiv {
+		    margin: 0; /* 去掉默认外边距 */
+		    padding: 0; /* 去掉内边距 */
+			display: inline-block;
+			vertical-align: top; /* 防止默认的基线对齐产生空白 */
+		}
+/*  		.mes{
+			margin-left: 140px;
+			margin-left: 5px;
+		} */	
+		.msgdiv{
+			height: 80px;
+		}
+/*   白色字   */	
+		.tr3,.text{
+			font-size: 23px;
+			color: white 
+			
+		}	
+/*   # ID选择器   */
+		#msg {
+		    border: none;
+		    outline: none;
+
+		}
+		#msgdiv{
+			border: none;
+			outline: none;
+			margin-left: 80px;
+			transform: translate(0px,-33px);
+			font-size: 23px;
+/* 			transform-origin: 0 0; /* 设置缩放基点为左上角 */
+/* 			transform: scale(0.6); */
+
+		}
+
+
+	</style>
+	
+	<script src="index.js">
+	</script>
+	
+
+</head>
+
+
+<body>
+
+
+
+<!--一区-->  
+	<div class="denntaku">
+		<div class="msgclass">
+	        MSG
+		</div>
+				<!--	input是行级，移动用块级div -->
+		<div  id="msgdiv"> <input type ="text"  id=msg readonly class="mes"></div>
+		
+		
+		<hr>
+	<!--分割线-->
+	<!--二区-->
+		<div class="main">	
+			<table class="table0">
+							
+				<!--	第一行 button，按下会有效果-->
+				<tr>
+					<td><button class="button" onclick="caculate(event,'add')"><div class="div__button--yuan"></div></button></td>	
+					<td class="td0"><div class="yunsuanfu">＋</div></td>
+					<td><button class="button" onclick="caculate(event,'subtract')" ><div class="div__button--yuan"></div></button></td>
+					<td class="td0"><div class="yunsuanfu">－</div></td>
+			    </tr>
+			</table>
+			
+			<table class="table" style="color: rgb(255, 255, 255);">
+					<!--	第二行 文本-->
+					
+					<tr>
+						<td class="td1">
+							<input type="text"  class="text" name="number1" value="number1" id="inputnum1">
+						</td>
+						
+						 <td>
+							<input type="text"  class="text" name="number2" value="number2" id="inputnum1">
+						</td >
+						
+					 </tr>					
+					 <!--	第2.1行 表单-->
+						<tr class="no-margin">
+							<td class="td1">
+								<input type="number" class="form" id="input1" placeholder="请输入数字">
+							</td>
+											
+							<td>							
+								<input type="number"class="form"  id="input2"  placeholder="请输入数字">							
+							</td>
+							
+						<tr class="no-margin">
+			
+				<!--	第三行 结果-->
+				<tr class="trmove">
+					<td class="td1">
+						<input type="text" class="tr3" name="jieguoshuchu" value="结果输出">
+					</td> 
+					
+					<td>
+						<form>
+							<input type="text" class="tr3" id="result" name="result" value="0" readonly>
+						</form>
+					</td>
+		
+				</tr>
+			
+			</table>	
+		</div>	
+	</div>		
+		
+		
+		<script>
+			<!--		 改MSG文本框-->
+//			document.getElementById("msg").style.fontSize="25px";	
+			
+			
+
+	
+		</script>
+	
+		<!--document访问
+		addzhi=访问表单form2-form1
+		-->	
+	
+	
+	</body>
+
+
+
+</html>
