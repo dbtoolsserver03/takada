@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>hello jquery</title>
+	<script src="./js/jquery-3.7.1.js">
+	</script>
+	
+	<script>
+		// 当<body>标签里的所有标签全部解析完后，会自动执行这个方法
+		$(document).ready(function(){
+			
+		  //$("#id_login")
+		  // document.getElementById("id_login");
+		  
+		  // 用ID的方式取标签
+		  $("#id_login").click(function(){
+			document.getElementById("id_user").value;
+			console.log( $("#id_user").val());
+			console.log( $("input[name='sex']:checked").val());
+			$("input[type='password']").css("background-color","pink");
+		  });
+		  
+		  // 用标签的方式取标签
+		  $("input[type='password']").mouseenter(function(){
+		    $(this).css("background-color","");
+		  });
+		  
+		});
+		
+	</script>
+</head>
+
+<body>
+
+	sex <label><input type="radio" name="sex" value="1">man</label>
+	<label><input type="radio" name="sex" value="0">woman</label>
+	<br>
+	user <input id="id_user" type="text">
+	<br>
+	password <input type="password">
+	<br>
+	<input id="id_login" type="button" value="login">
+
+
+</body>
+
+</html>
