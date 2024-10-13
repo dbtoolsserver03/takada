@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>计算器</title>
+</head>
+<body>
+   第一个数字:
+   <input id = nb1><br>
+
+   第二个数字:
+   <input id = nb2><br>
+
+   +
+   <input type="radio" name="jiajian">
+   -
+   <input type="radio" name="jiajian"><br>
+
+   <input type="button" value="结果输出" onclick="click1()"><br>
+
+   <input id="t1" type="textarea">
+   
+   <script>
+    isprint = false
+    function click1()
+    {
+        number1 = document.getElementById("nb1").value
+        number2 = document.getElementById("nb2").value
+        //并没有直接绑定而是引用了当前值
+        text1 = document.getElementById("t1")
+        //语法区别c# .value 不能直接绑定
+        radio1 = document.getElementsByName("jiajian")
+        let count = 0
+        let danan = 0
+        
+        //radio1只返回数组
+        for(selectradio of radio1)
+        {
+            count++
+            if(selectradio.checked)
+            {
+                //console.log(count)
+                if(count == 1)
+                {
+                    if(number1 != "")
+                    {
+                        if(number2 != "")
+                        {
+                            danan = Number(number1)+Number(number2)
+                            //console.log("加法"+danan)
+                        }
+                        else
+                        {
+                            alert("请输入数字")
+                        }
+                    }
+                    else
+                    {
+                        alert("请输入数字")
+                    }
+                
+                }
+                else
+                {
+                    if(number1 != "")
+                    {
+                        if(number2 != "")
+                        {
+                            danan = Number(number1)-Number(number2)
+                            //console.log("减法"+danan)
+                        }
+                        else
+                        {
+                            alert("请输入数字")
+                        }
+                    }
+                    else
+                    {
+                        alert("请输入数字")
+                    }
+                }
+            }
+            else if(radio1[0].checked == false)
+            {
+                if(radio1[1].checked == false)
+                {
+                    alert("请选择选项")
+                    break
+                }
+            }
+        }
+        text1.value = danan
+        //console.log(text1)
+
+    }
+   </script>
+</body>
+</html>
