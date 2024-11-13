@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <script>
+        function submitForm() {
+            // 获取输入框的内容
+            var inputText = document.getElementById('textInput').value;
+            
+            // 将输入框的内容保存在 URL 参数中传递
+            window.location.href = 'to.html?input=' + encodeURIComponent(inputText);
+            return false; // 阻止表单默认提交
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return submitForm();">
+        <label for="textInput">请输入内容:</label>
+        <input type="text" id="textInput" name="textInput">
+        <button type="submit">提交</button>
+    </form>
+</body>
+</html>

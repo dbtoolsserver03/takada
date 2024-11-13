@@ -11,7 +11,7 @@
 	#wrap {
 		width: 820px;
 		margin: 0 auto;
-		background: url(../img/bg.gif) top repeat-y #FFFFFF;
+		background: url(../img/bg.gif) top  repeat-y #FFFFFF;
 	}
 
 	#top_content {
@@ -63,8 +63,8 @@
 	}
 
 	#navigation {
-		background: #85c329;
-		/*border-top: 1px solid #ffffff;*/
+		background: #74A8F5;
+		border-top: 1px solid #ffffff;
 		height: 25px;
 		clear: both
 	}
