@@ -1,11 +1,16 @@
 package com.baizhi.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.baizhi.entity.original.TStudent;
 import com.baizhi.service.StudentService;
@@ -86,6 +91,27 @@ public class StudentController {
     	service.delete(studentId);
        
         return "redirect:lists";
+    }
+    
+    @RequestMapping(value = "ajaxCheck", method = RequestMethod.POST)
+    public @ResponseBody Map<String, Object> handleAjaxRequest(@RequestBody Map<String, Object> requestParams) {
+        
+    	
+    	Map<String, Object> responseData = new HashMap<>();
+    	   
+    	List< TStudent> lst = service.findRecByNm((String)requestParams.get("name"));
+    	
+    	if (lst.size()>0) {
+
+            responseData.put("message", "使えません");
+
+		} else {
+            responseData.put("message", "使えます");
+
+		}
+     
+        // 返回响应数据
+        return responseData;
     }
     
 }

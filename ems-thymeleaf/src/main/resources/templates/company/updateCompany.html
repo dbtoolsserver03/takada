@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymealf.org">
+
+<head>
+	<title>会社更新画面</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+					</p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					会社更新:
+				</h1>
+				<form th:action="@{/company/update}" method="post">
+					<table cellpadding="0" cellspacing="0" border="0" class="form_table">
+						<tr>
+							<td valign="middle" align="right">
+								会社名前:
+							</td>
+							<td valign="middle" align="left">
+								<input type="text" class="inputgri" name="name" th:value="${obj.name}" />
+							</td>
+							
+							<input type="hidden" name="id" th:value="${obj.id}">
+							
+						</td>
+
+						<tr>
+							<td valign="middle" align="right">
+								会社種類:
+							</td>
+							<td valign="middle" align="left">
+								
+								
+							<label>	<input value="0" type="radio" class="inputgri" name="type" th:checked="${obj.type=='0'}" /> 0:合同会社</label>
+							<label>	<input value="1" type="radio" class="inputgri" name="type" th:checked="${obj.type=='1'}"/> 1:株式会社</label>
+							</td>
+						</tr>
+						<tr>
+							<td valign="middle" align="right">
+								会社開始日:
+							</td>
+							<td valign="middle" align="left">
+								<input type="date" class="inputgri" name="createDate" th:value="${#dates.format(obj.createDate,'yyyy-MM-dd')}" />
+								
+<!--								固定値-->
+<!--								<input type="text" value="tanaka" -->
+								
+							</td>
+						</tr>
+						<tr>
+							<td valign="middle" align="right">
+								会社アイコン:
+							</td>
+							<td valign="middle" align="left">
+								<img height="10%" width="20%" th:src="${obj.icon}">
+								<input type="text" class="inputgri" name="icon" th:value="${obj.icon}" />
+							</td>
+						</tr>
+					</table>
+					<p>
+						<input type="submit" class="button" value="更新確認" />
+						<input type="button" class="button" value="返回列表" onclick="returnCompanyLst()" />
+						<script>
+							function returnCompanyLst() {
+								location.href = '[[@{/company/lists}]]';
+							}
+
+						</script>
+					</p>
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	    var contextPath = /*[[@{/}]]*/ '';
+	    console.log("Context Pathsss:", contextPath);
+	</script>
+</body>
+
+</html>

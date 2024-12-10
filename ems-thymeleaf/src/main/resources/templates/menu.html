@@ -36,7 +36,21 @@
           欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
           <span th:if="${session.user==null}">游客</span>!
         </h1>
-
+		
+		<input type="button" class="button" value="物件管理" onclick="manageBuken()" />
+		<script>
+		  function manageBuken() {
+		    location.href = '[[@{buken/manageBuken}]]';
+		  }
+		</script>
+		
+		<input type="button" class="button" value="会社管理" onclick="manageCompany()" />
+		<script>
+		  function manageCompany() {
+		    location.href = '[[@{/manageCompany}]]';
+		  }
+		</script>
+		
 
         <input type="button" class="button" value="学生管理" onclick="manageStudent()" />
         <script>

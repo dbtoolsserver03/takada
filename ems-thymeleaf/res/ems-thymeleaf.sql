@@ -129,4 +129,47 @@ CREATE TABLE `student` (
   PRIMARY KEY (`student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='学生テーブル';
 
-
+DROP TABLE IF EXISTS `t_buken`;
+CREATE TABLE `t_buken` (
+  `buken_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'NO',
+  `location` varchar(100) DEFAULT NULL COMMENT '所在地',
+  `near_station_time` int unsigned DEFAULT NULL COMMENT '最寄り駅まで徒歩何分',
+  `buken_year` int unsigned DEFAULT NULL COMMENT '築年数',
+  `madori` char(2) DEFAULT NULL COMMENT '間取り',
+  `area` int unsigned DEFAULT NULL COMMENT '面積',
+  `direction` char(2) DEFAULT NULL COMMENT '向き',
+  `buken_condition` varchar(100) DEFAULT NULL COMMENT '限定条件',
+  `money_rent` int unsigned DEFAULT NULL COMMENT '賃料',
+  `money_deposit` int unsigned DEFAULT NULL COMMENT '敷金',
+  `money_gift` int unsigned DEFAULT NULL COMMENT '礼金',
+  `money_management` int unsigned DEFAULT NULL COMMENT '管理費/共益費',
+  `buken_type` char(2) DEFAULT NULL COMMENT '建物種別',
+  `device` varchar(100) DEFAULT NULL COMMENT '設備',
+  `delete_flg` char(1) NOT NULL DEFAULT '0' COMMENT '削除フラグ',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '登録日時',
+  `create_user_id` varchar(20) DEFAULT NULL COMMENT '登録者',
+  `update_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新日時',
+  `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
+  PRIMARY KEY (`buken_id`)
+) ENGINE=InnoDB  COMMENT='賃貸不動産テーブル';
+DROP TABLE IF EXISTS `t_buken_icon`;
+CREATE TABLE `t_buken_icon` (
+  `buken_id` int unsigned NOT NULL COMMENT '物件番号',
+  `sub_id` int unsigned NOT NULL COMMENT '枝番',
+  `url` varchar(1000) DEFAULT NULL COMMENT 'アイコン',
+  `delete_flg` char(1) NOT NULL DEFAULT '0' COMMENT '削除フラグ',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '登録日時',
+  `create_user_id` varchar(20) DEFAULT NULL COMMENT '登録者',
+  `update_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新日時',
+  `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
+  PRIMARY KEY (`buken_id`,`sub_id`)
+) ENGINE=InnoDB  COMMENT='物件アイコンテーブル';
+DROP TABLE IF EXISTS `t_company`;
+CREATE TABLE `t_company` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `name` varchar(255) DEFAULT NULL COMMENT '名前',
+  `type` char(1) DEFAULT NULL COMMENT '1:合同会社 2:株式会社',
+  `create_date` date DEFAULT NULL COMMENT '創立日',
+  `icon` varchar(1000) DEFAULT NULL COMMENT '画像',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  COMMENT='会社テーブル'

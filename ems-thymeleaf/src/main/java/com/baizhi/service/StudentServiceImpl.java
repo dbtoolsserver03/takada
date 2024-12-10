@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.baizhi.dao.original.TStudentMapper;
 import com.baizhi.entity.original.TStudent;
+import com.baizhi.entity.original.TStudentExample;
 
 @Service
 @Transactional
@@ -41,6 +42,15 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public void delete(Integer id) {
 		mapper.deleteByPrimaryKey(id);
+	}
+
+	@Override
+	public List<TStudent> findRecByNm(String nm) {
+	
+		TStudentExample example = new TStudentExample();
+		example.createCriteria().andStudentNameEqualTo(nm);
+		
+		return mapper.selectByExample(example);
 	}
 
 }

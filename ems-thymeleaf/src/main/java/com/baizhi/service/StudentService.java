@@ -17,4 +17,6 @@ public interface StudentService {
 
 	void delete(Integer id);
 
+	List<TStudent> findRecByNm(String string);
+
 }

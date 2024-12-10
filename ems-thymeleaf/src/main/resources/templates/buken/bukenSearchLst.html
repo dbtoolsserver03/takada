@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>物件検索一覧</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	<script th:src="@{/js/plug-in/jquery/jquery-3.7.1.min.js}"></script>
+
+
+
+	<script th:inline="javascript">
+		$(document).ready(function () {
+			$("#selectAll").change(function () {
+				var isChecked = $(this).prop("checked");
+				$(".checkbox").prop("checked", isChecked);
+			});
+		});
+
+
+		function delAllRec() {
+
+			if ($(".checkbox:checked").length > 0) {
+				if (window.confirm('選択されたレコードを削除しますか？')) {
+
+					$('#formLst').submit();
+				}
+			} else {
+				alert("レコードを選択してください！");
+			}
+		}
+
+
+		function downloadCsv() {
+			
+			/*<![CDATA[*/
+			      var ctxPath = /*[[@{/}]]*/ '';
+			/*]]>*/
+
+			// 書き方よくない
+			//$('#formSearch').attr("action","/ems-thymeleaf/buken/downloadCsv");
+			
+			
+			// HTMLのタグから属性の内容を取得する
+			var urlMoto = $('#formSearch').attr("action");
+			
+			//  HTMLタグ内の指定された属性に値を設定する
+			$('#formSearch').attr("action",ctxPath + "buken/downloadCsv");
+			
+			// FORMをJAVA側にリクエストする
+			$('#formSearch').submit();
+			
+			// FORMのactionを元の値で設定する
+			$('#formSearch').attr("action",urlMoto);
+		}
+
+
+	</script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+						<a th:href="@{/menu}">メニューに戻る</a>
+						<a th:if="${session.user!=null}" th:href="@{/user/logout}">ログアウト</a>
+						<a th:if="${session.user==null}" th:href="@{/login}">登録</a>
+					</p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+
+
+
+
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					ようこそ <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+					<span th:if="${session.user==null}">游客</span>!
+				</h1>
+
+
+				<form  id="formSearch" th:action="@{/buken/searchLst}" method="post">
+
+					<table>
+						<tr>
+							<td>賃料</td>
+							<td><input type="text" name="moneyRentMin" th:value="${vo.moneyRentMin}">～<input type="text"
+									name="moneyRentMax" th:value="${vo.moneyRentMax}"></td>
+						</tr>
+
+						<tr>
+							<td>所在地</td>
+							<td><input type="text" name="location" th:value="${vo.location}"></td>
+						</tr>
+
+						<tr>
+							<td>間取り</td>
+							<td>
+								<span th:each="entry : ${vo.masterMadoriMap}">
+									<label><input type="checkbox" name="madori" th:value="${entry.key}"
+											th:text="${entry.value.mDisplay1}"
+											th:checked="${vo.madori !=null and vo.madori.contains(entry.value.mCode)}"></label>
+								</span>
+							</td>
+						</tr>
+
+						<tr>
+							<td>最寄り駅まで徒歩何分</td>
+							<td><input type="text" name="nearStationTimeMin">～<input type="text"
+									name="nearStationTimeMin">
+							</td>
+						</tr>
+					</table>
+
+
+					<div align="right">
+						<input type="submit" value="検索">
+					</div>
+
+				</form>
+
+
+				<form id="formLst" th:action="@{/buken/deleteAllExecute}" method="post">
+
+					<table class="table">
+						<tr class="table_header">
+							<td>
+								<input type="checkbox" id="selectAll">
+							</td>
+							<td>
+								物件番号
+							</td>
+							<td>
+								建物種別
+							</td>
+							<td>
+								所在地
+							</td>
+							<td>
+								築年数
+							</td>
+							<td>
+								面積
+							</td>
+							<td>
+								向き
+							</td>
+							<td>
+								賃料
+							</td>
+							<td>
+								間取り
+							</td>
+							<td>
+								操作
+							</td>
+						</tr>
+						<tr th:each="obj,state:${objLst}" th:class="${state.odd?'row1':'row2'}">
+							<td>
+
+								<input type="checkbox" th:value="${obj.bukenId}" class="checkbox" name="bukenIds" />
+
+							</td>
+							<td>
+								<span th:text="${obj.bukenId}"></span>
+							</td>
+							<td>
+								<span th:if="${obj.bukenType != null && vo.masterTypeMap[obj.bukenType]!=null}"
+									th:text="${vo.masterTypeMap[obj.bukenType].mDisplay1}"></span>
+							</td>
+							<td>
+								<span th:text="${obj.location}"></span>
+							</td>
+							<td>
+								<span th:text="${obj.bukenYear}"></span>
+							</td>
+
+							<td>
+								<span th:text="${obj.area}"></span>
+							</td>
+
+							<td>
+								<span th:if="${obj.direction != null &&  vo.masterDirectionMap[obj.direction]!=null}"
+									th:text="${vo.masterDirectionMap[obj.direction].mDisplay1}"></span>
+
+							</td>
+							<td>
+								<span th:text="${obj.moneyRent}"></span>
+							</td>
+							<td>
+								<span th:if="${obj.madori != null &&   vo.masterMadoriMap[obj.madori]!=null}"
+									th:text="${vo.masterMadoriMap[obj.madori].mDisplay1}"></span>
+
+							</td>
+							<td>
+								<a href="javascript:;" th:onclick="'deletebuken('+${obj.bukenId}+')'">削除</a>
+								<a th:href="@{/buken/updateInit(id=${obj.bukenId})}">更新</a>
+								<a th:href="@{/buken/detailInit(id=${obj.bukenId})}">詳細</a>
+							</td>
+						</tr>
+						<script>
+							function deletebuken(id) {
+								console.log(id);
+								if (window.confirm('削除しますか?')) {
+									location.href = '[[@{/buken/deleteAllExecute?bukenIds=}]]' + id;
+								}
+							}
+						</script>
+					</table>
+
+
+					<p>
+						<input type="button" class="button" value="追加" onclick="addbuken()" />
+						<script>
+							function addbuken() {
+								location.href = '[[@{/buken/addInit}]]';
+							}
+						</script>
+						<input type="button" class="button" value="一括削除" onclick="delAllRec()" />
+
+						<input type="button" class="button" value="CSVダウンロード" onclick="downloadCsv()" />
+
+					</p>
+
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+	<script th:inline="javascript">
+		var objLst = /*[[${objLst}]]*/ {};
+		console.log(objLst);
+	</script>
+
+</body>
+
+</html>

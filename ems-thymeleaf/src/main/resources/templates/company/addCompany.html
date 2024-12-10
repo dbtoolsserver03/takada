@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymealf.org">
+
+<head>
+	<title>会社追加画面</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	<script type="text/javascript" th:src="@{/js/plug-in/jquery/jquery-3.7.1.min.js}"></script>
+
+
+	<script>
+		
+		// HTMLのすべてのタグを読込後、実行する
+		$(document).ready(function(){
+			  
+		  $("input[name='name']").blur(function(){
+			
+			$.ajax({
+				
+				// request url
+			    url: 'ajaxCheck',
+				
+				// post,get
+			    type: 'POST',
+				
+				async: false,  // 同期リクエスト
+				
+			    contentType: 'application/json',
+				
+			    data: JSON.stringify({
+					
+			        name: $(this).val()
+					
+			    }),
+				
+				
+			    success: function(response) {
+					
+					$("#id_msg").text(response.message);
+					
+			    },
+			    error: function(error) {
+			        console.error('Error:', error);
+			    }
+			});
+			
+			//$("#id_msg").text("同期、非同期テスト");
+			
+		  });
+		});
+
+
+		//同期は、順番通りに処理が実行され、1つのタスクが終わるまで次のタスクが始まらない。
+		//非同期は、タスクが並行して実行され、次のタスクが終わるのを待たずに進行する。
+		
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+					</p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					会社追加:
+				</h1>
+				<form th:action="@{/company/save}" method="post">
+					<table cellpadding="0" cellspacing="0" border="0" class="form_table">
+						<tr>
+							<td valign="middle" align="right">
+								会社名前:
+							</td>
+							<td valign="middle" align="left">
+								<input type="text" class="inputgri" name="name" /><span id="id_msg"></span>
+							</td>
+							
+						</td>
+
+						<tr>
+							<td valign="middle" align="right">
+								会社種類:
+							</td>
+							<td valign="middle" align="left">
+								
+								
+							<label>	<input value="0" type="radio" class="inputgri" name="type" /> 0:合同会社</label>
+							<label>	<input value="1" type="radio" class="inputgri" name="type" /> 1:株式会社</label>
+							</td>
+						</tr>
+						<tr>
+							<td valign="middle" align="right">
+								会社開始日:
+							</td>
+							<td valign="middle" align="left">
+								<input type="date" class="inputgri" name="createDate" />
+							</td>
+						</tr>
+						<tr>
+							<td valign="middle" align="right">
+								会社アイコン:
+							</td>
+							<td valign="middle" align="left">
+								<input type="text" class="inputgri" name="icon" />
+							</td>
+						</tr>
+					</table>
+					<p>
+						<input type="submit" class="button" value="追加確認" />
+						<input type="button" class="button" value="返回列表" onclick="returnCompanyLst()" />
+						<script>
+							function returnCompanyLst() {
+								location.href = '[[@{/company/lists}]]';
+							}
+
+						</script>
+					</p>
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	    var contextPath = /*[[@{/}]]*/ '';
+	    console.log("Context Pathsss:", contextPath);
+	</script>
+</body>
+
+</html>

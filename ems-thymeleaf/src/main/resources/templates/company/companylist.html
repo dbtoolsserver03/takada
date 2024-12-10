@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>会社一覧</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+						<a th:href="@{/menu}">メニューに戻る</a>
+						<a th:if="${session.user!=null}" th:href="@{/user/logout}">ログアウト</a>
+						<a th:if="${session.user==null}" th:href="@{/login}">登録</a>
+					</p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					欢迎 <span th:if="${session.user!=null}" th:text="${session.user.username}"></span>
+					<span th:if="${session.user==null}">游客</span>!
+				</h1>
+				<table class="table">
+					<tr class="table_header">
+						<td>
+						番号
+						</td>
+						<td>
+						会社名前
+						</td>
+						<td>
+							会社種類
+						</td>
+						<td>
+							会社開始日
+						</td>
+						<td>
+							会社画像
+						</td>
+						<td>
+							操作
+						</td>
+					</tr>
+					<tr th:each="obj,state:${objLst}" th:class="${state.odd?'row1':'row2'}">
+						<td>
+							<span th:text="${obj.id}"></span>
+						</td>
+						<td>
+							<span th:text="${obj.name}"></span>
+						</td>
+
+						<td>
+							
+							<span th:if="${obj.type == '0'}">合同会社 </span>
+							<span th:if="${obj.type == '1'}">株式会社 </span>
+
+						</td>
+						<td>
+							<span th:text="${#dates.format(obj.createDate,'yyyy/MM/dd')}"></span>
+						</td>
+
+						<td>
+<!--							 <input type="image" th:src="${obj.icon}">-->
+							 <img height="10%" width="20%" th:src="${obj.icon}">
+						</td>
+						<td>
+							<a href="javascript:;" th:onclick="'deleteCompany('+${obj.id}+')'">削除</a>
+							<a th:href="@{/company/updateInit(id=${obj.id})}">更新</a>
+						</td>
+					</tr>
+					<script>
+						function deleteCompany(id) {
+							console.log(id);
+							if (window.confirm('削除しますか?')) {
+								location.href = '[[@{/company/delete?id=}]]' + id;
+							}
+						}
+					</script>
+				</table>
+				<p>
+					<input type="button" class="button" value="追加" onclick="addCompany()" />
+					<script>
+						function addCompany() {
+							location.href = '[[@{/company/add}]]';
+						}
+					</script>
+				</p>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+	    <script th:inline="javascript">
+        var objLst = /*[[${objLst}]]*/ {};
+        console.log(objLst);
+    </script>
+    
+</body>
+
+</html>

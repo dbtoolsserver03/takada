@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymealf.org">
+
+<head>
+	<title>物件追加画面</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/lightbox.min.css}" />
+
+	<script type="text/javascript" th:src="@{/js/plug-in/jquery/jquery-3.7.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/plug-in/lightbox2-master/dist/js/lightbox.min.js}"></script>
+
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="top_content">
+			<div id="header">
+				<div id="rightheader">
+					<p>
+						2009/11/20
+						<br />
+					</p>
+				</div>
+				<div id="topheader">
+					<h1 id="title">
+						<a href="#">main</a>
+					</h1>
+				</div>
+				<div id="navigation">
+				</div>
+			</div>
+			<div id="content">
+				<p id="whereami">
+				</p>
+				<h1>
+					物件更新:
+				</h1>
+
+				<form th:action="@{/buken/updateExecute}" method="post" enctype="multipart/form-data">
+					<table cellpadding="0" cellspacing="0" border="0" class="form_table">
+						<tr>
+							<input type="hidden" name="rec.bukenId" th:value="${vo.rec.bukenId}">
+							
+							<td valign="middle" align="right">
+								所在地:
+							</td>
+							<td valign="middle" align="left">
+								<input type="text" class="inputgri" name="rec.location" th:value="${vo.rec.location}" />
+							</td>
+							
+						</td>
+
+						<tr>
+							<td valign="middle" align="right">
+								最寄り駅まで徒歩何分:
+							</td>
+							<td valign="middle" align="left">
+								<input type="text" class="inputgri" name="rec.nearStationTime" th:value="${vo.rec.nearStationTime}" />
+							</td>
+						</tr>
+						
+						<tr>
+							<td valign="middle" align="right">
+								築年数(yyyy):
+							</td>
+							<td valign="middle" align="left">
+								<input type="text" class="inputgri" name="rec.bukenYear"  th:value="${vo.rec.bukenYear}" />
+							</td>
+						</tr>
+
+						<tr>
+							<td valign="middle" align="right">
+								間取り:
+							</td>
+							<td valign="middle" align="left">
+								<span th:each="entry : ${vo.masterMadoriMap}">
+									<label> <input type="radio" th:value="${entry.key}"
+											th:text="${entry.value.mDisplay1}" name="rec.madori" th:checked="(${vo.rec.madori} == ${entry.value.mCode})"  /></label>
+											
+											
+													
+								</span>
+							</td>
+						</tr>
+
+						<tr>
+							<td valign="middle" align="right">
+								面積:
+							</td>
+							<td valign="middle" align="left">
+								<input type="text" class="inputgri" name="rec.area"  th:value="${vo.rec.area}"  />
+							</td>
+						</tr>
+
+						<tr>
+							<td valign="middle" align="right">
+								向き:
+							</td>
+							<td valign="middle" align="left">
+								
+								<select name="rec.direction">
+										<option></option>
+										<option th:each="entry : ${vo.masterDirectionMap}" th:value="${entry.key}"
+											th:text="${entry.value.mDisplay1}"
+											th:selected="${vo.rec.direction==entry.value.mCode}"></option>
+									</select>
+							</td>
+						</tr>
+
+
+						<tr>
+							<td valign="middle" align="right">
+								限定条件:
+							</td>
+							<td valign="middle" align="left">
+								<textarea  class="inputgri" name="rec.bukenCondition" th:text="${vo.rec.bukenCondition}" ></textarea>
+							</td>
+						</tr>
+
+						<tr>
+							<td valign="middle" align="right">
+								賃料:
+							</td>
+							<td valign="middle" align="left">
+								<input type="text" class="inputgri" name="rec.moneyRent"  th:value="${vo.rec.moneyRent}"/>
+							</td>
+						</tr>
+
+						<tr>
+							<td valign="middle" align="right">
+								敷金:
+							</td>
+							<td valign="middle" align="left">
+								<input type="text" class="inputgri" name="rec.moneyDeposit"  th:value="${vo.rec.moneyDeposit}"/>
+							</td>
+						</tr>
+
+		
+						<tr>
+							<td valign="middle" align="right">
+								礼金:
+							</td>
+							<td valign="middle" align="left">
+								<input type="text" class="inputgri" name="rec.moneyGift"  th:value="${vo.rec.moneyGift}"/>
+							</td>
+						</tr>
+
+						<tr>
+							<td valign="middle" align="right">
+								管理費/共益費:
+							</td>
+							<td valign="middle" align="left">
+								<input type="text" class="inputgri" name="rec.moneyManagement"  th:value="${vo.rec.moneyManagement}"/>
+							</td>
+						</tr>
+
+						<tr>
+							<td valign="middle" align="right">
+								建物種別:
+							</td>
+							<td valign="middle" align="left">
+								<span th:each="entry : ${vo.masterTypeMap}">
+									<label> <input type="radio" th:value="${entry.key}"
+											th:text="${entry.value.mDisplay1}" name="rec.bukenType" 
+											th:checked="(${vo.rec.bukenType} == ${entry.value.mCode})"/></label>
+								</span>
+							</td>
+						</tr>
+
+						<tr>
+							<td valign="middle" align="right">
+								設備:
+							</td>
+							<td valign="middle" align="left">
+								<span th:each="entry : ${vo.masterPointMap}">
+									<label><input type="checkbox" name="rec.device" th:value="${entry.key}"
+											th:text="${entry.value.mDisplay1}"
+											
+											th:checked="${vo.rec.device !=null and vo.rec.device.contains(entry.value.mCode)}"
+											
+											></label>
+								</span>
+							</td>
+						</tr>
+	
+						
+						<tr>
+							<td valign="middle" align="right">
+								物件アイコン:
+							</td>
+							<td valign="middle" align="left">
+								<input type="file"  class="inputgri" name="urls" multiple/>
+								
+								
+								<div>
+								  <a th:each="obj,state:${vo.icons}" 
+								  class="example-image-link" 
+								  th:href="@{/}+${obj.url}"
+								   data-lightbox="example-set" 
+								   data-title="Click the right half of the image to move forward.">
+								
+								   	<img class="example-image" th:src="@{/}+${obj.url}" alt="" width="50" height="50"/>
+								</a>
+
+								  
+								  <!--<a class="example-image-link" href="C:\work\file\photo\20241116151937986.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg" alt="" /></a>-->
+								</div>
+								
+							</td>
+						</tr>
+					</table>
+					<p>
+						<input type="submit" class="button" value="更新確認" />
+						<input type="button" class="button" value="一覧画面に戻る" onclick="returnbukenLst()" />
+						<script>
+							function returnbukenLst() {
+								location.href = '[[@{/buken/searchLst}]]';
+							}
+
+						</script>
+					</p>
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer_bg">
+				ABC@126.com
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	    var contextPath = /*[[@{/}]]*/ '';
+	    console.log("Context Pathsss:", contextPath);
+	</script>
+</body>
+
+</html>
