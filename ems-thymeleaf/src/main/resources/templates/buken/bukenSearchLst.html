@@ -9,6 +9,180 @@
 	<script th:src="@{/js/plug-in/jquery/jquery-3.7.1.min.js}"></script>
 
 
+	<style>
+	    /* コンボボックスの幅を固定値に設定 */
+	    select.fixed-width {
+	        width: 120px; /* 固定幅 */
+	    }
+	</style>
+
+	<script th:inline="javascript">
+
+		
+	function funDensyaType(){
+		$("input[type='submit']").prop("disabled", true);
+
+		const densyaSelect = $("select[name='densyaNo']")[0];
+
+		// 選択肢を初期化
+		densyaSelect.innerHTML = "<option>Loading...</option>";
+
+		$.ajax({
+
+			// request url
+			url: 'ajaxGetDensyaName',
+
+			// post,get
+			type: 'POST',
+
+			async: false,  // 同期リクエスト
+
+			contentType: 'application/json',
+
+			data: JSON.stringify({
+
+				densyaType: $("select[name='densyaType']").val()
+
+			}),
+
+
+			success: function (response) {
+
+				console.log(response.densyaLst);
+
+				densyaSelect.innerHTML = ""; // 初期化
+				
+				const optionBlank = document.createElement("option");
+				optionBlank.value = "";
+				optionBlank.textContent = "";
+				densyaSelect.appendChild(optionBlank);
+				
+				for (var i = 0; i < response.densyaLst.length; i++) {
+					const option = document.createElement("option");
+					option.value = response.densyaLst[i].densyaNo;
+					option.textContent = response.densyaLst[i].densyaName;
+					densyaSelect.appendChild(option);
+				}
+				
+				$("select[name='ekiNo']").empty(); // 初期化
+				$("input[type='submit']").prop("disabled", false);
+
+			},
+			error: function (error) {
+				$("input[type='submit']").prop("disabled", false);
+
+				alert('funDensyaType error !!');
+			}
+		});
+		
+	}
+	
+	function funDensyaNo() {
+		$("input[type='submit']").prop("disabled", true);
+		const ekiNoSelect = $("select[name='ekiNo']")[0];
+
+		// 選択肢を初期化
+		ekiNoSelect.innerHTML = "<option>Loading...</option>";
+
+		$.ajax({
+
+			// request url
+			url: 'ajaxGetDensyaName02',
+
+			// post,get
+			type: 'POST',
+
+			async: false,  // 同期リクエスト
+
+			contentType: 'application/json',
+
+			data: JSON.stringify({
+				densyaType: $("select[name='densyaType']").val(),
+				densyaNo: $("select[name='densyaNo']").val()
+
+			}),
+
+
+			success: function (response) {
+
+				console.log(response.densyaEkiLst);
+
+				ekiNoSelect.innerHTML = ""; // 初期化
+				
+				const optionBlank = document.createElement("option");
+				optionBlank.value = "";
+				optionBlank.textContent = "";
+				ekiNoSelect.appendChild(optionBlank);
+				
+				for (var i = 0; i < response.densyaEkiLst.length; i++) {
+					const option = document.createElement("option");
+					option.value = response.densyaEkiLst[i].ekiNo;
+					option.textContent = response.densyaEkiLst[i].ekiName;
+					ekiNoSelect.appendChild(option);
+				}
+				
+				$("input[type='submit']").prop("disabled", false);
+			},
+			error: function (error) {
+
+				alert('funDensyaNo error !!');
+				$("input[type='submit']").prop("disabled", false);
+			}
+		});
+	}
+	
+	// HTMLのすべてのタグを読込後、実行する
+	$(document).ready(function () {
+
+		$("input[type='submit']").prop("disabled", true);
+		
+		
+		if($("select[name='densyaType']").val()) {
+			funDensyaType();
+			
+			const vo = /*[[${vo}]]*/"vp";
+			$("select[name='densyaNo']").val(vo.densyaNo);
+		}
+		
+		if($("select[name='densyaNo']").val()) {
+			funDensyaNo();
+			
+			const vo = /*[[${vo}]]*/"vp";
+			$("select[name='ekiNo']").val(vo.ekiNo);
+			
+		} else {
+			
+			$("input[type='submit']").prop("disabled", false);
+		}
+
+	
+		$("input[type='submit']").click(function () {
+			$(this).prop("disabled", true);
+			$("#formSearch").submit();
+		});
+		
+
+
+		$("select[name='densyaType']").change(function () {
+
+			funDensyaType();
+
+		});
+
+
+
+		$("select[name='densyaNo']").change(function () {
+			funDensyaNo();
+		});
+
+		
+		
+
+	});
+
+		
+	</script>
+
 
 	<script th:inline="javascript">
 		$(document).ready(function () {
@@ -119,6 +293,30 @@
 							</td>
 						</tr>
 
+						
+						<tr>
+							<td valign="middle" align="right">
+								最寄り駅:
+							</td>
+							
+							<td valign="middle" align="left">
+							
+								<select name="densyaType"  class="fixed-width">
+									<option></option>
+									<option th:each="entry : ${vo.masterDensyaTypeMap}" th:selected="${vo.densyaType==entry.value.mCode}" th:value="${entry.key}" th:text="${entry.value.mDisplay1}">
+									</option>
+																	
+								</select>
+								<select name="densyaNo"  class="fixed-width">
+									<option></option>
+								</select>
+								<select name="ekiNo"  class="fixed-width">
+									<option></option>
+								</select>
+							</td>
+							
+						</tr>
+						
 						<tr>
 							<td>最寄り駅まで徒歩何分</td>
 							<td><input type="text" name="nearStationTimeMin">～<input type="text"
@@ -151,6 +349,11 @@
 							<td>
 								所在地
 							</td>
+							
+							<td>
+								最寄り駅
+							</td>
+							
 							<td>
 								築年数
 							</td>
@@ -173,44 +376,47 @@
 						<tr th:each="obj,state:${objLst}" th:class="${state.odd?'row1':'row2'}">
 							<td>
 
-								<input type="checkbox" th:value="${obj.bukenId}" class="checkbox" name="bukenIds" />
+								<input type="checkbox" th:value="${obj.buken.bukenId}" class="checkbox" name="bukenIds" />
 
 							</td>
 							<td>
-								<span th:text="${obj.bukenId}"></span>
+								<span th:text="${obj.buken.bukenId}"></span>
 							</td>
 							<td>
-								<span th:if="${obj.bukenType != null && vo.masterTypeMap[obj.bukenType]!=null}"
+								<span th:if="${obj.buken.bukenType != null && vo.masterTypeMap[obj.buken.bukenType]!=null}"
 									th:text="${vo.masterTypeMap[obj.bukenType].mDisplay1}"></span>
 							</td>
 							<td>
-								<span th:text="${obj.location}"></span>
+								<span th:text="${obj.buken.location}"></span>
 							</td>
 							<td>
-								<span th:text="${obj.bukenYear}"></span>
+								<span th:text="${obj.ekiNm}"></span>
+							</td>
+							<td>
+								<span th:text="${obj.buken.bukenYear}"></span>
 							</td>
 
 							<td>
-								<span th:text="${obj.area}"></span>
+								<span th:text="${obj.buken.area}"></span>
 							</td>
 
 							<td>
-								<span th:if="${obj.direction != null &&  vo.masterDirectionMap[obj.direction]!=null}"
-									th:text="${vo.masterDirectionMap[obj.direction].mDisplay1}"></span>
+								<span th:if="${obj.buken.direction != null &&  vo.masterDirectionMap[obj.buken.direction]!=null}"
+									th:text="${vo.masterDirectionMap[obj.buken.direction].mDisplay1}"></span>
 
 							</td>
 							<td>
-								<span th:text="${obj.moneyRent}"></span>
+								<span th:text="${obj.buken.moneyRent}"></span>
 							</td>
 							<td>
-								<span th:if="${obj.madori != null &&   vo.masterMadoriMap[obj.madori]!=null}"
-									th:text="${vo.masterMadoriMap[obj.madori].mDisplay1}"></span>
+								<span th:if="${obj.buken.madori != null &&   vo.masterMadoriMap[obj.buken.madori]!=null}"
+									th:text="${vo.masterMadoriMap[obj.buken.madori].mDisplay1}"></span>
 
 							</td>
 							<td>
-								<a href="javascript:;" th:onclick="'deletebuken('+${obj.bukenId}+')'">削除</a>
-								<a th:href="@{/buken/updateInit(id=${obj.bukenId})}">更新</a>
-								<a th:href="@{/buken/detailInit(id=${obj.bukenId})}">詳細</a>
+								<a href="javascript:;" th:onclick="'deletebuken('+${obj.buken.bukenId}+')'">削除</a>
+								<a th:href="@{/buken/updateInit(id=${obj.buken.bukenId})}">更新</a>
+								<a th:href="@{/buken/detailInit(id=${obj.buken.bukenId})}">詳細</a>
 							</td>
 						</tr>
 						<script>

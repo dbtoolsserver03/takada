@@ -28,10 +28,12 @@ import com.baizhi.constant.MasterInfo;
 import com.baizhi.entity.User;
 import com.baizhi.entity.original.MCode;
 import com.baizhi.entity.original.MDensya;
+import com.baizhi.entity.original.MDensyaEki;
 import com.baizhi.entity.original.TBuken;
 import com.baizhi.entity.original.TBukenIcon;
 import com.baizhi.entity.vo.BukenAddVo;
 import com.baizhi.entity.vo.BukenContidionVo;
+import com.baizhi.entity.vo.BukenRec;
 import com.baizhi.entity.vo.BukenUpdateVo;
 import com.baizhi.service.BukenService;
 
@@ -61,7 +63,7 @@ public class BukenController {
 
 		log.debug("画面のパラメーターは：" + contionVo.toString());
 
-		List<TBuken> objList = service.searchList(contionVo);
+		List<BukenRec> objList = service.searchList(contionVo);
 		Map<String, MCode> masterMadoriMap = masterInfo.getCodeMap().get(MasterInfo.BUKEN_MADORI);
 		contionVo.setMasterMadoriMap(masterMadoriMap);
 
@@ -73,6 +75,11 @@ public class BukenController {
 
 		Map<String, MCode> masterTypeMap = masterInfo.getCodeMap().get(MasterInfo.BUKEN_TYPE);
 		contionVo.setMasterTypeMap(masterTypeMap);
+		
+
+		Map<String, MCode> masterDensyaTypeMap = masterInfo.getCodeMap().get(MasterInfo.DENSYA_TYPE);
+		contionVo.setMasterDensyaTypeMap(masterDensyaTypeMap);
+		
 
 		model.addAttribute("vo", contionVo);
 		model.addAttribute("objLst", objList);
@@ -93,6 +100,9 @@ public class BukenController {
 		Map<String, MCode> masterMadoriMap = masterInfo.getCodeMap().get(MasterInfo.BUKEN_MADORI);
 		contionVo.setMasterMadoriMap(masterMadoriMap);
 
+		Map<String, MCode> masterDensyaTypeMap = masterInfo.getCodeMap().get(MasterInfo.DENSYA_TYPE);
+		contionVo.setMasterDensyaTypeMap(masterDensyaTypeMap);
+		
 		model.addAttribute("vo", contionVo);
 
 		return "buken/bukenSearchLst";
@@ -165,10 +175,12 @@ public class BukenController {
 
 		List<String> urlsLst = new ArrayList<String>();
 
-		if (urls != null) {
+		if (urls != null && urls[0].getOriginalFilename().length()!=0) {
 			for (MultipartFile img : urls) {
 				// 画像のアップロード処理を行う。
 				String originalFilename = img.getOriginalFilename();
+				
+				
 				String newFileName = uploadPhoto(img, originalFilename);
 				urlsLst.add(newFileName);
 			}
@@ -330,7 +342,7 @@ public class BukenController {
 
 		log.debug("画面のパラメーターは：" + contionVo.toString());
 
-		List<TBuken> objList = service.searchList(contionVo);
+		List<BukenRec> objList = service.searchList(contionVo);
 
 		// リスポンスにCSVの属性を設定する
 		response.setContentType("text/csv");
@@ -344,13 +356,13 @@ public class BukenController {
 		
 		// システムより改行する
 		writer.write(System.lineSeparator());
-		for (TBuken rec : objList) {
+		for (BukenRec rec : objList) {
 			
 			 writer.write(
-					 rec.getBukenId()+","+
-					 rec.getLocation()+","+
-					 rec.getNearStationTime()+","+
-					 rec.getBukenYear());
+					 rec.getBuken().getBukenId()+","+
+					 rec.getBuken().getLocation()+","+
+					 rec.getBuken().getNearStationTime()+","+
+					 rec.getBuken().getBukenYear());
 			 writer.write(System.lineSeparator());
 		}
 		
@@ -378,4 +390,26 @@ public class BukenController {
 		return responseData;
 	}
 
+	
+	
+	/**
+	 * AJAXを利用し、駅名データを取得する。
+	 *
+	 * @return
+	 */
+	@RequestMapping("ajaxGetDensyaName02")
+	public @ResponseBody Map<String, Object> handleAjaxRequest02(@RequestBody Map<String, Object> requestParams) {
+
+		Map<String, Object> responseData = new HashMap<>();
+
+		List<MDensyaEki> lst = service.findEkiInfoLst((String) requestParams.get("densyaType"),Integer.valueOf((String)requestParams.get("densyaNo")) );
+
+		responseData.put("densyaEkiLst", lst);
+		
+
+		// リスポンスを戻ります。
+		return responseData;
+	}
+
+	
 }

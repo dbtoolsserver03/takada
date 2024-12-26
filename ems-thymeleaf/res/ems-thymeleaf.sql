@@ -130,9 +130,13 @@ CREATE TABLE `student` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='学生テーブル';
 
 DROP TABLE IF EXISTS `t_buken`;
+
 CREATE TABLE `t_buken` (
   `buken_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'NO',
   `location` varchar(100) DEFAULT NULL COMMENT '所在地',
+  `densya_type` char(2)  COMMENT '電車種別',
+  `densya_no` int unsigned  COMMENT '電車番号',
+  `eki_no` int unsigned  COMMENT '駅番号',
   `near_station_time` int unsigned DEFAULT NULL COMMENT '最寄り駅まで徒歩何分',
   `buken_year` int unsigned DEFAULT NULL COMMENT '築年数',
   `madori` char(2) DEFAULT NULL COMMENT '間取り',
@@ -152,7 +156,9 @@ CREATE TABLE `t_buken` (
   `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
   PRIMARY KEY (`buken_id`)
 ) ENGINE=InnoDB  COMMENT='賃貸不動産テーブル';
+
 DROP TABLE IF EXISTS `t_buken_icon`;
+
 CREATE TABLE `t_buken_icon` (
   `buken_id` int unsigned NOT NULL COMMENT '物件番号',
   `sub_id` int unsigned NOT NULL COMMENT '枝番',
@@ -164,7 +170,9 @@ CREATE TABLE `t_buken_icon` (
   `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
   PRIMARY KEY (`buken_id`,`sub_id`)
 ) ENGINE=InnoDB  COMMENT='物件アイコンテーブル';
+
 DROP TABLE IF EXISTS `t_company`;
+
 CREATE TABLE `t_company` (
   `id` int NOT NULL AUTO_INCREMENT COMMENT 'id',
   `name` varchar(255) DEFAULT NULL COMMENT '名前',
@@ -172,4 +180,34 @@ CREATE TABLE `t_company` (
   `create_date` date DEFAULT NULL COMMENT '創立日',
   `icon` varchar(1000) DEFAULT NULL COMMENT '画像',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  COMMENT='会社テーブル'
+) ENGINE=InnoDB  COMMENT='会社テーブル';
+
+
+DROP TABLE IF EXISTS `m_densya`;
+CREATE TABLE `m_densya` (
+`densya_type` char(2) COMMENT '電車種別',
+`densya_no`int unsigned COMMENT '電車番号',
+`densya_name` varchar(50) DEFAULT NULL COMMENT '電車の名前',
+  `delete_flg` char(1) NOT NULL DEFAULT '0' COMMENT '削除フラグ',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '登録日時',
+  `create_user_id` varchar(20) DEFAULT NULL COMMENT '登録者',
+  `update_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新日時',
+  `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
+ PRIMARY KEY (`densya_type`,`densya_no`)
+) COMMENT='電車テーブル';
+
+
+
+DROP TABLE IF EXISTS `m_densya_eki`;
+CREATE TABLE `m_densya_eki` (
+`densya_type` char(2) COMMENT '電車種別',
+`densya_no`int unsigned COMMENT '電車番号',
+`eki_no`int unsigned COMMENT '駅番号',
+`eki_name` varchar(50) DEFAULT NULL COMMENT '駅の名前',
+  `delete_flg` char(1) NOT NULL DEFAULT '0' COMMENT '削除フラグ',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '登録日時',
+  `create_user_id` varchar(20) DEFAULT NULL COMMENT '登録者',
+  `update_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新日時',
+  `update_user_id` varchar(20) DEFAULT NULL COMMENT '更新者',
+ PRIMARY KEY (`densya_type`,`densya_no`,`eki_no`)
+) COMMENT='電車駅テーブル';

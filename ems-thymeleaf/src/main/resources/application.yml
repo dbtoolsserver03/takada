@@ -29,4 +29,8 @@ logging:
     com.baizhi: debug
     org.mybatis.generator: debug
 
-
+# 指定文件上传位置
+photo:
+  file:
+#    dir: /Users/user/Documents/file/photo
+    dir: C:\work\file\photo

@@ -3,9 +3,11 @@ package com.baizhi.service;
 import java.util.List;
 
 import com.baizhi.entity.original.MDensya;
+import com.baizhi.entity.original.MDensyaEki;
 import com.baizhi.entity.original.TBuken;
 import com.baizhi.entity.original.TBukenIcon;
 import com.baizhi.entity.vo.BukenContidionVo;
+import com.baizhi.entity.vo.BukenRec;
 
 public interface BukenService {
 
@@ -16,7 +18,7 @@ public interface BukenService {
 	 * @param contionVo
 	 * @return
 	 */
-	 List<TBuken> searchList(BukenContidionVo contionVo);
+	 List<BukenRec> searchList(BukenContidionVo contionVo);
 
 	/**
 	 * 物件テーブルにレコードを追加する。
@@ -78,5 +80,13 @@ public interface BukenService {
 	 * @return
 	 */
 	List<MDensya> findDensyaLst(String densyaType);
+
+	/**
+	 * 電車類型、電車名より、駅名リストを取得する。
+	 * @param densyaType
+	 * @param densyaNo
+	 * @return
+	 */
+	List<MDensyaEki> findEkiInfoLst(String densyaType, int densyaNo);
 
 }
