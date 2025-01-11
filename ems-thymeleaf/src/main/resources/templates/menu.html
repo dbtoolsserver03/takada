@@ -37,6 +37,13 @@
           <span th:if="${session.user==null}">游客</span>!
         </h1>
 		
+		<input type="button" class="button" value="専門学生管理" onclick="manageSenmon()" />
+		<script>
+		  function manageSenmon() {
+		    location.href = '[[@{senmon/manageSenmon}]]';
+		  }
+		</script>
+		
 		<input type="button" class="button" value="物件管理" onclick="manageBuken()" />
 		<script>
 		  function manageBuken() {

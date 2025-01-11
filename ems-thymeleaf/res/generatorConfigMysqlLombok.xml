@@ -102,6 +102,7 @@
 		
 <table tableName="m_densya" domainObjectName="MDensya"></table>
 <table tableName="m_densya_eki" domainObjectName="MDensyaEki"></table>
+<table tableName="senmongakusei" domainObjectName="Senmongakusei"></table>
 
 
 
