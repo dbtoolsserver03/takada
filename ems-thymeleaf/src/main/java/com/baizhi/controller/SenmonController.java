@@ -1,10 +1,12 @@
 package com.baizhi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.baizhi.entity.original.Senmongakusei;
+import com.baizhi.service.SenmonService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -13,6 +15,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SenmonController {
 
+	@Autowired
+	SenmonService senmonService;
+	
 	/**
 	 * 専門学生画面初期化
 	 *
@@ -24,5 +29,19 @@ public class SenmonController {
 		model.addAttribute("vo", new Senmongakusei());
 		return "senmon/senmonSearchLst";
 	}
+	
+	/**
+	 * 専門学生画面検索
+	 *
+	 * @return
+	 */
+	@RequestMapping("searchLst")
+	public String searchLstxxx(Model model, Senmongakusei obj) {
+
+		model.addAttribute("vo", obj);
+		model.addAttribute("objLst", senmonService.searchList(obj));
+		return "senmon/senmonSearchLst";
+	}
+	
 	
 }

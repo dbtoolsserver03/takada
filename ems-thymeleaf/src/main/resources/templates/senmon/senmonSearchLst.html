@@ -53,7 +53,7 @@
 					<span th:if="${session.user==null}">游客</span>!
 				</h1>
 
-				<form id="formSearch" th:action="@{/buken/searchLst}" method="post">
+				<form id="formSearch" th:action="@{/senmon/searchLst}" method="post">
 
 					<table>
 
@@ -111,7 +111,7 @@
 								<span th:text="${obj.studentId}"></span>
 							</td>
 							<td>
-								<span th:text="${obj.student_name}"></span>
+								<span th:text="${obj.studentName}"></span>
 							</td>
 							<td>
 								<span th:text="${obj.sex}"></span>
