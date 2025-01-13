@@ -39,7 +39,8 @@ public class LombokMyCommentGenerator {
 	public static void run() {
         try {
         	System.out.println("--------------------start generator-------------------");
-            List<String> warnings = new ArrayList<String>();
+            List<String> warnings = new ArrayList
+            		<String>();
             boolean overwrite = true;
             String filePath = "res" + File.separator+"generatorConfigMysqlLombok.xml";
             File f = new File(filePath);
