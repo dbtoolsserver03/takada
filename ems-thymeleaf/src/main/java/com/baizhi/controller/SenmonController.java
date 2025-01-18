@@ -66,4 +66,32 @@ public class SenmonController {
 
 		return "redirect:/senmon/manageSenmon";
 	}
+
+	/**
+	 * 専門学生更新画面
+	 *
+	 * @return
+	 */
+	@RequestMapping("updateInit")
+	public String updateInit(Model model, Senmongakusei obj) {
+
+		Senmongakusei dbRec = senmonService.getOneRec(obj);
+
+		model.addAttribute("obj", dbRec);
+		return "senmon/senmonUpdate";
+	}
+
+	/**
+	 * 専門学生更新実行
+	 *
+	 * @return
+	 */
+	@RequestMapping("update")
+	public String update(Model model, Senmongakusei obj) {
+
+		senmonService.updateRec(obj);
+
+		return "redirect:/senmon/manageSenmon";
+	}
+
 }

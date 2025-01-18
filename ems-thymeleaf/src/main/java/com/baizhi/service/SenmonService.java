@@ -16,4 +16,8 @@ public interface SenmonService {
 
 	void addRec(Senmongakusei obj);
 
+	Senmongakusei getOneRec(Senmongakusei obj);
+
+	void updateRec(Senmongakusei obj);
+
 }

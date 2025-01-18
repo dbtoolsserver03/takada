@@ -127,8 +127,8 @@
 							</td>
 							<td>
 								<a href="javascript:;" th:onclick="'deletesenmon('+${obj.studentId}+')'">削除</a>
-								<a th:href="@{/senmon/updateInit(id=${obj.studentId})}">更新</a>
-								<a th:href="@{/senmon/detailInit(id=${obj.studentId})}">詳細</a>
+								<a th:href="@{/senmon/updateInit(studentId=${obj.studentId})}">更新</a>
+								<a th:href="@{/senmon/detailInit(studentId=${obj.studentId})}">詳細</a>
 							</td>
 						</tr>
 						<script>

@@ -38,4 +38,15 @@ public class SenmonServiceImpl implements SenmonService {
 	public void addRec(Senmongakusei obj) {
 		mapper.insertSelective(obj);
 	}
+
+	@Override
+	public Senmongakusei getOneRec(Senmongakusei obj) {
+
+		return mapper.selectByPrimaryKey(obj.getStudentId());
+	}
+
+	@Override
+	public void updateRec(Senmongakusei obj) {
+		mapper.updateByPrimaryKeySelective(obj);
+	}
 }
