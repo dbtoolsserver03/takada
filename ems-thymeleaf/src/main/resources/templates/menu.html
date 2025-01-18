@@ -78,10 +78,23 @@
             location.href = '[[@{/manageEmp02}]]';
           }
         </script>
-        <input type="button" class="button" value="员工管理03" onclick="manageEmp03()" />
+        <input type="button" id="btn03" name="btn03" class="button" value="员工管理03" onclick="manageEmp03()" />
         <script>
           function manageEmp03() {
-            location.href = '[[@{/manageEmp03}]]';
+			// 显示确认对话框
+			let result = confirm("你确定要执行这个操作吗？");
+
+			// 根据用户的选择执行不同的操作
+			if (result) {
+
+				location.href = '[[@{/manageEmp03}]]';
+			    console.log("用户点击了确定");
+			    // 在这里执行“确定”时的逻辑
+			} else {
+			    console.log("用户点击了取消");
+			    // 在这里执行“取消”时的逻辑
+			}
+		
           }
         </script>
         <input type="button" class="button" value="员工管理04" onclick="manageEmp04()" />
