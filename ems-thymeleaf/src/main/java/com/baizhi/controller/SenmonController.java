@@ -17,7 +17,7 @@ public class SenmonController {
 
 	@Autowired
 	SenmonService senmonService;
-	
+
 	/**
 	 * 専門学生画面初期化
 	 *
@@ -29,7 +29,7 @@ public class SenmonController {
 		model.addAttribute("vo", new Senmongakusei());
 		return "senmon/senmonSearchLst";
 	}
-	
+
 	/**
 	 * 専門学生画面検索
 	 *
@@ -42,6 +42,28 @@ public class SenmonController {
 		model.addAttribute("objLst", senmonService.searchList(obj));
 		return "senmon/senmonSearchLst";
 	}
-	
-	
+
+	/**
+	 * 専門学生追加画面
+	 *
+	 * @return
+	 */
+	@RequestMapping("addInit")
+	public String addInit(Model model) {
+
+		return "senmon/senmonAdd";
+	}
+
+	/**
+	 * 専門学生追加実行
+	 *
+	 * @return
+	 */
+	@RequestMapping("save")
+	public String save(Model model, Senmongakusei obj) {
+
+		senmonService.addRec(obj);
+
+		return "redirect:/senmon/manageSenmon";
+	}
 }

@@ -24,13 +24,18 @@ public class SenmonServiceImpl implements SenmonService {
 		SenmongakuseiExample example = new SenmongakuseiExample();
 
 		Criteria criteria = example.createCriteria();
-		
+
 		if (contionVo.getStudentName() != null && contionVo.getStudentName().length() > 0) {
 			criteria.andStudentNameLike("%" + contionVo.getStudentName() + "%");
 		}
-		
-		List<Senmongakusei> lst =  mapper.selectByExample(example);
-		
-		return  lst;
+
+		List<Senmongakusei> lst = mapper.selectByExample(example);
+
+		return lst;
+	}
+
+	@Override
+	public void addRec(Senmongakusei obj) {
+		mapper.insertSelective(obj);
 	}
 }
