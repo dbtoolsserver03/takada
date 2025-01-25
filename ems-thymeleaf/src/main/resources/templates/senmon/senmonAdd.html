@@ -47,8 +47,25 @@
 							<td valign="middle" align="right">
 								性別:
 							</td>
+							
+							
 							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="sex" />
+<!--								<input type="text" class="inputgri" name="sex" />-->
+
+
+<!--                                    vo1-->
+
+								<span th:each="entry : ${vo.masterSexMap}">
+									<label> <input type="radio" th:value="${entry.key}"
+											th:text="${entry.value}" name="sex" /></label>
+								</span>
+
+<!--								<label> <input type="radio" name="sex" value="1">男</label>-->
+<!--								<label> <input type="radio" name="sex" value="0">女</label>-->
+								
+								
+								
+								
 							</td>
 						</tr>
 						<tr>
@@ -56,7 +73,9 @@
 								学科:
 							</td>
 							<td valign="middle" align="left">
-								<input type="text" class="inputgri" name="gakka" />
+<!--								<input type="text" class="inputgri" name="gakka" />-->
+								<label> <input type="checkbox" name="gakka" value="1">gakka1</label>
+								<label> <input type="checkbox" name="gakka" value="2">gakka2</label>
 							</td>
 						</tr>
 						<tr>
