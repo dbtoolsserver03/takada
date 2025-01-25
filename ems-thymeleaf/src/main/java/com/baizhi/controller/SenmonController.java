@@ -1,6 +1,5 @@
 package com.baizhi.controller;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.baizhi.constant.MasterInfo;
+import com.baizhi.entity.original.MCode;
 import com.baizhi.entity.original.Senmongakusei;
 import com.baizhi.entity.vo.SenmonVo;
 import com.baizhi.service.SenmonService;
@@ -21,6 +22,9 @@ public class SenmonController {
 
 	@Autowired
 	SenmonService senmonService;
+
+	@Autowired
+	private MasterInfo masterInfo;
 
 	/**
 	 * 専門学生画面初期化
@@ -57,11 +61,13 @@ public class SenmonController {
 
 		SenmonVo senmonVo = new SenmonVo();
 
-		Map<String, String> sexMap = new LinkedHashMap<>();
-		sexMap.put("1", "男");
-		sexMap.put("0", "女");
+		Map<String, MCode> masterSexMap = masterInfo.getCodeMap().get(MasterInfo.SEX);
 
-		senmonVo.setMasterSexMap(sexMap);
+		//		Map<String, String> sexMap = new LinkedHashMap<>();
+		//		sexMap.put("1", "男");
+		//		sexMap.put("0", "女");
+
+		senmonVo.setMasterSexMap(masterSexMap);
 
 		model.addAttribute("vo", senmonVo);
 
