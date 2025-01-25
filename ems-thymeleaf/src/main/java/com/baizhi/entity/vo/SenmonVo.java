@@ -10,6 +10,6 @@ import lombok.Data;
 public class SenmonVo {
 
 	private Map<String, MCode> masterSexMap;
-	private Map<String, String> masterGakkaMap;
+	private Map<String, MCode> masterGakkaMap;
 
 }

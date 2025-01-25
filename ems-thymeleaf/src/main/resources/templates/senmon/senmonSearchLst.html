@@ -114,10 +114,17 @@
 								<span th:text="${obj.studentName}"></span>
 							</td>
 							<td>
-								<span th:text="${obj.sex}"></span>
+								
+								<span th:if="${obj.sex != null && masterInfo.masterSexMap[obj.sex]!=null}"
+									th:text="${masterInfo.masterSexMap[obj.sex].mDisplay1}"></span>
 							</td>
 							<td>
-								<span th:text="${obj.gakka}"></span>
+								<div th:if="${obj.gakka!=null}" th:with="values=${obj.gakka.split(',')}">
+									<ul>
+										<li th:each="value : ${values}" th:text="${masterInfo.masterGakkaMap.get(value).mDisplay1}"></li>
+									</ul>
+								</div>
+
 							</td>
 							<td>
 								<span th:text="${obj.course}"></span>

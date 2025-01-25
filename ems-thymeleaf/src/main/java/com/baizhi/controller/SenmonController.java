@@ -47,6 +47,18 @@ public class SenmonController {
 	public String searchLstxxx(Model model, Senmongakusei obj) {
 
 		model.addAttribute("vo", obj);
+
+		SenmonVo senmonVo = new SenmonVo();
+
+		Map<String, MCode> masterSexMap = masterInfo.getCodeMap().get(MasterInfo.SEX);
+
+		Map<String, MCode> masterGakkaMap = masterInfo.getCodeMap().get(MasterInfo.SENMONGAKUSEI_GAKKA);
+
+		senmonVo.setMasterSexMap(masterSexMap);
+		senmonVo.setMasterGakkaMap(masterGakkaMap);
+
+		model.addAttribute("masterInfo", senmonVo);
+
 		model.addAttribute("objLst", senmonService.searchList(obj));
 		return "senmon/senmonSearchLst";
 	}
@@ -63,11 +75,14 @@ public class SenmonController {
 
 		Map<String, MCode> masterSexMap = masterInfo.getCodeMap().get(MasterInfo.SEX);
 
+		Map<String, MCode> masterGakkaMap = masterInfo.getCodeMap().get(MasterInfo.SENMONGAKUSEI_GAKKA);
+
 		//		Map<String, String> sexMap = new LinkedHashMap<>();
 		//		sexMap.put("1", "男");
 		//		sexMap.put("0", "女");
 
 		senmonVo.setMasterSexMap(masterSexMap);
+		senmonVo.setMasterGakkaMap(masterGakkaMap);
 
 		model.addAttribute("vo", senmonVo);
 

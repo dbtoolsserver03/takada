@@ -73,9 +73,16 @@
 								学科:
 							</td>
 							<td valign="middle" align="left">
+								
+								
+								<span th:each="entry : ${vo.masterGakkaMap}">
+									<label><input type="checkbox" name="gakka" th:value="${entry.key}"
+											th:text="${entry.value.mDisplay1}"></label>
+								</span>
+								
 <!--								<input type="text" class="inputgri" name="gakka" />-->
-								<label> <input type="checkbox" name="gakka" value="1">gakka1</label>
-								<label> <input type="checkbox" name="gakka" value="2">gakka2</label>
+<!--								<label> <input type="checkbox" name="gakka" value="1">gakka1</label>-->
+<!--								<label> <input type="checkbox" name="gakka" value="2">gakka2</label>-->
 							</td>
 						</tr>
 						<tr>
